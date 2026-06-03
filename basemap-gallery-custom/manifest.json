@@ -1,0 +1,18 @@
+{
+  "name": "basemap-gallery-custom",
+  "label": "Basemap Gallery Custom",
+  "type": "widget",
+  "version": "1.19.0",
+  "dependency": [ "jimu-arcgis" ],
+  "exbVersion": "1.19.0",
+  "author": "Brian McLeer",
+  "description": "Gallery interface for selecting basemaps from portal",
+  "copyright": "City of Grand Junction",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {},
+  "translatedLocales": [ "en" ],
+  "defaultSize": {
+    "width": 400,
+    "height": 500
+  }
+}

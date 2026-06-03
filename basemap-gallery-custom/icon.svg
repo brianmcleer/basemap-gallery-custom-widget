@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+	<title>basemap-gallery</title>
+	<g fill="none" stroke="currentColor" stroke-width="1">
+		<!-- Top layer with grid pattern -->
+		<rect x="2" y="1" width="12" height="8" rx="0.5"/>
+		<line x1="6" y1="1" x2="6" y2="9"/>
+		<line x1="10" y1="1" x2="10" y2="9"/>
+		<line x1="2" y1="5" x2="14" y2="5"/>
+		<!-- Middle layer -->
+		<path d="M3 11L3 10L13 10L13 11" stroke-linecap="round"/>
+		<!-- Bottom layer -->
+		<path d="M4 13L4 12L12 12L12 13" stroke-linecap="round"/>
+	</g>
+</svg>

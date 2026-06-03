@@ -1,0 +1,17 @@
+{
+  "name": "basemap-gallery-custom",
+  "version": "1.19.0",
+  "description": "ArcGIS Experience Builder custom widget that displays a configurable gallery of portal basemaps with thumbnail or list views, custom ordering, a default basemap, and XML import and export of settings.",
+  "keywords": [
+    "exb-widget",
+    "experience-builder",
+    "exb",
+    "arcgis",
+    "basemap",
+    "basemap-gallery",
+    "gallery"
+  ],
+  "license": "Apache-2.0",
+  "author": "Brian McLeer",
+  "dependencies": {}
+}
