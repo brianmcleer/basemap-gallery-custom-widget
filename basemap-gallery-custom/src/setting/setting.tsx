@@ -139,15 +139,6 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
             .replace(/'/g, '&apos;')
     }
 
-    const unescapeXml = (str: string): string => {
-        return str
-            .replace(/&apos;/g, "'")
-            .replace(/&quot;/g, '"')
-            .replace(/&gt;/g, '>')
-            .replace(/&lt;/g, '<')
-            .replace(/&amp;/g, '&')
-    }
-
     const parseXml = (xmlString: string): { portalUrl?: string, defaultBasemapId?: string, size?: SizeOption, displayMode?: DisplayMode, basemaps: BasemapItem[] } | null => {
         try {
             const parser = new DOMParser()
@@ -169,17 +160,17 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
 
             const portalUrlEl = root.querySelector('portalUrl')
             if (portalUrlEl?.textContent) {
-                result.portalUrl = unescapeXml(portalUrlEl.textContent)
+                result.portalUrl = portalUrlEl.textContent
             }
 
             const defaultBasemapIdEl = root.querySelector('defaultBasemapId')
             if (defaultBasemapIdEl?.textContent) {
-                result.defaultBasemapId = unescapeXml(defaultBasemapIdEl.textContent)
+                result.defaultBasemapId = defaultBasemapIdEl.textContent
             }
 
             const sizeEl = root.querySelector('size')
             if (sizeEl?.textContent) {
-                const sizeValue = unescapeXml(sizeEl.textContent) as SizeOption
+                const sizeValue = sizeEl.textContent.trim() as SizeOption
                 if (['xs', 'sm', 'md', 'lg', 'xl'].includes(sizeValue)) {
                     result.size = sizeValue
                 }
@@ -187,7 +178,7 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
 
             const displayModeEl = root.querySelector('displayMode')
             if (displayModeEl?.textContent) {
-                const displayModeValue = unescapeXml(displayModeEl.textContent) as DisplayMode
+                const displayModeValue = displayModeEl.textContent.trim() as DisplayMode
                 if (['grid', 'list'].includes(displayModeValue)) {
                     result.displayMode = displayModeValue
                 }
@@ -201,9 +192,9 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
 
                 if (id && title) {
                     result.basemaps.push({
-                        id: unescapeXml(id),
-                        title: unescapeXml(title),
-                        thumbnailUrl: thumbnailUrl ? unescapeXml(thumbnailUrl) : undefined
+                        id: id,
+                        title: title,
+                        thumbnailUrl: thumbnailUrl || undefined
                     })
                 }
             })
@@ -320,6 +311,10 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
             const item = await response.json()
             if (item.error) return null
 
+            // Only Web Maps and Vector Tile Services work as basemaps
+            const validTypes = ['Web Map', 'Vector Tile Service']
+            if (!validTypes.includes(item.type)) return null
+
             return {
                 id: item.id,
                 title: item.title,
@@ -345,14 +340,15 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
                     setPortalItems([item])
                 } else {
                     setPortalItems([])
-                    setError('Item not found with that ID')
+                    setError('Item not found, or it is not a Web Map or Vector Tile Service')
                 }
                 setIsLoading(false)
                 return
             }
 
-            const query = searchText
-                ? `(title:${searchText} OR ${searchText}) AND (type:"Web Map" OR type:"Vector Tile Service")`
+            const safeSearch = searchText.replace(/["\\]/g, ' ').trim()
+            const query = safeSearch
+                ? `(title:"${safeSearch}" OR "${safeSearch}") AND (type:"Web Map" OR type:"Vector Tile Service")`
                 : '(type:"Web Map" AND tags:basemap) OR (type:"Vector Tile Service" AND typekeywords:basemap)'
 
             const params = new URLSearchParams({

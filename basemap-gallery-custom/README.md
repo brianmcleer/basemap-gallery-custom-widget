@@ -9,8 +9,27 @@ Gallery with additional configuration for developers.
 - Five size settings for the list and thumbnail layouts
 - Import and export XML files to transfer widget settings across applications
 - Reorder the basemaps in the list
-- Set a default basemap for application load
-- WCAG compliant
+- Set a default basemap that is applied to the map on application load
+- Favorites: star a basemap to pin it to the top of the gallery. Favorites persist per
+  browser, and keyboard users can press F on a focused basemap to toggle it
+- Search box to filter basemaps by name, shown automatically for galleries with more
+  than 8 basemaps
+- Live sync: the active indicator stays correct even when the basemap is changed by
+  another widget, a bookmark, or the out of the box gallery, and the gallery scrolls
+  the active basemap into view
+- Fast loading: basemaps load in parallel, skeleton placeholders show while they load,
+  and one bad item ID no longer blocks the rest (a notice reports any items that failed)
+- WCAG compliant: full keyboard navigation with row aware arrow keys in grid view,
+  screen reader announcements for every state change, visible focus indicators, and
+  reduced motion support
+
+## Keyboard reference
+
+- Tab: move focus into the gallery
+- Arrow keys: move between basemaps (up and down move by row in grid view)
+- Enter or Space: apply the focused basemap to the map
+- F: add or remove the focused basemap from favorites
+- Home / End: jump to the first or last basemap
 
 ## Requirements
 
@@ -38,6 +57,13 @@ Gallery with additional configuration for developers.
    confirm that `basemap-gallery-custom` appears.
 5. Add the widget to an experience from the Insert widget panel.
 
+## Notes
+
+- Favorites are stored in the browser (localStorage) per widget, so they are personal to
+  each user and each browser. Clearing browser data clears favorites.
+- The default basemap is applied once when the map loads. After that the widget never
+  overrides a basemap the user has chosen.
+
 ## Troubleshooting
 
 ### Build reports `basemap-gallery-custom is duplicated`
@@ -61,6 +87,16 @@ copy you kept is nested too deep. Move it so the manifest is directly inside the
 After moving the widget between Experience Builder versions, clear `client\dist\widgets` of
 the old compiled copy before running `npm start`, otherwise the build can see both the new
 source and the old compiled widget and report a duplicate.
+
+### The widget shows "No map connected"
+
+The widget is not linked to a map. Open the widget settings and select a map widget.
+
+### Some basemaps show a notice that they could not be loaded
+
+One or more configured item IDs failed to load. Open the browser console for a warning
+naming each failed item ID, then check that the item exists, is shared appropriately, and
+is a Web Map or Vector Tile Service on the configured portal.
 
 ## Feedback
 

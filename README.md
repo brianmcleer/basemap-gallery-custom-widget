@@ -12,8 +12,17 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 - Five size settings for the list and thumbnail layouts
 - Import and export XML files to transfer widget settings across applications
 - Reorder the basemaps in the list
-- Set a default basemap for application load
-- WCAG compliant
+- Set a default basemap that is applied to the map on application load
+- Favorites: star a basemap to pin it to the top of the gallery, persisted per browser,
+  with an F key shortcut for keyboard users
+- Search box to filter basemaps by name, shown automatically for galleries with more
+  than 8 basemaps
+- Live sync: the active indicator stays correct even when the basemap is changed by
+  another widget, a bookmark, or the out of the box gallery
+- Fast loading: basemaps load in parallel with skeleton placeholders, and one bad item
+  ID no longer blocks the rest
+- WCAG compliant: full keyboard navigation with row aware arrow keys in grid view,
+  screen reader announcements, and reduced motion support
 
 ## Requirements
 
@@ -30,8 +39,8 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 3. From the `client` folder run `npm install`, then `npm start`.
 4. Add the widget to an experience from the Insert widget panel.
 
-The widget folder ships with its own README that includes install placement details and a
-troubleshooting section for the `is duplicated` build error. See
+The widget folder ships with its own README that includes a keyboard reference, install
+placement details, and a troubleshooting section for the `is duplicated` build error. See
 [`basemap-gallery-custom/README.md`](basemap-gallery-custom/README.md).
 
 ## License
