@@ -58,7 +58,12 @@ const DISPLAY_MODE_OPTIONS: { value: DisplayMode, label: string }[] = [
     { value: 'list', label: 'List (Rows)' }
 ]
 
-const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
+type SettingProps = AllWidgetSettingProps<IMConfig> & {
+    id: string
+    useMapWidgetIds?: string[] | any
+}
+
+const Setting = (props: SettingProps) => {
     const [useCustomPortal, setUseCustomPortal] = useState(!!props.config?.portalUrl)
     const [portalItems, setPortalItems] = useState<BasemapItem[]>([])
     const [isLoading, setIsLoading] = useState(false)
