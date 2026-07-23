@@ -26,7 +26,7 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 
 ## Requirements
 
-- ArcGIS Experience Builder Developer Edition 1.19 or 1.20 (both run React 19).
+- ArcGIS Experience Builder Developer Edition 1.19, 1.20, or 1.21 (all run React 19).
 - Experience Builder 1.18 and earlier run React 18 and are not supported.
 
 ## Install
@@ -36,7 +36,9 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
    manifest sits directly at
    `client\your-extensions\widgets\basemap-gallery-custom\manifest.json`. Do not nest the
    folder a second level deep.
-3. From the `client` folder run `npm install`, then `npm start`.
+3. Install dependencies from the `client` folder, then run `npm start`. On Experience
+   Builder 1.19 and 1.20 install with `npm install`. On 1.21 and newer install with pnpm
+   instead (`npm i -g pnpm` once, then `pnpm ci`), because `npm install` errors on 1.21.
 4. Add the widget to an experience from the Insert widget panel.
 
 The widget folder ships with its own README that includes a keyboard reference, install

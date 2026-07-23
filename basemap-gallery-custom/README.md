@@ -33,7 +33,7 @@ Gallery with additional configuration for developers.
 
 ## Requirements
 
-- ArcGIS Experience Builder Developer Edition 1.19 or 1.20 (both run React 19).
+- ArcGIS Experience Builder Developer Edition 1.19, 1.20, or 1.21 (all run React 19).
 - Experience Builder 1.18 and earlier run React 18 and are not supported.
 
 ## Installation
@@ -50,9 +50,15 @@ Gallery with additional configuration for developers.
    not nest it a second level deep (for example
    `widgets\basemap-gallery-custom\basemap-gallery-custom`). Nesting is the most common
    install mistake and it stops the widget from being registered.
-3. From a terminal in the `client` folder, run `npm install`. Experience Builder installs
-   any widget dependencies automatically. This widget has no third party dependencies, so
-   nothing extra is pulled in.
+3. Install dependencies from a terminal in the `client` folder. The command depends on
+   your Experience Builder version:
+   - **1.19 and 1.20:** run `npm install`
+   - **1.21 and newer:** Esri switched dependency installs to pnpm. Running `npm install`
+     or `npm ci` will error. Instead run `npm i -g pnpm` once, then `pnpm ci` in the
+     `client` folder (and in the `server` folder for a fresh install).
+
+   Experience Builder installs any widget dependencies automatically during this step.
+   This widget has no third party dependencies, so nothing extra is pulled in either way.
 4. Start the client with `npm start`. Watch the Entrypoint list as the build runs and
    confirm that `basemap-gallery-custom` appears.
 5. Add the widget to an experience from the Insert widget panel.
@@ -81,6 +87,11 @@ cannot duplicate itself, so a second copy is present somewhere. Check these in o
 If you remove a copy and the widget then disappears from the Entrypoint list entirely, the
 copy you kept is nested too deep. Move it so the manifest is directly inside the
 `basemap-gallery-custom` folder.
+
+### `npm install` fails on Experience Builder 1.21
+
+This is expected. Starting with 1.21, dependencies must be installed with pnpm. Run
+`npm i -g pnpm` once, then `pnpm ci` in the `client` folder. See the install steps above.
 
 ### Upgrading Experience Builder versions
 
