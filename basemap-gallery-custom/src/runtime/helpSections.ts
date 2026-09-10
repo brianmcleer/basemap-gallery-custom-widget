@@ -14,6 +14,10 @@ export interface HelpFeatures {
   loadError: boolean
   partialFailure: boolean
   missingThumbnail: boolean
+  /** The compare button is available (gallery shown and compare enabled in settings). */
+  compare: boolean
+  /** Compare is on right now. */
+  comparing: boolean
 }
 
 type T = (id: string, values?: Record<string, string>) => string
@@ -47,6 +51,14 @@ export function buildHelpSections (t: T, f: HelpFeatures): HelpSection[] {
         t('helpFavoritesMap')
       ]
     }] : []),
+    ...(f.compare ? [{
+      key: 'compare', icon: 'compare', title: t('helpCompareTitle'), body: [
+        t('helpCompareOpen', { compareLabel: t('compareOn') }),
+        t('helpComparePick'), t('helpCompareSlider'), t('helpCompareSwap'),
+        t('helpCompareClose', { closeCompareLabel: t('compareOff') }),
+        ...when(f.comparing, 'helpCompareCurrent')
+      ]
+    }] : []),
     ...(f.search ? [{
       key: 'organize', icon: 'search', title: t('helpOrganizeTitle'), body: [
         t('helpOrganizeFilter', { filterLabel: t('filterPlaceholder') }),
@@ -57,7 +69,9 @@ export function buildHelpSections (t: T, f: HelpFeatures): HelpSection[] {
       key: 'keyboard', icon: 'keyboard', title: t('helpKeyboardTitle'), body: [
         t('helpKeyboardTab'), t(f.listView ? 'helpKeyboardList' : 'helpKeyboardGrid'),
         t('helpKeyboardChoose'), t('helpKeyboardEnds'),
-        ...when(f.favorites, 'helpKeyboardFavorite')
+        ...when(f.favorites, 'helpKeyboardFavorite'),
+        ...when(f.compare, 'helpKeyboardCompare'),
+        ...when(f.comparing, 'helpKeyboardSlider')
       ]
     }] : []),
     { key: 'keep', icon: 'folder', title: t('helpKeepTitle'), body: [
@@ -73,13 +87,15 @@ export function buildHelpSections (t: T, f: HelpFeatures): HelpSection[] {
       ...(f.search ? [t('helpTroubleSearch', { filterLabel: t('filterPlaceholder') })] : []),
       ...when(f.missingThumbnail, 'helpTroubleThumbnail'),
       ...when(f.galleryAvailable, 'helpTroubleMap'),
+      ...when(f.comparing, 'helpTroubleCompare', 'helpTroubleCompareSame'),
       ...when(f.favorites, 'helpTroubleFavorites'),
       t('helpTroubleContact')
     ] },
     { key: 'tips', icon: 'lightbulb', title: t('helpTipsTitle'), body: [
       t('helpTipsHelp', { helpLabel: t('helpTitle') }),
       t('helpTipsClose', { closeLabel: t('close') }),
-      ...when(f.favorites, 'helpTipsOrder')
+      ...when(f.favorites, 'helpTipsOrder'),
+      ...when(f.compare, 'helpTipsCompare')
     ] }
   ]
 }

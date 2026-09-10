@@ -1,5 +1,88 @@
 # Changelog
 
+## 1.21.3 - 2026-09-10
+
+### Added
+
+- While a comparison is active, the current basemap card shows a "Right" badge (primary
+  color) to match the "Left" badge on the compared basemap. Its aria-label and tooltip
+  say so, and the guide's compare section mentions both badges.
+
+
+## 1.21.2 - 2026-09-10
+
+### Fixed
+
+- The map could not be panned or zoomed while compare was on. The `<arcgis-swipe>` host
+  added through `view.ui` received `pointer-events: auto` and covered the view. The widget
+  now sets `pointer-events: none` on the host (inline, applied again on `arcgisReady`) and
+  adds a stylesheet to the component's shadow root that keeps only the divider and handle
+  interactive. Dragging the divider still works; the slider is unaffected.
+
+
+## 1.21.1 - 2026-09-10
+
+### Changed
+
+- The header row (filter, Compare, Help) and the compare bar sit in a `.gallery-sticky`
+  wrapper that stays visible while the gallery scrolls.
+- Compare is a labeled tool button (icon plus "Compare", outlined) instead of an icon-only
+  tertiary button. While compare is on it is filled and reads "Close". Both states have a
+  tooltip. Titles, aria-labels, and aria-pressed are unchanged.
+
+### Validation
+
+- `tsc -p .` zero errors; 34 automated tests pass (header tests extended for the wrapper,
+  label, button type, and sticky CSS). No live Experience Builder build was run here.
+
+
+## 1.21.0 - 2026-09-10
+
+### Added
+
+- Compare two basemaps. A compare button in the header (Calcite `compare` icon) turns
+  compare on. Choosing a basemap then loads it as map layers behind an ArcGIS Maps SDK
+  `<arcgis-swipe>` divider, with the current basemap on the right. A `CalciteSlider`
+  below the header and the on-map divider drive each other.
+- Keyboard: C on a focused basemap compares it. Enter and Space choose the left side while
+  compare is on. Screen-reader announcements for every compare state.
+- A `Compare basemaps` switch in the Appearance settings (`enableCompare`, default on),
+  written to and read from the XML export as `<enableCompare>`.
+- Guide content: a "Compare two basemaps" section, keyboard lines, two troubleshooting
+  lines while compare is on, and a Good to know line. All gated on the live compare state.
+- Tests: compare guide gating across 16,384 flag combinations, and widget tests for the
+  header button, slider and divider two-way position, layer add/remove/destroy, replacing
+  the left side, closing compare, the C key, and the settings switch.
+
+### Changed
+
+- Header order is filter, compare, Help. The compare button appears only when the gallery
+  is shown and compare is enabled.
+- `src/vendor-shims.d.ts` declares `arcgis-map-components`, `CalciteSlider`, and
+  `esri/core/Collection` for the editor-only type check.
+- Test mocks cover the new shared-library imports. No runtime dependencies were added.
+
+### Credits
+
+- The compare idea comes from Nicholas Cramer's modified out of the box Basemap Gallery
+  widget (opacity blend of two basemaps with a range slider). This release adapts it to
+  a side by side divider.
+
+### Notes
+
+- `arcgis-slider` (`@arcgis/common-components`) was evaluated and not used: Experience
+  Builder 1.21 does not externalize that package, so importing it would bundle a private
+  copy. `arcgis-swipe` and Calcite are both shared externals.
+- The shared HelpPopup, FirstRunHint, theme, and editor master are unchanged.
+
+### Validation
+
+- TypeScript 5.8.3: `tsc -p . --noEmit` passed with zero errors.
+- Node 22: all 33 automated tests passed.
+- A live Experience Builder build and browser check of the divider were not run here.
+  See README "Compare basemaps" and docs/HELP_GUIDE.md for the live checks.
+
+
 ## 1.20.2 - 2026-09-10
 
 ### Fixed

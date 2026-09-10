@@ -42,6 +42,7 @@ interface Config {
     defaultBasemapId?: string
     size?: SizeOption
     displayMode?: DisplayMode
+    enableCompare?: boolean
 }
 
 export type IMConfig = ImmutableObject<Config>
@@ -125,6 +126,10 @@ const Setting = (props: SettingProps) => {
             xml += `  <displayMode>${escapeXml(props.config.displayMode)}</displayMode>\n`
         }
 
+        if (props.config?.enableCompare === false) {
+            xml += '  <enableCompare>false</enableCompare>\n'
+        }
+
         if (basemaps.length > 0) {
             xml += '  <basemaps>\n'
             basemaps.forEach((b: BasemapItem) => {
@@ -152,7 +157,7 @@ const Setting = (props: SettingProps) => {
             .replace(/'/g, '&apos;')
     }
 
-    const parseXml = (xmlString: string): { portalUrl?: string, defaultBasemapId?: string, size?: SizeOption, displayMode?: DisplayMode, basemaps: BasemapItem[] } | null => {
+    const parseXml = (xmlString: string): { portalUrl?: string, defaultBasemapId?: string, size?: SizeOption, displayMode?: DisplayMode, enableCompare?: boolean, basemaps: BasemapItem[] } | null => {
         try {
             const parser = new DOMParser()
             const doc = parser.parseFromString(xmlString, 'text/xml')
@@ -167,7 +172,7 @@ const Setting = (props: SettingProps) => {
                 throw new Error('Missing BasemapGalleryConfig root element')
             }
 
-            const result: { portalUrl?: string, defaultBasemapId?: string, size?: SizeOption, displayMode?: DisplayMode, basemaps: BasemapItem[] } = {
+            const result: { portalUrl?: string, defaultBasemapId?: string, size?: SizeOption, displayMode?: DisplayMode, enableCompare?: boolean, basemaps: BasemapItem[] } = {
                 basemaps: []
             }
 
@@ -194,6 +199,14 @@ const Setting = (props: SettingProps) => {
                 const displayModeValue = displayModeEl.textContent.trim() as DisplayMode
                 if (['grid', 'list'].includes(displayModeValue)) {
                     result.displayMode = displayModeValue
+                }
+            }
+
+            const enableCompareEl = root.querySelector('enableCompare')
+            if (enableCompareEl?.textContent) {
+                const enableCompareValue = enableCompareEl.textContent.trim().toLowerCase()
+                if (enableCompareValue === 'true' || enableCompareValue === 'false') {
+                    result.enableCompare = enableCompareValue === 'true'
                 }
             }
 
@@ -276,6 +289,9 @@ const Setting = (props: SettingProps) => {
         if (parsed.displayMode) {
             newConfig = newConfig.set('displayMode', parsed.displayMode)
         }
+
+        // Missing element means the exporting app used the default (on)
+        newConfig = newConfig.set('enableCompare', parsed.enableCompare !== false)
 
         props.onSettingChange({
             id: props.id,
@@ -440,6 +456,13 @@ const Setting = (props: SettingProps) => {
         props.onSettingChange({
             id: props.id,
             config: props.config.set('displayMode', evt.target.value as DisplayMode)
+        })
+    }
+
+    const handleEnableCompareChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+        props.onSettingChange({
+            id: props.id,
+            config: props.config.set('enableCompare', evt.target.checked)
         })
     }
 
@@ -916,6 +939,14 @@ const Setting = (props: SettingProps) => {
                                 </Option>
                             ))}
                         </Select>
+                    </SettingRow>
+
+                    <SettingRow label='Compare basemaps' flow='no-wrap'>
+                        <Switch
+                            checked={props.config?.enableCompare !== false}
+                            onChange={handleEnableCompareChange}
+                            aria-label='Show the compare button, which places a second basemap on the map behind a draggable divider'
+                        />
                     </SettingRow>
                 </div>
             </SettingSection>

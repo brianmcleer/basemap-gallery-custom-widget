@@ -5,12 +5,12 @@ const load = loader()
 const messages = load('src/runtime/translations/default.ts').default
 const { buildHelpSections } = load('src/runtime/helpSections.ts')
 const t = translate(messages)
-const flags = ['mapConnected', 'galleryAvailable', 'listView', 'search', 'favorites', 'defaultBasemap', 'activeIndicator', 'loading', 'empty', 'loadError', 'partialFailure', 'missingThumbnail']
+const flags = ['mapConnected', 'galleryAvailable', 'listView', 'search', 'favorites', 'defaultBasemap', 'activeIndicator', 'loading', 'empty', 'loadError', 'partialFailure', 'missingThumbnail', 'compare', 'comparing']
 const base = Object.fromEntries(flags.map(key => [key, false]))
 const ready = { ...base, mapConnected: true, galleryAvailable: true, favorites: true }
 const content = sections => sections.map(s => [s.title, s.intro || '', ...s.body].join('\n')).join('\n')
 
-test('All 4,096 flag combinations resolve strings and obey writing/section rules', () => {
+test('All 16,384 flag combinations resolve strings and obey writing/section rules', () => {
   for (let mask = 0; mask < 2 ** flags.length; mask++) {
     const features = Object.fromEntries(flags.map((key, index) => [key, Boolean(mask & (1 << index))]))
     const sections = buildHelpSections(t, features)
@@ -33,7 +33,7 @@ test('All 4,096 flag combinations resolve strings and obey writing/section rules
 
 test('Optional controls disappear from the guide when unavailable', () => {
   const allOff = content(buildHelpSections(t, base))
-  for (const word of ['favorites', 'Filter basemaps...', 'Press F', 'Press Enter', 'chosen basemap', 'picture is missing']) {
+  for (const word of ['favorites', 'Filter basemaps...', 'Press F', 'Press Enter', 'chosen basemap', 'picture is missing', 'Compare', 'divider']) {
     assert.ok(!allOff.toLowerCase().includes(word.toLowerCase()), word)
   }
   const noSearch = content(buildHelpSections(t, ready))
@@ -49,7 +49,8 @@ test('Each individual optional flag adds exactly its intended guidance', () => {
     favorites: ['helpFavoritesAdd', { addLabel: messages.favoriteAdd }],
     defaultBasemap: ['helpUseDefault'], activeIndicator: ['helpUseIndicator', { activeLabel: messages.activeBasemapLabel }],
     loading: ['helpTroubleLoading'], empty: ['helpTroubleEmpty'], loadError: ['helpTroubleLoadError'],
-    partialFailure: ['helpTroublePartial'], missingThumbnail: ['helpTroubleThumbnail']
+    partialFailure: ['helpTroublePartial'], missingThumbnail: ['helpTroubleThumbnail'],
+    compare: ['helpCompareOpen', { compareLabel: messages.compareOn }], comparing: ['helpTroubleCompare']
   }
   for (const [flag, [id, values]] of Object.entries(mapping)) {
     const expected = t(id, values)
@@ -112,4 +113,28 @@ test('Missing window and blocked localStorage reads/writes do not throw', () => 
     assert.equal(hint.isHelpHintDismissed('one'), false)
     assert.doesNotThrow(() => hint.dismissHelpHint('one'))
   }
+})
+
+test('Compare guidance follows the compare button and the current compare state', () => {
+  const off = content(buildHelpSections(t, ready))
+  assert.doesNotMatch(off, /compare|divider/i)
+  const available = buildHelpSections(t, { ...ready, compare: true })
+  const section = available.find(s => s.key === 'compare')
+  assert.ok(section)
+  assert.equal(section.icon, 'compare')
+  assert.ok(section.body.includes(t('helpCompareOpen', { compareLabel: messages.compareOn })))
+  assert.ok(section.body.includes(t('helpCompareClose', { closeCompareLabel: messages.compareOff })))
+  assert.ok(!section.body.includes(messages.helpCompareCurrent))
+  const availableText = content(available)
+  assert.ok(availableText.includes(messages.helpKeyboardCompare))
+  assert.ok(!availableText.includes(messages.helpKeyboardSlider))
+  assert.ok(availableText.includes(messages.helpTipsCompare))
+  assert.ok(!availableText.includes(messages.helpTroubleCompare))
+  const on = buildHelpSections(t, { ...ready, compare: true, comparing: true })
+  assert.ok(on.find(s => s.key === 'compare').body.includes(messages.helpCompareCurrent))
+  const onText = content(on)
+  for (const id of ['helpKeyboardSlider', 'helpTroubleCompare', 'helpTroubleCompareSame']) assert.ok(onText.includes(messages[id]), id)
+  const keys = available.map(s => s.key)
+  assert.ok(keys.indexOf('compare') > keys.indexOf('favorites'))
+  assert.ok(keys.indexOf('compare') < keys.indexOf('keyboard'))
 })

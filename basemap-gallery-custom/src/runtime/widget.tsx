@@ -4,7 +4,10 @@ import { React, jsx, css } from 'jimu-core'
 import { type AllWidgetProps } from 'jimu-core'
 import { JimuMapView, JimuMapViewComponent } from 'jimu-arcgis'
 import { Button, Loading, Tooltip, TextInput } from 'jimu-ui'
-import { CalciteIcon } from 'calcite-components'
+import { CalciteIcon, CalciteSlider } from 'calcite-components'
+// Registers the ArcGIS Maps SDK map components (arcgis-swipe) through the
+// Experience Builder shared bundle. No copy of the library is bundled here.
+import 'arcgis-map-components'
 import HelpPopup from './components/HelpPopup'
 import FirstRunHint from './components/FirstRunHint'
 import { buildHelpSections, type HelpFeatures } from './helpSections'
@@ -12,6 +15,7 @@ import { dismissHelpHint, isHelpHintDismissed } from './helpHint'
 import defaultMessages from './translations/default'
 import Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
+import Collection from 'esri/core/Collection'
 import * as reactiveUtils from 'esri/core/reactiveUtils'
 
 const { useEffect, useState, useRef, useCallback, useMemo } = React
@@ -38,10 +42,53 @@ interface Config {
     defaultBasemapId?: string
     size?: SizeOption
     displayMode?: DisplayMode
+    /** Show the Compare control. Undefined means on, so existing configs keep working. */
+    enableCompare?: boolean
+}
+
+// Everything the compare feature has placed on the map, so it can be removed cleanly.
+interface CompareOverlay {
+    id: string
+    layers: any[]
+    swipe: any
+    onInput: () => void
 }
 
 // Number of basemaps at which the search filter appears
 const SEARCH_THRESHOLD = 8
+
+// Starting divider position (percent of the view showing the compare basemap)
+const COMPARE_DEFAULT_POSITION = 50
+
+// view.ui gives every component `pointer-events: auto`. The swipe host covers the whole
+// view, so that setting swallows pan and zoom. Let events through the host and keep only
+// the divider and its handle interactive.
+const SWIPE_POINTER_CSS = ':host{pointer-events:none!important}' +
+    '.esri-swipe__container{pointer-events:none!important}' +
+    '.esri-swipe__divider,.esri-swipe__handle,.esri-swipe__handle-inner{pointer-events:auto!important}'
+
+function letMapEventsThroughSwipe (swipe: any): void {
+    try {
+        swipe.style.pointerEvents = 'none'
+        swipe.style.position = 'absolute'
+        swipe.style.inset = '0'
+        const root = swipe.shadowRoot
+        if (!root) return
+        if (typeof CSSStyleSheet !== 'undefined' && Array.isArray(root.adoptedStyleSheets) && !swipe.__bgcPointerSheet) {
+            const sheet = new CSSStyleSheet()
+            sheet.replaceSync(SWIPE_POINTER_CSS)
+            root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet]
+            swipe.__bgcPointerSheet = true
+        } else if (!swipe.__bgcPointerSheet) {
+            const style = document.createElement('style')
+            style.textContent = SWIPE_POINTER_CSS
+            root.appendChild(style)
+            swipe.__bgcPointerSheet = true
+        }
+    } catch (err) {
+        console.warn('Could not adjust swipe pointer events:', err)
+    }
+}
 
 // Size configurations for grid mode
 const SIZE_CONFIG = {
@@ -207,11 +254,33 @@ const Widget = (props: WidgetProps) => {
     // so the default applies once on load and never fights the user afterward
     const defaultAppliedRef = useRef<Record<string, boolean>>({})
 
+    // Compare: a second basemap is placed on the map as ordinary layers and an
+    // arcgis-swipe divider clips it. The slider below the header drives the divider.
+    // The compare idea comes from Nicholas Cramer's modified out of the box Basemap
+    // Gallery widget, which blends two basemaps by layer opacity with a range slider.
+    // This version keeps his enter/exit flow and slider bar but shows the two basemaps
+    // side by side with a divider instead of a crossfade.
+    const [compareMode, setCompareMode] = useState(false)
+    const [compareBasemapId, setCompareBasemapId] = useState<string>(null)
+    const [comparePosition, setComparePositionState] = useState(COMPARE_DEFAULT_POSITION)
+    // Mirror of comparePosition for callbacks that must not go stale while dragging
+    const comparePositionRef = useRef(COMPARE_DEFAULT_POSITION)
+    const setComparePosition = useCallback((value: number) => {
+        comparePositionRef.current = value
+        setComparePositionState(value)
+    }, [])
+    const [compareLoading, setCompareLoading] = useState(false)
+    const [compareError, setCompareError] = useState<string>(null)
+    const compareRef = useRef<CompareOverlay>(null)
+    // Ignore a slow compare load that finishes after the user picked another basemap
+    const compareRequestRef = useRef(0)
+
     const size = props.config?.size || 'md'
     const displayMode = props.config?.displayMode || 'grid'
     const sizeConfig = SIZE_CONFIG[size]
     const listSizeConfig = LIST_SIZE_CONFIG[size]
     const hasMapWidget = props.useMapWidgetIds?.length === 1
+    const enableCompare = props.config?.enableCompare !== false
 
     // WCAG 4.1.3 - Announce status changes to screen readers
     const announceStatus = useCallback((message: string) => {
@@ -396,18 +465,227 @@ const Widget = (props: WidgetProps) => {
         }
     }, [jimuMapView])
 
+    // Remove the compare layers and the swipe divider from whichever view holds them.
+    // Safe to call when nothing is active. Does not change compare mode itself.
+    const clearCompareOverlay = useCallback(() => {
+        const overlay = compareRef.current
+        compareRef.current = null
+        compareRequestRef.current++
+        if (!overlay) return
+        const view = jimuMapView?.view
+        try {
+            if (overlay.swipe) {
+                overlay.swipe.removeEventListener('arcgisSwipeInput', overlay.onInput)
+                overlay.swipe.removeEventListener('arcgisSwipeChange', overlay.onInput)
+                view?.ui?.remove?.(overlay.swipe)
+                if (typeof overlay.swipe.destroy === 'function') {
+                    void Promise.resolve(overlay.swipe.destroy()).catch(() => undefined)
+                }
+                overlay.swipe.remove?.()
+            }
+            if (view?.map && overlay.layers.length > 0) {
+                view.map.removeMany(overlay.layers)
+            }
+            overlay.layers.forEach(layer => { layer.destroy?.() })
+        } catch (err) {
+            console.warn('Failed to remove compare layers:', err)
+        }
+    }, [jimuMapView])
+
+    // Put the chosen basemap on the left side of the divider. The map's own basemap
+    // (the checked one in the gallery) stays on the right side.
+    const startCompare = useCallback(async (item: LoadedBasemap) => {
+        const view = jimuMapView?.view
+        if (!view?.map) return
+
+        clearCompareOverlay()
+        const requestId = compareRequestRef.current
+        setCompareBasemapId(item.id)
+        setCompareLoading(true)
+        setCompareError(null)
+        announceStatus(`Loading ${item.title} for comparison`)
+        let addedLayers: any[] = []
+
+        try {
+            // A separate Basemap object so the gallery's own layer objects stay untouched.
+            const portalUrl = props.config?.portalUrl || 'https://www.arcgis.com'
+            const source = new Basemap({
+                portalItem: { id: item.id, portal: new Portal({ url: portalUrl }) }
+            })
+            await source.loadAll()
+            if (requestId !== compareRequestRef.current) return
+
+            // The shared map-components bundle registers arcgis-swipe. Wait for it
+            // before touching the map so a missing bundle leaves the map unchanged.
+            if (typeof customElements !== 'undefined' && customElements.whenDefined) {
+                await new Promise<void>((resolve, reject) => {
+                    const timer = setTimeout(() => { reject(new Error('arcgis-swipe is not registered')) }, 15000)
+                    customElements.whenDefined('arcgis-swipe').then(
+                        () => { clearTimeout(timer); resolve() },
+                        (err) => { clearTimeout(timer); reject(err) }
+                    )
+                })
+            }
+            if (requestId !== compareRequestRef.current) return
+
+            // Swipe only clips layers that belong to the map, so move the basemap's
+            // layers out of the Basemap and into the map below the operational layers.
+            const layers: any[] = [
+                ...source.baseLayers.toArray(),
+                ...source.referenceLayers.toArray()
+            ]
+            source.baseLayers.removeAll()
+            source.referenceLayers.removeAll()
+            view.map.addMany(layers, 0)
+            addedLayers = layers
+
+            const swipe: any = document.createElement('arcgis-swipe')
+            swipe.view = view
+            swipe.direction = 'horizontal'
+            swipe.position = comparePositionRef.current
+            // Maps SDK 5.x names the sides startLayers/endLayers; 4.x builds used leadingLayers
+            const startLayers = new Collection(layers)
+            if ('startLayers' in swipe || !('leadingLayers' in swipe)) {
+                swipe.startLayers = startLayers
+            } else {
+                swipe.leadingLayers = startLayers
+            }
+            const onInput = () => {
+                const value = Number(swipe.position)
+                if (Number.isFinite(value)) {
+                    setComparePosition(Math.round(value))
+                }
+            }
+            swipe.addEventListener('arcgisSwipeInput', onInput)
+            swipe.addEventListener('arcgisSwipeChange', onInput)
+            // The shadow root may not exist until the component renders, so apply now and again on ready
+            letMapEventsThroughSwipe(swipe)
+            swipe.addEventListener('arcgisReady', () => { letMapEventsThroughSwipe(swipe) }, { once: true })
+            view.ui.add(swipe, 'manual')
+            letMapEventsThroughSwipe(swipe)
+
+            compareRef.current = { id: item.id, layers, swipe, onInput }
+            setCompareLoading(false)
+            announceStatus(`Comparing ${item.title} on the left with the current basemap on the right. Drag the divider or use the slider.`)
+        } catch (err) {
+            // Nothing half-built may stay on the map
+            if (addedLayers.length > 0) {
+                try {
+                    view.map.removeMany(addedLayers)
+                    addedLayers.forEach(layer => { layer.destroy?.() })
+                } catch {
+                    // The view may already be gone
+                }
+            }
+            if (requestId !== compareRequestRef.current) return
+            console.warn(`Failed to compare basemap ${item.id}:`, err)
+            setCompareLoading(false)
+            setCompareBasemapId(null)
+            setCompareError(`${item.title} could not be loaded for comparison.`)
+            announceStatus(`${item.title} could not be loaded for comparison`)
+        }
+    }, [jimuMapView, props.config?.portalUrl, clearCompareOverlay, announceStatus, setComparePosition])
+
+    const stopCompare = useCallback(() => {
+        clearCompareOverlay()
+        setCompareMode(false)
+        setCompareBasemapId(null)
+        setCompareLoading(false)
+        setCompareError(null)
+        announceStatus('Compare closed. The map shows the current basemap only.')
+    }, [clearCompareOverlay, announceStatus])
+
+    const toggleCompareMode = useCallback(() => {
+        if (compareMode) {
+            stopCompare()
+        } else {
+            setCompareMode(true)
+            setCompareError(null)
+            announceStatus('Compare on. Choose a basemap to show on the left side of the map.')
+        }
+    }, [compareMode, stopCompare, announceStatus])
+
+    const handleCompareSlider = useCallback((e: any) => {
+        const value = Number(e?.target?.value)
+        if (!Number.isFinite(value)) return
+        const clamped = Math.min(100, Math.max(0, Math.round(value)))
+        setComparePosition(clamped)
+        const swipe = compareRef.current?.swipe
+        if (swipe) {
+            swipe.position = clamped
+        }
+    }, [setComparePosition])
+
+    // Compare layers must not outlive the map view they were added to
+    useEffect(() => {
+        return () => {
+            clearCompareOverlay()
+        }
+    }, [clearCompareOverlay])
+
+    // Leaving compare mode, or a config change that hides it, drops the overlay
+    useEffect(() => {
+        if (!enableCompare && (compareMode || compareRef.current)) {
+            clearCompareOverlay()
+            setCompareMode(false)
+            setCompareBasemapId(null)
+            setCompareLoading(false)
+            setCompareError(null)
+        }
+    }, [enableCompare, compareMode, clearCompareOverlay])
+
+    // If a config change removes the compared basemap from the gallery, take it off the map too
+    useEffect(() => {
+        if (!compareBasemapId || isLoading) return
+        if (!loadedBasemaps.some(b => b.id === compareBasemapId)) {
+            clearCompareOverlay()
+            setCompareBasemapId(null)
+            setCompareLoading(false)
+        }
+    }, [loadedBasemaps, compareBasemapId, isLoading, clearCompareOverlay])
+
     const handleBasemapClick = useCallback((item: LoadedBasemap, index: number) => {
         if (!jimuMapView?.view?.map) return
+        setFocusedIndex(index)
+
+        if (compareMode) {
+            if (item.id === activeBasemapId) {
+                announceStatus(`${item.title} is already the current basemap. Choose a different basemap to compare.`)
+                return
+            }
+            if (item.id === compareRef.current?.id || item.id === compareBasemapId) {
+                announceStatus(`${item.title} is already being compared`)
+                return
+            }
+            void startCompare(item)
+            return
+        }
 
         // Prioritize this basemap if the background warmer has not reached it yet.
         // Do not await it: applying immediately lets the MapView use the cache now.
         void preloadBasemap(item).catch(() => undefined)
         jimuMapView.view.map.basemap = item.basemap
         setActiveBasemapId(item.id)
-        setFocusedIndex(index)
         // WCAG 4.1.3 - Announce selection to screen readers
         announceStatus(`${item.title} basemap applied to map`)
-    }, [jimuMapView, announceStatus, preloadBasemap])
+    }, [jimuMapView, announceStatus, preloadBasemap, compareMode, activeBasemapId, compareBasemapId, startCompare])
+
+    // Compare against a focused basemap from the keyboard (C key), entering compare mode if needed
+    const handleCompareKey = useCallback((item: LoadedBasemap, index: number) => {
+        if (!enableCompare || !jimuMapView?.view?.map) return
+        setFocusedIndex(index)
+        if (item.id === activeBasemapId) {
+            announceStatus(`${item.title} is already the current basemap. Choose a different basemap to compare.`)
+            return
+        }
+        if (item.id === compareRef.current?.id || item.id === compareBasemapId) {
+            announceStatus(`${item.title} is already being compared`)
+            return
+        }
+        setCompareMode(true)
+        setCompareError(null)
+        void startCompare(item)
+    }, [enableCompare, jimuMapView, activeBasemapId, compareBasemapId, startCompare, announceStatus])
 
     const toggleFavorite = useCallback((id: string, title: string) => {
         setFavorites(prev => {
@@ -463,6 +741,8 @@ const Widget = (props: WidgetProps) => {
     const handleKeyDown = useCallback((e: React.KeyboardEvent, item: LoadedBasemap, index: number) => {
         const itemCount = visibleBasemaps.length
         if (itemCount === 0) return
+        // Leave browser shortcuts (Ctrl+F, Ctrl+C, and so on) alone
+        if (e.ctrlKey || e.metaKey || e.altKey) return
         let newIndex = index
 
         switch (e.key) {
@@ -497,6 +777,12 @@ const Widget = (props: WidgetProps) => {
                 e.preventDefault()
                 toggleFavorite(item.id, item.title)
                 return
+            case 'c':
+            case 'C':
+                if (!enableCompare) return
+                e.preventDefault()
+                handleCompareKey(item, index)
+                return
             case 'Home':
                 e.preventDefault()
                 newIndex = 0
@@ -513,7 +799,7 @@ const Widget = (props: WidgetProps) => {
             setFocusedIndex(newIndex)
             itemRefs.current[newIndex]?.focus()
         }
-    }, [visibleBasemaps.length, handleBasemapClick, displayMode, getColumnCount, toggleFavorite])
+    }, [visibleBasemaps.length, handleBasemapClick, displayMode, getColumnCount, toggleFavorite, enableCompare, handleCompareKey])
 
     // Keep the active item visible when the selection moves, including when
     // another widget or bookmark changes the basemap
@@ -530,6 +816,11 @@ const Widget = (props: WidgetProps) => {
     }, [])
 
     const activeViewChangeHandler = (jmv: JimuMapView) => {
+        // The overlay belongs to the previous view; the effect cleanup removes it
+        setCompareMode(false)
+        setCompareBasemapId(null)
+        setCompareLoading(false)
+        setCompareError(null)
         if (jmv) {
             setJimuMapView(jmv)
             setIsLoading(true)
@@ -579,6 +870,30 @@ const Widget = (props: WidgetProps) => {
       border: 0;
     }
 
+    /* Filter, Compare and Help (and the compare bar) stay visible while the gallery scrolls */
+    .gallery-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--ref-palette-white);
+      border-bottom: 1px solid var(--ref-palette-neutral-300);
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    /* Compare reads as a tool: icon plus a text label, outlined when off, filled when on */
+    .compare-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .compare-toggle .compare-toggle-label {
+      line-height: 1;
+    }
+
     .gallery-header {
       display: flex;
       align-items: center;
@@ -593,6 +908,109 @@ const Widget = (props: WidgetProps) => {
     .search-container {
       flex: 1 1 0%;
       min-width: 0;
+    }
+
+    /* Compare bar: slider between the two basemap names, plus a close button */
+    .compare-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 4px ${sizeConfig.padding}px 8px ${sizeConfig.padding}px;
+      border-top: 1px solid var(--ref-palette-neutral-300);
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .compare-labels {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--ref-palette-neutral-1100);
+      min-width: 0;
+    }
+
+    .compare-label {
+      flex: 1 1 0%;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .compare-label.right {
+      text-align: right;
+    }
+
+    .compare-label .side {
+      font-weight: 600;
+      color: var(--ref-palette-neutral-900);
+      margin-right: 4px;
+    }
+
+    .compare-label.right .side {
+      margin-right: 0;
+      margin-left: 4px;
+    }
+
+    .compare-slider {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .compare-prompt {
+      font-size: 12px;
+      color: var(--ref-palette-neutral-1000);
+      padding: 2px 0;
+    }
+
+    .compare-error {
+      font-size: 12px;
+      color: var(--sys-color-error-dark, #c62828);
+      padding: 2px 0;
+    }
+
+    /* Basemap currently on the left side of the divider */
+    .gallery-container .compare-indicator {
+      position: absolute;
+      bottom: ${sizeConfig.gap / 2}px;
+      right: ${sizeConfig.gap / 2}px;
+      background: var(--ref-palette-neutral-1100);
+      color: white;
+      border-radius: 4px;
+      padding: 0 6px;
+      height: ${sizeConfig.indicatorSize}px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: ${Math.max(9, sizeConfig.indicatorFontSize - 3)}px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .gallery-container .compare-indicator.right {
+      background: var(--sys-color-primary-main);
+    }
+
+    .grid-mode .basemap-item.comparing {
+      border-color: var(--ref-palette-neutral-1100);
+      border-style: dashed;
+    }
+
+    .list-mode .basemap-item.comparing {
+      border-color: var(--ref-palette-neutral-1100);
+      border-style: dashed;
+    }
+
+    .list-mode .compare-indicator {
+      position: static;
+      margin-left: ${listSizeConfig.gap}px;
+      flex-shrink: 0;
+      height: ${listSizeConfig.indicatorSize}px;
+      font-size: ${Math.max(9, listSizeConfig.indicatorFontSize - 2)}px;
     }
 
     .partial-failure-notice {
@@ -964,12 +1382,17 @@ const Widget = (props: WidgetProps) => {
     const configBasemaps = props.config?.basemaps as BasemapItem[] | undefined
     const hasConfiguredBasemaps = configBasemaps && configBasemaps.length > 0
     const showGallery = Boolean(hasMapWidget && jimuMapView && !isLoading && !error && loadedBasemaps.length > 0)
+    const showCompare = showGallery && enableCompare
+    const compareItem = compareBasemapId ? loadedBasemaps.find(b => b.id === compareBasemapId) : undefined
+    const activeItem = activeBasemapId ? loadedBasemaps.find(b => b.id === activeBasemapId) : undefined
     const helpFeatures: HelpFeatures = {
         mapConnected: hasMapWidget,
         galleryAvailable: showGallery,
         listView: showGallery && displayMode === 'list',
         search: showGallery && showSearch,
         favorites: showGallery,
+        compare: showCompare,
+        comparing: showCompare && compareMode,
         defaultBasemap: showGallery && loadedBasemaps.some(item => item.id === props.config?.defaultBasemapId),
         activeIndicator: showGallery && visibleBasemaps.some(item => item.id === activeBasemapId),
         loading: hasMapWidget && (isLoading || !jimuMapView),
@@ -1004,7 +1427,9 @@ const Widget = (props: WidgetProps) => {
                 />
             )}
 
-            {/* Keep the filter and Help on one row, including in narrow panels. */}
+            {/* Sticky top: the header row and the compare bar stay put while the gallery scrolls */}
+            <div className='gallery-sticky'>
+            {/* Keep the filter, Compare and Help on one row, including in narrow panels. */}
             <div className='gallery-header'>
                 {showGallery && showSearch && (
                     <div className='search-container'>
@@ -1019,9 +1444,68 @@ const Widget = (props: WidgetProps) => {
                         />
                     </div>
                 )}
+                {showCompare && (
+                    <Tooltip title={t(compareMode ? 'compareOffTip' : 'compareOnTip')} placement='bottom'>
+                        <Button
+                            size='sm'
+                            type={compareMode ? 'primary' : 'secondary'}
+                            className='compare-toggle'
+                            onClick={toggleCompareMode}
+                            title={t(compareMode ? 'compareOff' : 'compareOn')}
+                            aria-label={t(compareMode ? 'compareOff' : 'compareOn')}
+                            aria-pressed={compareMode}
+                            style={{ flexShrink: 0 }}
+                        >
+                            <CalciteIcon icon='compare' scale='s' />
+                            <span className='compare-toggle-label' aria-hidden='true'>
+                                {t(compareMode ? 'compareOffShort' : 'compareOnShort')}
+                            </span>
+                        </Button>
+                    </Tooltip>
+                )}
                 <Button size="sm" type="tertiary" icon onClick={onHelp} title={t('helpTitle')} aria-label={t('helpTitle')} style={{ flexShrink: 0 }}>
                   <CalciteIcon icon="question" scale="s" />
                 </Button>
+            </div>
+
+            {/* Compare bar: shown while compare is on. The slider mirrors the on-map divider. */}
+            {showCompare && compareMode && (
+                <div className='compare-bar' role='group' aria-label={t('compareGroupLabel')}>
+                    {compareError && (
+                        <div className='compare-error' role='alert'>{compareError}</div>
+                    )}
+                    {!compareItem && !compareError && (
+                        <div className='compare-prompt' role='status'>
+                            {compareLoading ? t('compareLoading') : t('comparePrompt')}
+                        </div>
+                    )}
+                    {compareItem && (
+                        <>
+                            <div className='compare-labels' aria-hidden='true'>
+                                <span className='compare-label' title={compareItem.title}>
+                                    <span className='side'>{t('compareLeft')}</span>{compareItem.title}
+                                </span>
+                                <span className='compare-label right' title={activeItem?.title || ''}>
+                                    {activeItem?.title || t('compareCurrent')}<span className='side'>{t('compareRight')}</span>
+                                </span>
+                            </div>
+                            <CalciteSlider
+                                className='compare-slider'
+                                min={0}
+                                max={100}
+                                step={1}
+                                value={comparePosition}
+                                scale='s'
+                                labelHandles
+                                disabled={compareLoading}
+                                label={t('compareSliderLabel', { left: compareItem.title, right: activeItem?.title || t('compareCurrent') })}
+                                onCalciteSliderInput={handleCompareSlider}
+                                onCalciteSliderChange={handleCompareSlider}
+                            />
+                        </>
+                    )}
+                </div>
+            )}
             </div>
             <div style={{ flexShrink: 0 }}>
                 <FirstRunHint
@@ -1136,7 +1620,10 @@ const Widget = (props: WidgetProps) => {
                         Press Enter or Space to select and apply a basemap to the map.
                         Home key jumps to first basemap, End key jumps to last basemap.
                         Press F to add or remove the focused basemap from favorites. Favorites are pinned to the top of the gallery.
+                        {showCompare && ' Press C to compare the focused basemap with the current basemap using a divider on the map.'}
+                        {showCompare && compareMode && ' Compare is on: Enter or Space chooses the basemap for the left side of the divider instead of applying it.'}
                         {activeBasemapId && ` Currently selected: ${loadedBasemaps.find(b => b.id === activeBasemapId)?.title || 'Unknown'}.`}
+                        {compareItem && ` Comparing: ${compareItem.title} on the left.`}
                     </div>
 
                     {/* No matches for the current search */}
@@ -1159,10 +1646,19 @@ const Widget = (props: WidgetProps) => {
                             {visibleBasemaps.map((item, index) => {
                                 const isActive = activeBasemapId === item.id
                                 const isFav = favorites.includes(item.id)
+                                const isComparing = showCompare && compareBasemapId === item.id
+                                // While compare is on, the current basemap is the right side of the divider
+                                const isRightSide = showCompare && compareMode && isActive && compareBasemapId !== null
                                 const thumbBroken = brokenThumbs[item.id]
-                                const tooltipContent = isActive
-                                    ? `${item.title} - Currently active basemap (click to reapply)`
-                                    : `Click to apply ${item.title} basemap to the map`
+                                const tooltipContent = showCompare && compareMode
+                                    ? (isActive
+                                        ? `${item.title} - Current basemap, shown on the right side`
+                                        : isComparing
+                                            ? `${item.title} - Shown on the left side of the divider`
+                                            : `Click to compare ${item.title} with the current basemap`)
+                                    : isActive
+                                        ? `${item.title} - Currently active basemap (click to reapply)`
+                                        : `Click to apply ${item.title} basemap to the map`
 
                                 return (
                                     <Tooltip
@@ -1175,14 +1671,14 @@ const Widget = (props: WidgetProps) => {
                                         <div
                                             ref={el => { itemRefs.current[index] = el }}
                                             id={`basemap-${item.id}`}
-                                            className={`basemap-item ${isActive ? 'active' : ''}`}
+                                            className={`basemap-item ${isActive ? 'active' : ''} ${isComparing ? 'comparing' : ''}`}
                                             onClick={() => handleBasemapClick(item, index)}
                                             onMouseEnter={() => { void preloadBasemap(item).catch(() => undefined) }}
                                             onFocus={() => { void preloadBasemap(item).catch(() => undefined) }}
                                             onKeyDown={(e) => handleKeyDown(e, item, index)}
                                             role='option'
                                             aria-selected={isActive}
-                                            aria-label={`${item.title}${isActive ? ', currently selected basemap' : ''}${isFav ? ', favorite' : ''}, ${index + 1} of ${visibleBasemaps.length}`}
+                                            aria-label={`${item.title}${isActive ? ', currently selected basemap' : ''}${isComparing ? ', shown on the left side for comparison' : ''}${isRightSide ? ', shown on the right side for comparison' : ''}${isFav ? ', favorite' : ''}, ${index + 1} of ${visibleBasemaps.length}`}
                                             aria-posinset={index + 1}
                                             aria-setsize={visibleBasemaps.length}
                                             tabIndex={index === tabStopIndex ? 0 : -1}
@@ -1222,6 +1718,32 @@ const Widget = (props: WidgetProps) => {
                                             >
                                                 ★
                                             </button>
+                                            {/* Compare badge: this basemap is on the left side of the divider */}
+                                            {isComparing && (
+                                                <Tooltip title={t('compareIndicatorLabel')} placement='left'>
+                                                    <div
+                                                        className='compare-indicator'
+                                                        aria-hidden='true'
+                                                        role='presentation'
+                                                    >
+                                                        <CalciteIcon icon='compare' scale='s' />
+                                                        {t('compareLeft')}
+                                                    </div>
+                                                </Tooltip>
+                                            )}
+                                            {/* Compare badge: the current basemap is on the right side of the divider */}
+                                            {isRightSide && (
+                                                <Tooltip title={t('compareRightIndicatorLabel')} placement='left'>
+                                                    <div
+                                                        className='compare-indicator right'
+                                                        aria-hidden='true'
+                                                        role='presentation'
+                                                    >
+                                                        <CalciteIcon icon='compare' scale='s' />
+                                                        {t('compareRight')}
+                                                    </div>
+                                                </Tooltip>
+                                            )}
                                             {/* WCAG 1.4.1 - Non-color indicator for active state */}
                                             {isActive && (
                                                 <Tooltip title={t('activeBasemapLabel')} placement='left'>

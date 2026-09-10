@@ -1,35 +1,56 @@
-# Files in the 1.20.2 JSX access fix
+# Files in the 1.21.0 compare update
 
 This ZIP contains the complete widget. Copy its `basemap-gallery-custom` folder
 over the existing widget folder, replacing matching files. Do not nest it inside
 another folder of the same name or install a second widget copy.
 
-Changes below are relative to the previously supplied 1.20.1 inline Help ZIP.
+Changes below are relative to 1.20.2.
 
-## Editor-only source change
+## Runtime source
 
-- `src/setting/emotion-jsx-runtime.d.ts`: replaced the redundant JSX-runtime
-  re-export with comments. The file stays present so an overwrite update disables
-  the old declaration. It emits no JavaScript.
+- `src/runtime/widget.tsx`: compare button, compare bar with `CalciteSlider`,
+  `<arcgis-swipe>` overlay lifecycle, C key, badges, announcements, guide flags.
+- `src/runtime/helpSections.ts`: `compare` and `comparing` flags and the new section.
+- `src/runtime/translations/default.ts`: compare control labels and guide text.
 
-## New test and documentation
+## Settings source
 
-- `tests/editor-isolation.test.cjs`
-- `docs/EDITOR_FIX.md`
+- `src/setting/setting.tsx`: `Compare basemaps` switch and `<enableCompare>` XML
+  export and import.
 
-## Updated documentation and release metadata
+## Editor-only declarations
 
-- `README.md`
-- `CHANGELOG.md`
-- `UPDATED_FILES.md`
-- `manifest.json`
-- `package.json`: version plus the new test in the existing test command.
-- `package-lock.json`: root version metadata only.
+- `src/vendor-shims.d.ts`: `arcgis-map-components`, `CalciteSlider`, `esri/core/Collection`.
 
-All runtime source files and `src/setting/setting.tsx` are byte-identical to 1.20.1.
-`tsconfig.json`, the shared editor master, vendor shims, config, dependency
-resolutions, and pnpm lockfile are also unchanged. The filter and Help button
-remain in the same row. No new libraries were added.
+## Tests
 
-After copying the files, clear only this widget's `.vs` cache with Visual Studio
-closed, then reopen the widget folder directly. See `docs/EDITOR_FIX.md`.
+- `tests/helpers.cjs`: mocks for the new shared-library imports.
+- `tests/help-content.test.cjs`: new flags and a compare gating test.
+- `tests/help-ui.test.cjs`: header order and three compare behavior tests.
+
+## Configuration, documentation, and release metadata
+
+- `config.json`: `enableCompare: true` default.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, `docs/HELP_GUIDE.md`
+- `manifest.json`, `package.json`, `package-lock.json`: version 1.21.0.
+
+Unchanged: `src/runtime/components/*`, `src/runtime/theme.ts`, `src/runtime/helpHint.ts`,
+`src/exb-editor-shims.d.ts`, `src/setting/emotion-jsx-runtime.d.ts`, `tsconfig.json`,
+`tests/help-consistency.test.cjs`, `tests/editor-isolation.test.cjs`, `docs/EDITOR_FIX.md`,
+and the manifest `exbVersion`. No new libraries were added.
+
+## 1.21.1
+
+- `src/runtime/widget.tsx`: sticky `.gallery-sticky` wrapper; labeled Compare button.
+- `src/runtime/translations/default.ts`: `compareOnShort`, `compareOffShort`, tooltips.
+- `tests/help-ui.test.cjs`, `README.md`, `CHANGELOG.md`, `docs/HELP_GUIDE.md`, version files.
+
+## 1.21.2
+
+- `src/runtime/widget.tsx`: `letMapEventsThroughSwipe` so the divider no longer blocks pan and zoom.
+- `tests/help-ui.test.cjs`, `README.md`, `CHANGELOG.md`, version files.
+
+## 1.21.3
+
+- `src/runtime/widget.tsx`, `src/runtime/translations/default.ts`: Right badge on the current basemap while comparing.
+- `tests/help-ui.test.cjs`, `README.md`, `CHANGELOG.md`, version files.

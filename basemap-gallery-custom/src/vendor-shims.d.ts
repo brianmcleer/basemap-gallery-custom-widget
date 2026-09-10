@@ -11,6 +11,19 @@ declare namespace JSX {
 
 declare module 'calcite-components' {
   export const CalciteIcon: any
+  export const CalciteSlider: any
+}
+
+// Experience Builder's shared ArcGIS Maps SDK components bundle (registers <arcgis-swipe>).
+declare module 'arcgis-map-components'
+
+declare module 'esri/core/Collection' {
+  export default class Collection<T = any> {
+    constructor (items?: T[])
+    [key: string]: any
+    toArray (): T[]
+    removeAll (): void
+  }
 }
 
 declare module 'esri/Basemap' {

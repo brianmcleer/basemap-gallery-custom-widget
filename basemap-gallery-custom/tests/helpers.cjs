@@ -96,11 +96,13 @@ function hookHarness () {
   const mocks = {
     'jimu-core': { React, jsx: React.createElement, css: (parts, ...args) => parts.reduce((s, p, i) => s + p + (args[i] ?? ''), '') },
     'jimu-ui': Object.fromEntries(['Button', 'Modal', 'ModalHeader', 'ModalBody', 'ModalFooter', 'TextInput', 'Tooltip', 'Loading'].map(name => [name, name])),
-    'calcite-components': { CalciteIcon: 'CalciteIcon' },
+    'calcite-components': { CalciteIcon: 'CalciteIcon', CalciteSlider: 'CalciteSlider' },
+    'arcgis-map-components': {},
     'jimu-theme': { useTheme: () => ({ sys: { color: { primary: { main: 'primary' }, surface: { paper: 'surface', paperText: 'text' } } } }) },
     'jimu-arcgis': { JimuMapViewComponent: 'JimuMapViewComponent' },
     'esri/Basemap': class Basemap {},
     'esri/portal/Portal': class Portal {},
+    'esri/core/Collection': class Collection { constructor (items) { this.items = items || [] } },
     'esri/core/reactiveUtils': { watch: () => ({ remove () {} }) }
   }
   return { render, mocks }

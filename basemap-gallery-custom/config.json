@@ -3,5 +3,6 @@
   "basemaps": [],
   "defaultBasemapId": null,
   "size": "md",
-  "displayMode": "grid"
+  "displayMode": "grid",
+  "enableCompare": true
 }

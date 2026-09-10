@@ -23,11 +23,15 @@ additional ambient declarations live separately in `src/vendor-shims.d.ts`.
 
 ## Header layout
 
-The filter box and Help button share `.gallery-header`, a single non-wrapping flex row.
-The filter wrapper can shrink (`flex: 1 1 0%`, `min-width: 0`); the Help button keeps its
-size (`flexShrink: 0`). Only the filter is gated by `showGallery && showSearch`, so Help
-remains available while loading, for small galleries, and in empty or error states.
-The first-run hint remains below this shared row. Keep the filter in the header rather
+`.gallery-sticky` (position sticky, top 0) wraps the header row and the compare bar so both
+stay visible while the gallery scrolls. The filter box, compare button, and Help button
+share `.gallery-header`, a single non-wrapping flex row in that order. Compare is a
+labeled `secondary` button ("Compare") that becomes `primary` ("Close") while compare is on. The filter wrapper can shrink (`flex: 1 1 0%`,
+`min-width: 0`); the two buttons keep their size (`flexShrink: 0`). Only the filter is
+gated by `showGallery && showSearch`, and the compare button by `showGallery && enableCompare`,
+so Help remains available while loading, for small galleries, and in empty or error states.
+While compare is on, `.compare-bar` (names of the two sides and the `CalciteSlider`)
+sits directly under the header. The first-run hint remains below these rows. Keep the filter in the header rather
 than reintroducing a second search row above the cards.
 
 ## Feature checks
@@ -40,8 +44,15 @@ the configured default to be loaded. Active-marker text requires a visible activ
 Loading, empty, error, partial failure, and missing-preview lines use the corresponding
 live state. Start here always has three steps appropriate to the current state.
 
+Compare uses two flags. `compare` is `showGallery && enableCompare` (the header button is
+shown). `comparing` adds `compareMode` (compare is on). The compare section, its keyboard
+line, and the Good to know line follow `compare`; the "Compare is on now" line, the slider
+keyboard line, and the two compare troubleshooting lines follow `comparing`. The section
+reuses the button labels `compareOn` and `compareOff` so the guide names the real control.
+
 The guide has no XML import/export instructions because those controls belong to the
-builder settings, not the end-user gallery. No new builder settings or config flags were added.
+builder settings, not the end-user gallery. The only builder setting the guide reacts to is
+the `Compare basemaps` switch (`enableCompare`), through the `compare` flag.
 
 ## Editing the guide
 
@@ -82,5 +93,14 @@ Builder webpack compiler and runtime.
    no configured basemaps, and a partially failed gallery. The guide must match visible controls.
 7. Switch basemaps, star items, use the keyboard, and confirm the existing cache, default,
    and selection behavior is unchanged. Review browser network/console output.
-8. Review the guide in the app's light and dark themes. Build and redeploy the app through
-   the normal workflow only after these checks pass.
+8. Review the guide in the app's light and dark themes.
+9. Compare: turn compare on, choose a basemap, and confirm the `<arcgis-swipe>` divider
+   appears on the map with the chosen basemap on the left and the current one on the right.
+   Drag the divider and confirm the slider follows; move the slider and confirm the divider
+   follows. Choose a second basemap and confirm the first one's layers leave the map. Press
+   C on a focused basemap. Close compare and confirm the map shows only its basemap, the
+   layer list has no leftover layers, and normal selection works again. Switch the map
+   widget's active map (if the app has more than one) and confirm no divider remains.
+   Turn off `Compare basemaps` in settings and confirm the button, C key, and guide section
+   disappear. Export and import the XML and confirm the switch round-trips.
+10. Build and redeploy the app through the normal workflow only after these checks pass.
