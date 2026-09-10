@@ -5,3 +5,5 @@ dist/
 *.suo
 .DS_Store
 Thumbs.db
+Claude outputs/
+*.zip
