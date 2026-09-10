@@ -5,6 +5,8 @@ Gallery with additional configuration for developers.
 
 ## Features
 
+- In-widget Help with a searchable guide, one open section at a time, and a dismissible
+  first-run hint. The guide describes the controls and messages currently available.
 - Display basemaps as thumbnails or as a list
 - Five size settings for the list and thumbnail layouts
 - Import and export XML files to transfer widget settings across applications
@@ -22,6 +24,38 @@ Gallery with additional configuration for developers.
 - WCAG compliant: full keyboard navigation with row aware arrow keys in grid view,
   screen reader announcements for every state change, visible focus indicators, and
   reduced motion support
+
+## In-widget help
+
+Use the question-mark button at the top right of the widget, beside the filter box when
+filtering is available. Both controls share one row. The guide covers choosing a basemap,
+favorites, filtering, keyboard shortcuts, saved choices, and troubleshooting.
+Only applicable sections and lines appear. For example, filtering instructions appear
+only when the gallery's existing search box appears, with more than eight loaded basemaps.
+The guide remains available when the map is missing or basemaps cannot load.
+
+The **New here?** hint links to the same guide. Opening the guide or dismissing the hint
+remembers that choice for this widget in this browser. Blocked browser storage does not
+prevent the guide or gallery from working. The new hint uses
+`basemapGalleryCustom.helpHintDismissed.<widgetId>` and leaves the existing
+`bgc-favorites-<widgetId>` values untouched.
+
+`HelpPopup.tsx` and `theme.ts` are copied verbatim from Sections 10.3 and 11.2 of the supplied
+`WIDGETHANDOFF.md`. The button and banner use its Section 10.5 markup. The guide introduces
+no runtime dependencies. Its text is in `src/runtime/translations/default.ts`, and its
+feature-gated sections are in `src/runtime/helpSections.ts`.
+
+### Updating an existing installation
+
+Stop the Experience Builder client. Copy the contents of this ZIP's `basemap-gallery-custom`
+folder over the existing widget folder, replacing matching files. Do not put a second
+`basemap-gallery-custom` folder inside it, and do not leave a renamed backup widget in
+`your-extensions/widgets`. Start the client again and refresh the app. Existing configured
+basemaps and the existing favorites storage key are unchanged.
+
+Version **1.20.2** is the widget release number, not a change to the Experience Builder
+version field. The manifest's existing `exbVersion` value is unchanged. This update does not
+add a library that needs a separate installation.
 
 ## Keyboard reference
 
@@ -88,6 +122,30 @@ If you remove a copy and the widget then disappears from the Entrypoint list ent
 copy you kept is nested too deep. Move it so the manifest is directly inside the
 `basemap-gallery-custom` folder.
 
+### Visual Studio cannot read `@types/react/jsx-runtime.d.ts`
+
+Version 1.20.2 neutralizes the obsolete `src/setting/emotion-jsx-runtime.d.ts` shim.
+The previous ZIP already had classic `"jsx": "react"` in `tsconfig.json`, but this
+separate shim still re-exported `react/jsx-runtime`. A compiler-host test reproduced
+that explicit re-export causing a read of the real React JSX type file even with
+classic JSX and `skipLibCheck` enabled. The patched file contains comments only.
+It stays in the ZIP to overwrite the old file during an update.
+
+Close Visual Studio and copy the updated widget files over the existing folder.
+Delete only the `.vs` cache inside this widget folder, if it exists, then use
+**File > Open > Folder** to open this folder directly:
+
+```text
+C:\arcgis-experience-builder-1.21\client\your-extensions\widgets\basemap-gallery-custom
+```
+
+Do not open the entire `client` folder or keep files from `client\node_modules`,
+`client\jimu-core`, or `client\dist` open in the editor while checking this widget.
+The handoff explains that these can make Visual Studio analyze a different project.
+The widget-level `tsconfig.json` remains self-contained and unchanged.
+No dependency install or file-permission change is part of this patch.
+See `docs/EDITOR_FIX.md` for the reproduction, limitations, and validation.
+
 ### `npm install` fails on Experience Builder 1.21
 
 This is expected. Starting with 1.21, dependencies must be installed with pnpm. Run
@@ -113,3 +171,26 @@ is a Web Map or Vector Tile Service on the configured portal.
 
 Questions and feedback are welcome on the Esri Community post:
 https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-custom-widget/ba-p/1676397
+
+## Developer checks
+
+The widget uses the handoff's self-contained, editor-only TypeScript setup with classic
+JSX. The shared `src/exb-editor-shims.d.ts` is copied unchanged from the published
+Property Report reference. Widget-specific declarations are separate in
+`src/vendor-shims.d.ts` and `src/runtime/esri.d.ts`. The two existing files that use
+Emotion's `css` prop have explicit JSX and fragment pragmas to preserve that rendering.
+
+From the widget folder inside the Experience Builder client tree, run:
+
+```powershell
+node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consistency.test.cjs tests/editor-isolation.test.cjs
+npx tsc -p .
+```
+
+The tests reuse the client's TypeScript installation and Node's built-in test runner.
+There are no added Jest or browser-test dependencies. Node 18 or newer is required for
+this test runner. `npm test` runs the same tests. `tests/help-consistency.test.cjs` contains
+the `WIDGETS` list for checking additional sibling widgets against the supplied guide.
+
+See `docs/HELP_GUIDE.md` for maintenance notes and the remaining live-app checks.
+See `CHANGELOG.md` for the update details and `UPDATED_FILES.md` for the file inventory.

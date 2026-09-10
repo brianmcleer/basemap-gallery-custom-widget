@@ -1,5 +1,6 @@
-﻿import { React, ImmutableObject, css } from 'jimu-core'
-import { type AllWidgetSettingProps } from 'jimu-for-builder'
+﻿/** @jsx jsx */
+/** @jsxFrag React.Fragment */
+import { React, jsx, ImmutableObject, css } from 'jimu-core'
 import { MapWidgetSelector, SettingSection, SettingRow } from 'jimu-ui/advanced/setting-components'
 import {
     TextInput,
@@ -58,7 +59,14 @@ const DISPLAY_MODE_OPTIONS: { value: DisplayMode, label: string }[] = [
     { value: 'list', label: 'List (Rows)' }
 ]
 
-type SettingProps = AllWidgetSettingProps<IMConfig> & {
+type SettingProps = {
+    config: IMConfig
+    onSettingChange: (settings: any, ...rest: any[]) => void
+    useDataSources?: any
+    intl?: any
+    theme?: any
+    portalUrl?: string
+    [key: string]: any
     id: string
     useMapWidgetIds?: string[] | any
 }

@@ -1,7 +1,15 @@
-﻿import { React, css } from 'jimu-core'
+/** @jsx jsx */
+/** @jsxFrag React.Fragment */
+import { React, jsx, css } from 'jimu-core'
 import { type AllWidgetProps } from 'jimu-core'
 import { JimuMapView, JimuMapViewComponent } from 'jimu-arcgis'
-import { Loading, Tooltip, TextInput } from 'jimu-ui'
+import { Button, Loading, Tooltip, TextInput } from 'jimu-ui'
+import { CalciteIcon } from 'calcite-components'
+import HelpPopup from './components/HelpPopup'
+import FirstRunHint from './components/FirstRunHint'
+import { buildHelpSections, type HelpFeatures } from './helpSections'
+import { dismissHelpHint, isHelpHintDismissed } from './helpHint'
+import defaultMessages from './translations/default'
 import Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
 import * as reactiveUtils from 'esri/core/reactiveUtils'
@@ -143,7 +151,34 @@ const LIST_SIZE_CONFIG = {
     }
 }
 
-const Widget = (props: AllWidgetProps<Config>) => {
+type WidgetProps = AllWidgetProps<Config> & { id: string; useMapWidgetIds?: string[] }
+
+const Widget = (props: WidgetProps) => {
+    const t = useCallback((id: string, values?: Record<string, string>): string => {
+        const message = defaultMessages[id as keyof typeof defaultMessages] || id
+        if (props.intl) {
+            return props.intl.formatMessage({ id, defaultMessage: message }, values)
+        }
+        return message.replace(/\{(\w+)\}/g, (match, key: string) => values?.[key] ?? match)
+    }, [props.intl])
+    const [helpOpen, setHelpOpen] = useState(false)
+    const [showFirstRunHint, setShowFirstRunHint] = useState(() => !isHelpHintDismissed(props.id))
+
+    useEffect(() => {
+        setShowFirstRunHint(!isHelpHintDismissed(props.id))
+    }, [props.id])
+
+    const onDismissHint = useCallback(() => {
+        setShowFirstRunHint(false)
+        dismissHelpHint(props.id)
+    }, [props.id])
+
+    const onOpenHelp = useCallback(() => {
+        setHelpOpen(true)
+        onDismissHint()
+    }, [onDismissHint])
+    const onHelp = onOpenHelp
+
     const [jimuMapView, setJimuMapView] = useState<JimuMapView>(null)
     const [isLoading, setIsLoading] = useState(false)
     const [loadedBasemaps, setLoadedBasemaps] = useState<LoadedBasemap[]>([])
@@ -164,6 +199,10 @@ const Widget = (props: AllWidgetProps<Config>) => {
     const galleryRef = useRef<HTMLDivElement>(null)
     const itemRefs = useRef<(HTMLDivElement | null)[]>([])
     const statusRef = useRef<HTMLDivElement>(null)
+    // Cache in-flight/completed loadAll() calls so each basemap's underlying
+    // TileLayers are warmed only once. This loads layer metadata up front;
+    // actual map tiles still come from the ArcGIS Server cache on demand.
+    const preloadPromisesRef = useRef<Record<string, Promise<Basemap> | undefined>>({})
     // Tracks which map views have already had the default basemap applied,
     // so the default applies once on load and never fights the user afterward
     const defaultAppliedRef = useRef<Record<string, boolean>>({})
@@ -179,6 +218,25 @@ const Widget = (props: AllWidgetProps<Config>) => {
         if (statusRef.current) {
             statusRef.current.textContent = message
         }
+    }, [])
+
+    // Warm the selected basemap's underlying layers. Basemap.load() only loads
+    // the basemap item itself; loadAll() also loads its base/reference layers.
+    // For ArcGISTiledMapServiceLayer items this keeps them as TileLayers and
+    // continues using /MapServer/tile/... cache requests.
+    const preloadBasemap = useCallback((item: LoadedBasemap): Promise<Basemap> => {
+        const existing = preloadPromisesRef.current[item.id]
+        if (existing) return existing
+
+        const promise = item.basemap.loadAll().catch((err) => {
+            // Allow a later hover/click to retry if a temporary service error occurs.
+            delete preloadPromisesRef.current[item.id]
+            console.warn(`Failed to preload basemap layers ${item.id}:`, err)
+            throw err
+        })
+
+        preloadPromisesRef.current[item.id] = promise
+        return promise
     }, [])
 
     // Load basemaps when the map view or config changes
@@ -256,6 +314,27 @@ const Widget = (props: AllWidgetProps<Config>) => {
                 setLoadedBasemaps(loaded)
                 setFailedCount(failed)
 
+                // Warm the underlying TileLayers in the background so the first
+                // switch to a historical airphoto does not also pay the layer-load
+                // cost. Limit concurrency to avoid hammering the production server.
+                void (async () => {
+                    const queue = [...loaded]
+                    const workerCount = Math.min(4, queue.length)
+                    const workers = Array.from({ length: workerCount }, async () => {
+                        while (!destroyed && queue.length > 0) {
+                            const item = queue.shift()
+                            if (!item) break
+                            try {
+                                await preloadBasemap(item)
+                            } catch {
+                                // Individual failures are logged by preloadBasemap;
+                                // keep warming the rest of the gallery.
+                            }
+                        }
+                    })
+                    await Promise.all(workers)
+                })()
+
                 // Determine what should be active, in priority order:
                 // 1. Apply the configured default basemap once per map view.
                 //    This is the "set default basemap for application load" feature.
@@ -296,7 +375,7 @@ const Widget = (props: AllWidgetProps<Config>) => {
         return () => {
             destroyed = true
         }
-    }, [jimuMapView, props.config?.portalUrl, props.config?.basemaps, props.config?.defaultBasemapId, announceStatus])
+    }, [jimuMapView, props.config?.portalUrl, props.config?.basemaps, props.config?.defaultBasemapId, announceStatus, preloadBasemap])
 
     // Live sync: keep the active indicator correct when the basemap is changed
     // from anywhere else (another widget, a bookmark, the OOTB gallery)
@@ -320,12 +399,15 @@ const Widget = (props: AllWidgetProps<Config>) => {
     const handleBasemapClick = useCallback((item: LoadedBasemap, index: number) => {
         if (!jimuMapView?.view?.map) return
 
+        // Prioritize this basemap if the background warmer has not reached it yet.
+        // Do not await it: applying immediately lets the MapView use the cache now.
+        void preloadBasemap(item).catch(() => undefined)
         jimuMapView.view.map.basemap = item.basemap
         setActiveBasemapId(item.id)
         setFocusedIndex(index)
         // WCAG 4.1.3 - Announce selection to screen readers
         announceStatus(`${item.title} basemap applied to map`)
-    }, [jimuMapView, announceStatus])
+    }, [jimuMapView, announceStatus, preloadBasemap])
 
     const toggleFavorite = useCallback((id: string, title: string) => {
         setFavorites(prev => {
@@ -497,9 +579,20 @@ const Widget = (props: AllWidgetProps<Config>) => {
       border: 0;
     }
 
-    .search-container {
-      padding: ${sizeConfig.padding}px ${sizeConfig.padding}px 0 ${sizeConfig.padding}px;
+    .gallery-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      gap: 8px;
+      padding: 6px ${sizeConfig.padding}px;
       flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .search-container {
+      flex: 1 1 0%;
+      min-width: 0;
     }
 
     .partial-failure-notice {
@@ -870,6 +963,23 @@ const Widget = (props: AllWidgetProps<Config>) => {
 
     const configBasemaps = props.config?.basemaps as BasemapItem[] | undefined
     const hasConfiguredBasemaps = configBasemaps && configBasemaps.length > 0
+    const showGallery = Boolean(hasMapWidget && jimuMapView && !isLoading && !error && loadedBasemaps.length > 0)
+    const helpFeatures: HelpFeatures = {
+        mapConnected: hasMapWidget,
+        galleryAvailable: showGallery,
+        listView: showGallery && displayMode === 'list',
+        search: showGallery && showSearch,
+        favorites: showGallery,
+        defaultBasemap: showGallery && loadedBasemaps.some(item => item.id === props.config?.defaultBasemapId),
+        activeIndicator: showGallery && visibleBasemaps.some(item => item.id === activeBasemapId),
+        loading: hasMapWidget && (isLoading || !jimuMapView),
+        empty: Boolean(hasMapWidget && jimuMapView && !isLoading && !error && !hasConfiguredBasemaps),
+        loadError: Boolean(hasMapWidget && jimuMapView && !isLoading && (error || (hasConfiguredBasemaps && loadedBasemaps.length === 0))),
+        partialFailure: showGallery && failedCount > 0,
+        missingThumbnail: showGallery && visibleBasemaps.some(item => !item.thumbnailUrl || brokenThumbs[item.id])
+    }
+    // The happy path is shown only when the gallery can actually be used.
+    const hintT = (id: string): string => t(id === 'firstRunBody' && !showGallery ? 'firstRunBodyWaiting' : id)
 
     return (
         <div
@@ -893,6 +1003,44 @@ const Widget = (props: AllWidgetProps<Config>) => {
                     onActiveViewChange={activeViewChangeHandler}
                 />
             )}
+
+            {/* Keep the filter and Help on one row, including in narrow panels. */}
+            <div className='gallery-header'>
+                {showGallery && showSearch && (
+                    <div className='search-container'>
+                        <TextInput
+                            placeholder={t('filterPlaceholder')}
+                            value={searchText}
+                            onChange={handleSearchChange}
+                            allowClear
+                            aria-label={t('filterLabel')}
+                            type='search'
+                            style={{ width: '100%', minWidth: 0 }}
+                        />
+                    </div>
+                )}
+                <Button size="sm" type="tertiary" icon onClick={onHelp} title={t('helpTitle')} aria-label={t('helpTitle')} style={{ flexShrink: 0 }}>
+                  <CalciteIcon icon="question" scale="s" />
+                </Button>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+                <FirstRunHint
+                    showFirstRunHint={showFirstRunHint}
+                    t={hintT}
+                    onOpenHelp={onOpenHelp}
+                    onDismissHint={onDismissHint}
+                />
+            </div>
+            <HelpPopup
+                open={helpOpen}
+                onClose={() => { setHelpOpen(false) }}
+                sections={buildHelpSections(t, helpFeatures)}
+                title={t('helpTitle')}
+                intro={t('helpIntro')}
+                searchPlaceholder={t('helpSearchPlaceholder')}
+                noMatches={t('helpNoMatches')}
+                closeLabel={t('close')}
+            />
 
             {/* No map widget connected - prompt instead of an endless spinner */}
             {!hasMapWidget && (
@@ -972,26 +1120,12 @@ const Widget = (props: AllWidgetProps<Config>) => {
                 </div>
             )}
 
-            {hasMapWidget && jimuMapView && !isLoading && !error && loadedBasemaps.length > 0 && (
+            {showGallery && (
                 <>
                     {/* Partial failure notice when some configured items failed */}
                     {failedCount > 0 && (
                         <div className='partial-failure-notice' role='status'>
                             {failedCount} basemap{failedCount !== 1 ? 's' : ''} could not be loaded. Check the item IDs in settings.
-                        </div>
-                    )}
-
-                    {/* Search filter for large galleries */}
-                    {showSearch && (
-                        <div className='search-container'>
-                            <TextInput
-                                placeholder='Filter basemaps...'
-                                value={searchText}
-                                onChange={handleSearchChange}
-                                allowClear
-                                aria-label='Filter basemaps by name'
-                                type='search'
-                            />
                         </div>
                     )}
 
@@ -1043,6 +1177,8 @@ const Widget = (props: AllWidgetProps<Config>) => {
                                             id={`basemap-${item.id}`}
                                             className={`basemap-item ${isActive ? 'active' : ''}`}
                                             onClick={() => handleBasemapClick(item, index)}
+                                            onMouseEnter={() => { void preloadBasemap(item).catch(() => undefined) }}
+                                            onFocus={() => { void preloadBasemap(item).catch(() => undefined) }}
                                             onKeyDown={(e) => handleKeyDown(e, item, index)}
                                             role='option'
                                             aria-selected={isActive}
@@ -1078,7 +1214,7 @@ const Widget = (props: AllWidgetProps<Config>) => {
                                                 className={`fav-btn ${isFav ? 'is-fav' : ''}`}
                                                 tabIndex={-1}
                                                 aria-hidden='true'
-                                                title={isFav ? 'Remove from favorites' : 'Add to favorites (pins to top)'}
+                                                title={t(isFav ? 'favoriteRemove' : 'favoriteAdd')}
                                                 onClick={(e) => {
                                                     e.stopPropagation()
                                                     toggleFavorite(item.id, item.title)
@@ -1088,7 +1224,7 @@ const Widget = (props: AllWidgetProps<Config>) => {
                                             </button>
                                             {/* WCAG 1.4.1 - Non-color indicator for active state */}
                                             {isActive && (
-                                                <Tooltip title='Currently active basemap' placement='left'>
+                                                <Tooltip title={t('activeBasemapLabel')} placement='left'>
                                                     <div
                                                         className='active-indicator'
                                                         aria-hidden='true'
