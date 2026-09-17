@@ -59,7 +59,7 @@ folder over the existing widget folder, replacing matching files. Do not put a s
 `your-extensions/widgets`. Start the client again and refresh the app. Existing configured
 basemaps and the existing favorites storage key are unchanged.
 
-Version **1.21.3** is the widget release number, not a change to the Experience Builder
+Version **1.21.4** is the widget release number, not a change to the Experience Builder
 version field. The manifest's existing `exbVersion` value is unchanged. This update does not
 add a library that needs a separate installation.
 
@@ -81,7 +81,18 @@ add a library that needs a separate installation.
 
 ## Installation
 
-1. Download the widget and unzip it.
+1. Download `basemap-gallery-custom.zip` from the latest release and unzip it.
+
+   The zip is the widget only. The Visual Studio type shims in the repo
+   (`basemap-gallery-custom/src/exb-editor-shims.d.ts` and
+   `basemap-gallery-custom/src/vendor-shims.d.ts`) are left out on purpose: their ambient
+   `declare module` blocks are not file-scoped and would rewrite the react, jimu and esri
+   types for every other widget in your `your-extensions` folder. The `tests` folder is
+   left out for the same reason, since two of its suites read those files.
+
+   If you clone the repository instead of using the zip, delete
+   `basemap-gallery-custom/src/exb-editor-shims.d.ts` before building. Nothing else
+   depends on it.
 2. Copy the `basemap-gallery-custom` folder into your Experience Builder install so that
    the path looks exactly like this:
 
@@ -99,6 +110,12 @@ add a library that needs a separate installation.
    - **1.21 and newer:** Esri switched dependency installs to pnpm. Running `npm install`
      or `npm ci` will error. Instead run `npm i -g pnpm` once, then `pnpm ci` in the
      `client` folder (and in the `server` folder for a fresh install).
+
+     Run the `npm i -g pnpm` part from any folder except `client` or `server`. If the `-g`
+     is mistyped or dropped there, npm reads it as package names and writes junk entries
+     (`@`, `g`, `pnpm`) into that folder's `package.json`, and every later `pnpm ci` fails
+     with `ERR_PNPM_OUTDATED_LOCKFILE`. The fix is to delete those three entries from
+     `package.json` and run `pnpm install` again.
 
    Experience Builder installs any widget dependencies automatically during this step.
    This widget has no third party dependencies, so nothing extra is pulled in either way.
@@ -245,9 +262,11 @@ node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consis
 npx tsc -p .
 ```
 
-The tests reuse the client's TypeScript installation and Node's built-in test runner.
-There are no added Jest or browser-test dependencies. Node 18 or newer is required for
-this test runner. `npm test` runs the same tests. `tests/help-consistency.test.cjs` contains
+The `tests` folder and the two editor shim files are in the GitHub repository but not in
+the release zip, so clone the repository if you want to run them. The tests reuse the
+client's TypeScript installation and Node's built-in test runner. There are no added Jest
+or browser-test dependencies. Node 18 or newer is required for this test runner.
+`npm test` runs the same tests. `tests/help-consistency.test.cjs` contains
 the `WIDGETS` list for checking additional sibling widgets against the supplied guide.
 
 See `docs/HELP_GUIDE.md` for maintenance notes and the remaining live-app checks.

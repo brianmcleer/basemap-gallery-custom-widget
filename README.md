@@ -31,7 +31,18 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 
 ## Install
 
-1. Download the latest release and unzip it.
+1. Download `basemap-gallery-custom.zip` from the latest release and unzip it.
+
+   The zip is the widget only. The Visual Studio type shims in this repo
+   (`basemap-gallery-custom/src/exb-editor-shims.d.ts` and
+   `basemap-gallery-custom/src/vendor-shims.d.ts`) are left out on purpose: their ambient
+   `declare module` blocks are not file-scoped and would rewrite the react, jimu and esri
+   types for every other widget in your `your-extensions` folder. The `tests` folder is
+   left out for the same reason, since two of its suites read those files.
+
+   If you clone this repository instead of using the zip, delete
+   `basemap-gallery-custom/src/exb-editor-shims.d.ts` before building. Nothing else
+   depends on it.
 2. Copy the `basemap-gallery-custom` folder into your Experience Builder install so the
    manifest sits directly at
    `client\your-extensions\widgets\basemap-gallery-custom\manifest.json`. Do not nest the

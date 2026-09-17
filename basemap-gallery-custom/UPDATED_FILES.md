@@ -54,3 +54,14 @@ and the manifest `exbVersion`. No new libraries were added.
 
 - `src/runtime/widget.tsx`, `src/runtime/translations/default.ts`: Right badge on the current basemap while comparing.
 - `tests/help-ui.test.cjs`, `README.md`, `CHANGELOG.md`, version files.
+
+## 1.21.4
+
+Packaging only. No runtime source changed.
+
+- `publish.ps1` (repo root, not in the widget folder): `$ReleaseOnlyExclude` strips the
+  editor shims and `tests` from the release zip, with a guard that fails the run if an
+  ambient shim survives.
+- `README.md`: zip contents note, clone note, pnpm install caution, developer checks.
+- `CHANGELOG.md`, `UPDATED_FILES.md`, `manifest.json`, `package.json`,
+  `package-lock.json`: version 1.21.4.

@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.21.4 - 2026-09-17
+
+### Changed
+
+- Packaging: the Visual Studio editor shims are no longer in the release zip.
+  `publish.ps1` now stages a copy of the widget, removes `src/exb-editor-shims.d.ts`,
+  `src/vendor-shims.d.ts`, `src/runtime/esri.d.ts` and `tests`, and zips that. The files
+  stay in the GitHub repository. Their ambient `declare module` blocks are not
+  file-scoped, so in a downstream `your-extensions` folder they rewrote the react, jimu
+  and esri types for every other widget and flooded the type checker with errors.
+- `publish.ps1` refuses to build a zip if an ambient shim survives the staging step, and
+  prints one line per file it leaves out.
+- README: the download step says what the zip omits, the clone step says which file to
+  delete, and the install step warns that `npm i -g pnpm` run inside `client` or `server`
+  can write junk dependencies into that folder's `package.json`.
+
+### Validation
+
+- `tsc -p .` zero errors; 34 automated tests pass.
+- Release staging was simulated against the current file list: both ambient shims and the
+  tests folder are removed, `manifest.json` stays directly inside the widget folder, and
+  the only remaining `.d.ts` is the comments-only `src/setting/emotion-jsx-runtime.d.ts`.
+- No runtime source changed in this release.
+
+
 ## 1.21.3 - 2026-09-10
 
 ### Added
