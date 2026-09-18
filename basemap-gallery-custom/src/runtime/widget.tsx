@@ -46,6 +46,8 @@ interface Config {
     displayMode?: DisplayMode
     /** Show the Compare control. Undefined means on, so existing configs keep working. */
     enableCompare?: boolean
+    /** Show the question-mark button that opens the help guide. Undefined means on. */
+    showHelp?: boolean
 }
 
 // Everything the compare feature has placed on the map, so it can be removed cleanly.
@@ -1471,9 +1473,11 @@ const Widget = (props: WidgetProps) => {
                         </Button>
                     </Tooltip>
                 )}
-                <Button size="sm" type="tertiary" icon onClick={onHelp} title={t('helpTitle')} aria-label={t('helpTitle')} style={{ flexShrink: 0 }}>
-                  <CalciteIcon icon="question" scale="s" />
-                </Button>
+                {props.config?.showHelp !== false && (
+                    <Button size="sm" type="tertiary" icon onClick={onHelp} title={t('helpTitle')} aria-label={t('helpTitle')} style={{ flexShrink: 0 }}>
+                      <CalciteIcon icon="question" scale="s" />
+                    </Button>
+                )}
             </div>
 
             {/* Compare bar: shown while compare is on. The slider mirrors the on-map divider. */}
@@ -1517,7 +1521,7 @@ const Widget = (props: WidgetProps) => {
             </div>
             <div style={{ flexShrink: 0 }}>
                 <FirstRunHint
-                    showFirstRunHint={showFirstRunHint}
+                    showFirstRunHint={props.config?.showHelp !== false && showFirstRunHint}
                     t={hintT}
                     onOpenHelp={onOpenHelp}
                     onDismissHint={onDismissHint}

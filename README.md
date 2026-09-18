@@ -1,5 +1,7 @@
 # Basemap Gallery Custom Widget
 
+[![License](https://img.shields.io/github/license/brianmcleer/basemap-gallery-custom-widget)](LICENSE) [![Release](https://img.shields.io/github/v/release/brianmcleer/=tag)](https://github.com/brianmcleer/basemap-gallery-custom-widget/releases) [![Issues](https://img.shields.io/github/issues/brianmcleer/basemap-gallery-custom-widget)](https://github.com/brianmcleer/basemap-gallery-custom-widget/issues)
+
 A custom widget for ArcGIS Experience Builder that extends the out of the box Basemap
 Gallery with additional configuration for developers.
 
