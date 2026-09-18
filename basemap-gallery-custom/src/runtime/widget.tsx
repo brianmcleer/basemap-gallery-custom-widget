@@ -13,6 +13,8 @@ import FirstRunHint from './components/FirstRunHint'
 import { buildHelpSections, type HelpFeatures } from './helpSections'
 import { dismissHelpHint, isHelpHintDismissed } from './helpHint'
 import defaultMessages from './translations/default'
+import { beacon } from '../shared/beacon'
+import type { BeaconHandle } from '../shared/beacon'
 import Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
 import Collection from 'esri/core/Collection'
@@ -210,6 +212,8 @@ const Widget = (props: WidgetProps) => {
     }, [props.intl])
     const [helpOpen, setHelpOpen] = useState(false)
     const [showFirstRunHint, setShowFirstRunHint] = useState(() => !isHelpHintDismissed(props.id))
+    const beaconRef = useRef<BeaconHandle | null>(null)
+    useEffect(() => { beaconRef.current = beacon.init(props) }, [])
 
     useEffect(() => {
         setShowFirstRunHint(!isHelpHintDismissed(props.id))
@@ -495,6 +499,7 @@ const Widget = (props: WidgetProps) => {
     // Put the chosen basemap on the left side of the divider. The map's own basemap
     // (the checked one in the gallery) stays on the right side.
     const startCompare = useCallback(async (item: LoadedBasemap) => {
+        beaconRef.current?.action('compare')
         const view = jimuMapView?.view
         if (!view?.map) return
 
@@ -568,6 +573,7 @@ const Widget = (props: WidgetProps) => {
             setCompareLoading(false)
             announceStatus(`Comparing ${item.title} on the left with the current basemap on the right. Drag the divider or use the slider.`)
         } catch (err) {
+            beaconRef.current?.error(err, 'compare')
             // Nothing half-built may stay on the map
             if (addedLayers.length > 0) {
                 try {
@@ -663,6 +669,7 @@ const Widget = (props: WidgetProps) => {
 
         // Prioritize this basemap if the background warmer has not reached it yet.
         // Do not await it: applying immediately lets the MapView use the cache now.
+        beaconRef.current?.action('apply')
         void preloadBasemap(item).catch(() => undefined)
         jimuMapView.view.map.basemap = item.basemap
         setActiveBasemapId(item.id)
@@ -688,6 +695,7 @@ const Widget = (props: WidgetProps) => {
     }, [enableCompare, jimuMapView, activeBasemapId, compareBasemapId, startCompare, announceStatus])
 
     const toggleFavorite = useCallback((id: string, title: string) => {
+        beaconRef.current?.action('favorite')
         setFavorites(prev => {
             const wasFav = prev.includes(id)
             const next = wasFav ? prev.filter(f => f !== id) : [...prev, id]
