@@ -54,8 +54,9 @@ interface Config {
 interface CompareOverlay {
     id: string
     layers: any[]
-    swipe: any
+    swipe?: any
     onInput: () => void
+    mode: 'swipe' | 'blend'
 }
 
 // Number of basemaps at which the search filter appears
@@ -92,6 +93,32 @@ function letMapEventsThroughSwipe (swipe: any): void {
     } catch (err) {
         console.warn('Could not adjust swipe pointer events:', err)
     }
+}
+
+// Take the swipe element off the view completely: detach its layers so the clip is
+// released, pull it out of view.ui and the DOM, then destroy it. Each step is guarded
+// because the component may be mid-render when the user switches modes.
+function destroySwipe (overlay: CompareOverlay, view: any): void {
+    const swipe = overlay.swipe
+    if (!swipe) return
+    overlay.swipe = undefined
+    try { swipe.removeEventListener('arcgisSwipeInput', overlay.onInput) } catch {}
+    try { swipe.removeEventListener('arcgisSwipeChange', overlay.onInput) } catch {}
+    try {
+        if ('startLayers' in swipe) swipe.startLayers = new Collection()
+        if ('leadingLayers' in swipe) swipe.leadingLayers = new Collection()
+        if ('endLayers' in swipe) swipe.endLayers = new Collection()
+        if ('trailingLayers' in swipe) swipe.trailingLayers = new Collection()
+    } catch {}
+    try { swipe.view = null } catch {}
+    try { view?.ui?.remove(swipe) } catch {}
+    try { swipe.parentElement?.removeChild(swipe) } catch {}
+    try { swipe.destroy?.() } catch {}
+}
+
+// Slider percent (0-100) to layer opacity (0-1)
+function clampOpacity (percent: number): number {
+    return Math.max(0, Math.min(1, percent / 100))
 }
 
 // Size configurations for grid mode
@@ -260,13 +287,11 @@ const Widget = (props: WidgetProps) => {
     // so the default applies once on load and never fights the user afterward
     const defaultAppliedRef = useRef<Record<string, boolean>>({})
 
-    // Compare: a second basemap is placed on the map as ordinary layers and an
-    // arcgis-swipe divider clips it. The slider below the header drives the divider.
-    // The compare idea comes from Nicholas Cramer's modified out of the box Basemap
-    // Gallery widget, which blends two basemaps by layer opacity with a range slider.
-    // This version keeps his enter/exit flow and slider bar but shows the two basemaps
-    // side by side with a divider instead of a crossfade.
+    // Compare: layers are placed on the map and blended using opacity.
+    // In swipe mode, a visual divider overlay indicates the swipe position.
+    // In blend mode, the divider is hidden and blend modes cycle via slider.
     const [compareMode, setCompareMode] = useState(false)
+    const [compareBlendMode, setCompareBlendMode] = useState<'swipe' | 'blend'>('swipe')
     const [compareBasemapId, setCompareBasemapId] = useState<string>(null)
     const [comparePosition, setComparePositionState] = useState(COMPARE_DEFAULT_POSITION)
     // Mirror of comparePosition for callbacks that must not go stale while dragging
@@ -471,7 +496,7 @@ const Widget = (props: WidgetProps) => {
         }
     }, [jimuMapView])
 
-    // Remove the compare layers and the swipe divider from whichever view holds them.
+    // Remove the compare layers and swipe element from the map.
     // Safe to call when nothing is active. Does not change compare mode itself.
     const clearCompareOverlay = useCallback(() => {
         const overlay = compareRef.current
@@ -479,27 +504,63 @@ const Widget = (props: WidgetProps) => {
         compareRequestRef.current++
         if (!overlay) return
         const view = jimuMapView?.view
+        destroySwipe(overlay, view)
         try {
-            if (overlay.swipe) {
-                overlay.swipe.removeEventListener('arcgisSwipeInput', overlay.onInput)
-                overlay.swipe.removeEventListener('arcgisSwipeChange', overlay.onInput)
-                view?.ui?.remove?.(overlay.swipe)
-                if (typeof overlay.swipe.destroy === 'function') {
-                    void Promise.resolve(overlay.swipe.destroy()).catch(() => undefined)
-                }
-                overlay.swipe.remove?.()
-            }
             if (view?.map && overlay.layers.length > 0) {
                 view.map.removeMany(overlay.layers)
             }
-            overlay.layers.forEach(layer => { layer.destroy?.() })
+            overlay.layers.forEach(layer => {
+                if (layer && typeof layer.destroy === 'function') {
+                    layer.destroy()
+                }
+            })
+            overlay.layers = []
         } catch (err) {
             console.warn('Failed to remove compare layers:', err)
         }
     }, [jimuMapView])
 
-    // Put the chosen basemap on the left side of the divider. The map's own basemap
-    // (the checked one in the gallery) stays on the right side.
+    // Build the arcgis-swipe element that clips the compare layers to the left side.
+    const attachSwipe = useCallback(async (overlay: CompareOverlay, view: any, requestId: number): Promise<void> => {
+        if (typeof customElements !== 'undefined' && customElements.whenDefined) {
+            await new Promise<void>((resolve, reject) => {
+                const timer = setTimeout(() => { reject(new Error('arcgis-swipe is not registered')) }, 15000)
+                customElements.whenDefined('arcgis-swipe').then(
+                    () => { clearTimeout(timer); resolve() },
+                    (err) => { clearTimeout(timer); reject(err) }
+                )
+            })
+        }
+        if (requestId !== compareRequestRef.current || compareRef.current !== overlay) return
+
+        const swipe: any = document.createElement('arcgis-swipe')
+        swipe.direction = 'horizontal'
+        swipe.position = comparePositionRef.current
+        const startLayers = new Collection(overlay.layers)
+        if ('startLayers' in swipe || !('leadingLayers' in swipe)) {
+            swipe.startLayers = startLayers
+        } else {
+            swipe.leadingLayers = startLayers
+        }
+        const onInput = () => {
+            const value = Number(swipe.position)
+            if (Number.isFinite(value)) {
+                setComparePosition(Math.round(value))
+            }
+        }
+        swipe.addEventListener('arcgisSwipeInput', onInput)
+        swipe.addEventListener('arcgisSwipeChange', onInput)
+        letMapEventsThroughSwipe(swipe)
+        swipe.addEventListener('arcgisReady', () => { letMapEventsThroughSwipe(swipe) }, { once: true })
+        swipe.view = view
+        view.ui.add(swipe, 'manual')
+        letMapEventsThroughSwipe(swipe)
+        overlay.swipe = swipe
+        overlay.onInput = onInput
+    }, [setComparePosition])
+
+    // Put the chosen basemap on the map. Swipe mode clips it to the left of the divider.
+    // Blend mode lays it over the whole map at the slider's opacity.
     const startCompare = useCallback(async (item: LoadedBasemap) => {
         beaconRef.current?.action('compare')
         const view = jimuMapView?.view
@@ -507,6 +568,7 @@ const Widget = (props: WidgetProps) => {
 
         clearCompareOverlay()
         const requestId = compareRequestRef.current
+        const mode = compareBlendMode
         setCompareBasemapId(item.id)
         setCompareLoading(true)
         setCompareError(null)
@@ -522,58 +584,36 @@ const Widget = (props: WidgetProps) => {
             await source.loadAll()
             if (requestId !== compareRequestRef.current) return
 
-            // The shared map-components bundle registers arcgis-swipe. Wait for it
-            // before touching the map so a missing bundle leaves the map unchanged.
-            if (typeof customElements !== 'undefined' && customElements.whenDefined) {
-                await new Promise<void>((resolve, reject) => {
-                    const timer = setTimeout(() => { reject(new Error('arcgis-swipe is not registered')) }, 15000)
-                    customElements.whenDefined('arcgis-swipe').then(
-                        () => { clearTimeout(timer); resolve() },
-                        (err) => { clearTimeout(timer); reject(err) }
-                    )
-                })
-            }
-            if (requestId !== compareRequestRef.current) return
-
-            // Swipe only clips layers that belong to the map, so move the basemap's
-            // layers out of the Basemap and into the map below the operational layers.
+            // Move the basemap's layers out of the Basemap and into the map below the operational layers.
             const layers: any[] = [
                 ...source.baseLayers.toArray(),
                 ...source.referenceLayers.toArray()
             ]
             source.baseLayers.removeAll()
             source.referenceLayers.removeAll()
+
+            // Hide comparison layers from the layer list widget - they're temporary overlays
+            layers.forEach(layer => {
+                if (layer && typeof layer.listMode !== 'undefined') {
+                    layer.listMode = 'hide'
+                }
+                if (layer) layer.opacity = mode === 'swipe' ? 1 : clampOpacity(comparePositionRef.current)
+            })
+
             view.map.addMany(layers, 0)
             addedLayers = layers
 
-            const swipe: any = document.createElement('arcgis-swipe')
-            swipe.view = view
-            swipe.direction = 'horizontal'
-            swipe.position = comparePositionRef.current
-            // Maps SDK 5.x names the sides startLayers/endLayers; 4.x builds used leadingLayers
-            const startLayers = new Collection(layers)
-            if ('startLayers' in swipe || !('leadingLayers' in swipe)) {
-                swipe.startLayers = startLayers
-            } else {
-                swipe.leadingLayers = startLayers
-            }
-            const onInput = () => {
-                const value = Number(swipe.position)
-                if (Number.isFinite(value)) {
-                    setComparePosition(Math.round(value))
-                }
-            }
-            swipe.addEventListener('arcgisSwipeInput', onInput)
-            swipe.addEventListener('arcgisSwipeChange', onInput)
-            // The shadow root may not exist until the component renders, so apply now and again on ready
-            letMapEventsThroughSwipe(swipe)
-            swipe.addEventListener('arcgisReady', () => { letMapEventsThroughSwipe(swipe) }, { once: true })
-            view.ui.add(swipe, 'manual')
-            letMapEventsThroughSwipe(swipe)
+            const overlay: CompareOverlay = { id: item.id, layers, onInput: () => {}, mode }
+            compareRef.current = overlay
 
-            compareRef.current = { id: item.id, layers, swipe, onInput }
+            if (mode === 'swipe') {
+                await attachSwipe(overlay, view, requestId)
+                if (requestId !== compareRequestRef.current) return
+                announceStatus(`Comparing ${item.title} on the left with the current basemap on the right. Drag the divider or use the slider.`)
+            } else {
+                announceStatus(`Blending ${item.title} over the current basemap. Use the slider to adjust transparency.`)
+            }
             setCompareLoading(false)
-            announceStatus(`Comparing ${item.title} on the left with the current basemap on the right. Drag the divider or use the slider.`)
         } catch (err) {
             beaconRef.current?.error(err, 'compare')
             // Nothing half-built may stay on the map
@@ -586,13 +626,14 @@ const Widget = (props: WidgetProps) => {
                 }
             }
             if (requestId !== compareRequestRef.current) return
+            compareRef.current = null
             console.warn(`Failed to compare basemap ${item.id}:`, err)
             setCompareLoading(false)
             setCompareBasemapId(null)
             setCompareError(`${item.title} could not be loaded for comparison.`)
             announceStatus(`${item.title} could not be loaded for comparison`)
         }
-    }, [jimuMapView, props.config?.portalUrl, clearCompareOverlay, announceStatus, setComparePosition])
+    }, [jimuMapView, props.config?.portalUrl, clearCompareOverlay, attachSwipe, announceStatus, compareBlendMode])
 
     const stopCompare = useCallback(() => {
         clearCompareOverlay()
@@ -609,21 +650,59 @@ const Widget = (props: WidgetProps) => {
         } else {
             setCompareMode(true)
             setCompareError(null)
-            announceStatus('Compare on. Choose a basemap to show on the left side of the map.')
+            announceStatus(`Compare on using ${compareBlendMode} mode. Choose a basemap to show on the left side of the map.`)
         }
-    }, [compareMode, stopCompare, announceStatus])
+    }, [compareMode, stopCompare, announceStatus, compareBlendMode])
+
+    // Switch an active comparison between swipe and blend without reloading the layers.
+    const toggleCompareBlendMode = useCallback(() => {
+        const newMode: 'swipe' | 'blend' = compareBlendMode === 'swipe' ? 'blend' : 'swipe'
+        setCompareBlendMode(newMode)
+        setComparePosition(COMPARE_DEFAULT_POSITION)
+
+        const overlay = compareRef.current
+        const view = jimuMapView?.view
+        if (!overlay || !view) {
+            announceStatus(newMode === 'swipe'
+                ? 'Switched to swipe mode.'
+                : 'Switched to blend mode. Use the slider to adjust transparency.')
+            return
+        }
+
+        overlay.mode = newMode
+        if (newMode === 'blend') {
+            // Tear the swipe element down completely so no divider or clipping remains
+            destroySwipe(overlay, view)
+            const opacity = clampOpacity(COMPARE_DEFAULT_POSITION)
+            overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = opacity })
+            announceStatus('Switched to blend mode. Use the slider to adjust transparency.')
+        } else {
+            overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = 1 })
+            const requestId = compareRequestRef.current
+            void attachSwipe(overlay, view, requestId).catch(err => {
+                console.warn('Could not create swipe divider:', err)
+                setCompareError('The swipe divider could not be created.')
+            })
+            announceStatus('Switched to swipe mode. Drag the divider or use the slider.')
+        }
+    }, [compareBlendMode, jimuMapView, attachSwipe, announceStatus, setComparePosition])
 
     const handleCompareSlider = useCallback((e: any) => {
         const value = Number(e?.target?.value)
         if (!Number.isFinite(value)) return
         const clamped = Math.min(100, Math.max(0, Math.round(value)))
         setComparePosition(clamped)
-        const swipe = compareRef.current?.swipe
-        if (swipe) {
-            swipe.position = clamped
+
+        const overlay = compareRef.current
+        if (!overlay) return
+
+        if (overlay.mode === 'swipe') {
+            if (overlay.swipe) overlay.swipe.position = clamped
+        } else {
+            const opacity = clampOpacity(clamped)
+            overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = opacity })
         }
     }, [setComparePosition])
-
     // Compare layers must not outlive the map view they were added to
     useEffect(() => {
         return () => {
@@ -639,6 +718,7 @@ const Widget = (props: WidgetProps) => {
             setCompareBasemapId(null)
             setCompareLoading(false)
             setCompareError(null)
+            setCompareBlendMode('swipe')
         }
     }, [enableCompare, compareMode, clearCompareOverlay])
 
@@ -1073,7 +1153,7 @@ const Widget = (props: WidgetProps) => {
       &:focus {
         outline: none;
         border-color: var(--sys-color-primary-dark, #005a9e);
-        box-shadow: 
+        box-shadow:
           0 0 0 3px var(--ref-palette-white),
           0 0 0 6px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1081,7 +1161,7 @@ const Widget = (props: WidgetProps) => {
       &:focus-visible {
         outline: none;
         border-color: var(--sys-color-primary-dark, #005a9e);
-        box-shadow: 
+        box-shadow:
           0 0 0 3px var(--ref-palette-white),
           0 0 0 6px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1094,7 +1174,7 @@ const Widget = (props: WidgetProps) => {
 
       &.active:focus,
       &.active:focus-visible {
-        box-shadow: 
+        box-shadow:
           0 0 0 3px var(--ref-palette-white),
           0 0 0 6px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1188,7 +1268,7 @@ const Widget = (props: WidgetProps) => {
       &:focus {
         outline: none;
         border-color: var(--sys-color-primary-dark, #005a9e);
-        box-shadow: 
+        box-shadow:
           0 0 0 2px var(--ref-palette-white),
           0 0 0 4px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1196,7 +1276,7 @@ const Widget = (props: WidgetProps) => {
       &:focus-visible {
         outline: none;
         border-color: var(--sys-color-primary-dark, #005a9e);
-        box-shadow: 
+        box-shadow:
           0 0 0 2px var(--ref-palette-white),
           0 0 0 4px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1214,7 +1294,7 @@ const Widget = (props: WidgetProps) => {
 
       &.active:focus,
       &.active:focus-visible {
-        box-shadow: 
+        box-shadow:
           0 0 0 2px var(--ref-palette-white),
           0 0 0 4px var(--sys-color-primary-dark, #005a9e);
       }
@@ -1461,7 +1541,6 @@ const Widget = (props: WidgetProps) => {
                             type={compareMode ? 'primary' : 'secondary'}
                             className='compare-toggle'
                             onClick={toggleCompareMode}
-                            title={t(compareMode ? 'compareOff' : 'compareOn')}
                             aria-label={t(compareMode ? 'compareOff' : 'compareOn')}
                             aria-pressed={compareMode}
                             style={{ flexShrink: 0 }}
@@ -1480,7 +1559,7 @@ const Widget = (props: WidgetProps) => {
                 )}
             </div>
 
-            {/* Compare bar: shown while compare is on. The slider mirrors the on-map divider. */}
+            {/* Compare bar: shown while compare is on. Streamlined for easy UX. */}
             {showCompare && compareMode && (
                 <div className='compare-bar' role='group' aria-label={t('compareGroupLabel')}>
                     {compareError && (
@@ -1493,27 +1572,69 @@ const Widget = (props: WidgetProps) => {
                     )}
                     {compareItem && (
                         <>
-                            <div className='compare-labels' aria-hidden='true'>
-                                <span className='compare-label' title={compareItem.title}>
-                                    <span className='side'>{t('compareLeft')}</span>{compareItem.title}
-                                </span>
-                                <span className='compare-label right' title={activeItem?.title || ''}>
-                                    {activeItem?.title || t('compareCurrent')}<span className='side'>{t('compareRight')}</span>
+                            {/* Mode selector - clean horizontal layout */}
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', paddingBottom: '8px', borderBottom: '1px solid var(--ref-palette-neutral-300)' }}>
+                                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ref-palette-neutral-900)', whiteSpace: 'nowrap' }}>Comparison:</span>
+                                <Button
+                                    size='sm'
+                                    type={compareBlendMode === 'swipe' ? 'primary' : 'secondary'}
+                                    onClick={() => { if (compareBlendMode !== 'swipe') toggleCompareBlendMode() }}
+                                    title='Drag divider side by side'
+                                    aria-label='Swipe mode'
+                                    aria-pressed={compareBlendMode === 'swipe'}
+                                >
+                                    Swipe
+                                </Button>
+                                <Button
+                                    size='sm'
+                                    type={compareBlendMode === 'blend' ? 'primary' : 'secondary'}
+                                    onClick={() => { if (compareBlendMode !== 'blend') toggleCompareBlendMode() }}
+                                    title='Overlay with blend effects'
+                                    aria-label='Blend mode'
+                                    aria-pressed={compareBlendMode === 'blend'}
+                                >
+                                    Blend
+                                </Button>
+                                <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--ref-palette-neutral-900)', fontWeight: 500 }}>
+                                    {compareBlendMode === 'blend' && `Opacity: ${comparePosition}%`}
                                 </span>
                             </div>
-                            <CalciteSlider
-                                className='compare-slider'
-                                min={0}
-                                max={100}
-                                step={1}
-                                value={comparePosition}
-                                scale='s'
-                                labelHandles
-                                disabled={compareLoading}
-                                label={t('compareSliderLabel', { left: compareItem.title, right: activeItem?.title || t('compareCurrent') })}
-                                onCalciteSliderInput={handleCompareSlider}
-                                onCalciteSliderChange={handleCompareSlider}
-                            />
+
+                            {/* Layer labels */}
+                            <div className='compare-labels' aria-hidden='true'>
+                                <span className='compare-label' title={compareItem.title}>
+                                    <span className='side'>{compareBlendMode === 'swipe' ? t('compareLeft') : 'Overlay:'}</span>
+                                    <span style={{ fontSize: '11px' }}>{compareItem.title}</span>
+                                </span>
+                                <span className='compare-label right' title={activeItem?.title || ''}>
+                                    <span style={{ fontSize: '11px' }}>{activeItem?.title || t('compareCurrent')}</span>
+                                    <span className='side'>{compareBlendMode === 'swipe' ? t('compareRight') : 'Base'}</span>
+                                </span>
+                            </div>
+
+                            {/* Slider - single purpose, clear purpose */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <CalciteSlider
+                                    className='compare-slider'
+                                    min={0}
+                                    max={100}
+                                    step={1}
+                                    value={comparePosition}
+                                    scale='s'
+                                    labelHandles
+                                    disabled={compareLoading}
+                                    label={compareBlendMode === 'swipe'
+                                        ? `Adjust divider position: ${comparePosition}%`
+                                        : `Opacity: ${comparePosition}%`
+                                    }
+                                    onCalciteSliderInput={handleCompareSlider}
+                                    onCalciteSliderChange={handleCompareSlider}
+                                    style={{ flex: 1 }}
+                                />
+                                <span style={{ fontSize: '11px', color: 'var(--ref-palette-neutral-900)', minWidth: '45px', textAlign: 'right', whiteSpace: 'nowrap' }}>
+                                    {compareBlendMode === 'swipe' ? `${comparePosition}%` : ''}
+                                </span>
+                            </div>
                         </>
                     )}
                 </div>
@@ -1632,10 +1753,10 @@ const Widget = (props: WidgetProps) => {
                         Press Enter or Space to select and apply a basemap to the map.
                         Home key jumps to first basemap, End key jumps to last basemap.
                         Press F to add or remove the focused basemap from favorites. Favorites are pinned to the top of the gallery.
-                        {showCompare && ' Press C to compare the focused basemap with the current basemap using a divider on the map.'}
-                        {showCompare && compareMode && ' Compare is on: Enter or Space chooses the basemap for the left side of the divider instead of applying it.'}
+                        {showCompare && ' Press C to compare the focused basemap with the current basemap using swipe or blend mode.'}
+                        {showCompare && compareMode && ` Compare is on in ${compareBlendMode} mode: Enter or Space chooses the basemap to compare.`}
                         {activeBasemapId && ` Currently selected: ${loadedBasemaps.find(b => b.id === activeBasemapId)?.title || 'Unknown'}.`}
-                        {compareItem && ` Comparing: ${compareItem.title} on the left.`}
+                        {compareItem && ` Comparing: ${compareItem.title}. Use the slider to adjust the comparison.`}
                     </div>
 
                     {/* No matches for the current search */}

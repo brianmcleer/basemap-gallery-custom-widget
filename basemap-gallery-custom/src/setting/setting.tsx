@@ -43,6 +43,7 @@ interface Config {
     size?: SizeOption
     displayMode?: DisplayMode
     enableCompare?: boolean
+    showHelp?: boolean
 }
 
 export type IMConfig = ImmutableObject<Config>
