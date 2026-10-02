@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.21.10 (2026-10-02)
+
+- Console: removed all `console.warn` and `console.error` calls from the runtime and settings. Load, preload, compare and swipe errors go to the beacon instead; the gallery's on-screen failed count and compare error messages are unchanged.
+
+## 1.21.9 (2026-10-02)
+
+- Added: works with Map Switcher 1.1.0 to keep the basemap when switching apps. If the user arrives through Map Switcher with a basemap that is in this gallery, the gallery applies it and marks it active instead of the configured default. If the carried basemap is not in this gallery (for example one picked in the Esri Basemap Gallery), the gallery skips its default and leaves the map to Map Switcher. With no carried basemap, the default behaves as before.
+
 ## 1.21.7 (2026-09-18)
 
 - Settings: a **Show help guide** option. Turn it off and the question-mark button and the first-run hint both disappear; the guide itself is untouched. Undefined means on, so apps configured before this release keep their help button.

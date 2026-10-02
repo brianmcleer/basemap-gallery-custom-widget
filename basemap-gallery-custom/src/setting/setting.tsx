@@ -227,8 +227,7 @@ const Setting = (props: SettingProps) => {
             })
 
             return result
-        } catch (err) {
-            console.error('XML parse error:', err)
+        } catch {
             return null
         }
     }

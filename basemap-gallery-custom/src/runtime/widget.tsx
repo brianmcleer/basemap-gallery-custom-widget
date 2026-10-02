@@ -90,8 +90,8 @@ function letMapEventsThroughSwipe (swipe: any): void {
             root.appendChild(style)
             swipe.__bgcPointerSheet = true
         }
-    } catch (err) {
-        console.warn('Could not adjust swipe pointer events:', err)
+    } catch {
+        // Swipe still works; pan and zoom through the host may not.
     }
 }
 
@@ -229,6 +229,42 @@ const LIST_SIZE_CONFIG = {
     }
 }
 
+// Map Switcher hand-off (Map Switcher 1.1.0+). When the user arrives from
+// another app through Map Switcher, the basemap they had there is carried in
+// one of these channels. A carried basemap wins over defaultBasemapId so the
+// gallery's one-time default does not overwrite it.
+const MS_BASEMAP_PARAM = 'ms_basemap'
+const MS_HANDOFF_KEY = 'ms-basemap-handoff'
+const MS_CARRY_KEY = 'ms-basemap-carry'
+const MS_MAX_AGE_MS = 120000
+const MS_ITEM_ID_PATTERN = /^[a-f0-9]{32}$/i
+
+// Captured on module load, before Map Switcher cleans the address bar.
+const msInitialSearch = typeof window !== 'undefined' ? window.location.search : ''
+
+function readMapSwitcherBasemap (): string | null {
+    const fresh = (h: any): boolean => !!h?.value && Date.now() - Number(h.ts) < MS_MAX_AGE_MS
+    try {
+        const g = (window as any).__msBasemapHandoff
+        if (g?.value) return String(g.value)
+    } catch {}
+    try {
+        const v = new URLSearchParams(msInitialSearch || window.location.search).get(MS_BASEMAP_PARAM)
+        if (v) return v
+    } catch {}
+    try {
+        const raw = window.sessionStorage.getItem(MS_HANDOFF_KEY)
+        const h = raw ? JSON.parse(raw) : null
+        if (fresh(h)) return String(h.value)
+    } catch {}
+    try {
+        const raw = window.localStorage.getItem(MS_CARRY_KEY)
+        const h = raw ? JSON.parse(raw) : null
+        if (fresh(h)) return String(h.value)
+    } catch {}
+    return null
+}
+
 type WidgetProps = AllWidgetProps<Config> & { id: string; useMapWidgetIds?: string[] }
 
 const Widget = (props: WidgetProps) => {
@@ -331,7 +367,7 @@ const Widget = (props: WidgetProps) => {
         const promise = item.basemap.loadAll().catch((err) => {
             // Allow a later hover/click to retry if a temporary service error occurs.
             delete preloadPromisesRef.current[item.id]
-            console.warn(`Failed to preload basemap layers ${item.id}:`, err)
+            beaconRef.current?.error(err, 'preload')
             throw err
         })
 
@@ -407,7 +443,7 @@ const Widget = (props: WidgetProps) => {
                         })
                     } else {
                         failed++
-                        console.warn(`Failed to load basemap ${item.id}:`, result.reason)
+                        beaconRef.current?.error(result.reason, 'load')
                     }
                 })
 
@@ -446,8 +482,26 @@ const Widget = (props: WidgetProps) => {
                     ? loaded.find(b => b.id === defaultId)
                     : undefined
                 const currentBasemapId = view.map?.basemap?.portalItem?.id
+                const carried = readMapSwitcherBasemap()
+                const carriedItemId = carried?.startsWith('item:') ? carried.slice(5) : null
+                const carriedMatch = carriedItemId && MS_ITEM_ID_PATTERN.test(carriedItemId)
+                    ? loaded.find(b => b.id === carriedItemId)
+                    : undefined
 
-                if (defaultBasemap && !defaultAppliedRef.current[viewKey]) {
+                if (carried && !defaultAppliedRef.current[viewKey]) {
+                    // 0. A basemap carried over by Map Switcher wins over the default.
+                    //    If it is in this gallery, apply it here; otherwise leave the
+                    //    map alone so Map Switcher can apply it.
+                    defaultAppliedRef.current[viewKey] = true
+                    if (carriedMatch) {
+                        if (currentBasemapId !== carriedMatch.id) {
+                            view.map.basemap = carriedMatch.basemap
+                        }
+                        setActiveBasemapId(carriedMatch.id)
+                    } else if (currentBasemapId && loaded.some(b => b.id === currentBasemapId)) {
+                        setActiveBasemapId(currentBasemapId)
+                    }
+                } else if (defaultBasemap && !defaultAppliedRef.current[viewKey]) {
                     defaultAppliedRef.current[viewKey] = true
                     if (currentBasemapId !== defaultBasemap.id) {
                         view.map.basemap = defaultBasemap.basemap
@@ -516,7 +570,7 @@ const Widget = (props: WidgetProps) => {
             })
             overlay.layers = []
         } catch (err) {
-            console.warn('Failed to remove compare layers:', err)
+            beaconRef.current?.error(err, 'compare-clear')
         }
     }, [jimuMapView])
 
@@ -627,7 +681,7 @@ const Widget = (props: WidgetProps) => {
             }
             if (requestId !== compareRequestRef.current) return
             compareRef.current = null
-            console.warn(`Failed to compare basemap ${item.id}:`, err)
+            beaconRef.current?.error(err, 'compare')
             setCompareLoading(false)
             setCompareBasemapId(null)
             setCompareError(`${item.title} could not be loaded for comparison.`)
@@ -680,7 +734,7 @@ const Widget = (props: WidgetProps) => {
             overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = 1 })
             const requestId = compareRequestRef.current
             void attachSwipe(overlay, view, requestId).catch(err => {
-                console.warn('Could not create swipe divider:', err)
+                beaconRef.current?.error(err, 'swipe')
                 setCompareError('The swipe divider could not be created.')
             })
             announceStatus('Switched to swipe mode. Drag the divider or use the slider.')
