@@ -1,0 +1,1313 @@
+{
+  "version": 2,
+  "generator": "exb-i18n-kit",
+  "parts": {
+    "runtime": {
+      "en": "c4b0cd9de4be",
+      "keys": 159,
+      "hashes": {
+        "_widgetLabel": "082788e57dd7",
+        "helpTitle": "c47ae15370cf",
+        "close": "bbfa773e5a63",
+        "helpIntro": "d9ee9b7414ed",
+        "helpSearchPlaceholder": "d6d82e21b70b",
+        "helpNoMatches": "3fe179f75330",
+        "helpAnd": "cffa50a32cb1",
+        "firstRunTitle": "b81f2e17e001",
+        "firstRunBody": "d56cb5f798d8",
+        "firstRunBodyWaiting": "3ad3cb7fbd61",
+        "firstRunHelpLink": "2447dd6134ea",
+        "firstRunDismiss": "660f4a3c8bc3",
+        "filterPlaceholder": "6accab50e144",
+        "filterLabel": "42fc39a85469",
+        "favoriteAdd": "1350f7d9f98d",
+        "favoriteRemove": "b6ddf62b5644",
+        "activeBasemapLabel": "e71314c0c633",
+        "compareOn": "01b7f5d1c4c3",
+        "compareOff": "8a926c9bf085",
+        "compareOnShort": "8d105cf44d39",
+        "compareOffShort": "bbfa773e5a63",
+        "compareOnTip": "67a3cf402c83",
+        "compareOffTip": "806f072b1491",
+        "compareGroupLabel": "01b7f5d1c4c3",
+        "comparePrompt": "46248772d52e",
+        "compareLoading": "05b443f7e190",
+        "compareLeft": "8ae1c34bd37f",
+        "compareRight": "954daa8b0033",
+        "compareCurrent": "8b8025fc854d",
+        "compareSliderLabel": "2f4c84662d6a",
+        "compareIndicatorLabel": "0db8f7c1c0ec",
+        "compareRightIndicatorLabel": "6092bc18462e",
+        "helpStartTitle": "789320b4831d",
+        "helpStartGrid": "14300e5f1b42",
+        "helpStartList": "7d5928ff8f31",
+        "helpStartChoose": "bead863acd38",
+        "helpStartWait": "0a3192f72d1e",
+        "helpStartNoMap1": "6235e27d12fb",
+        "helpStartNoMap2": "f09b4e6cb894",
+        "helpStartNoMap3": "81f6d6baf7a7",
+        "helpStartLoading1": "8d848d7de85c",
+        "helpStartLoading2": "df4db7ddb265",
+        "helpStartLoading3": "d299af11a141",
+        "helpStartEmpty1": "bf72e9db0512",
+        "helpStartEmpty2": "76398935fb14",
+        "helpStartEmpty3": "1ffaec1814c3",
+        "helpStartError1": "760166740e36",
+        "helpStartError2": "f432bfaa9a5f",
+        "helpStartError3": "1c0c0e9e874d",
+        "helpUseTitle": "5ed64f25c087",
+        "helpUseChoose": "222114d5e64d",
+        "helpUseIndicator": "93e0b01a1c5e",
+        "helpUseReapply": "e80389a049f5",
+        "helpUseDefault": "247e5b109bed",
+        "helpUseOther": "f06e37ace5e1",
+        "helpFavoritesTitle": "12b45d19bd2f",
+        "helpFavoritesAdd": "af02556f42c1",
+        "helpFavoritesRemove": "310c43329106",
+        "helpFavoritesMap": "1958dd10860e",
+        "helpOrganizeTitle": "579093cdcacd",
+        "helpOrganizeFilter": "46bc2af56636",
+        "helpOrganizeNames": "07f2824b1ddd",
+        "helpOrganizeClear": "6e11dd428c57",
+        "helpKeyboardTitle": "971712384346",
+        "helpKeyboardTab": "e6f26fc37bd1",
+        "helpKeyboardGrid": "1bd99aad5f60",
+        "helpKeyboardList": "00c97bc4a9a2",
+        "helpKeyboardChoose": "da4fdc7b0d47",
+        "helpKeyboardEnds": "782232ab5adc",
+        "helpKeyboardFavorite": "627e8d247763",
+        "helpKeyboardCompare": "b669aa4ce2f5",
+        "helpKeyboardSlider": "11f650311630",
+        "helpCompareTitle": "6f915b3314cd",
+        "helpCompareOpen": "a62c2d222375",
+        "helpComparePick": "fa738b747681",
+        "helpCompareSlider": "786487716003",
+        "helpCompareSwap": "bc1e02c5b24f",
+        "helpCompareClose": "f539e5b61be3",
+        "helpCompareCurrent": "c8454b90b944",
+        "helpKeepTitle": "2be573afd6ab",
+        "helpKeepFavorites": "23d7e68937bc",
+        "helpKeepClear": "2b6d7ac68498",
+        "helpKeepPrivate": "cd326d98301b",
+        "helpKeepHint": "541448645048",
+        "helpTroubleTitle": "6f7fec3ff1e0",
+        "helpTroubleNoMap": "8711082fb7ab",
+        "helpTroubleLoading": "7e67e1a58b66",
+        "helpTroubleEmpty": "5570df135ef9",
+        "helpTroubleLoadError": "8d1ac5ada6b0",
+        "helpTroublePartial": "a46244d6a562",
+        "helpTroubleSearch": "2e9f57f4f25c",
+        "helpTroubleThumbnail": "37be8663e4e2",
+        "helpTroubleCompare": "a664d761b459",
+        "helpTroubleCompareSame": "7dc63b09b71d",
+        "helpTroubleMap": "8a960bc9dfb2",
+        "helpTroubleFavorites": "2be33d982ee6",
+        "helpTroubleContact": "19bfa10f267a",
+        "helpTipsTitle": "79fc372dc790",
+        "helpTipsHelp": "fe401058fd1e",
+        "helpTipsClose": "71719df16193",
+        "helpTipsOrder": "42b789263081",
+        "helpTipsCompare": "2599e2ac4f7c",
+        "loadingBasemaps": "c412ee72eb32",
+        "noBasemapsConfigured": "9e87b76876c0",
+        "loadedCountBasemapsLoadedFailedNoteUseArrow": "8d08078322d8",
+        "loadedCountBasemapLoadedFailedNoteUseArrow": "14ed6d6e817e",
+        "loadingTitleForComparison": "cc4feae47681",
+        "comparingTitleOnTheLeftWith": "2b777e33f9d9",
+        "blendingTitleOverTheCurrentBasemap": "4560d01543ca",
+        "titleCouldNotBeLoadedFor": "87d96861e6ef",
+        "compareClosedTheMapShowsThe": "cb515a44fb7c",
+        "compareOnUsingCompareBlendModeModeChoose": "222078b1ecaf",
+        "switchedToSwipeMode": "d9ef52fdd062",
+        "switchedToBlendModeUseThe": "23a748459ff4",
+        "switchedToSwipeModeDragThe": "a896996594c1",
+        "titleIsAlreadyTheCurrentBasemap": "d78cad4713b0",
+        "titleIsAlreadyBeingCompared": "660c01c9e616",
+        "titleBasemapAppliedToMap": "898bb2d3ee4a",
+        "titleRemovedFromFavorites": "db16f11d1a85",
+        "titleAddedToFavoritesAndPinned": "ebde32148312",
+        "visibleBasemapsCountBasemapsMatchYourSearch": "a8b17636cb6b",
+        "visibleBasemapsCountBasemapMatchYourSearch": "8ff0ed3cc0be",
+        "basemapGalleryWidget": "710f3d251c50",
+        "comparison": "23c8ff228f11",
+        "swipe": "378dced1d18a",
+        "dragDividerSideBySide": "9f48ea21e8ce",
+        "swipeMode": "f5953279d908",
+        "blend": "7a358cfad459",
+        "overlayWithBlendEffects": "28985c95ae7c",
+        "blendMode": "2285fee5732a",
+        "opacityComparePosition": "4740e3145bae",
+        "base": "077fe9c54ed5",
+        "adjustDividerPositionComparePosition": "dfe431944522",
+        "noMapWidgetConnected": "5b215e62ab2a",
+        "noMapConnected": "881e5f08bac9",
+        "selectAMapWidgetInThe": "cd16026acc85",
+        "loadingBasemaps2": "4c746f7ab986",
+        "noBasemapsConfigured2": "1836f9dfcbb8",
+        "addBasemapsInTheWidgetSettings": "c7b083776e61",
+        "basemapsCouldNotBeLoaded": "21bc4f04a4cc",
+        "noBasemapsCouldBeLoaded": "67542d9df8fb",
+        "checkTheItemIDsAndPortal": "95840b50e572",
+        "failedCountBasemapsCouldNotBeLoaded": "8f39421bde8f",
+        "failedCountBasemapCouldNotBeLoaded": "72be79d17aef",
+        "basemapGalleryWithVisibleBasemapsCountBasemapsAvailable": "9b44b6548567",
+        "basemapGalleryWithVisibleBasemapsCountBasemapAvailable": "eadb67743210",
+        "pressCToCompareTheFocused": "29698dc14a83",
+        "compareIsOnInCompareBlendModeMode": "df89d0f1e00c",
+        "unknown": "bc7819b34ff8",
+        "currentlySelectedTitle": "cfae184ccc34",
+        "comparingTitleUseTheSliderTo": "13e868a95989",
+        "noBasemapsMatchSearchText": "3ae50c2ea240",
+        "basemapSelectionGalleryListView": "78a181cb8d20",
+        "basemapSelectionGalleryGridView": "5a471f1d8587",
+        "titleCurrentBasemapShownOnThe": "4c573e6ef6b5",
+        "titleShownOnTheLeftSide": "e0790180c644",
+        "clickToCompareTitleWithThe": "7fb5808280f7",
+        "titleCurrentlyActiveBasemapClickTo": "10f7940f4d52",
+        "clickToApplyTitleBasemapTo": "21abed740b2b"
+      },
+      "locales": {
+        "ar": {
+          "file": "31d1ea4baf0d",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "bg": {
+          "file": "8455f577a53d",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "bs": {
+          "file": "58baa43b8820",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "ca": {
+          "file": "e08f1acd9333",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "cs": {
+          "file": "c06bbfa373f6",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "da": {
+          "file": "a3a52159a876",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "de": {
+          "file": "705b254cb88f",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "el": {
+          "file": "fcfbcef4d301",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "es": {
+          "file": "7c316686b2e0",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "et": {
+          "file": "94b077ea875b",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "fi": {
+          "file": "ca801bab67d7",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "fr": {
+          "file": "395cf8e94813",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "he": {
+          "file": "b964395bb072",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "hr": {
+          "file": "58baa43b8820",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "hu": {
+          "file": "4adfae2c52ad",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "id": {
+          "file": "8b965d57254e",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "it": {
+          "file": "fbcada483bdb",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "ja": {
+          "file": "2edab2334dd1",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "ko": {
+          "file": "91aa86b2cf7d",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "lt": {
+          "file": "e27be1bbc1c1",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "lv": {
+          "file": "9a0f0ba9770b",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "no": {
+          "file": "afa508b30152",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "nl": {
+          "file": "2aebee834e95",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "pl": {
+          "file": "00a409339531",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "pt-br": {
+          "file": "7028a4ce1887",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "pt-pt": {
+          "file": "77116f51d78c",
+          "counts": {
+            "esri": 14,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "ro": {
+          "file": "932b02b152e2",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "ru": {
+          "file": "bfd6733cf372",
+          "counts": {
+            "esri": 13,
+            "esri-check": 2,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "sk": {
+          "file": "fcc70451716d",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "sl": {
+          "file": "c935eb27822c",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "sr": {
+          "file": "022d9a01965d",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "sv": {
+          "file": "b1a3b2494f74",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "th": {
+          "file": "511594e71b01",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "tr": {
+          "file": "4e595b830a59",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "zh-cn": {
+          "file": "de715c4cd469",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "uk": {
+          "file": "8077c24d9e71",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "vi": {
+          "file": "f6f2e4ea43a4",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "zh-hk": {
+          "file": "7a91a4abcba7",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        },
+        "zh-tw": {
+          "file": "7a91a4abcba7",
+          "counts": {
+            "esri": 15,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 144
+          },
+          "entries": {}
+        }
+      }
+    },
+    "setting": {
+      "en": "37f9069ebb7b",
+      "keys": 40,
+      "hashes": {
+        "map": "ab478f3efc84",
+        "appearance": "41def7a0febe",
+        "displayMode": "ab106677edc7",
+        "displaySize": "237f890bcdf0",
+        "compareBasemaps": "01b7f5d1c4c3",
+        "showTheCompareButtonWhichPlaces": "755f7b70754a",
+        "portalSource": "66fb1ef3138b",
+        "useCustomPortal": "ff2f3f70405b",
+        "portalUrl": "7d1f3467578c",
+        "browsePortalItems": "34ae2e5f998f",
+        "searchByTitleOrItemId": "cd90dd3bb20b",
+        "search": "bce06414177f",
+        "noItemsFoundTryADifferent": "f55af8470d45",
+        "added": "55461d2ceeb7",
+        "add": "61cc55aa0453",
+        "importExportConfiguration": "f2f770dc6a0e",
+        "exportConfiguration": "1f002604b485",
+        "exportYourBasemapConfigurationToXml": "9e32f3ae8e37",
+        "generateXml": "30835fd73c2d",
+        "downloadFile": "6dff41f945dd",
+        "copyToClipboard": "f9c15aed60b9",
+        "importConfiguration": "4122ce7eaa8f",
+        "importBasemapConfigurationFromXmlThis": "d1e119fa90f3",
+        "loadFromFile": "200480c5ea8d",
+        "orPasteXml": "793151c06c46",
+        "configurationImportedSuccessfully": "8b8f037f4c71",
+        "clear": "719ea396ad92",
+        "noteImportingWillReplaceAllCurrent": "1f99c91daec7",
+        "selectedBasemaps": "8608c4d812c4",
+        "clickToSetTheDefaultBasemap": "4adef861df7a",
+        "moveUp": "b4f57cd0cd5c",
+        "moveDown": "260ff8ae7182",
+        "defaultBasemap": "9a227b2961d5",
+        "setAsDefault": "5b6f739130d0",
+        "removeBasemap": "58c69e93a0df",
+        "default": "c32f3c8245d5",
+        "noBasemapsSelectedUseTheBrowse": "2875d7bec54b",
+        "help": "c47ae15370cf",
+        "showHelpGuide": "03e9f0b81336",
+        "showTheQuestionMarkButtonThat": "62c4e81a84ca"
+      },
+      "locales": {
+        "ar": {
+          "file": "bd7df0c1d913",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "bg": {
+          "file": "7b16f4e052f0",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "bs": {
+          "file": "675a516068f8",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "ca": {
+          "file": "6b7ecc293a97",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "cs": {
+          "file": "bc47734e86bb",
+          "counts": {
+            "esri": 8,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "da": {
+          "file": "002c2172a077",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "de": {
+          "file": "2ffab82ba13f",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "el": {
+          "file": "7df8cd3b4696",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "es": {
+          "file": "0dd303f770ef",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "et": {
+          "file": "91d5854edbcf",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "fi": {
+          "file": "1ea7bdebeb24",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "fr": {
+          "file": "07c57deb0545",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "he": {
+          "file": "7aac2cb9d1d6",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "hr": {
+          "file": "675a516068f8",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "hu": {
+          "file": "5cd78b8866d7",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "id": {
+          "file": "f18eec1a6d8d",
+          "counts": {
+            "esri": 8,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "it": {
+          "file": "1473aba5ece5",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "ja": {
+          "file": "4df48e480840",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "ko": {
+          "file": "94ec54ca5628",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "lt": {
+          "file": "15a320f94a23",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "lv": {
+          "file": "0a705b51213b",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "no": {
+          "file": "ac795a5fc798",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "nl": {
+          "file": "769b47b33ccb",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "pl": {
+          "file": "b7f51fb2ad25",
+          "counts": {
+            "esri": 8,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "pt-br": {
+          "file": "be9e5ec0dfc3",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "pt-pt": {
+          "file": "ccccbe8f2efe",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "ro": {
+          "file": "936ec0bd2090",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "ru": {
+          "file": "3f5a5a359832",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "sk": {
+          "file": "965c802aa8fb",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "sl": {
+          "file": "efc640144ac9",
+          "counts": {
+            "esri": 8,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "sr": {
+          "file": "0d8ec4688f3b",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "sv": {
+          "file": "ce0ce9f33c23",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "th": {
+          "file": "77aa42b96920",
+          "counts": {
+            "esri": 8,
+            "esri-check": 1,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "tr": {
+          "file": "041fdde9746f",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "zh-cn": {
+          "file": "6abfd6f9a758",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "uk": {
+          "file": "e6a7e7a62550",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "vi": {
+          "file": "70d99688e432",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "zh-hk": {
+          "file": "eb320c3a2d7b",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        },
+        "zh-tw": {
+          "file": "eb320c3a2d7b",
+          "counts": {
+            "esri": 9,
+            "esri-check": 0,
+            "community": 0,
+            "manual": 0,
+            "existing": 0,
+            "machine": 0,
+            "stale": 0,
+            "missing": 31
+          },
+          "entries": {}
+        }
+      }
+    }
+  }
+}

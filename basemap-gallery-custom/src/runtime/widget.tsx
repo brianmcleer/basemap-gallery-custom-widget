@@ -385,14 +385,14 @@ const Widget = (props: WidgetProps) => {
             setIsLoading(true)
             setError(null)
             setFailedCount(0)
-            announceStatus('Loading basemaps...')
+            announceStatus(t('loadingBasemaps'))
 
             const configBasemaps = props.config?.basemaps as BasemapItem[] | undefined
 
             if (!configBasemaps || configBasemaps.length === 0) {
                 setLoadedBasemaps([])
                 setIsLoading(false)
-                announceStatus('No basemaps configured')
+                announceStatus(t('noBasemapsConfigured'))
                 return
             }
 
@@ -513,7 +513,7 @@ const Widget = (props: WidgetProps) => {
 
                 setIsLoading(false)
                 const failedNote = failed > 0 ? ` ${failed} failed to load.` : ''
-                announceStatus(`${loaded.length} basemap${loaded.length !== 1 ? 's' : ''} loaded.${failedNote} Use arrow keys to navigate, Enter or Space to select.`)
+                announceStatus((loaded.length !== 1 ? t('loadedCountBasemapsLoadedFailedNoteUseArrow', { loadedCount: String(loaded.length), failedNote: String(failedNote) }) : t('loadedCountBasemapLoadedFailedNoteUseArrow', { loadedCount: String(loaded.length), failedNote: String(failedNote) })))
             } catch (err) {
                 if (!destroyed) {
                     const errorMsg = `Failed to load basemaps: ${err.message}`
@@ -626,7 +626,7 @@ const Widget = (props: WidgetProps) => {
         setCompareBasemapId(item.id)
         setCompareLoading(true)
         setCompareError(null)
-        announceStatus(`Loading ${item.title} for comparison`)
+        announceStatus(t('loadingTitleForComparison', { title: String(item.title) }))
         let addedLayers: any[] = []
 
         try {
@@ -663,9 +663,9 @@ const Widget = (props: WidgetProps) => {
             if (mode === 'swipe') {
                 await attachSwipe(overlay, view, requestId)
                 if (requestId !== compareRequestRef.current) return
-                announceStatus(`Comparing ${item.title} on the left with the current basemap on the right. Drag the divider or use the slider.`)
+                announceStatus(t('comparingTitleOnTheLeftWith', { title: String(item.title) }))
             } else {
-                announceStatus(`Blending ${item.title} over the current basemap. Use the slider to adjust transparency.`)
+                announceStatus(t('blendingTitleOverTheCurrentBasemap', { title: String(item.title) }))
             }
             setCompareLoading(false)
         } catch (err) {
@@ -685,7 +685,7 @@ const Widget = (props: WidgetProps) => {
             setCompareLoading(false)
             setCompareBasemapId(null)
             setCompareError(`${item.title} could not be loaded for comparison.`)
-            announceStatus(`${item.title} could not be loaded for comparison`)
+            announceStatus(t('titleCouldNotBeLoadedFor', { title: String(item.title) }))
         }
     }, [jimuMapView, props.config?.portalUrl, clearCompareOverlay, attachSwipe, announceStatus, compareBlendMode])
 
@@ -695,7 +695,7 @@ const Widget = (props: WidgetProps) => {
         setCompareBasemapId(null)
         setCompareLoading(false)
         setCompareError(null)
-        announceStatus('Compare closed. The map shows the current basemap only.')
+        announceStatus(t('compareClosedTheMapShowsThe'))
     }, [clearCompareOverlay, announceStatus])
 
     const toggleCompareMode = useCallback(() => {
@@ -704,7 +704,7 @@ const Widget = (props: WidgetProps) => {
         } else {
             setCompareMode(true)
             setCompareError(null)
-            announceStatus(`Compare on using ${compareBlendMode} mode. Choose a basemap to show on the left side of the map.`)
+            announceStatus(t('compareOnUsingCompareBlendModeModeChoose', { compareBlendMode: String(compareBlendMode) }))
         }
     }, [compareMode, stopCompare, announceStatus, compareBlendMode])
 
@@ -718,8 +718,8 @@ const Widget = (props: WidgetProps) => {
         const view = jimuMapView?.view
         if (!overlay || !view) {
             announceStatus(newMode === 'swipe'
-                ? 'Switched to swipe mode.'
-                : 'Switched to blend mode. Use the slider to adjust transparency.')
+                ? t('switchedToSwipeMode')
+                : t('switchedToBlendModeUseThe'))
             return
         }
 
@@ -729,7 +729,7 @@ const Widget = (props: WidgetProps) => {
             destroySwipe(overlay, view)
             const opacity = clampOpacity(COMPARE_DEFAULT_POSITION)
             overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = opacity })
-            announceStatus('Switched to blend mode. Use the slider to adjust transparency.')
+            announceStatus(t('switchedToBlendModeUseThe'))
         } else {
             overlay.layers.forEach((layer: any) => { if (layer) layer.opacity = 1 })
             const requestId = compareRequestRef.current
@@ -737,7 +737,7 @@ const Widget = (props: WidgetProps) => {
                 beaconRef.current?.error(err, 'swipe')
                 setCompareError('The swipe divider could not be created.')
             })
-            announceStatus('Switched to swipe mode. Drag the divider or use the slider.')
+            announceStatus(t('switchedToSwipeModeDragThe'))
         }
     }, [compareBlendMode, jimuMapView, attachSwipe, announceStatus, setComparePosition])
 
@@ -792,11 +792,11 @@ const Widget = (props: WidgetProps) => {
 
         if (compareMode) {
             if (item.id === activeBasemapId) {
-                announceStatus(`${item.title} is already the current basemap. Choose a different basemap to compare.`)
+                announceStatus(t('titleIsAlreadyTheCurrentBasemap', { title: String(item.title) }))
                 return
             }
             if (item.id === compareRef.current?.id || item.id === compareBasemapId) {
-                announceStatus(`${item.title} is already being compared`)
+                announceStatus(t('titleIsAlreadyBeingCompared', { title: String(item.title) }))
                 return
             }
             void startCompare(item)
@@ -810,7 +810,7 @@ const Widget = (props: WidgetProps) => {
         jimuMapView.view.map.basemap = item.basemap
         setActiveBasemapId(item.id)
         // WCAG 4.1.3 - Announce selection to screen readers
-        announceStatus(`${item.title} basemap applied to map`)
+        announceStatus(t('titleBasemapAppliedToMap', { title: String(item.title) }))
     }, [jimuMapView, announceStatus, preloadBasemap, compareMode, activeBasemapId, compareBasemapId, startCompare])
 
     // Compare against a focused basemap from the keyboard (C key), entering compare mode if needed
@@ -818,11 +818,11 @@ const Widget = (props: WidgetProps) => {
         if (!enableCompare || !jimuMapView?.view?.map) return
         setFocusedIndex(index)
         if (item.id === activeBasemapId) {
-            announceStatus(`${item.title} is already the current basemap. Choose a different basemap to compare.`)
+            announceStatus(t('titleIsAlreadyTheCurrentBasemap', { title: String(item.title) }))
             return
         }
         if (item.id === compareRef.current?.id || item.id === compareBasemapId) {
-            announceStatus(`${item.title} is already being compared`)
+            announceStatus(t('titleIsAlreadyBeingCompared', { title: String(item.title) }))
             return
         }
         setCompareMode(true)
@@ -840,7 +840,7 @@ const Widget = (props: WidgetProps) => {
             } catch {
                 // Storage unavailable (private mode); favorites just do not persist
             }
-            announceStatus(wasFav ? `${title} removed from favorites` : `${title} added to favorites and pinned to top`)
+            announceStatus(wasFav ? t('titleRemovedFromFavorites', { title: String(title) }) : t('titleAddedToFavoritesAndPinned', { title: String(title) }))
             return next
         })
     }, [props.id, announceStatus])
@@ -869,7 +869,7 @@ const Widget = (props: WidgetProps) => {
     useEffect(() => {
         if (!showSearch) return
         if (searchText.trim()) {
-            announceStatus(`${visibleBasemaps.length} basemap${visibleBasemaps.length !== 1 ? 's' : ''} match your search`)
+            announceStatus((visibleBasemaps.length !== 1 ? t('visibleBasemapsCountBasemapsMatchYourSearch', { visibleBasemapsCount: String(visibleBasemaps.length) }) : t('visibleBasemapsCountBasemapMatchYourSearch', { visibleBasemapsCount: String(visibleBasemaps.length) })))
         }
     }, [visibleBasemaps.length, searchText, showSearch, announceStatus])
 
@@ -1553,7 +1553,7 @@ const Widget = (props: WidgetProps) => {
             className='jimu-widget'
             css={style}
             role='region'
-            aria-label='Basemap Gallery Widget'
+            aria-label={t('basemapGalleryWidget')}
         >
             {/* WCAG 4.1.3 - Live region for screen reader announcements */}
             <div
@@ -1628,29 +1628,29 @@ const Widget = (props: WidgetProps) => {
                         <>
                             {/* Mode selector - clean horizontal layout */}
                             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', paddingBottom: '8px', borderBottom: '1px solid var(--ref-palette-neutral-300)' }}>
-                                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ref-palette-neutral-900)', whiteSpace: 'nowrap' }}>Comparison:</span>
+                                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ref-palette-neutral-900)', whiteSpace: 'nowrap' }}>{t('comparison')}</span>
                                 <Button
                                     size='sm'
                                     type={compareBlendMode === 'swipe' ? 'primary' : 'secondary'}
                                     onClick={() => { if (compareBlendMode !== 'swipe') toggleCompareBlendMode() }}
-                                    title='Drag divider side by side'
-                                    aria-label='Swipe mode'
+                                    title={t('dragDividerSideBySide')}
+                                    aria-label={t('swipeMode')}
                                     aria-pressed={compareBlendMode === 'swipe'}
                                 >
-                                    Swipe
+                                    {t('swipe')}
                                 </Button>
                                 <Button
                                     size='sm'
                                     type={compareBlendMode === 'blend' ? 'primary' : 'secondary'}
                                     onClick={() => { if (compareBlendMode !== 'blend') toggleCompareBlendMode() }}
-                                    title='Overlay with blend effects'
-                                    aria-label='Blend mode'
+                                    title={t('overlayWithBlendEffects')}
+                                    aria-label={t('blendMode')}
                                     aria-pressed={compareBlendMode === 'blend'}
                                 >
-                                    Blend
+                                    {t('blend')}
                                 </Button>
                                 <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--ref-palette-neutral-900)', fontWeight: 500 }}>
-                                    {compareBlendMode === 'blend' && `Opacity: ${comparePosition}%`}
+                                    {compareBlendMode === 'blend' && t('opacityComparePosition', { comparePosition: String(comparePosition) })}
                                 </span>
                             </div>
 
@@ -1662,7 +1662,7 @@ const Widget = (props: WidgetProps) => {
                                 </span>
                                 <span className='compare-label right' title={activeItem?.title || ''}>
                                     <span style={{ fontSize: '11px' }}>{activeItem?.title || t('compareCurrent')}</span>
-                                    <span className='side'>{compareBlendMode === 'swipe' ? t('compareRight') : 'Base'}</span>
+                                    <span className='side'>{compareBlendMode === 'swipe' ? t('compareRight') : t('base')}</span>
                                 </span>
                             </div>
 
@@ -1678,8 +1678,8 @@ const Widget = (props: WidgetProps) => {
                                     labelHandles
                                     disabled={compareLoading}
                                     label={compareBlendMode === 'swipe'
-                                        ? `Adjust divider position: ${comparePosition}%`
-                                        : `Opacity: ${comparePosition}%`
+                                        ? t('adjustDividerPositionComparePosition', { comparePosition: String(comparePosition) })
+                                        : t('opacityComparePosition', { comparePosition: String(comparePosition) })
                                     }
                                     onCalciteSliderInput={handleCompareSlider}
                                     onCalciteSliderChange={handleCompareSlider}
@@ -1718,10 +1718,10 @@ const Widget = (props: WidgetProps) => {
                 <div
                     className='empty-container'
                     role='status'
-                    aria-label='No map widget connected'
+                    aria-label={t('noMapWidgetConnected')}
                 >
-                    <span>No map connected.</span>
-                    <span className='instructions'>Select a map widget in the widget settings.</span>
+                    <span>{t('noMapConnected')}</span>
+                    <span className='instructions'>{t('selectAMapWidgetInThe')}</span>
                 </div>
             )}
 
@@ -1731,10 +1731,10 @@ const Widget = (props: WidgetProps) => {
                     className='loading-container'
                     role='status'
                     aria-busy='true'
-                    aria-label='Loading basemaps'
+                    aria-label={t('loadingBasemaps2')}
                 >
                     <Loading />
-                    <span className='mt-2' aria-hidden='true'>Loading basemaps...</span>
+                    <span className='mt-2' aria-hidden='true'>{t('loadingBasemaps')}</span>
                 </div>
             )}
 
@@ -1744,7 +1744,7 @@ const Widget = (props: WidgetProps) => {
                     className={`gallery-container ${displayMode === 'list' ? 'list-mode' : 'grid-mode'}`}
                     role='status'
                     aria-busy='true'
-                    aria-label='Loading basemaps'
+                    aria-label={t('loadingBasemaps2')}
                 >
                     {Array.from({ length: Math.min(configBasemaps.length, 12) }).map((_, i) => (
                         <div key={i} className='skeleton-item' aria-hidden='true'>
@@ -1772,10 +1772,10 @@ const Widget = (props: WidgetProps) => {
                 <div
                     className='empty-container'
                     role='status'
-                    aria-label='No basemaps configured'
+                    aria-label={t('noBasemapsConfigured')}
                 >
-                    <span>No basemaps configured.</span>
-                    <span className='instructions'>Add basemaps in the widget settings.</span>
+                    <span>{t('noBasemapsConfigured2')}</span>
+                    <span className='instructions'>{t('addBasemapsInTheWidgetSettings')}</span>
                 </div>
             )}
 
@@ -1784,10 +1784,10 @@ const Widget = (props: WidgetProps) => {
                 <div
                     className='empty-container'
                     role='alert'
-                    aria-label='Basemaps could not be loaded'
+                    aria-label={t('basemapsCouldNotBeLoaded')}
                 >
-                    <span>No basemaps could be loaded.</span>
-                    <span className='instructions'>Check the item IDs and portal URL in settings.</span>
+                    <span>{t('noBasemapsCouldBeLoaded')}</span>
+                    <span className='instructions'>{t('checkTheItemIDsAndPortal')}</span>
                 </div>
             )}
 
@@ -1796,27 +1796,23 @@ const Widget = (props: WidgetProps) => {
                     {/* Partial failure notice when some configured items failed */}
                     {failedCount > 0 && (
                         <div className='partial-failure-notice' role='status'>
-                            {failedCount} basemap{failedCount !== 1 ? 's' : ''} could not be loaded. Check the item IDs in settings.
+                            {(failedCount !== 1 ? t('failedCountBasemapsCouldNotBeLoaded', { failedCount: String(failedCount) }) : t('failedCountBasemapCouldNotBeLoaded', { failedCount: String(failedCount) }))}
                         </div>
                     )}
 
                     {/* WCAG 4.1.3 - Status messages for screen readers */}
                     <div className='sr-only' id='basemap-instructions'>
-                        Basemap gallery with {visibleBasemaps.length} basemap{visibleBasemaps.length !== 1 ? 's' : ''} available.
-                        Use arrow keys to navigate between basemaps.
-                        Press Enter or Space to select and apply a basemap to the map.
-                        Home key jumps to first basemap, End key jumps to last basemap.
-                        Press F to add or remove the focused basemap from favorites. Favorites are pinned to the top of the gallery.
-                        {showCompare && ' Press C to compare the focused basemap with the current basemap using swipe or blend mode.'}
-                        {showCompare && compareMode && ` Compare is on in ${compareBlendMode} mode: Enter or Space chooses the basemap to compare.`}
-                        {activeBasemapId && ` Currently selected: ${loadedBasemaps.find(b => b.id === activeBasemapId)?.title || 'Unknown'}.`}
-                        {compareItem && ` Comparing: ${compareItem.title}. Use the slider to adjust the comparison.`}
+                        {(visibleBasemaps.length !== 1 ? t('basemapGalleryWithVisibleBasemapsCountBasemapsAvailable', { visibleBasemapsCount: String(visibleBasemaps.length) }) : t('basemapGalleryWithVisibleBasemapsCountBasemapAvailable', { visibleBasemapsCount: String(visibleBasemaps.length) }))}
+                        {showCompare && t('pressCToCompareTheFocused')}
+                        {showCompare && compareMode && t('compareIsOnInCompareBlendModeMode', { compareBlendMode: String(compareBlendMode) })}
+                        {activeBasemapId && t('currentlySelectedTitle', { title: String(loadedBasemaps.find(b => b.id === activeBasemapId)?.title || t('unknown')) })}
+                        {compareItem && t('comparingTitleUseTheSliderTo', { title: String(compareItem.title) })}
                     </div>
 
                     {/* No matches for the current search */}
                     {visibleBasemaps.length === 0 && (
                         <div className='no-results' role='status'>
-                            No basemaps match "{searchText}".
+                            {t('noBasemapsMatchSearchText', { searchText: String(searchText) })}
                         </div>
                     )}
 
@@ -1826,7 +1822,7 @@ const Widget = (props: WidgetProps) => {
                             ref={galleryRef}
                             className={`gallery-container ${displayMode === 'list' ? 'list-mode' : 'grid-mode'}`}
                             role='listbox'
-                            aria-label={`Basemap selection gallery - ${displayMode === 'list' ? 'list view' : 'grid view'}`}
+                            aria-label={(displayMode === 'list' ? t('basemapSelectionGalleryListView') : t('basemapSelectionGalleryGridView'))}
                             aria-describedby='basemap-instructions'
                             aria-activedescendant={activeBasemapId ? `basemap-${activeBasemapId}` : undefined}
                         >
@@ -1839,13 +1835,13 @@ const Widget = (props: WidgetProps) => {
                                 const thumbBroken = brokenThumbs[item.id]
                                 const tooltipContent = showCompare && compareMode
                                     ? (isActive
-                                        ? `${item.title} - Current basemap, shown on the right side`
+                                        ? t('titleCurrentBasemapShownOnThe', { title: String(item.title) })
                                         : isComparing
-                                            ? `${item.title} - Shown on the left side of the divider`
-                                            : `Click to compare ${item.title} with the current basemap`)
+                                            ? t('titleShownOnTheLeftSide', { title: String(item.title) })
+                                            : t('clickToCompareTitleWithThe', { title: String(item.title) }))
                                     : isActive
-                                        ? `${item.title} - Currently active basemap (click to reapply)`
-                                        : `Click to apply ${item.title} basemap to the map`
+                                        ? t('titleCurrentlyActiveBasemapClickTo', { title: String(item.title) })
+                                        : t('clickToApplyTitleBasemapTo', { title: String(item.title) })
 
                                 return (
                                     <Tooltip

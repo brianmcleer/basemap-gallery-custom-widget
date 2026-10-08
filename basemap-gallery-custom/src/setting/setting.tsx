@@ -15,6 +15,9 @@ import {
     Select,
     Option
 } from 'jimu-ui'
+import { hooks as __exbI18nHooks } from 'jimu-core';
+import __exbI18nMessages from './translations/default';
+
 
 const { useState, useEffect, useRef } = React
 
@@ -74,6 +77,7 @@ type SettingProps = {
 }
 
 const Setting = (props: SettingProps) => {
+  const t = __exbI18nHooks.useTranslation(__exbI18nMessages);
     const [useCustomPortal, setUseCustomPortal] = useState(!!props.config?.portalUrl)
     const [portalItems, setPortalItems] = useState<BasemapItem[]>([])
     const [isLoading, setIsLoading] = useState(false)
@@ -878,7 +882,7 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.map}
                     aria-controls='section-map'
                 >
-                    <span className='section-title'>Map</span>
+                    <span className='section-title'>{t('map')}</span>
                     <span className={`section-toggle ${!openSections.map ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
@@ -904,14 +908,14 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.appearance}
                     aria-controls='section-appearance'
                 >
-                    <span className='section-title'>Appearance</span>
+                    <span className='section-title'>{t('appearance')}</span>
                     <span className={`section-toggle ${!openSections.appearance ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
                     id='section-appearance'
                     className={`section-content ${openSections.appearance ? 'expanded' : 'collapsed'}`}
                 >
-                    <SettingRow label='Display Mode' flow='no-wrap'>
+                    <SettingRow label={t('displayMode')} flow='no-wrap'>
                         <Select
                             value={props.config?.displayMode || 'grid'}
                             onChange={handleDisplayModeChange}
@@ -926,7 +930,7 @@ const Setting = (props: SettingProps) => {
                         </Select>
                     </SettingRow>
 
-                    <SettingRow label='Display Size' flow='no-wrap'>
+                    <SettingRow label={t('displaySize')} flow='no-wrap'>
                         <Select
                             value={props.config?.size || 'md'}
                             onChange={handleSizeChange}
@@ -941,11 +945,11 @@ const Setting = (props: SettingProps) => {
                         </Select>
                     </SettingRow>
 
-                    <SettingRow label='Compare basemaps' flow='no-wrap'>
+                    <SettingRow label={t('compareBasemaps')} flow='no-wrap'>
                         <Switch
                             checked={props.config?.enableCompare !== false}
                             onChange={handleEnableCompareChange}
-                            aria-label='Show the compare button, which places a second basemap on the map behind a draggable divider'
+                            aria-label={t('showTheCompareButtonWhichPlaces')}
                         />
                     </SettingRow>
                 </div>
@@ -961,14 +965,14 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.portalSource}
                     aria-controls='section-portal-source'
                 >
-                    <span className='section-title'>Portal Source</span>
+                    <span className='section-title'>{t('portalSource')}</span>
                     <span className={`section-toggle ${!openSections.portalSource ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
                     id='section-portal-source'
                     className={`section-content ${openSections.portalSource ? 'expanded' : 'collapsed'}`}
                 >
-                    <SettingRow label='Use custom portal' flow='no-wrap'>
+                    <SettingRow label={t('useCustomPortal')} flow='no-wrap'>
                         <Switch
                             checked={useCustomPortal}
                             onChange={handleCustomPortalToggle}
@@ -978,7 +982,7 @@ const Setting = (props: SettingProps) => {
                     {useCustomPortal && (
                         <SettingRow flow='wrap'>
                             <Label className='w-100'>
-                                Portal URL
+                                {t('portalUrl')}
                                 <TextInput
                                     className='w-100 mt-1'
                                     placeholder='https://your-portal.com/portal'
@@ -1002,7 +1006,7 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.browsePortal}
                     aria-controls='section-browse-portal'
                 >
-                    <span className='section-title'>Browse Portal Items</span>
+                    <span className='section-title'>{t('browsePortalItems')}</span>
                     <span className={`section-toggle ${!openSections.browsePortal ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
@@ -1012,7 +1016,7 @@ const Setting = (props: SettingProps) => {
                     <div className='search-container'>
                         <TextInput
                             className='search-input'
-                            placeholder='Search by title or item ID...'
+                            placeholder={t('searchByTitleOrItemId')}
                             value={searchText}
                             onChange={(e) => setSearchText(e.target.value)}
                             onKeyPress={handleSearchKeyPress}
@@ -1023,7 +1027,7 @@ const Setting = (props: SettingProps) => {
                             onClick={handleSearch}
                             disabled={isLoading}
                         >
-                            Search
+                            {t('search')}
                         </Button>
                     </div>
 
@@ -1039,7 +1043,7 @@ const Setting = (props: SettingProps) => {
                         <div className='browse-list'>
                             {portalItems.length === 0 ? (
                                 <div className='empty-message'>
-                                    No items found. Try a different search term.
+                                    {t('noItemsFoundTryADifferent')}
                                 </div>
                             ) : (
                                 portalItems.map(item => {
@@ -1070,9 +1074,9 @@ const Setting = (props: SettingProps) => {
                                                 {item.title}
                                             </div>
                                             {selected ? (
-                                                <span className='added-indicator'>✓ Added</span>
+                                                <span className='added-indicator'>{t('added')}</span>
                                             ) : (
-                                                <Button type='tertiary' size='sm'>Add</Button>
+                                                <Button type='tertiary' size='sm'>{t('add')}</Button>
                                             )}
                                         </div>
                                     )
@@ -1093,7 +1097,7 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.importExport}
                     aria-controls='section-import-export'
                 >
-                    <span className='section-title'>Import / Export Configuration</span>
+                    <span className='section-title'>{t('importExportConfiguration')}</span>
                     <span className={`section-toggle ${!openSections.importExport ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
@@ -1101,21 +1105,21 @@ const Setting = (props: SettingProps) => {
                     className={`section-content ${openSections.importExport ? 'expanded' : 'collapsed'}`}
                 >
                     <CollapsablePanel
-                        label='Export Configuration'
+                        label={t('exportConfiguration')}
                         type='default'
                         defaultIsOpen={false}
                         className='mb-3'
                     >
                         <div className='import-export-section'>
                             <div className='help-text'>
-                                Export your basemap configuration to XML for backup or sharing.
+                                {t('exportYourBasemapConfigurationToXml')}
                             </div>
                             <div className='button-group'>
                                 <Button type='primary' onClick={handleExport}>
-                                    Generate XML
+                                    {t('generateXml')}
                                 </Button>
                                 <Button type='default' onClick={handleDownloadExport}>
-                                    Download File
+                                    {t('downloadFile')}
                                 </Button>
                             </div>
                             {exportXml && (
@@ -1127,7 +1131,7 @@ const Setting = (props: SettingProps) => {
                                     />
                                     <div className='button-group'>
                                         <Button type='tertiary' size='sm' onClick={handleCopyExport}>
-                                            Copy to Clipboard
+                                            {t('copyToClipboard')}
                                         </Button>
                                     </div>
                                 </>
@@ -1136,13 +1140,13 @@ const Setting = (props: SettingProps) => {
                     </CollapsablePanel>
 
                     <CollapsablePanel
-                        label='Import Configuration'
+                        label={t('importConfiguration')}
                         type='default'
                         defaultIsOpen={false}
                     >
                         <div className='import-export-section'>
                             <div className='help-text'>
-                                Import basemap configuration from XML. This will replace your current basemap selections.
+                                {t('importBasemapConfigurationFromXmlThis')}
                             </div>
 
                             <input
@@ -1158,12 +1162,12 @@ const Setting = (props: SettingProps) => {
                                     type='default'
                                     onClick={() => fileInputRef.current?.click()}
                                 >
-                                    Load from File
+                                    {t('loadFromFile')}
                                 </Button>
                             </div>
 
                             <Label className='w-100'>
-                                Or paste XML:
+                                {t('orPasteXml')}
                                 <TextArea
                                     className='xml-textarea mt-1'
                                     value={importXml}
@@ -1188,7 +1192,7 @@ const Setting = (props: SettingProps) => {
                             )}
 
                             {importSuccess && (
-                                <Alert type='success' text='Configuration imported successfully!' className='mt-2' />
+                                <Alert type='success' text={t('configurationImportedSuccessfully')} className='mt-2' />
                             )}
 
                             <div className='button-group'>
@@ -1197,7 +1201,7 @@ const Setting = (props: SettingProps) => {
                                     onClick={handleImport}
                                     disabled={!importXml.trim()}
                                 >
-                                    Import Configuration
+                                    {t('importConfiguration')}
                                 </Button>
                                 {importXml && (
                                     <Button
@@ -1207,13 +1211,13 @@ const Setting = (props: SettingProps) => {
                                             setImportError(null)
                                         }}
                                     >
-                                        Clear
+                                        {t('clear')}
                                     </Button>
                                 )}
                             </div>
 
                             <div className='import-export-help'>
-                                Note: Importing will replace all current basemap selections but will not change the selected map widget.
+                                {t('noteImportingWillReplaceAllCurrent')}
                             </div>
                         </div>
                     </CollapsablePanel>
@@ -1230,7 +1234,7 @@ const Setting = (props: SettingProps) => {
                     aria-expanded={openSections.selectedBasemaps}
                     aria-controls='section-selected-basemaps'
                 >
-                    <span className='section-title'>Selected Basemaps</span>
+                    <span className='section-title'>{t('selectedBasemaps')}</span>
                     <span className={`section-toggle ${!openSections.selectedBasemaps ? 'collapsed' : ''}`}>▼</span>
                 </div>
                 <div
@@ -1238,7 +1242,7 @@ const Setting = (props: SettingProps) => {
                     className={`section-content ${openSections.selectedBasemaps ? 'expanded' : 'collapsed'}`}
                 >
                     <div className='help-text'>
-                        Click ★ to set the default basemap shown when the app loads. Use arrows to reorder.
+                        {t('clickToSetTheDefaultBasemap')}
                     </div>
 
                     {selectedBasemaps.length > 0 ? (
@@ -1254,8 +1258,8 @@ const Setting = (props: SettingProps) => {
                                                     type='tertiary'
                                                     onClick={() => handleMoveUp(index)}
                                                     disabled={index === 0}
-                                                    title='Move up'
-                                                    aria-label='Move up'
+                                                    title={t('moveUp')}
+                                                    aria-label={t('moveUp')}
                                                 >
                                                     ▲
                                                 </Button>
@@ -1264,8 +1268,8 @@ const Setting = (props: SettingProps) => {
                                                     type='tertiary'
                                                     onClick={() => handleMoveDown(index)}
                                                     disabled={index === selectedBasemaps.length - 1}
-                                                    title='Move down'
-                                                    aria-label='Move down'
+                                                    title={t('moveDown')}
+                                                    aria-label={t('moveDown')}
                                                 >
                                                     ▼
                                                 </Button>
@@ -1275,8 +1279,8 @@ const Setting = (props: SettingProps) => {
                                                 className={`default-btn ${isDefault ? 'is-default' : ''}`}
                                                 type='tertiary'
                                                 onClick={() => handleSetDefault(item.id)}
-                                                title={isDefault ? 'Default basemap' : 'Set as default'}
-                                                aria-label={isDefault ? 'Default basemap' : 'Set as default'}
+                                                title={isDefault ? t('defaultBasemap') : t('setAsDefault')}
+                                                aria-label={isDefault ? t('defaultBasemap') : t('setAsDefault')}
                                             >
                                                 {isDefault ? '★' : '☆'}
                                             </Button>
@@ -1295,8 +1299,8 @@ const Setting = (props: SettingProps) => {
                                                 className='remove-btn'
                                                 type='tertiary'
                                                 onClick={() => handleRemoveBasemap(item.id)}
-                                                title='Remove basemap'
-                                                aria-label='Remove basemap'
+                                                title={t('removeBasemap')}
+                                                aria-label={t('removeBasemap')}
                                             >
                                                 ✕
                                             </Button>
@@ -1305,7 +1309,7 @@ const Setting = (props: SettingProps) => {
                                         <div className='basemap-info'>
                                             <div className='basemap-title'>
                                                 {item.title}
-                                                {isDefault && <span className='default-badge'>(Default)</span>}
+                                                {isDefault && <span className='default-badge'>{t('default')}</span>}
                                             </div>
                                             <div className='basemap-id'>{item.id}</div>
                                         </div>
@@ -1316,17 +1320,17 @@ const Setting = (props: SettingProps) => {
                     ) : (
                         <Alert
                             type='info'
-                            text='No basemaps selected. Use the Browse Portal Items section above to add basemaps.'
+                            text={t('noBasemapsSelectedUseTheBrowse')}
                         />
                     )}
                 </div>
             </SettingSection>
-            <SettingSection title='Help'>
-              <SettingRow tag='label' label='Show help guide'>
+            <SettingSection title={t('help')}>
+              <SettingRow tag='label' label={t('showHelpGuide')}>
                 <Switch
                   checked={props.config?.showHelp !== false}
                   onChange={(evt) => { props.onSettingChange({ id: (props as any).id, config: (props.config as any).set('showHelp', evt.target.checked) }) }}
-                  aria-label='Show the question-mark button that opens the widget help guide'
+                  aria-label={t('showTheQuestionMarkButtonThat')}
                 />
               </SettingRow>
             </SettingSection>
