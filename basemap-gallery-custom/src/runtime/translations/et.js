@@ -9,8 +9,8 @@ System.register([], function (e) {
         helpIntro: "Valige taustakaart, mida soovite selles rakenduses näha.",
         helpSearchPlaceholder: "Otsige juhendist (proovige \"kaart\" või \"abi\")",
         helpNoMatches: "Mitte miski juhendis ei klapi selle sõnaga. Proovige teist või avage ülaltoodud lõigud.",
-        helpAnd: "and",
-        firstRunTitle: "New here?",
+        helpAnd: "ja",
+        firstRunTitle: "Uus siin?",
         firstRunBody: "Vali taustakaardi muutmiseks aluskaart, seejärel jätka kaardi kasutamist.",
         firstRunBodyWaiting: "Kui aluskaardid on saadaval, vali taustakaardi muutmiseks üks.",
         firstRunHelpLink: "Tee teejuht lahti.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: kasutage galeriisse naasmiseks juhendi allosas olevat nuppu.",
         helpTipsOrder: "Lemmikloomad ilmuvad esimesena. Ülejäänud aluskaardid jäävad selle rakenduse jaoks valitud järjekorras.",
         helpTipsCompare: "Võrdlemine ei lisa salvestatud kaardile midagi. Sulgeminevõrdlus tagastab kaardi aktiivsele aluskaardile.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Baaskaartide laadimine...",
         noBasemapsConfigured: "Aluskaarte pole seadistatud",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} aluskaardid laetud.{failedNote} Valimiseks kasutage nooleklahve, et navigeerida, sisestada või tühikut.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} baaskaart laetud.{failedNote} Valimiseks kasutage nooleklahve, et navigeerida, sisestada või tühikut.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Kaardividinat pole ühendatud",
         noMapConnected: "Kaart pole ühendatud.",
         selectAMapWidgetInThe: "Vali vidina seadistustes kaardi vidin.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Baaskaartide laadimine",
         noBasemapsConfigured2: "Aluskaarte pole seadistatud.",
         addBasemapsInTheWidgetSettings: "Lisa vidina seadistustesse aluskaardid.",
         basemapsCouldNotBeLoaded: "Basmapsi laadimine nurjus",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Jagaja vasakul küljel.",
         clickToCompareTitleWithThe: "Klõpsa võrdlemiseks {title} praeguse baaskaardiga",
         titleCurrentlyActiveBasemapClickTo: "{title} - Praegu aktiivne aluskaart (klõpsa uuesti rakendusele)",
-        clickToApplyTitleBasemapTo: "Klõpsa rakendusele {title} kaardi aluskaart"
+        clickToApplyTitleBasemapTo: "Klõpsa rakendusele {title} kaardi aluskaart",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Ni izbranih baznih zemljevidov. Uporabite oddelek Brskanje Portal postavke zgoraj za dodajanje baznih zemljevidov.",
         help: "Pomoč",
         showHelpGuide: "Prikaži vodnik za pomoč",
-        showTheQuestionMarkButtonThat: "Prikaži gumb z vprašanji, ki odpre widget pomoč vodnik"
+        showTheQuestionMarkButtonThat: "Prikaži gumb z vprašanji, ki odpre widget pomoč vodnik",
+        extraSmall: "Extra Small",
+        small: "Majhna",
+        mediumDefault: "Medium (Default)",
+        large: "Velika",
+        extraLarge: "Zelo veliko",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

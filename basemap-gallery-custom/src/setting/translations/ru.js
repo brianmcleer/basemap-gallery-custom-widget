@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Никаких базовых карт не выбрано. Используйте раздел Browse Portal Items выше, чтобы добавить базовые карты.",
         help: "Справка",
         showHelpGuide: "Показать справочник",
-        showTheQuestionMarkButtonThat: "Покажите кнопку вопрос-марка, которая открывает руководство по помощи виджета"
+        showTheQuestionMarkButtonThat: "Покажите кнопку вопрос-марка, которая открывает руководство по помощи виджета",
+        extraSmall: "Extra Small",
+        small: "Малое",
+        mediumDefault: "Medium (Default)",
+        large: "Большое",
+        extraLarge: "Очень большой",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

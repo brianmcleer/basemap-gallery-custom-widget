@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Nincs kiválasztva alaplap. A bázisok hozzáadásához használja a fenti böngészési portálelemek részt.",
         help: "Súgó",
         showHelpGuide: "Segítőútmutató megjelenítése",
-        showTheQuestionMarkButtonThat: "Megjeleníti a kérdőjel gombot, amely megnyitja a widget súgó útmutatót"
+        showTheQuestionMarkButtonThat: "Megjeleníti a kérdőjel gombot, amely megnyitja a widget súgó útmutatót",
+        extraSmall: "Extra Small",
+        small: "Kicsi",
+        mediumDefault: "Medium (Default)",
+        large: "Nagy",
+        extraLarge: "Extra nagy",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

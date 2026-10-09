@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "לא נבחרו מפות בסיס. השתמש בסעיף פריטים פורטל Browse לעיל כדי להוסיף מפות בסיס.",
         help: "עזרה",
         showHelpGuide: "מדריך עזרה",
-        showTheQuestionMarkButtonThat: "הצג את לחצן סימן שאלה פותח את מדריך העזרה widget"
+        showTheQuestionMarkButtonThat: "הצג את לחצן סימן שאלה פותח את מדריך העזרה widget",
+        extraSmall: "Extra Small",
+        small: "קטן",
+        mediumDefault: "Medium (Default)",
+        large: "גדול",
+        extraLarge: "גדול מאד",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

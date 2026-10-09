@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Aucune carte de base sélectionnée. Utilisez la section Parcourir les éléments du portail ci-dessus pour ajouter des cartes de base.",
         help: "Aide",
         showHelpGuide: "Afficher le guide d'aide",
-        showTheQuestionMarkButtonThat: "Afficher le bouton question-marque qui ouvre le guide d'aide du widget"
+        showTheQuestionMarkButtonThat: "Afficher le bouton question-marque qui ouvre le guide d'aide du widget",
+        extraSmall: "Extra Small",
+        small: "Petite",
+        mediumDefault: "Medium (Default)",
+        large: "Grande",
+        extraLarge: "Très grande",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

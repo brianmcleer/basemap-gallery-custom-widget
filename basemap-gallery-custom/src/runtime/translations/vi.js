@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Tìm hướng dẫn",
         helpNoMatches: "Không có gì phù hợp với từ đó. Thử cái khác, hoặc mở phần trên.",
         helpAnd: "và",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Mới đến à?",
         firstRunBody: "Chọn một sơ đồ cơ bản để thay đổi bản đồ nền, rồi tiếp tục sử dụng bản đồ.",
         firstRunBodyWaiting: "Một khi có bản đồ cơ bản, hãy chọn một bản đồ nền.",
         firstRunHelpLink: "Mở sách hướng dẫn ra.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: hãy dùng cái nút ở dưới cùng của chỉ mục để trở về phòng trưng bày.",
         helpTipsOrder: "Yêu thích xuất hiện trước. Các bản đồ cơ bản còn lại sẽ ở lại theo thứ tự chọn ứng dụng này.",
         helpTipsCompare: "So sánh không thêm gì vào bản đồ đã lưu. Đóng so sánh bản đồ với sơ đồ cơ bản hiện tại.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Đang tải sơ đồ cơ bản...",
         noBasemapsConfigured: "Không có bản đồ cơ bản được cấu hình",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Các sơ đồ cơ bản đã nạp.{failedNote} Dùng phím mũi tên để định hướng, Enter or Space để chọn.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Sơ đồ cơ bản đã nạp.{failedNote} Dùng phím mũi tên để định hướng, Enter or Space để chọn.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Name",
         noMapConnected: "Không có bản đồ kết nối.",
         selectAMapWidgetInThe: "Chọn một ô điều khiển sơ đồ trong thiết lập ô điều khiển.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Đang tải sơ đồ cơ bản",
         noBasemapsConfigured2: "Không có bản đồ cơ bản được cấu hình.",
         addBasemapsInTheWidgetSettings: "Thêm sơ đồ cơ bản trong thiết lập ô điều khiển.",
         basemapsCouldNotBeLoaded: "Không thể tải bản đồ cơ bản",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Hiển thị bên trái của chia",
         clickToCompareTitleWithThe: "Nhấn để so sánh {title} với sơ đồ cơ sở hiện tại",
         titleCurrentlyActiveBasemapClickTo: "{title} - Hiện tại là sơ đồ cơ sở hoạt động (click to reply)",
-        clickToApplyTitleBasemapTo: "Nhấn vào để áp dụng {title} Sơ đồ cơ bản của bản đồ"
+        clickToApplyTitleBasemapTo: "Nhấn vào để áp dụng {title} Sơ đồ cơ bản của bản đồ",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

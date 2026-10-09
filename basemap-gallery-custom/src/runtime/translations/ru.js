@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Поиск в руководстве (попробуйте «карту» или «помощь»)",
         helpNoMatches: "Ничто в руководстве не соответствует этому слову. Попробуйте другой или откройте разделы выше.",
         helpAnd: "и",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Здесь новый?",
         firstRunBody: "Выберите базовую карту для изменения фоновой карты, а затем продолжайте использовать карту.",
         firstRunBodyWaiting: "Как только доступны базовые карты, выберите один, чтобы изменить фоновую карту.",
         firstRunHelpLink: "Откройте проводник.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}Используйте кнопку внизу руководства, чтобы вернуться в галерею.",
         helpTipsOrder: "Сначала появляются фавориты. Остальные базовые карты остаются в порядке, выбранном для этого приложения.",
         helpTipsCompare: "Сравнение ничего не добавляет к сохраненной карте. Закрытие сравнения возвращает карту к текущей базовой карте.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Загрузка базовых карт...",
         noBasemapsConfigured: "Базовые карты не настроены",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Базовые карты загружены.{failedNote} Используйте клавиши стрелок для навигации, входа или пространства для выбора.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Базовая карта загружена.{failedNote} Используйте клавиши стрелок для навигации, входа или пространства для выбора.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Виджет карты не подключен",
         noMapConnected: "Никакой карты.",
         selectAMapWidgetInThe: "Выберите виджет карты в настройках виджета.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Загрузка базовых карт",
         noBasemapsConfigured2: "Никаких базовых карт.",
         addBasemapsInTheWidgetSettings: "Добавьте базовые карты в настройки виджета.",
         basemapsCouldNotBeLoaded: "Баземапы не могут быть загружены",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - На левой стороне разделителя",
         clickToCompareTitleWithThe: "Нажмите, чтобы сравнить {title} с текущей базовой картой",
         titleCurrentlyActiveBasemapClickTo: "{title} - В настоящее время активная базовая карта (нажмите, чтобы повторно подать заявку)",
-        clickToApplyTitleBasemapTo: "Нажмите, чтобы применить {title} Базовая карта на карте"
+        clickToApplyTitleBasemapTo: "Нажмите, чтобы применить {title} Базовая карта на карте",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

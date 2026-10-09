@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Søg i guiden (prøv \"kort\" eller \"hjælp\")",
         helpNoMatches: "Intet i guiden matcher det ord. Prøv en anden, eller åbn afsnittene ovenfor.",
         helpAnd: "og",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Ny her?",
         firstRunBody: "Vælg en basemap for at ændre baggrundskortet, og fortsæt derefter med at bruge kortet.",
         firstRunBodyWaiting: "Når basemaps er tilgængelige, skal du vælge en for at ændre baggrundskortet.",
         firstRunHelpLink: "Åbn guiden.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: brug knappen nederst i vejledningen til at vende tilbage til galleriet.",
         helpTipsOrder: "Favoritter kommer først. De resterende basemaps forbliver i den rækkefølge, der er valgt for denne app.",
         helpTipsCompare: "Sammenlign tilføjer intet til det gemte kort. Lukning sammenligne returnerer kortet til den aktuelle basemap.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Indlæser basemaps...",
         noBasemapsConfigured: "Ingen basemaps indstillet",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps ladt.{failedNote} Brug piletasterne til at navigere, Indtast eller mellemrum til at vælge.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap ladt.{failedNote} Brug piletasterne til at navigere, Indtast eller mellemrum til at vælge.",
@@ -127,7 +127,7 @@ System.register([], function (e) {
         visibleBasemapsCountBasemapMatchYourSearch: "{visibleBasemapsCount} basemap matcher din søgning",
         basemapGalleryWidget: "Basemap- galleri kontrol",
         comparison: "Sammenligning:",
-        swipe: "Swipe",
+        swipe: "Stryg",
         dragDividerSideBySide: "Træk deler side om side",
         swipeMode: "Swipe-tilstand",
         blend: "Blend",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Ingen kortkontrol tilsluttet",
         noMapConnected: "Intet kort forbundet.",
         selectAMapWidgetInThe: "Vælg en kortkontrol i kontrolindstillingerne.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Indlæser basemaps",
         noBasemapsConfigured2: "Ingen basemaps konfigureret.",
         addBasemapsInTheWidgetSettings: "Tilføj basemaps i kontrolindstillingerne.",
         basemapsCouldNotBeLoaded: "Basemaps kunne ikke indlæses",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Vist på venstre side af divideren",
         clickToCompareTitleWithThe: "Klik for at sammenligne {title} med den aktuelle basemap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktuelt aktivt basemap (klik for at genansøge)",
-        clickToApplyTitleBasemapTo: "Klik for at anvende {title} basemap til kortet"
+        clickToApplyTitleBasemapTo: "Klik for at anvende {title} basemap til kortet",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

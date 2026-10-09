@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Caută ghidul (încercaţi \"map\" sau \"ajutor\")",
         helpNoMatches: "Nimic din ghid nu se potriveşte cu acest cuvânt. Încearcă altul, sau deschide secţiunile de mai sus.",
         helpAnd: "și",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nou aici?",
         firstRunBody: "Alegeți o hartă de bază pentru a schimba harta de fundal, apoi continuați să utilizați harta.",
         firstRunBodyWaiting: "Odată ce sunt disponibile basemaps, alege unul pentru a schimba harta de fundal.",
         firstRunHelpLink: "Deschide ghidul.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Harta este goală: că baza de date nu poate avea imagini pentru acest domeniu sau zoom nivel. Încearcă altă bază.",
         helpTroubleFavorites: "Favoriţii au dispărut: acest browser poate fi eliminat sau blocat opţiunile salvate. Adăugaţi din nou stelele în browser-ul pe care intenţionaţi să-l utilizaţi.",
         helpTroubleContact: "Încă blocat? Contactați divizia GIS și menționați numele personalizat al Galeriei Basemap și această aplicație.",
-        helpTipsTitle: "E bine de ştiut.",
+        helpTipsTitle: "E bine de ştiut",
         helpTipsHelp: "{helpLabel}: Utilizați semnul de întrebare din dreapta sus a widget-ului pentru a deschide din nou acest ghid.",
         helpTipsClose: "{closeLabel}: Utilizați butonul din partea de jos a ghidului pentru a reveni la galerie.",
         helpTipsOrder: "Favoriţii apar primii. Cele rămase rămân în ordinea aleasă pentru această aplicație.",
         helpTipsCompare: "Compara nu adaugă nimic la harta salvată. Compararea inchiderii returneaza harta in baza curenta.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Se încarcă macele...",
         noBasemapsConfigured: "Nicio bază configurată",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps încărcat.{failedNote} Utilizați tastele săgeată pentru a naviga, introduce sau spațiu pentru a selecta.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Bază încărcată.{failedNote} Utilizați tastele săgeată pentru a naviga, introduce sau spațiu pentru a selecta.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Niciun widget de hartă conectat",
         noMapConnected: "Nicio hartă conectată.",
         selectAMapWidgetInThe: "Selectaţi un widget hartă în setările widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Se încarcă macele",
         noBasemapsConfigured2: "Nicio poză configurată.",
         addBasemapsInTheWidgetSettings: "Adaugă șervețele în setările widget.",
         basemapsCouldNotBeLoaded: "Basemaps nu a putut fi încărcat",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Arată pe partea stângă a separatorului",
         clickToCompareTitleWithThe: "Faceți clic pentru a compara {title} cu harta de bază curentă",
         titleCurrentlyActiveBasemapClickTo: "{title} - Bază de bază activă (click pentru a aplica din nou)",
-        clickToApplyTitleBasemapTo: "Click pentru aplicare {title} mapa de bază a hărții"
+        clickToApplyTitleBasemapTo: "Click pentru aplicare {title} mapa de bază a hărții",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

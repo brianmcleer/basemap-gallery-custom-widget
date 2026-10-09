@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Aluskaarte pole valitud. Baaskaartide lisamiseks kasutage ülalolevat jaotist Sirvi portaali elemendid.",
         help: "Abi",
         showHelpGuide: "Abijuhendi näitamine",
-        showTheQuestionMarkButtonThat: "Küsimusemärgi nupu näitamine, mis avab vidina abi juhendi"
+        showTheQuestionMarkButtonThat: "Küsimusemärgi nupu näitamine, mis avab vidina abi juhendi",
+        extraSmall: "Extra Small",
+        small: "Väike",
+        mediumDefault: "Medium (Default)",
+        large: "Suur",
+        extraLarge: "Eriti suur",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

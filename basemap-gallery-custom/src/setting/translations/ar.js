@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "لم يتم إختيار أيّ تطابق استخدمي قسم \"بروز بورتال\" أعلاه لإضافة مواضع قاعدية",
         help: "المساعدة",
         showHelpGuide: "دليل المساعدة",
-        showTheQuestionMarkButtonThat: "اظهر زر التساؤل الذي يفتح المرشد"
+        showTheQuestionMarkButtonThat: "اظهر زر التساؤل الذي يفتح المرشد",
+        extraSmall: "Extra Small",
+        small: "صغير",
+        mediumDefault: "Medium (Default)",
+        large: "كبير",
+        extraLarge: "كبير للغاية",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Meklēt ceļvedī (mēģiniet \"karte\" vai \"palīdzība\")",
         helpNoMatches: "Nekas ceļvedī neatbilst šim vārdam. Mēģiniet citu, vai atvērt sadaļas iepriekš.",
         helpAnd: "un",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Jauna šeit?",
         firstRunBody: "Izvēlieties bāzes karti, lai mainītu fona karti, pēc tam turpiniet lietot karti.",
         firstRunBodyWaiting: "Kad bāzes kartes ir pieejamas, izvēlieties vienu, lai mainītu fona karti.",
         firstRunHelpLink: "Atveriet ceļvedi.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: izmantojiet pogu ceļveža apakšā, lai atgrieztos galerijā.",
         helpTipsOrder: "Iecienīti parādās vispirms. Atlikušās bāzes kartes paliek izvēlētajā secībā.",
         helpTipsCompare: "Salīdzināt neko nepievieno saglabātajai kartei. Aizverot salīdzināt atgriež karti uz pašreizējo bāzes karti.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Ielādē bāzes kartes...",
         noBasemapsConfigured: "Nav konfigurētas bāzes kartes",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} ielādētas bāzes kartes.{failedNote} Izmanto bultu taustiņus, lai pārvietotos, ievadiet vai Space, lai izvēlētos.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} ielādēta bāzes karte.{failedNote} Izmanto bultu taustiņus, lai pārvietotos, ievadiet vai Space, lai izvēlētos.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Nav pieslēgta kartes logdaļa",
         noMapConnected: "Nav kartes pieslēgta.",
         selectAMapWidgetInThe: "Izvēlieties kartes logdaļu logdaļas iestatījumos.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Ielādē bāzes kartes",
         noBasemapsConfigured2: "Nav konfigurētas bāzes kartes.",
         addBasemapsInTheWidgetSettings: "Pievienot logdaļu bāzes kartes.",
         basemapsCouldNotBeLoaded: "Neizdevās ielādēt bāzes kartes",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Parādās sadalītāja kreisajā pusē",
         clickToCompareTitleWithThe: "Nospiediet, lai salīdzinātu {title} ar pašreizējo bāzes karti",
         titleCurrentlyActiveBasemapClickTo: "{title} - Šobrīd aktīva bāzes karte (noklikšķiniet, lai atkārtoti)",
-        clickToApplyTitleBasemapTo: "Nospiediet, lai pieteiktos {title} Pamatkarte uz karti"
+        clickToApplyTitleBasemapTo: "Nospiediet, lai pieteiktos {title} Pamatkarte uz karti",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

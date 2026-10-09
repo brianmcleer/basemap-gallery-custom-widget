@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Keresés az útmutató (próbálja \"térkép\" vagy \"segítség\")",
         helpNoMatches: "A kalauzban semmi sem egyezik ezzel a szóval. Próbálja meg egy másik, vagy nyissa ki a fenti szakaszok.",
         helpAnd: "és",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Új itt?",
         firstRunBody: "Válasszon egy basemap változtatni a háttér térképet, majd továbbra is használja a térképet.",
         firstRunBodyWaiting: "Amint rendelkezésre állnak a bázisok, válasszon egyet a háttértérkép megváltoztatásához.",
         firstRunHelpLink: "Nyisd ki az útmutatót.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "A térkép üres: hogy basemap nem lehet képeket ezen a területen vagy zoom szinten. Próbálj meg egy másik alaplapot.",
         helpTroubleFavorites: "Kedvencek elmentek: ez a böngésző lehet, hogy megtisztította vagy blokkolta mentett választási lehetőségek. Helyezd el újra a csillagokat a használni kívánt böngészőben.",
         helpTroubleContact: "Még mindig? Lépjen kapcsolatba a FIS Division, és említse a Basemap Galéria Custom nevét és ezt az alkalmazást.",
-        helpTipsTitle: "Jó tudni.",
+        helpTipsTitle: "Jó tudni",
         helpTipsHelp: "{helpLabel}: használja a kérdőjelet a jobb felső a widget, hogy nyissa meg ezt az útmutatót újra.",
         helpTipsClose: "{closeLabel}: használja a gombot az útmutató alján, hogy visszatérjen a galéria.",
         helpTipsOrder: "A kedvencek jelennek meg először. A többi alaplap az alkalmazáshoz választott sorrendben marad.",
         helpTipsCompare: "Összehasonlítás nem ad semmit a mentett térkép. Összehasonlítás bezárása adja vissza a térképet az aktuális alaphoz.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Bázisok betöltése...",
         noBasemapsConfigured: "Nincs beállított bázis",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps betöltve.{failedNote} Használja nyilakkal navigálni, Enter vagy Space kiválasztása.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap betöltve.{failedNote} Használja nyilakkal navigálni, Enter vagy Space kiválasztása.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Nincs leképezési elem csatlakoztatva",
         noMapConnected: "Nincs kapcsolat a térképpel.",
         selectAMapWidgetInThe: "Válasszon egy térképet a widget beállításaiban.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Bázisok betöltése",
         noBasemapsConfigured2: "Nincs beállítva alaplap.",
         addBasemapsInTheWidgetSettings: "Basemaps hozzáadása a widget beállításokhoz.",
         basemapsCouldNotBeLoaded: "Az alapelemeket nem lehetett betölteni",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - A megosztó bal oldalán",
         clickToCompareTitleWithThe: "Összehasonlításhoz kattintson ide {title} az aktuális alappal",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktív bázis (kattintson az újraalkalmazásra)",
-        clickToApplyTitleBasemapTo: "Kattintson az alkalmazásra {title} basemap a térképre"
+        clickToApplyTitleBasemapTo: "Kattintson az alkalmazásra {title} basemap a térképre",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

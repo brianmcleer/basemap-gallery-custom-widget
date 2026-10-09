@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Durchsuchen Sie den Leitfaden (versuchen Sie \"Karte\" oder \"Hilfe\")",
         helpNoMatches: "Nichts im Guide passt zu diesem Wort. Versuchen Sie es mit einem anderen oder öffnen Sie die obigen Abschnitte.",
         helpAnd: "und",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Neu hier?",
         firstRunBody: "Wählen Sie eine Basemap, um die Hintergrundkarte zu ändern, und verwenden Sie dann die Karte weiter.",
         firstRunBodyWaiting: "Sobald Basemaps verfügbar sind, wählen Sie eine, um die Hintergrundkarte zu ändern.",
         firstRunHelpLink: "Öffne den Guide.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}Verwenden Sie den Button am unteren Rand der Anleitung, um zur Galerie zurückzukehren.",
         helpTipsOrder: "Favoriten erscheinen zuerst. Die restlichen basemaps bleiben in der für diese app ausgewählten reihenfolge.",
         helpTipsCompare: "Vergleichen fügt der gespeicherten Karte nichts hinzu. Der Closing-Vergleich gibt die Karte zur aktuellen Basemap zurück.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Laden von Basemaps...",
         noBasemapsConfigured: "Keine Basemaps konfiguriert",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps geladen.{failedNote} Verwenden Sie Pfeiltasten zum Navigieren, Enter oder Space zum Auswählen.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap geladen.{failedNote} Verwenden Sie Pfeiltasten zum Navigieren, Enter oder Space zum Auswählen.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Kein Map Widget verbunden",
         noMapConnected: "Keine Karte verbunden.",
         selectAMapWidgetInThe: "Wählen Sie ein Map Widget in den Widget-Einstellungen aus.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Laden von Basemaps",
         noBasemapsConfigured2: "Keine Basemaps konfiguriert.",
         addBasemapsInTheWidgetSettings: "Fügen Sie Basemaps in den Widget-Einstellungen hinzu.",
         basemapsCouldNotBeLoaded: "Basemaps konnten nicht geladen werden",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Auf der linken Seite des Teilers",
         clickToCompareTitleWithThe: "Klicken zum Vergleichen {title} mit der aktuellen Basemap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktuell aktive Basemap (klicken Sie zum erneuten Anwenden)",
-        clickToApplyTitleBasemapTo: "Klicken Sie auf bewerben {title} Basemap zur Karte"
+        clickToApplyTitleBasemapTo: "Klicken Sie auf bewerben {title} Basemap zur Karte",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

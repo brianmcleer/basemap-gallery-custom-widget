@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Ingen basiskart valgt. Bruk delen Bla gjennom portalelementer ovenfor for å legge til basekart.",
         help: "Hjelp",
         showHelpGuide: "Vis hjelpguide",
-        showTheQuestionMarkButtonThat: "Vis spørsmålsmerkeknappen som åpner widget-hjelpeguiden"
+        showTheQuestionMarkButtonThat: "Vis spørsmålsmerkeknappen som åpner widget-hjelpeguiden",
+        extraSmall: "Extra Small",
+        small: "Liten",
+        mediumDefault: "Medium (Default)",
+        large: "Stor",
+        extraLarge: "Ekstra stor",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

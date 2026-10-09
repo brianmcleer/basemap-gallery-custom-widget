@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Ieškoti vadovo (pabandykite \"žemėlapis\" arba \"pagalba\")",
         helpNoMatches: "Vadove nėra nieko, kas atitiktų šį žodį. Pabandykite kitą, arba atidaryti skyrių aukščiau.",
         helpAnd: "ir",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Čia nauja?",
         firstRunBody: "Pasirinkite bazinį žemėlapį pakeisti fono žemėlapį, tada naudoti žemėlapį.",
         firstRunBodyWaiting: "Kai basemaps yra prieinama, pasirinkti vieną pakeisti fono žemėlapį.",
         firstRunHelpLink: "Atidaryk gidą.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: naudoti mygtuką ties vadovo apačioje grįžti į galeriją.",
         helpTipsOrder: "Pirmiausia pasirodo mėgiamitės. Likę basemaps likti šiai programai pasirinkta tvarka.",
         helpTipsCompare: "Palyginti prideda nieko į išsaugotą žemėlapį. Uždarymo palyginimas grąžina žemėlapį į dabartinį basemap.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Įkeliami basemaps...",
         noBasemapsConfigured: "Nenurodytas basemaps",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps užtaisytas.{failedNote} Naudokite rodyklių klavišus naršyti, Enter arba tarpo klavišą pasirinkti.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap užtaisytas.{failedNote} Naudokite rodyklių klavišus naršyti, Enter arba tarpo klavišą pasirinkti.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Neprisijungtas žemėlapio valdiklis",
         noMapConnected: "Nėra prijungto žemėlapio.",
         selectAMapWidgetInThe: "Pasirinkite žemėlapio valdiklį valdiklio nustatymuose.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Įkeliami basemaps",
         noBasemapsConfigured2: "Nenurodytas basemaps.",
         addBasemapsInTheWidgetSettings: "Pridėti basemaps valdikliui nustatymus.",
         basemapsCouldNotBeLoaded: "Nepavyko įkelti tinklapių",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Rodoma kairėje daliklio pusėje",
         clickToCompareTitleWithThe: "Spustelėkite norėdami palyginti {title} su esamu basemap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Šiuo metu aktyvus basemap (spustelėkite norėdami vėl kreiptis)",
-        clickToApplyTitleBasemapTo: "Spustelėkite, jei norite taikyti {title} basemap iki žemėlapio"
+        clickToApplyTitleBasemapTo: "Spustelėkite, jei norite taikyti {title} basemap iki žemėlapio",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

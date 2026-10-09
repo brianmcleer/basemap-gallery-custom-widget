@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Пошук керівництва (три \"карта\" або \"допомога\")",
         helpNoMatches: "Ніщо в інструкції відповідає словом. Спробуйте ще одну або відкрийте розділи вище.",
         helpAnd: "та",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Головна",
         firstRunBody: "Виберіть базову карту, щоб змінити фонову карту, потім зберегти за допомогою карти.",
         firstRunBodyWaiting: "Після того, як базові карти доступні, виберіть одну для зміни фонової карти.",
         firstRunHelpLink: "Відкрийте посібник.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: використовуйте кнопку внизу керівництва для повернення в галереї.",
         helpTipsOrder: "Вибрані з'являються першими. Залиште базові карти, що залишаються в порядку, вибраному для цього додатку.",
         helpTipsCompare: "Порівняйте не додано нічого до збереженої карти. Закриття порівнювати повертає карту на поточну базову карту.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Завантаження базових мапи ...",
         noBasemapsConfigured: "Ні базові карти, налаштовані",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} базові карти завантажені.{failedNote} Використовуйте клавіші стріли для навігації, введіть або простір, щоб вибрати.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} базова карта завантажена.{failedNote} Використовуйте клавіші стріли для навігації, введіть або простір, щоб вибрати.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Немає підключеного віджету карти",
         noMapConnected: "Немає підключених карт.",
         selectAMapWidgetInThe: "Виберіть віджет у налаштуваннях віджету.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Завантаження базових мапи",
         noBasemapsConfigured2: "Не налаштовано базові карти.",
         addBasemapsInTheWidgetSettings: "Додати базові карти в налаштуваннях віджету.",
         basemapsCouldNotBeLoaded: "Базикарти не можуть бути завантажені",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Показати на лівому боці дивіденця",
         clickToCompareTitleWithThe: "Натисніть, щоб порівняти {title} з поточною основою",
         titleCurrentlyActiveBasemapClickTo: "{title} - В даний час активна базова карта",
-        clickToApplyTitleBasemapTo: "Натисніть, щоб застосувати {title} базова карта на карті"
+        clickToApplyTitleBasemapTo: "Натисніть, щоб застосувати {title} базова карта на карті",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

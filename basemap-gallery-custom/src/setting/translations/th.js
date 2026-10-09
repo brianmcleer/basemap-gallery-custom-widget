@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "ยังไม่มีการเลือกฐานแมพ ใช้ส่วนรายการทางด้านบนในการเรียกดู เพื่อเพิ่มการใช้ฐานแมป",
         help: "ตัวช่วย",
         showHelpGuide: "แสดงคําแนะนํา",
-        showTheQuestionMarkButtonThat: "แสดงปุ่ม เครื่องหมายคําถามที่เปิดวิดเจ็ตคําแนะนํา"
+        showTheQuestionMarkButtonThat: "แสดงปุ่ม เครื่องหมายคําถามที่เปิดวิดเจ็ตคําแนะนํา",
+        extraSmall: "Extra Small",
+        small: "เล็ก",
+        mediumDefault: "Medium (Default)",
+        large: "ใหญ่",
+        extraLarge: "ใหญ่พิเศษ",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

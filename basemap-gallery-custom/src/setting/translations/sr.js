@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "No basemaps selected. Use the Browse Portal Items section above to add basemaps.",
         help: "Pomoć",
         showHelpGuide: "Show help guide",
-        showTheQuestionMarkButtonThat: "Show the question-mark button that opens the widget help guide"
+        showTheQuestionMarkButtonThat: "Show the question-mark button that opens the widget help guide",
+        extraSmall: "Extra Small",
+        small: "Malo",
+        mediumDefault: "Medium (Default)",
+        large: "Veliko",
+        extraLarge: "Izuzetno veliko",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

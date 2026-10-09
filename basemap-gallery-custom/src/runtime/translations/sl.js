@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Iskanje vodnika (poskus \"map\" ali \"pomoč\")",
         helpNoMatches: "Nič v vodiču se ne ujema s to besedo. Poskusite drugo ali pa odprite zgornje oddelke.",
         helpAnd: "in",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nova tukaj?",
         firstRunBody: "Izberite osnovni zemljevid, da spremenite zemljevid ozadja in nato nadaljujte z uporabo zemljevida.",
         firstRunBodyWaiting: "Ko so na voljo bazne karte, izberite eno za spremembo zemljevida ozadja.",
         firstRunHelpLink: "Odpri vodič.",
@@ -87,7 +87,7 @@ System.register([], function (e) {
         helpKeepClear: "Počistitev podatkov brskalnika te spletne strani odstrani vaše najljubše. Drug brskalnik ima svoje najljubše.",
         helpKeepPrivate: "Če brskalnik ne omogoča shranjevanja, najljubši delajo, medtem ko galerija ostane odprta, vendar se lahko izgubi, ko ponovno naložite.",
         helpKeepHint: "Odpiranje vodiča ali zavračanje \"Novega tukaj?\" skriva to napitnino za to galerijo v tem brskalniku.",
-        helpTroubleTitle: "Če je kaj narobe.",
+        helpTroubleTitle: "Če je kaj narobe",
         helpTroubleNoMap: "Ni povezan zemljevid: ta gradnik ni bil povezan z zemljevidom. Vprašajte oddelek GIS, da ga povežete v nastavitvah widget.",
         helpTroubleLoading: "Nalaganje traja dolgo: zemljevid ali bazne karte še niso končale nalaganja. Dajte jim trenutek, nato ponovno naložite stran, če se še vedno ne pojavijo.",
         helpTroubleEmpty: "Ni nastavljenih baznih zemljevidov: za to galerijo ni nastavljenih baznih zemljevidov. Prosi oddelek za GIS.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Zemljevid je prazen: ta osnovna karta morda nima slik za to področje ali stopnjo povečave. Poskusi z drugo bazo.",
         helpTroubleFavorites: "Priljubljenosti so izginile: ta brskalnik je morda odstranil ali blokiral shranjene izbire. Dodajte zvezde še enkrat v brskalnik, ki ga nameravate uporabljati.",
         helpTroubleContact: "Še vedno obtičal? Kontaktirajte oddelek GIS in omenite Basemap Gallery Custom name in to aplikacijo.",
-        helpTipsTitle: "Dobro je vedeti.",
+        helpTipsTitle: "Dobro je vedeti",
         helpTipsHelp: "{helpLabel}: uporabite vprašaj na vrhu desno od widget odpreti ta vodnik znova.",
         helpTipsClose: "{closeLabel}: uporabite gumb na dnu vodnika za vrnitev v galerijo.",
         helpTipsOrder: "Najprej se pojavijo favoriti. Preostali osnovni zemljevidi ostanejo v izbranem vrstnem redu za to aplikacijo.",
         helpTipsCompare: "Primerjava ne dodaja ničesar na shranjen zemljevid. Zaključna primerjava vrne zemljevid na trenutno osnovno karto.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Nalaganje baznih zemljevidov...",
         noBasemapsConfigured: "Ni nastavljenih osnovnih zemljevidov",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Naložene bazne karte.{failedNote} Uporabite puščične tipke za navigacijo, Vnesite ali Vesolje izbrati.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Osnovna karta naložena.{failedNote} Uporabite puščične tipke za navigacijo, Vnesite ali Vesolje izbrati.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Brez povezave gradnika zemljevida",
         noMapConnected: "Ni povezave z zemljevidom.",
         selectAMapWidgetInThe: "Izberite gradnik zemljevida v nastavitvah gradnika.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Nalaganje baznih zemljevidov",
         noBasemapsConfigured2: "Ni nastavljenih baznih zemljevidov.",
         addBasemapsInTheWidgetSettings: "Dodaj osnovne zemljevide v nastavitve gradnikov.",
         basemapsCouldNotBeLoaded: "Osnovnih kart ni bilo moč naložiti",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Na levi strani delilnika.",
         clickToCompareTitleWithThe: "Kliknite za primerjavo {title} s trenutno osnovno karto",
         titleCurrentlyActiveBasemapClickTo: "{title} - Trenutno aktivna baza (klikni za ponovno aplikacijo)",
-        clickToApplyTitleBasemapTo: "Kliknite za prijavo {title} Osnovna karta na zemljevidu"
+        clickToApplyTitleBasemapTo: "Kliknite za prijavo {title} Osnovna karta na zemljevidu",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

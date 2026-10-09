@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Hiçbir tabanmaps seçilmiş. Bazmaps eklemek için yukarıdaki Göz Portal Eşyaları bölümünü kullanın.",
         help: "Yardım",
         showHelpGuide: "Show help guide",
-        showTheQuestionMarkButtonThat: "widget'ı açan soru işaret düğmesine göster"
+        showTheQuestionMarkButtonThat: "Widget'ı açan soru işaret düğmesine göster",
+        extraSmall: "Extra Small",
+        small: "Küçük",
+        mediumDefault: "Medium (Default)",
+        large: "Büyük",
+        extraLarge: "Ekstra büyük",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

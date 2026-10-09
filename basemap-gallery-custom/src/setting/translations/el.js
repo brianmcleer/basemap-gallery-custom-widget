@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Δεν επιλέχθηκαν χάρτες βάσης. Χρησιμοποιήστε την παραπάνω ενότητα αντικειμένων πύλης περιήγησης για να προσθέσετε χάρτες βάσης.",
         help: "Βοήθεια",
         showHelpGuide: "Εμφάνιση οδηγού βοήθειας",
-        showTheQuestionMarkButtonThat: "Εμφάνιση του κουμπιού ερωτηματολογίου που ανοίγει τον οδηγό βοήθειας widget"
+        showTheQuestionMarkButtonThat: "Εμφάνιση του κουμπιού ερωτηματολογίου που ανοίγει τον οδηγό βοήθειας widget",
+        extraSmall: "Extra Small",
+        small: "Μικρό μέγεθος",
+        mediumDefault: "Medium (Default)",
+        large: "Μεγάλο μέγεθος",
+        extraLarge: "Πολύ μεγάλο",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

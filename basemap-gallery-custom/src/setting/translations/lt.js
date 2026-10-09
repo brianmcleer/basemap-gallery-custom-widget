@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Nepasirinktas basemaps. Naudokite Naršyti portalo elementus skirsnyje aukščiau pridėti basemaps.",
         help: "Pagalba",
         showHelpGuide: "Rodyti pagalbos vadovą",
-        showTheQuestionMarkButtonThat: "Rodyti klausimų žymėjimo mygtuką, kuris atveria valdikliui skirtą pagalbos vadovą"
+        showTheQuestionMarkButtonThat: "Rodyti klausimų žymėjimo mygtuką, kuris atveria valdikliui skirtą pagalbos vadovą",
+        extraSmall: "Extra Small",
+        small: "Mažas",
+        mediumDefault: "Medium (Default)",
+        large: "Didelis",
+        extraLarge: "Labai didelis",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

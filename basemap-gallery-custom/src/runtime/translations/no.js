@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Søk i guiden (prøv \"kart\" eller \"hjelp\")",
         helpNoMatches: "Ingenting i guiden stemmer med det ordet. Prøv en annen, eller åpne seksjonene ovenfor.",
         helpAnd: "og",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Ny her?",
         firstRunBody: "Velg et basiskart for å endre bakgrunnskartet, og fortsett å bruke kartet.",
         firstRunBodyWaiting: "Når grunnkart er tilgjengelige, velger du en for å endre bakgrunnskartet.",
         firstRunHelpLink: "Åpne guiden.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}Bruk knappen nederst i guiden for å returnere til galleriet.",
         helpTipsOrder: "Favoritter vises først. De gjenværende grunnkartene blir i den rekkefølgen som er valgt for denne appen.",
         helpTipsCompare: "Sammenlign legger ingenting til det lagrede kartet. Når du lukker sammenligningen, returnerer kartet til gjeldende basiskart.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Laster inn basekart...",
         noBasemapsConfigured: "Ingen grunnkart satt opp",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} basekart lastet.{failedNote} Bruk piltastene til å navigere, angi eller plass til å velge.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basekart lastet.{failedNote} Bruk piltastene til å navigere, angi eller plass til å velge.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Ingen kart widget tilkoblet",
         noMapConnected: "Ingen kart tilkoblet.",
         selectAMapWidgetInThe: "Velg et kartelement i elementinnstillingene.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Laster inn basekart",
         noBasemapsConfigured2: "Ingen grunnkart konfigurert.",
         addBasemapsInTheWidgetSettings: "Legg til basekart i elementinnstillingene.",
         basemapsCouldNotBeLoaded: "Basekart kunne ikke lastes",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Vist på venstre side av deleren",
         clickToCompareTitleWithThe: "Klikk for å sammenligne {title} med gjeldende basiskart",
         titleCurrentlyActiveBasemapClickTo: "{title} - For tiden aktiv basekart (klikk for å søke på nytt)",
-        clickToApplyTitleBasemapTo: "Klikk for å søke {title} basekart til kartet"
+        clickToApplyTitleBasemapTo: "Klikk for å søke {title} basekart til kartet",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

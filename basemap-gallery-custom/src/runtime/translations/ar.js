@@ -10,10 +10,10 @@ System.register([], function (e) {
         helpSearchPlaceholder: "ابحث عن الدليل (الاختبار أو المساعدة)",
         helpNoMatches: "لا شيء في الدليل يطابق تلك الكلمة جرّبْ آخر، أَو يَفْتحُ الأقسامَ أعلاه.",
         helpAnd: "و",
-        firstRunTitle: "New here?",
+        firstRunTitle: "جديد هنا؟",
         firstRunBody: "اختر خريطة الأساس لتغيير خريطة الخلفية ثم استمر في استخدام الخريطة",
         firstRunBodyWaiting: "وحالما تتوافر نسق القاعدة، تختار واحدا لتغيير خريطة الخلفية.",
-        firstRunHelpLink: "افتح الدليل",
+        firstRunHelpLink: "افتح الدليل.",
         firstRunDismiss: "تلميح الفصل",
         filterPlaceholder: "....",
         filterLabel: "قاعد المصورين بالاسم",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: استخدام الزر في أسفل الدليل للعودة إلى المعرض.",
         helpTipsOrder: "المفضّلين يظهرون أولاً بقيّة عظمات القاعدة في الترتيب المختار لهذا التطبيق.",
         helpTipsCompare: "مقارنة لا تضيف شيئاً إلى الخريطة المنقذة ويقارن الإغلاق إعادة الخريطة إلى خريطة الأساس الحالية.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "....",
         noBasemapsConfigured: "لا توجد تطابقات",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} تم تحميلها{failedNote} استخدموا مفاتيح السهام للبحرية أو الدخول أو الفضاء لاختيارها",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} حُمّلتْ طلقاتَ القاعدةَ.{failedNote} استخدموا مفاتيح السهام للبحرية أو الدخول أو الفضاء لاختيارها",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "لا توجد خريطة",
         noMapConnected: "لا توجد خريطة مرتبطة",
         selectAMapWidgetInThe: "إختارْ a مسحة خريطِ في الوسائدِ.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "تركيبات قاعدية",
         noBasemapsConfigured2: "لا توجد تطابقات في القاعدة",
         addBasemapsInTheWidgetSettings: "أضف تطابقاً في الوسائد",
         basemapsCouldNotBeLoaded: "لا يمكن تحميلها",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} -أظهر على الجانب الأيسر من الشق",
         clickToCompareTitleWithThe: "إضغطْ لمقارنة {title} مع خط الأساس الحالي",
         titleCurrentlyActiveBasemapClickTo: "{title} - خريطة قاعدية نشطة في الوقت الراهن (انقر لتستأنف)",
-        clickToApplyTitleBasemapTo: "انقروا {title} خريطة"
+        clickToApplyTitleBasemapTo: "انقروا {title} خريطة",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

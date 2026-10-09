@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Cari panduan (coba \"map\" atau \"help\")",
         helpNoMatches: "Tidak ada dalam panduan cocok kata itu. Coba yang lain, atau buka bagian di atas.",
         helpAnd: "dan",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Baru di sini?",
         firstRunBody: "Pilih peta dasar untuk mengubah peta latar belakang, kemudian terus menggunakan peta.",
         firstRunBodyWaiting: "Setelah peta dasar tersedia, pilih salah satu untuk mengubah peta latar belakang.",
         firstRunHelpLink: "Buka panduannya.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: gunakan tombol di bagian bawah pemandu untuk kembali ke galeri.",
         helpTipsOrder: "Favorit muncul pertama. Peta dasar yang tersisa tetap dalam urutan yang dipilih untuk aplikasi ini.",
         helpTipsCompare: "Bandingkan dengan peta yang disimpan. Perbandingan penutup mengembalikan peta ke peta dasar saat ini.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Memuat peta dasar...",
         noBasemapsConfigured: "Tidak ada peta dasar yang dikonfigurasi",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} peta dasar dimuat.{failedNote} Gunakan tombol panah untuk menavigasi, Enter atau Space untuk memilih.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} peta dasar dimuat.{failedNote} Gunakan tombol panah untuk menavigasi, Enter atau Space untuk memilih.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Tak ada widget peta yang tersambung",
         noMapConnected: "Tidak ada peta yang terhubung.",
         selectAMapWidgetInThe: "Pilih widget peta pada pengaturan widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Memuat peta dasar",
         noBasemapsConfigured2: "Tidak ada peta dasar yang dikonfigurasi.",
         addBasemapsInTheWidgetSettings: "Tambahkan peta dasar pada pengaturan widget.",
         basemapsCouldNotBeLoaded: "Basemap tidak dapat dimuat",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Shown di sisi kiri pembagi",
         clickToCompareTitleWithThe: "Klik untuk membandingkan {title} dengan peta dasar saat ini",
         titleCurrentlyActiveBasemapClickTo: "{title} - Basemap yang sedang aktif (klik untuk mengajukan ulang)",
-        clickToApplyTitleBasemapTo: "Klik untuk menerapkan {title} basemap ke peta"
+        clickToApplyTitleBasemapTo: "Klik untuk menerapkan {title} basemap ke peta",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

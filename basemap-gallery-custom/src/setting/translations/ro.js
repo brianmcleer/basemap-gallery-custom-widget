@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Nu s-a selectat niciun basemaps. Utilizați secțiunea de elemente de portal de navigare de mai sus pentru a adăuga basemaps.",
         help: "Ajutor",
         showHelpGuide: "Arată ghidul de ajutor",
-        showTheQuestionMarkButtonThat: "Arată butonul semn de întrebare care deschide ghidul de ajutor widget"
+        showTheQuestionMarkButtonThat: "Arată butonul semn de întrebare care deschide ghidul de ajutor widget",
+        extraSmall: "Extra Small",
+        small: "Mică",
+        mediumDefault: "Medium (Default)",
+        large: "Mare",
+        extraLarge: "Extra mare",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

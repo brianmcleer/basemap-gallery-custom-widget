@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Neboli vybrané žiadne basemapy. Použi sekciu Položky portálu pre prehliadanie vyššie pre pridanie basemaps.",
         help: "Pomocník",
         showHelpGuide: "Zobraziť návod na pomoc",
-        showTheQuestionMarkButtonThat: "Zobraziť tlačidlo otázniku, ktoré otvorí sprievodcu pomocníkom"
+        showTheQuestionMarkButtonThat: "Zobraziť tlačidlo otázniku, ktoré otvorí sprievodcu pomocníkom",
+        extraSmall: "Extra Small",
+        small: "Malé",
+        mediumDefault: "Medium (Default)",
+        large: "Veľké",
+        extraLarge: "Extra veľké",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

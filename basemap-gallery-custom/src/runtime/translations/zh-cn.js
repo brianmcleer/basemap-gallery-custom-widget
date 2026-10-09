@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "搜索指南(尝试\"地图\"或\"帮助\")",
         helpNoMatches: "指南中没有任何内容与这个词相符。 尝试另一个,或者打开上面的部分。",
         helpAnd: "和",
-        firstRunTitle: "New here?",
+        firstRunTitle: "新来的?",
         firstRunBody: "选择一个背景图来修改背景图,然后继续使用地图。",
         firstRunBodyWaiting: "基础映射可用后,请选择一个来修改背景映射.",
         firstRunHelpLink: "开导.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}:使用指南底部的按钮返回画廊.",
         helpTipsOrder: "喜欢者先出现. 其余的基图按本应用程序所选择的顺序排列.",
         helpTipsCompare: "比较不会添加到保存的地图中 。 关闭比较将映射返回当前基图 。",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "正在装入底图...",
         noBasemapsConfigured: "没有配置基准地图",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} 已装入底图 。{failedNote} 使用箭头键来导航、输入或选择空格 。",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} 已装入底图 。{failedNote} 使用箭头键来导航、输入或选择空格 。",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "没有连接地图部件",
         noMapConnected: "没有连接到地图 。",
         selectAMapWidgetInThe: "在部件设置中选择地图部件。",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "正在装入底图",
         noBasemapsConfigured2: "没有配置基准地图 。",
         addBasemapsInTheWidgetSettings: "在部件设置中添加基准图 。",
         basemapsCouldNotBeLoaded: "无法装入底图",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - 显示在分裂者左侧",
         clickToCompareTitleWithThe: "点击比较 {title} 使用当前基图",
         titleCurrentlyActiveBasemapClickTo: "{title} - 当前活动底图(单击以重新应用)",
-        clickToApplyTitleBasemapTo: "单击以应用 {title} 基础映射到地图"
+        clickToApplyTitleBasemapTo: "单击以应用 {title} 基础映射到地图",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

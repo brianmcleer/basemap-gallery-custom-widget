@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Tidak ada peta dasar yang dipilih. Gunakan daerah Telusur Portal Ramban di atas untuk menambahkan peta dasar.",
         help: "Bantuan",
         showHelpGuide: "Tampilkan panduan bantuan",
-        showTheQuestionMarkButtonThat: "Tampilkan tombol tanya-tandai yang membuka panduan bantuan widget"
+        showTheQuestionMarkButtonThat: "Tampilkan tombol tanya-tandai yang membuka panduan bantuan widget",
+        extraSmall: "Extra Small",
+        small: "Kecil",
+        mediumDefault: "Medium (Default)",
+        large: "Besar",
+        extraLarge: "Ekstra besar",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

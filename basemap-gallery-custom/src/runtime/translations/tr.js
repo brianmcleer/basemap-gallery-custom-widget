@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Rehberi arayın (kendi \"map\" veya \"yardım\")",
         helpNoMatches: "Rehberde hiçbir şey bu kelimeyi maçları. Başka bir deneyin veya yukarıdaki bölümleri açın.",
         helpAnd: "ve",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Yeni burada?",
         firstRunBody: "Arka haritayı değiştirmek için bir bazmap seçin, sonra haritayı kullanmaya devam edin.",
         firstRunBodyWaiting: "Basemaps mevcut olduğunda, arka haritayı değiştirmek için birini seçin.",
         firstRunHelpLink: "Rehberi açın.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: Kılavuzun altındaki düğmeyi galeriye geri dönmek için kullanın.",
         helpTipsOrder: "Favoriler ilk olarak görünür. Kalan bazmaps bu uygulama için seçilen sırada kalır.",
         helpTipsCompare: "Karşılaştırma, kurtarılan haritaya hiçbir şey ekler. Kapanış karşılaştırma, haritayı mevcut tabana döndürür.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Araçlar Yükleniyor...",
         noBasemapsConfigured: "No basemaps yapılandırılmış",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps yüklenir.{failedNote} Yatmak için ok anahtarlarını kullanın, seçmek için girin veya Space.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap yüklenir.{failedNote} Yatmak için ok anahtarlarını kullanın, seçmek için girin veya Space.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "No map widget bağlantılı",
         noMapConnected: "Hiçbir harita bağlantılı değildir.",
         selectAMapWidgetInThe: "Widget ayarlarında bir harita öğesi seçin.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Araçlar Yükleniyor",
         noBasemapsConfigured2: "Hiçbir bazmaps yapılandırıldı.",
         addBasemapsInTheWidgetSettings: "Widget ayarlarında bazmaps ekleyin.",
         basemapsCouldNotBeLoaded: "Basemaps yüklenemez",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Sol tarafta ayrılıkçının",
         clickToCompareTitleWithThe: "Karşılaştırmak için tıklayın {title} Mevcut bazmap ile",
         titleCurrentlyActiveBasemapClickTo: "{title} - Şu anda aktif bazmap (Reapply'ye tıkla)",
-        clickToApplyTitleBasemapTo: "Başvuru için tıklayın {title} Basemap haritaya"
+        clickToApplyTitleBasemapTo: "Başvuru için tıklayın {title} Basemap haritaya",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

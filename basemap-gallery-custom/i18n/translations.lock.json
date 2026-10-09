@@ -3,8 +3,8 @@
   "generator": "exb-i18n-kit",
   "parts": {
     "runtime": {
-      "en": "c4b0cd9de4be",
-      "keys": 159,
+      "en": "0fa2360baffd",
+      "keys": 162,
       "hashes": {
         "_widgetLabel": "082788e57dd7",
         "helpTitle": "c47ae15370cf",
@@ -164,20 +164,23 @@
         "titleShownOnTheLeftSide": "e0790180c644",
         "clickToCompareTitleWithThe": "7fb5808280f7",
         "titleCurrentlyActiveBasemapClickTo": "10f7940f4d52",
-        "clickToApplyTitleBasemapTo": "21abed740b2b"
+        "clickToApplyTitleBasemapTo": "21abed740b2b",
+        "titleValueValue2Value3Value4Value5": "842dbbd4a2cc",
+        "unknownError": "af6321ca7a8b",
+        "unserializableError": "76e73551597a"
       },
       "locales": {
         "ar": {
-          "file": "672258d26fd5",
+          "file": "d40f557f59f7",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -195,11 +198,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "لا شيء في الدليل يطابق تلك الكلمة جرّبْ آخر، أَو يَفْتحُ الأقسامَ أعلاه.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "اختر خريطة الأساس لتغيير خريطة الخلفية ثم استمر في استخدام الخريطة",
               "src": "machine",
@@ -209,11 +207,6 @@
               "t": "وحالما تتوافر نسق القاعدة، تختار واحدا لتغيير خريطة الخلفية.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "افتح الدليل",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "تلميح الفصل",
@@ -294,11 +287,6 @@
               "t": "خريطة الأساس الحالية، مبينة على الجانب الأيمن من الفجوة",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "ابدأ هنا: ثلاث خطوات",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "انظر من خلال الصور والأسماء في المعرض.",
@@ -555,11 +543,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "إذا كان هناك شيء ما يبدو خاطئا",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "No map connected: this widget has not been linked to a map. أطلب من شعبة نظام المعلومات الجغرافية أن تربطها في وضعيات النظافة",
               "src": "machine",
@@ -619,11 +602,6 @@
               "t": "لا تزال عالقة؟ اتصلي بشعبة نظام المعلومات الجغرافية وتذكري اسم مستعار القاع و هذا التطبيق",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "من الجيد معرفة",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: استخدام علامة الأسئلة في أعلى اليمين من الوادي لفتح هذا الدليل مرة أخرى.",
@@ -795,6 +773,11 @@
               "src": "machine",
               "h": "cd16026acc85"
             },
+            "loadingBasemaps2": {
+              "t": "تركيبات قاعدية",
+              "src": "machine",
+              "h": "4c746f7ab986"
+            },
             "noBasemapsConfigured2": {
               "t": "لا توجد تطابقات في القاعدة",
               "src": "machine",
@@ -903,16 +886,16 @@
           }
         },
         "bg": {
-          "file": "0882310e0136",
+          "file": "674c4d02adc0",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -930,11 +913,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Нищо в ръководството не съвпада с тази дума. Опитайте друг, или отвори секциите по-горе.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Изберете базова карта, за да промените фоновата карта, след което продължете да използвате картата.",
               "src": "machine",
@@ -944,11 +922,6 @@
               "t": "След като Basemaps са на разположение, изберете един, за да промените фоновата карта.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Отвори гидът.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Свободно намекване",
@@ -1029,11 +1002,6 @@
               "t": "Текуща базова карта, показана от дясната страна на делителя",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Започнете от тук: три стъпки",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Прегледай снимките и имената в галерията.",
@@ -1290,11 +1258,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ако нещо не е наред",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Няма свързана карта: тази джаджа не е свързана с карта. Помолете GIS Division да го свържете в настройките на джаджата.",
               "src": "machine",
@@ -1354,11 +1317,6 @@
               "t": "Още ли си заклещен? Свържете се с GIS Division и споменете галерия Basemap Потребителско име и това приложение.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Добре е да го знам.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: използвайте въпросителен знак в горния десен ъгъл на джаджата, за да отворите това ръководство отново.",
@@ -1638,30 +1596,30 @@
           }
         },
         "bs": {
-          "file": "58baa43b8820",
+          "file": "e694769d4910",
           "counts": {
-            "esri": 15,
+            "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 144
+            "missing": 149
           },
           "entries": {}
         },
         "ca": {
-          "file": "28078ff6eeb6",
+          "file": "a18aaaeb58b1",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -1679,11 +1637,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Res en la guia coincideix amb aquesta paraula. Proveu-ne una altra, o obriu les seccions de dalt.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Escolliu un mapa base per a canviar el mapa de fons, aleshores continueu usant el mapa.",
               "src": "machine",
@@ -1693,11 +1646,6 @@
               "t": "Un cop estan disponibles mapes base, escolliu- ne un per a canviar el mapa de fons.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Obre la guia.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Descarta el consell",
@@ -1778,11 +1726,6 @@
               "t": "Mapa de base actual, mostrat al costat dret del divisor",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Comença aquí: tres passes",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Mira a través de les fotografies i noms a la galeria.",
@@ -2039,11 +1982,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Si alguna cosa sembla malament",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "No hi ha mapa connectat: aquest estri no s' ha enllaçat a un mapa. Demana a la Divisió GIS que el connecti a l' arranjament de l' estri.",
               "src": "machine",
@@ -2103,11 +2041,6 @@
               "t": "Encara està atrapat? Contacta amb la Divisió GIS i esmenta el nom de la Galeria basemap A mida i aquesta aplicació.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Bo saber-ho",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: useu el signe de pregunta a la part superior dreta de l' estri per obrir aquesta guia de nou.",
@@ -2259,6 +2192,11 @@
               "src": "machine",
               "h": "4740e3145bae"
             },
+            "base": {
+              "t": "Base",
+              "src": "machine",
+              "h": "077fe9c54ed5"
+            },
             "adjustDividerPositionComparePosition": {
               "t": "Ajusta la posició del divisor: {comparePosition}%",
               "src": "machine",
@@ -2387,16 +2325,16 @@
           }
         },
         "cs": {
-          "file": "4cbc4ed96da3",
+          "file": "f8523641109f",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -2414,11 +2352,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nic v průvodci neodpovídá tomu slovu. Zkuste jiný, nebo otevřete sekce výše.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Vyberte si basemap pro změnu mapy pozadí, pak pokračovat v používání mapy.",
               "src": "machine",
@@ -2428,11 +2361,6 @@
               "t": "Jakmile jsou k dispozici podložky, vyberte jeden změnit mapu pozadí.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otevři průvodce.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Odložit nápovědu",
@@ -2513,11 +2441,6 @@
               "t": "Současný základ, zobrazený na pravé straně děliče",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Začněte zde: tři kroky",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Prohlédněte si fotky a jména v galerii.",
@@ -2774,11 +2697,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Pokud něco vypadá špatně",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Mapka není připojena: tento widget není spojen s mapou. Požádejte oddělení GIS, aby jej připojilo v nastavení widget.",
               "src": "machine",
@@ -2838,11 +2756,6 @@
               "t": "Pořád se zasekl? Kontaktujte GIS Divizi a zmínit Basemap Galerie Vlastní jméno a tuto aplikaci.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobré vědět.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: použijte otazník v pravé horní části widgetu a znovu otevřete tento průvodce.",
@@ -3122,16 +3035,16 @@
           }
         },
         "da": {
-          "file": "73cad0eec117",
+          "file": "17a6e656e8c5",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -3149,11 +3062,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Intet i guiden matcher det ord. Prøv en anden, eller åbn afsnittene ovenfor.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Vælg en basemap for at ændre baggrundskortet, og fortsæt derefter med at bruge kortet.",
               "src": "machine",
@@ -3163,11 +3071,6 @@
               "t": "Når basemaps er tilgængelige, skal du vælge en for at ændre baggrundskortet.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Åbn guiden.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Afvis vink",
@@ -3248,11 +3151,6 @@
               "t": "Nuværende basemap, vist på højre side af divideren",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Start her: tre trin",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Se billederne og navnene i galleriet.",
@@ -3509,11 +3407,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Hvis noget ser forkert ud",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Intet kort forbundet: denne kontrol er ikke blevet knyttet til et kort. Bed GIS Division om at forbinde den i kontrolindstillingerne.",
               "src": "machine",
@@ -3573,11 +3466,6 @@
               "t": "Sidder du stadig fast? Kontakt GIS Division og nævne Basemap Galleri Custom navn og denne app.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Godt at vide",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: brug spørgsmålstegnet øverst til højre for widget for at åbne denne guide igen.",
@@ -3703,6 +3591,11 @@
               "t": "Sammenligning:",
               "src": "machine",
               "h": "23c8ff228f11"
+            },
+            "swipe": {
+              "t": "Stryg",
+              "src": "machine",
+              "h": "378dced1d18a"
             },
             "dragDividerSideBySide": {
               "t": "Træk deler side om side",
@@ -3857,16 +3750,16 @@
           }
         },
         "de": {
-          "file": "c25d1c1bb818",
+          "file": "70507197c8e8",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -3884,11 +3777,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nichts im Guide passt zu diesem Wort. Versuchen Sie es mit einem anderen oder öffnen Sie die obigen Abschnitte.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Wählen Sie eine Basemap, um die Hintergrundkarte zu ändern, und verwenden Sie dann die Karte weiter.",
               "src": "machine",
@@ -3898,11 +3786,6 @@
               "t": "Sobald Basemaps verfügbar sind, wählen Sie eine, um die Hintergrundkarte zu ändern.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Öffne den Guide.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Abweisungshinweis",
@@ -3983,11 +3866,6 @@
               "t": "Aktuelle Basemap, gezeigt auf der rechten Seite des Teilers",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Beginnen Sie hier: drei Schritte",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Schauen Sie sich die Bilder und Namen in der Galerie an.",
@@ -4244,11 +4122,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Wenn etwas falsch aussieht",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Keine Karte verbunden: Dieses Widget wurde nicht mit einer Karte verknüpft. Bitten Sie die GIS-Division, sie in den Widget-Einstellungen zu verbinden.",
               "src": "machine",
@@ -4308,11 +4181,6 @@
               "t": "Immer noch stecken? Kontaktieren Sie die GIS-Abteilung und erwähnen Sie den Namen der Basemap Gallery und diese App.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Gut zu wissen",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}Verwenden Sie das Fragezeichen oben rechts im Widget, um dieses Handbuch erneut zu öffnen.",
@@ -4592,16 +4460,16 @@
           }
         },
         "el": {
-          "file": "d8b8d55993b0",
+          "file": "255e56c63a44",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -4619,11 +4487,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Τίποτα στον οδηγό δεν ταιριάζει με αυτή τη λέξη. Δοκιμάστε ένα άλλο, ή ανοίξτε τα τμήματα παραπάνω.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Επιλέξτε ένα χάρτη βάσης για την αλλαγή του χάρτη φόντου, στη συνέχεια, συνεχίστε τη χρήση του χάρτη.",
               "src": "machine",
@@ -4633,11 +4496,6 @@
               "t": "Μόλις οι χάρτες βάσης είναι διαθέσιμοι, επιλέξτε έναν για να αλλάξετε το χάρτη φόντου.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Άνοιξε τον οδηγό.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Υπόδειξη απόρριψης",
@@ -4718,11 +4576,6 @@
               "t": "Τρέχων χάρτης βάσης, που εμφανίζεται στη δεξιά πλευρά του διαχωριστικού",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Εκκίνηση εδώ: τρία βήματα",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Κοίτα τις φωτογραφίες και τα ονόματα στην γκαλερί.",
@@ -4979,11 +4832,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Αν κάτι φαίνεται λάθος",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Δεν συνδέεται χάρτης: αυτό το γραφικό συστατικό δεν έχει συνδεθεί με χάρτη. Ζητήστε από το τμήμα GIS να το συνδέσετε στις ρυθμίσεις widget.",
               "src": "machine",
@@ -5043,11 +4891,6 @@
               "t": "Ακόμα κολλημένος; Επικοινωνήστε με το Τμήμα του GIS και αναφέρετε το όνομα Basemap Gallery Custom και αυτή την εφαρμογή.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Χαίρομαι που το μαθαίνω.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: χρησιμοποιήστε το ερωτηματικό στο επάνω δεξί μέρος του γραφικού συστατικού για να ανοίξετε ξανά αυτόν τον οδηγό.",
@@ -5173,6 +5016,11 @@
               "t": "Σύγκριση:",
               "src": "machine",
               "h": "23c8ff228f11"
+            },
+            "swipe": {
+              "t": "Περιστροφή",
+              "src": "machine",
+              "h": "378dced1d18a"
             },
             "dragDividerSideBySide": {
               "t": "Σύρετε διαχωριστικό δίπλα-δίπλα",
@@ -5327,16 +5175,16 @@
           }
         },
         "es": {
-          "file": "6a98533a7add",
+          "file": "b49351f14028",
           "counts": {
-            "esri": 15,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 141,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -5354,11 +5202,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nada en la guía coincide con esa palabra. Pruebe otro, o abra las secciones anteriores.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Elija un mapa base para cambiar el mapa de fondo, a continuación, siga utilizando el mapa.",
               "src": "machine",
@@ -5368,11 +5211,6 @@
               "t": "Una vez disponibles los mapas base, elija uno para cambiar el mapa de fondo.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Abre el guía.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Insinuación",
@@ -5453,11 +5291,6 @@
               "t": "Hoja de base actual, mostrada en el lado derecho del divisor",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Empieza aquí: tres pasos",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Mira a través de las fotos y nombres en la galería.",
@@ -5714,11 +5547,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Si algo se ve mal",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "No hay mapa conectado: este widget no se ha relacionado con un mapa. Pídale a la División GIS que la conecte en la configuración del widget.",
               "src": "machine",
@@ -5778,11 +5606,6 @@
               "t": "¿Sigues atrapado? Póngase en contacto con la División GIS y mencione el nombre de Basemap Gallery Custom y esta aplicación.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Es bueno saberlo.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: utilice la marca de preguntas en la parte superior derecha del widget para abrir esta guía de nuevo.",
@@ -5909,6 +5732,11 @@
               "src": "machine",
               "h": "23c8ff228f11"
             },
+            "swipe": {
+              "t": "Swipe",
+              "src": "machine",
+              "h": "378dced1d18a"
+            },
             "dragDividerSideBySide": {
               "t": "Arrastre divider lado a lado",
               "src": "machine",
@@ -5933,6 +5761,11 @@
               "t": "Opacity: {comparePosition}%",
               "src": "machine",
               "h": "4740e3145bae"
+            },
+            "base": {
+              "t": "Base",
+              "src": "machine",
+              "h": "077fe9c54ed5"
             },
             "adjustDividerPositionComparePosition": {
               "t": "Ajuste la posición del divider: {comparePosition}%",
@@ -6062,16 +5895,16 @@
           }
         },
         "et": {
-          "file": "08af702f35b8",
+          "file": "fe9ab0a6e818",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -6089,11 +5922,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Mitte miski juhendis ei klapi selle sõnaga. Proovige teist või avage ülaltoodud lõigud.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Vali taustakaardi muutmiseks aluskaart, seejärel jätka kaardi kasutamist.",
               "src": "machine",
@@ -6103,11 +5931,6 @@
               "t": "Kui aluskaardid on saadaval, vali taustakaardi muutmiseks üks.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Tee teejuht lahti.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Tühista vihje",
@@ -6188,11 +6011,6 @@
               "t": "Aktiivne aluskaart, mida näidatakse jagaja paremal küljel",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Alusta siit: kolm sammu",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Vaata pilte ja nimesid galeriis.",
@@ -6449,11 +6267,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Kui midagi on valesti",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Kaarti pole ühendatud: seda vidinat pole kaardiga seostatud. Paluge GIS-i osakonnal see vidina seadistustes ühendada.",
               "src": "machine",
@@ -6513,11 +6326,6 @@
               "t": "Ikka veel kinni? Võtke ühendust GIS-i osakonnaga ja mainige Basemap Gallery kohandatud nimi ja see rakendus.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Hea teada",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: kasutage vidina ülemises paremas servas olevat küsimärki, et see juhend uuesti avada.",
@@ -6797,16 +6605,16 @@
           }
         },
         "fi": {
-          "file": "c707c11482c3",
+          "file": "0696abf70b6b",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -6824,11 +6632,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Mikään oppaassa ei vastaa tuota sanaa. Kokeile toista, tai avaa kohdat yllä.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Valitse pohjakartta muuttaaksesi taustakarttaa ja jatka sitten kartan käyttöä.",
               "src": "machine",
@@ -6838,11 +6641,6 @@
               "t": "Kun pohjakartat ovat saatavilla, valitse yksi muuttaa taustakartta.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Avaa opas.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Hylkää vihje",
@@ -6923,11 +6721,6 @@
               "t": "Nykyinen pohjakartta, näkyy jakajan oikealla puolella",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Aloita tästä: kolme vaihetta",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Katsokaa kuvia ja nimiä galleriasta.",
@@ -7184,11 +6977,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Jos jokin näyttää väärältä.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Ei yhteyttä karttaan: tätä elementtiä ei ole liitetty karttaan. Pyydä GIS-osastoa yhdistämään se widget-asetuksissa.",
               "src": "machine",
@@ -7248,11 +7036,6 @@
               "t": "Oletko yhä jumissa? Ota yhteyttä GIS-osastolle ja mainitse Basemap Gallery Custom nimi ja tämä sovellus.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Hyvä tietää",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: Käytä kysymysmerkki oikeassa yläkulmassa widget avata tämän oppaan uudelleen.",
@@ -7532,16 +7315,16 @@
           }
         },
         "fr": {
-          "file": "0225f34224cc",
+          "file": "e4f49f05224c",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -7559,11 +7342,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Rien dans le guide ne correspond à ce mot. Essayez un autre, ou ouvrez les sections ci-dessus.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Choisissez une carte de base pour modifier la carte de fond, puis continuez à utiliser la carte.",
               "src": "machine",
@@ -7573,11 +7351,6 @@
               "t": "Une fois les cartes de base disponibles, choisissez-en une pour modifier la carte de fond.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Ouvrez le guide.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Rompez l'indice",
@@ -7658,11 +7431,6 @@
               "t": "Carte de base actuelle, affichée sur le côté droit du diviseur",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Commencez ici: trois étapes",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Regardez les photos et les noms dans la galerie.",
@@ -7919,11 +7687,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Si quelque chose ne va pas",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Pas de carte connectée : ce widget n'a pas été lié à une carte. Demandez à la Division SIG de la connecter dans les paramètres du widget.",
               "src": "machine",
@@ -7983,11 +7746,6 @@
               "t": "Toujours coincé ? Contactez la Division SIG et mentionnez le nom personnalisé de la galerie Basemap et cette application.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Bon à savoir",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: utilisez le point d'interrogation en haut à droite du widget pour ouvrir à nouveau ce guide.",
@@ -8267,16 +8025,16 @@
           }
         },
         "he": {
-          "file": "b9476c671fdf",
+          "file": "9051fb944224",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -8294,11 +8052,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "שום דבר במדריך לא מתאים למילה הזאת. נסה עוד, או לפתוח את החלקים לעיל.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "בחר מפת בסיס לשנות את מפת הרקע, ולאחר מכן להמשיך להשתמש במפה.",
               "src": "machine",
@@ -8308,11 +8061,6 @@
               "t": "ברגע שמפת בסיס זמינים, בחר אחד לשנות את מפת הרקע.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "פתח את המדריך",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "המונחים:",
@@ -8393,11 +8141,6 @@
               "t": "מפת הבסיס הנוכחית, המוצגת בצד ימין של המחלק",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "התחל כאן: שלושה צעדים",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "עיין בתמונות ובשמות בגלריה.",
@@ -8654,11 +8397,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "אם משהו נראה לא בסדר",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "אין מפה המחוברת: הווידג'ט הזה לא היה קשור למפה. שאל את החטיבה GIS כדי לחבר אותה בהגדרות widget.",
               "src": "machine",
@@ -8718,11 +8456,6 @@
               "t": "עדיין תקוע? צור קשר עם מחלקת GIS ולהזכיר את שם הגלריה של Basemap ואת היישום הזה.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "טוב לדעת",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}השתמש בסימן השאלה בחלק העליון של הווידג'ט כדי לפתוח את המדריך שוב.",
@@ -9002,30 +8735,30 @@
           }
         },
         "hr": {
-          "file": "58baa43b8820",
+          "file": "e694769d4910",
           "counts": {
-            "esri": 15,
+            "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 144
+            "missing": 149
           },
           "entries": {}
         },
         "hu": {
-          "file": "68cbe0989ff4",
+          "file": "9939a822bda2",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -9043,11 +8776,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "A kalauzban semmi sem egyezik ezzel a szóval. Próbálja meg egy másik, vagy nyissa ki a fenti szakaszok.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Válasszon egy basemap változtatni a háttér térképet, majd továbbra is használja a térképet.",
               "src": "machine",
@@ -9057,11 +8785,6 @@
               "t": "Amint rendelkezésre állnak a bázisok, válasszon egyet a háttértérkép megváltoztatásához.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Nyisd ki az útmutatót.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "A javaslat elutasítása",
@@ -9142,11 +8865,6 @@
               "t": "Aktuális bázis, látható a jobb oldalán a megosztó",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Kezdjük itt: három lépés",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Nézd át a képeket és neveket a galériában.",
@@ -9403,11 +9121,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ha valami nem stimmel",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nincs csatlakoztatott térkép: ez a widget nem kapcsolódik a térképhez. Kérje meg a FIS részleget, hogy csatlakoztassa a widget beállításokhoz.",
               "src": "machine",
@@ -9467,11 +9180,6 @@
               "t": "Még mindig? Lépjen kapcsolatba a FIS Division, és említse a Basemap Galéria Custom nevét és ezt az alkalmazást.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Jó tudni.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: használja a kérdőjelet a jobb felső a widget, hogy nyissa meg ezt az útmutatót újra.",
@@ -9751,16 +9459,16 @@
           }
         },
         "id": {
-          "file": "96dd20197b2f",
+          "file": "44c79590a511",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -9778,11 +9486,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Tidak ada dalam panduan cocok kata itu. Coba yang lain, atau buka bagian di atas.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Pilih peta dasar untuk mengubah peta latar belakang, kemudian terus menggunakan peta.",
               "src": "machine",
@@ -9792,11 +9495,6 @@
               "t": "Setelah peta dasar tersedia, pilih salah satu untuk mengubah peta latar belakang.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Buka panduannya.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Abaikan petunjuk",
@@ -9877,11 +9575,6 @@
               "t": "Basemap kini, ditampilkan di sisi kanan pembagi",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Mulai dari sini: tiga langkah",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Lihatlah melalui gambar dan nama-nama di galeri.",
@@ -10138,11 +9831,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Jika ada sesuatu yang salah",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Tidak ada peta yang tersambung: widget ini belum terhubung ke peta. Tanyakan Divisi GIS untuk menyambungkannya ke pengaturan widget.",
               "src": "machine",
@@ -10202,11 +9890,6 @@
               "t": "Masih terjebak? Hubungi Divisi GIS dan sebutkan nama Gubahan Basekap Galeri dan aplikasi ini.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Baik untuk mengetahui",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: gunakan tanda tanya di kanan atas widget untuk membuka panduan ini lagi.",
@@ -10486,16 +10169,16 @@
           }
         },
         "it": {
-          "file": "a7851da1058c",
+          "file": "d74018f0a189",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -10513,11 +10196,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Niente nella guida corrisponde a quella parola. Prova un altro, o apri le sezioni sopra.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Scegliere una mappa di base per cambiare la mappa di sfondo, quindi continuare a utilizzare la mappa.",
               "src": "machine",
@@ -10527,11 +10205,6 @@
               "t": "Una volta disponibili le basi, scegline una per cambiare la mappa di sfondo.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Apri la guida.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Annullamento",
@@ -10612,11 +10285,6 @@
               "t": "Basemap attuale, mostrata sul lato destro del divisore",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Inizia qui: tre passi",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Guarda le immagini e i nomi nella galleria.",
@@ -10873,11 +10541,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Se qualcosa sembra sbagliato",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nessuna mappa collegata: questo widget non è stato collegato a una mappa. Chiedi alla Divisione GIS di collegarla nelle impostazioni del widget.",
               "src": "machine",
@@ -10937,11 +10600,6 @@
               "t": "Ancora bloccata? Contattare la Divisione GIS e menzionare il nome personalizzato della Basemap Gallery e questa applicazione.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Buono a sapersi",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: utilizzare il punto interrogativo in alto a destra del widget per aprire nuovamente questa guida.",
@@ -11093,6 +10751,11 @@
               "src": "machine",
               "h": "4740e3145bae"
             },
+            "base": {
+              "t": "Base",
+              "src": "machine",
+              "h": "077fe9c54ed5"
+            },
             "adjustDividerPositionComparePosition": {
               "t": "Regolare la posizione del divisore: {comparePosition}%",
               "src": "machine",
@@ -11221,16 +10884,16 @@
           }
         },
         "ja": {
-          "file": "7a6bb9e343b1",
+          "file": "5d50427002c2",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -11248,11 +10911,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "ガイドがその単語と一致するわけではありません。 別のセクションを試し、または上記のセクションを開きます。",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "背景マップを変更するベースマップを選択し、マップを使用して保存します。",
               "src": "machine",
@@ -11262,11 +10920,6 @@
               "t": "ベースマップが利用可能になったら、背景マップを変更する1つを選択します。",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "ガイドを開きます。",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "ヒントを隠す",
@@ -11347,11 +11000,6 @@
               "t": "現在のベースマップは、ディバイダーの右側に表示されます",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "ここから: 3 つのステップ",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "ギャラリー内の写真や名前を見てください。",
@@ -11608,11 +11256,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "何かが間違っている",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "接続されていないマップ:このウィジェットはマップにリンクされていません。 GIS事業部に問い合わせてウィジェットの設定で接続してください。",
               "src": "machine",
@@ -11672,11 +11315,6 @@
               "t": "まだ立ち往生? GIS部門に連絡し、ベースマップギャラリーカスタム名とこのアプリに言及してください。",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "よく知る",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: ウィジェットの右上にある質問マークを使用して、このガイドを再度開きます。",
@@ -11956,16 +11594,16 @@
           }
         },
         "ko": {
-          "file": "9c4392e12b75",
+          "file": "30186c057f97",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -11983,11 +11621,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "가이드의 아무것도 그 단어 일치. 다른 시도, 또는 위의 섹션을 엽니 다.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "배경지도를 변경하려면 basemap을 선택하고, 지도를 사용하세요.",
               "src": "machine",
@@ -11997,11 +11630,6 @@
               "t": "basemaps를 사용할 때, 배경지도를 변경할 수 있습니다.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "자주 묻는 질문",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "헌팅턴병",
@@ -12082,11 +11710,6 @@
               "t": "현재 basemap, 배당의 오른쪽에 표시",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "여기에 시작: 세 단계",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "갤러리에 사진과 이름을 통해 보세요.",
@@ -12343,11 +11966,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "뭔가 잘못되었는지",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "지도가 연결되지 않았습니다: 이 위젯은 맵에 연결되지 않았습니다. GIS 사업부에게 위젯 설정에 연결하십시오.",
               "src": "machine",
@@ -12407,11 +12025,6 @@
               "t": "아직도 붙어? GIS 부서에 문의하고 Basemap Gallery Custom 이름과 이 앱을 언급하십시오.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "잘 알고",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: 이 가이드를 다시 열 위젯의 오른쪽 상단의 질문 표시를 사용합니다.",
@@ -12691,16 +12304,16 @@
           }
         },
         "lt": {
-          "file": "4a75bf1c2a64",
+          "file": "fc0f8c90a8ae",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -12718,11 +12331,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Vadove nėra nieko, kas atitiktų šį žodį. Pabandykite kitą, arba atidaryti skyrių aukščiau.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Pasirinkite bazinį žemėlapį pakeisti fono žemėlapį, tada naudoti žemėlapį.",
               "src": "machine",
@@ -12732,11 +12340,6 @@
               "t": "Kai basemaps yra prieinama, pasirinkti vieną pakeisti fono žemėlapį.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Atidaryk gidą.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Nutraukti užuominą",
@@ -12817,11 +12420,6 @@
               "t": "Dabartinis basemap, rodomas dešinėje daliklio pusėje",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Pradėti čia: trys žingsniai",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Pažvelkite per nuotraukas ir vardus galerijoje.",
@@ -13078,11 +12676,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Jei kas nors atrodo blogai",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nėra prijungto žemėlapio: šis valdiklis nebuvo susietas su žemėlapiu. Paprašykite GIS skyriaus prijungti jį valdikliui nustatymus.",
               "src": "machine",
@@ -13142,11 +12735,6 @@
               "t": "Vis dar įstrigęs? Susisiekite su GIS skyriumi ir paminėkite Basemap galeriją Custom name ir šią programėlę.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Gera žinoti",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: naudoti klausimo ženklą viršuje dešinėje valdikliui vėl atidaryti šį vadovą.",
@@ -13426,16 +13014,16 @@
           }
         },
         "lv": {
-          "file": "f6e13b47aa51",
+          "file": "3e3601ed7579",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -13453,11 +13041,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nekas ceļvedī neatbilst šim vārdam. Mēģiniet citu, vai atvērt sadaļas iepriekš.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Izvēlieties bāzes karti, lai mainītu fona karti, pēc tam turpiniet lietot karti.",
               "src": "machine",
@@ -13467,11 +13050,6 @@
               "t": "Kad bāzes kartes ir pieejamas, izvēlieties vienu, lai mainītu fona karti.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Atveriet ceļvedi.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Noņemt padomu",
@@ -13552,11 +13130,6 @@
               "t": "Pašreizējā bāzes karte, parādīta dalītāja labajā pusē",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Sākt šeit: trīs soļi",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Paskatieties caur fotogrāfijām un vārdiem galerijā.",
@@ -13813,11 +13386,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ja kaut kas izskatās nepareizi",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nav pieslēgta karte: šī logdaļa nav piesaistīta kartei. Lūdz GIS nodaļu pieslēgt to logdaļu iestatījumiem.",
               "src": "machine",
@@ -13877,11 +13445,6 @@
               "t": "Joprojām iestrēdzis? Sazinieties ar ĢIS nodaļu un pieminiet Basemap Gallery Pielāgots nosaukums un šī lietotne.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Labi zināt",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: izmantojiet jautājuma zīmi augšējā labajā logdaļā, lai atkal atvērtu šo rokasgrāmatu.",
@@ -14161,16 +13724,16 @@
           }
         },
         "no": {
-          "file": "0e8fb77aa339",
+          "file": "e3dde394831f",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -14188,11 +13751,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ingenting i guiden stemmer med det ordet. Prøv en annen, eller åpne seksjonene ovenfor.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Velg et basiskart for å endre bakgrunnskartet, og fortsett å bruke kartet.",
               "src": "machine",
@@ -14202,11 +13760,6 @@
               "t": "Når grunnkart er tilgjengelige, velger du en for å endre bakgrunnskartet.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Åpne guiden.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Utelukk hint",
@@ -14287,11 +13840,6 @@
               "t": "Nåværende basiskart, vist på høyre side av deleren",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Start her: 3 trinn",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Se gjennom bildene og navnene i galleriet.",
@@ -14548,11 +14096,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Hvis noe ser galt ut",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Ingen kart tilkoblet: denne widgeten har ikke blitt koblet til et kart. Be GIS-delingen om å koble den til i widgetinnstillingene.",
               "src": "machine",
@@ -14612,11 +14155,6 @@
               "t": "Fortsatt fast? Ta kontakt med GIS Division og nevne navnet på Basemap Gallery Custom og denne appen.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Godt å vite",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: bruk spørsmålsmerket øverst til høyre på widgeten for å åpne denne guiden igjen.",
@@ -14896,16 +14434,16 @@
           }
         },
         "nl": {
-          "file": "73c93985a19d",
+          "file": "b4695679b43b",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -14923,11 +14461,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Niets in de gids komt overeen met dat woord. Probeer een andere, of open de bovenstaande secties.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Kies een basismap om de achtergrondkaart te wijzigen en blijf dan de kaart gebruiken.",
               "src": "machine",
@@ -14937,11 +14470,6 @@
               "t": "Zodra basemaps beschikbaar zijn, kies er een om de achtergrondkaart te wijzigen.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Open de gids.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Hint verwerpen",
@@ -15022,11 +14550,6 @@
               "t": "Huidige basismap, rechts van de scheidingswand",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Begin hier: drie stappen",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Kijk door de foto's en namen in de galerie.",
@@ -15283,11 +14806,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Als er iets mis lijkt.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Geen kaart verbonden: dit widget is niet gekoppeld aan een kaart. Vraag de GIS Division om het te verbinden in de widget-instellingen.",
               "src": "machine",
@@ -15347,11 +14865,6 @@
               "t": "Nog steeds vast? Neem contact op met de GIS Division en vermeld de Basemap Gallery Aangepaste naam en deze app.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Goed om te weten",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: gebruik het vraagteken rechtsboven op het widget om deze gids weer te openen.",
@@ -15477,6 +14990,11 @@
               "t": "Vergelijking:",
               "src": "machine",
               "h": "23c8ff228f11"
+            },
+            "swipe": {
+              "t": "Vegen",
+              "src": "machine",
+              "h": "378dced1d18a"
             },
             "dragDividerSideBySide": {
               "t": "Sleep verdeler naast elkaar",
@@ -15631,16 +15149,16 @@
           }
         },
         "pl": {
-          "file": "1f5607393a0b",
+          "file": "906de4a5ce04",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -15658,11 +15176,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nic w przewodniku nie pasuje do tego słowa. Spróbuj innego, albo otwórz powyższe sekcje.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Wybierz bazę, aby zmienić mapę tła, a następnie używaj mapy.",
               "src": "machine",
@@ -15672,11 +15185,6 @@
               "t": "Gdy basemaps są dostępne, wybierz jeden, aby zmienić mapę tła.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otwórz przewodnik.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Odrzuć podpowiedź",
@@ -15757,11 +15265,6 @@
               "t": "Bieżąca baza, pokazana po prawej stronie rozdzielacza",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Zacznij tutaj: trzy kroki",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Przejrzyj zdjęcia i nazwiska z galerii.",
@@ -16018,11 +15521,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Jeśli coś wygląda źle",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Brak połączonej mapy: ten widget nie został połączony z mapą. Poproś GIS Division o podłączenie go w ustawieniach widżetu.",
               "src": "machine",
@@ -16082,11 +15580,6 @@
               "t": "Nadal utknąłeś? Skontaktuj się z Wydziałem GIS i wymień nazwę Galerii Basemap i tę aplikację.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobrze wiedzieć.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: użyj znaku zapytania w prawym górnym rogu widżetu, aby ponownie otworzyć ten przewodnik.",
@@ -16366,16 +15859,16 @@
           }
         },
         "pt-br": {
-          "file": "cf6d45a851ab",
+          "file": "5731c97bfa2e",
           "counts": {
-            "esri": 15,
+            "esri": 19,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -16393,11 +15886,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nada no guia combina com essa palavra. Tente outro, ou abra as seções acima.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Escolha um mapa para mudar o mapa de fundo e continue usando o mapa.",
               "src": "machine",
@@ -16407,11 +15895,6 @@
               "t": "Quando os mapas estiverem disponíveis, escolha um para mudar o mapa de fundo.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Abra o guia.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Dispensar a dica",
@@ -16492,11 +15975,6 @@
               "t": "Basemap atual, mostrado no lado direito do divisor",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Comece aqui: três passos",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Olhe as fotos e nomes na galeria.",
@@ -16753,11 +16231,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Se algo parecer errado",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nenhum mapa conectado: este widget não foi ligado a um mapa. Peça à Divisão GIS para conectá-lo nas configurações do widget.",
               "src": "machine",
@@ -16817,11 +16290,6 @@
               "t": "Ainda preso? Entre em contato com a Divisão GIS e mencione o nome personalizado da Galeria Basemap e este aplicativo.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Bom saber.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}Use o ponto de interrogação no topo direito do widget para abrir este guia novamente.",
@@ -16973,6 +16441,11 @@
               "src": "machine",
               "h": "4740e3145bae"
             },
+            "base": {
+              "t": "Base.",
+              "src": "machine",
+              "h": "077fe9c54ed5"
+            },
             "adjustDividerPositionComparePosition": {
               "t": "Ajuste a posição do divisor: {comparePosition}%",
               "src": "machine",
@@ -17101,16 +16574,16 @@
           }
         },
         "pt-pt": {
-          "file": "17c8cf5c837b",
+          "file": "389f788d010a",
           "counts": {
-            "esri": 14,
+            "esri": 18,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 140,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -17128,11 +16601,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nada no guia corresponde a essa palavra. Tente outro, ou abra as seções acima.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Escolha um mapa de base para alterar o mapa de fundo e continue usando o mapa.",
               "src": "machine",
@@ -17142,11 +16610,6 @@
               "t": "Uma vez que os mapas de base estão disponíveis, escolha um para alterar o mapa de fundo.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Abra o guia.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Descartar a dica",
@@ -17227,11 +16690,6 @@
               "t": "Mapa base atual, mostrado no lado direito do divisor",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Comece aqui: três passos",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Olhe através das fotos e nomes na galeria.",
@@ -17488,11 +16946,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Se algo parecer errado",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nenhum mapa ligado: este elemento não foi ligado a um mapa. Peça à Divisão GIS para conectá- la nas configurações do widget.",
               "src": "machine",
@@ -17552,11 +17005,6 @@
               "t": "Ainda preso? Entre em contato com a Divisão GIS e mencione a Galeria de Basemap Nome personalizado e este aplicativo.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "É bom saber.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: use o ponto de interrogação na parte superior direita do widget para abrir este guia novamente.",
@@ -17708,6 +17156,11 @@
               "src": "machine",
               "h": "4740e3145bae"
             },
+            "base": {
+              "t": "Base",
+              "src": "machine",
+              "h": "077fe9c54ed5"
+            },
             "adjustDividerPositionComparePosition": {
               "t": "Ajustar a posição do divisor: {comparePosition}%",
               "src": "machine",
@@ -17836,16 +17289,16 @@
           }
         },
         "ro": {
-          "file": "39541e9053c9",
+          "file": "1f085c90401c",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -17863,11 +17316,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nimic din ghid nu se potriveşte cu acest cuvânt. Încearcă altul, sau deschide secţiunile de mai sus.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Alegeți o hartă de bază pentru a schimba harta de fundal, apoi continuați să utilizați harta.",
               "src": "machine",
@@ -17877,11 +17325,6 @@
               "t": "Odată ce sunt disponibile basemaps, alege unul pentru a schimba harta de fundal.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Deschide ghidul.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Respins indiciu",
@@ -17962,11 +17405,6 @@
               "t": "Harta de bază curentă, afișată pe partea dreaptă a separatorului",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Începe aici: trei pași",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Uită-te prin poze şi nume din galerie.",
@@ -18223,11 +17661,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Dacă ceva nu arată bine",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nicio hartă conectată: acest widget nu a fost legat de o hartă. Cere Diviziei GIS să-l conecteze în setările widget.",
               "src": "machine",
@@ -18287,11 +17720,6 @@
               "t": "Încă blocat? Contactați divizia GIS și menționați numele personalizat al Galeriei Basemap și această aplicație.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "E bine de ştiut.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: Utilizați semnul de întrebare din dreapta sus a widget-ului pentru a deschide din nou acest ghid.",
@@ -18571,16 +17999,16 @@
           }
         },
         "ru": {
-          "file": "55cb94fb543b",
+          "file": "fd3e962fa5af",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -18598,11 +18026,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ничто в руководстве не соответствует этому слову. Попробуйте другой или откройте разделы выше.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Выберите базовую карту для изменения фоновой карты, а затем продолжайте использовать карту.",
               "src": "machine",
@@ -18612,11 +18035,6 @@
               "t": "Как только доступны базовые карты, выберите один, чтобы изменить фоновую карту.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Откройте проводник.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Отклонить намек",
@@ -18697,11 +18115,6 @@
               "t": "Текущая базовая карта, показанная на правой стороне разделителя",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Начните здесь: три шага",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Посмотрите фотографии и имена в галерее.",
@@ -18958,11 +18371,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Если что-то выглядит неправильно",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Карта не подключена: этот виджет не связан с картой. Попросите отдел ГИС подключить его в настройках виджета.",
               "src": "machine",
@@ -19022,11 +18430,6 @@
               "t": "Все еще застрял? Свяжитесь с отделом ГИС и укажите название Basemap Gallery Custom и это приложение.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Хорошо знать",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: используйте вопросительный знак в правом верхнем углу виджета, чтобы снова открыть это руководство.",
@@ -19306,16 +18709,16 @@
           }
         },
         "sk": {
-          "file": "ba65493463d8",
+          "file": "c09d0a9735dc",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -19333,11 +18736,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nič v sprievodcovi nezodpovedá tomu slovu. Skúste iné, alebo otvoriť časti vyššie.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Vyberte basemapku pre zmenu mapy pozadia a potom pokračujte v používaní mapy.",
               "src": "machine",
@@ -19347,11 +18745,6 @@
               "t": "Akonáhle sú k dispozícii basemapy, vyberte jeden pre zmenu mapy pozadia.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvorte sprievodcu.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Rozchod",
@@ -19432,11 +18825,6 @@
               "t": "Aktuálna basemap, zobrazená na pravej strane deliča",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Začnite tu: tri kroky",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Pozrite sa na obrázky a mená v galérii.",
@@ -19693,11 +19081,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ak niečo vyzerá zle",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Žiadna mapa pripojená: tento widget nebol spojený s mapou. Požiadajte Divíziu GIS o pripojenie v nastaveniach widgetu.",
               "src": "machine",
@@ -19757,11 +19140,6 @@
               "t": "Stále zaseknutý? Kontaktujte Divíziu GIS a zmieňte sa o Basemap Gallery Vlastné meno a túto aplikáciu.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobré vedieť",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: použite otáznik v pravom hornom rohu widgetu otvoriť tento sprievodca znova.",
@@ -20041,16 +19419,16 @@
           }
         },
         "sl": {
-          "file": "a6cb4263e65c",
+          "file": "d6410ef2ed65",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -20068,11 +19446,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Nič v vodiču se ne ujema s to besedo. Poskusite drugo ali pa odprite zgornje oddelke.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Izberite osnovni zemljevid, da spremenite zemljevid ozadja in nato nadaljujte z uporabo zemljevida.",
               "src": "machine",
@@ -20082,11 +19455,6 @@
               "t": "Ko so na voljo bazne karte, izberite eno za spremembo zemljevida ozadja.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Odpri vodič.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Zavrni namig",
@@ -20167,11 +19535,6 @@
               "t": "Trenutna osnovna karta, prikazana na desni strani delilnika",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Začnite tukaj: trije koraki",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Poglejte slike in imena v galeriji.",
@@ -20428,11 +19791,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Če je kaj narobe.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Ni povezan zemljevid: ta gradnik ni bil povezan z zemljevidom. Vprašajte oddelek GIS, da ga povežete v nastavitvah widget.",
               "src": "machine",
@@ -20492,11 +19850,6 @@
               "t": "Še vedno obtičal? Kontaktirajte oddelek GIS in omenite Basemap Gallery Custom name in to aplikacijo.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je vedeti.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: uporabite vprašaj na vrhu desno od widget odpreti ta vodnik znova.",
@@ -20776,30 +20129,30 @@
           }
         },
         "sr": {
-          "file": "022d9a01965d",
+          "file": "d35c5b3890a5",
           "counts": {
-            "esri": 15,
+            "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 144
+            "missing": 149
           },
           "entries": {}
         },
         "sv": {
-          "file": "b794294ad735",
+          "file": "776fa476264c",
           "counts": {
-            "esri": 15,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 141,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -20817,11 +20170,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ingenting i guiden matchar det ordet. Prova en annan, eller öppna avsnitten ovan.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Välj en baskarta för att ändra bakgrundskartan och fortsätt sedan med kartan.",
               "src": "machine",
@@ -20831,11 +20179,6 @@
               "t": "När basemaps är tillgängliga, välj en för att ändra bakgrundskartan.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Öppna guiden.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Avfärda hint",
@@ -20916,11 +20259,6 @@
               "t": "Nuvarande baskarta, som visas på höger sida av divider",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Börja här: tre steg",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Titta igenom bilder och namn i galleriet.",
@@ -21177,11 +20515,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Om något ser fel",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Ingen karta ansluten: denna widget har inte kopplats till en karta. Be GIS-avdelningen att ansluta den i widgetinställningarna.",
               "src": "machine",
@@ -21242,11 +20575,6 @@
               "src": "machine",
               "h": "19bfa10f267a"
             },
-            "helpTipsTitle": {
-              "t": "Bra att veta",
-              "src": "machine",
-              "h": "79fc372dc790"
-            },
             "helpTipsHelp": {
               "t": "{helpLabel}Använd frågetecknet högst upp till höger om widgeten för att öppna denna guide igen.",
               "src": "machine",
@@ -21266,6 +20594,11 @@
               "t": "Jämför lägger ingenting till den sparade kartan. Stängning jämför returnerar kartan till den aktuella baskartan.",
               "src": "machine",
               "h": "2599e2ac4f7c"
+            },
+            "loadingBasemaps": {
+              "t": "Loading basemaps...",
+              "src": "machine",
+              "h": "c412ee72eb32"
             },
             "noBasemapsConfigured": {
               "t": "Inga baskartor konfigurerade",
@@ -21417,6 +20750,11 @@
               "src": "machine",
               "h": "cd16026acc85"
             },
+            "loadingBasemaps2": {
+              "t": "Loading basemaps",
+              "src": "machine",
+              "h": "4c746f7ab986"
+            },
             "noBasemapsConfigured2": {
               "t": "Inga baskartor konfigurerade.",
               "src": "machine",
@@ -21525,16 +20863,16 @@
           }
         },
         "th": {
-          "file": "bf6aace44150",
+          "file": "2db6b5dbd2cc",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -21552,11 +20890,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "ไม่มีอะไรในคู่มือที่ตรงกับคํานั้น ลอง เปิด อีก ส่วน หนึ่ง ข้าง บน.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "เลือกฐานแมปเพื่อเปลี่ยนแผนที่พื้นหลัง จากนั้นให้ใช้แผนที่ต่อไป",
               "src": "machine",
@@ -21566,11 +20899,6 @@
               "t": "เมื่อ หา เบสแมป ได้ ให้ เลือก ตัว หนึ่ง เพื่อ เปลี่ยน แผนที่.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "เปิดคู่มือ",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "คําใบ้ที่ไม่สนใจ",
@@ -21651,11 +20979,6 @@
               "t": "เบสแมพปัจจุบัน แสดงอยู่ทางด้านขวาของตัวแบ่ง",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "เริ่มที่นี่: สามขั้นตอน",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "ดูภาพและชื่อในแกลอรี่สิ",
@@ -21912,11 +21235,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "ถ้ามีอะไรผิดปกติ",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "ไม่มีแผนที่ที่เชื่อมต่ออยู่: วิดเจ็ตนี้ไม่ได้ถูกเชื่อมโยงกับแผนที่ ขอให้หน่วย GIS เชื่อมต่อมันในการตั้งค่าวิดเจ็ต",
               "src": "machine",
@@ -21976,11 +21294,6 @@
               "t": "ยังติดอยู่อีกเหรอ? ติดต่อ IS ดิวิชั่น และพูดถึง เบสแมป แกลลอรี่ ชื่อและแอพนี้",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "ดีที่ได้รู้",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}ใช้เครื่องหมายคําถามด้านขวาบนของวิดเจ็ต เพื่อเปิดคู่มือนี้อีกครั้ง",
@@ -22260,16 +21573,16 @@
           }
         },
         "tr": {
-          "file": "4dc640371992",
+          "file": "60a829735cdf",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -22287,11 +21600,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Rehberde hiçbir şey bu kelimeyi maçları. Başka bir deneyin veya yukarıdaki bölümleri açın.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Arka haritayı değiştirmek için bir bazmap seçin, sonra haritayı kullanmaya devam edin.",
               "src": "machine",
@@ -22301,11 +21609,6 @@
               "t": "Basemaps mevcut olduğunda, arka haritayı değiştirmek için birini seçin.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Rehberi açın.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "İzinsiz ipucu",
@@ -22386,11 +21689,6 @@
               "t": "Mevcut bazmap, bölünmenin sağ tarafında gösterilen",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Buraya başlayın: Üç adım",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Galerideki resimler ve isimlere bakın.",
@@ -22647,11 +21945,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Bir şey yanlış görünüyorsa",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Hiçbir harita bağlantılı değildir: bu widget bir haritayla bağlantılı değildir. GIS Division'a bunu widget ayarlarında bağlamasını sorun.",
               "src": "machine",
@@ -22711,11 +22004,6 @@
               "t": "Hala sıkıştı? GIS Bölüm ile iletişime geçin ve Basemap Gallery Özel adı ve bu uygulamadan bahsedin.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "İyi bilmek",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: bu kılavuzu tekrar açmak için widget'ın üst sağdaki soruyu kullanın.",
@@ -22995,16 +22283,16 @@
           }
         },
         "zh-cn": {
-          "file": "0f7e3091d7af",
+          "file": "d93b84fbe983",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -23022,11 +22310,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "指南中没有任何内容与这个词相符。 尝试另一个,或者打开上面的部分。",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "选择一个背景图来修改背景图,然后继续使用地图。",
               "src": "machine",
@@ -23036,11 +22319,6 @@
               "t": "基础映射可用后,请选择一个来修改背景映射.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "开导.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "解职提示",
@@ -23121,11 +22399,6 @@
               "t": "当前底图, 在分隔符右侧显示",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "从这里开始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "看看画廊里的照片和名字",
@@ -23382,11 +22655,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "如果有什么不对劲",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "没有连接到地图: 此部件尚未链接到地图 。 请 GIS 分区在部件设置中连接它 。",
               "src": "machine",
@@ -23446,11 +22714,6 @@
               "t": "还卡住了? 联系GIS分部,并提及Basemap Gallery自定义名称和这个应用程序.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "很高兴知道",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}:使用部件右上方的问号再次打开此指南。",
@@ -23730,16 +22993,16 @@
           }
         },
         "uk": {
-          "file": "8ea18ad26293",
+          "file": "0c4efa1f6c0b",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -23757,11 +23020,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ніщо в інструкції відповідає словом. Спробуйте ще одну або відкрийте розділи вище.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Виберіть базову карту, щоб змінити фонову карту, потім зберегти за допомогою карти.",
               "src": "machine",
@@ -23771,11 +23029,6 @@
               "t": "Після того, як базові карти доступні, виберіть одну для зміни фонової карти.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Відкрийте посібник.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Відшкодування",
@@ -23856,11 +23109,6 @@
               "t": "Поточна базова карта, що відображається на правій стороні дивідора",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Почати тут: три кроки",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Переглядайте фотографії та імена в галереї.",
@@ -24117,11 +23365,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Якщо щось виглядає неправильно",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Немає підключеної карти: цей віджет не був підключений до карти. Задайте розділ ГІС для підключення його в налаштуваннях віджету.",
               "src": "machine",
@@ -24181,11 +23424,6 @@
               "t": "Натюрморт? Зв'язатися з відділом ГІС і згадувати базову сторінку галереї Користувальницьке ім'я і це додаток.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Добре знати",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: Використовуйте знак питання у верхньому правому верхньому правому віджеті, щоб відкрити цей посібник знову.",
@@ -24465,16 +23703,16 @@
           }
         },
         "vi": {
-          "file": "9386aaa6c37a",
+          "file": "80d6bbe8e9ae",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -24492,11 +23730,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Không có gì phù hợp với từ đó. Thử cái khác, hoặc mở phần trên.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "Chọn một sơ đồ cơ bản để thay đổi bản đồ nền, rồi tiếp tục sử dụng bản đồ.",
               "src": "machine",
@@ -24506,11 +23739,6 @@
               "t": "Một khi có bản đồ cơ bản, hãy chọn một bản đồ nền.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Mở sách hướng dẫn ra.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Xóa gợi ý",
@@ -24591,11 +23819,6 @@
               "t": "Sơ đồ cơ bản hiện tại, được hiển thị bên phải bộ chia",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Bắt đầu ở đây: ba bước",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Hãy nhìn qua những bức ảnh và tên trong phòng trưng bày.",
@@ -24852,11 +24075,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Nếu có gì không ổn",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Không có bản đồ nào được nối: ô điều khiển này chưa được liên kết đến bản đồ. Yêu cầu bộ phận GIS kết nối nó trong thiết lập thiết lập máy móc.",
               "src": "machine",
@@ -24916,11 +24134,6 @@
               "t": "Vẫn kẹt à? Liên lạc với Division GIS và đề cập đến tên phòng trưng bày bản đồ và ứng dụng này.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Rất vui được biết",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: hãy dùng dấu hỏi ở bên phải trên cùng của ô điều khiển để mở lại hướng dẫn này.",
@@ -25200,16 +24413,16 @@
           }
         },
         "zh-hk": {
-          "file": "28d5382bc182",
+          "file": "4846f701dcf2",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -25227,11 +24440,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "選擇要改變背景地圖的基底圖, 然后繼續使用地圖 。",
               "src": "machine",
@@ -25241,11 +24449,6 @@
               "t": "一旦有了基底圖, 請選擇一個來改變背景圖 。",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "打開向导",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "解散提示",
@@ -25326,11 +24529,6 @@
               "t": "目前底圖, 顯示在分隔符的右邊",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "從這裡開始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "看看畫廊裡的照片和名字",
@@ -25587,11 +24785,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "如果有什麼不對勁",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "沒有地圖連接: 此元件尚未連接到地圖 。 請 GIS 司 在元件設定中連接它 。",
               "src": "machine",
@@ -25651,11 +24844,6 @@
               "t": "仍然卡住了? 聯繫 GIS 司, 並提到 Basemap 畫廊自訂名稱與此應用程式 。",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "很高興知道",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: 使用元件右上方的問號再次開啟此導覽 。",
@@ -25935,16 +25123,16 @@
           }
         },
         "zh-tw": {
-          "file": "28d5382bc182",
+          "file": "4846f701dcf2",
           "counts": {
-            "esri": 15,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 144,
+            "machine": 139,
             "stale": 0,
-            "missing": 0
+            "missing": 3
           },
           "entries": {
             "_widgetLabel": {
@@ -25962,11 +25150,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
             "firstRunBody": {
               "t": "選擇要改變背景地圖的基底圖, 然后繼續使用地圖 。",
               "src": "machine",
@@ -25976,11 +25159,6 @@
               "t": "一旦有了基底圖, 請選擇一個來改變背景圖 。",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "打開向导",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "解散提示",
@@ -26061,11 +25239,6 @@
               "t": "目前底圖, 顯示在分隔符的右邊",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "從這裡開始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "看看畫廊裡的照片和名字",
@@ -26322,11 +25495,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "如果有什麼不對勁",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "沒有地圖連接: 此元件尚未連接到地圖 。 請 GIS 司 在元件設定中連接它 。",
               "src": "machine",
@@ -26386,11 +25554,6 @@
               "t": "仍然卡住了? 聯繫 GIS 司, 並提到 Basemap 畫廊自訂名稱與此應用程式 。",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "很高興知道",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: 使用元件右上方的問號再次開啟此導覽 。",
@@ -26672,8 +25835,8 @@
       }
     },
     "setting": {
-      "en": "37f9069ebb7b",
-      "keys": 40,
+      "en": "7838a474707d",
+      "keys": 49,
       "hashes": {
         "map": "ab478f3efc84",
         "appearance": "41def7a0febe",
@@ -26714,20 +25877,29 @@
         "noBasemapsSelectedUseTheBrowse": "2875d7bec54b",
         "help": "c47ae15370cf",
         "showHelpGuide": "03e9f0b81336",
-        "showTheQuestionMarkButtonThat": "62c4e81a84ca"
+        "showTheQuestionMarkButtonThat": "62c4e81a84ca",
+        "extraSmall": "4e149dc26ecb",
+        "small": "c74fd9714e38",
+        "mediumDefault": "4aa460289a5a",
+        "large": "738fd1d2452f",
+        "extraLarge": "6857dd8e354d",
+        "gridThumbnails": "522cc46ea77e",
+        "listRows": "0ba8d9e27e2f",
+        "itemNotFoundOrItIs": "e48a7ddaa009",
+        "failedToLoadItemsMessage": "8dee8e834c72"
       },
       "locales": {
         "ar": {
-          "file": "705cb8d00908",
+          "file": "3c0bed16f96c",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -26874,30 +26046,20 @@
               "t": "لم يتم إختيار أيّ تطابق استخدمي قسم \"بروز بورتال\" أعلاه لإضافة مواضع قاعدية",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "دليل المساعدة",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "اظهر زر التساؤل الذي يفتح المرشد",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "bg": {
-          "file": "6b667342b880",
+          "file": "3ad61d94ddd5",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27044,44 +26206,34 @@
               "t": "Не са избрани базови карти. Използвайте секцията на портала, за да добавите basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Показване на ръководство за помощ",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Показване на бутона въпрос-марка, която отваря джаджа помощ ръководство",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "bs": {
-          "file": "675a516068f8",
+          "file": "f32c5f332d8f",
           "counts": {
-            "esri": 9,
+            "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 31
+            "missing": 37
           },
           "entries": {}
         },
         "ca": {
-          "file": "8ee24f012f00",
+          "file": "a53ad35b15a7",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27228,30 +26380,20 @@
               "t": "No s' ha seleccionat cap mapa de dades. Useu la secció dels elements de l' exploració per afegir mapes base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Mostra la guia d' ajuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostra el botó Pregunta- marca que obre la guia d' ajuda de l' estri",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "cs": {
-          "file": "00bc7462a5e8",
+          "file": "cd25b6252172",
           "counts": {
-            "esri": 8,
-            "esri-check": 1,
+            "esri": 11,
+            "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27398,30 +26540,20 @@
               "t": "Žádné podložky. Pro přidání podkladů použijte výše uvedenou sekci Procházení portálových položek.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Zobrazit nápovědu",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zobrazit tlačítko question- mark, které otevře nápovědu widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "da": {
-          "file": "312d1e2dc588",
+          "file": "7880f77e9830",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27568,30 +26700,20 @@
               "t": "Ingen basemaps valgt. Brug afsnittet Gennemse portalelementer ovenfor til at tilføje basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Vis hjælpeguide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Vis spørgsmåls- markerings- knappen der åbner kontrolhjælpevejledningen",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "de": {
-          "file": "53b0ec478055",
+          "file": "533b505fdcee",
           "counts": {
-            "esri": 9,
+            "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 30,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27743,25 +26865,20 @@
               "t": "Show Help Guide",
               "src": "machine",
               "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zeigen Sie die Fragezeichentaste an, die das Widget-Hilfehandbuch öffnet",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "el": {
-          "file": "f0865e05ed52",
+          "file": "ccbb1b42701d",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -27908,30 +27025,20 @@
               "t": "Δεν επιλέχθηκαν χάρτες βάσης. Χρησιμοποιήστε την παραπάνω ενότητα αντικειμένων πύλης περιήγησης για να προσθέσετε χάρτες βάσης.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Εμφάνιση οδηγού βοήθειας",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Εμφάνιση του κουμπιού ερωτηματολογίου που ανοίγει τον οδηγό βοήθειας widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "es": {
-          "file": "f6e54747b46e",
+          "file": "cc16627963fa",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 13,
+            "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28078,30 +27185,20 @@
               "t": "No hay mapas de base seleccionados. Utilice la sección de artículos del Portal de Exploración para añadir mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Mostrar guía de ayuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostrar el botón de la marca de preguntas que abre el widget guía de ayuda",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "et": {
-          "file": "baf3a9ff33d7",
+          "file": "4ec4f29e5bf4",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28248,30 +27345,20 @@
               "t": "Aluskaarte pole valitud. Baaskaartide lisamiseks kasutage ülalolevat jaotist Sirvi portaali elemendid.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Abijuhendi näitamine",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Küsimusemärgi nupu näitamine, mis avab vidina abi juhendi",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "fi": {
-          "file": "c1c1684afa87",
+          "file": "7c7ea42323ab",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28418,30 +27505,20 @@
               "t": "Peruskarttoja ei ole valittu. Lisää basemapit käyttämällä yllä olevaa Selaa portaalia.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Näytä ohje",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Näytä kysymys-merkki-painike, joka avaa widget ohjeen",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "fr": {
-          "file": "f185244a01ab",
+          "file": "ef2e2bd69a8d",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28588,30 +27665,20 @@
               "t": "Aucune carte de base sélectionnée. Utilisez la section Parcourir les éléments du portail ci-dessus pour ajouter des cartes de base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Afficher le guide d'aide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Afficher le bouton question-marque qui ouvre le guide d'aide du widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "he": {
-          "file": "65b35a18ce94",
+          "file": "d0b01d505752",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28758,44 +27825,34 @@
               "t": "לא נבחרו מפות בסיס. השתמש בסעיף פריטים פורטל Browse לעיל כדי להוסיף מפות בסיס.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "מדריך עזרה",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "הצג את לחצן סימן שאלה פותח את מדריך העזרה widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "hr": {
-          "file": "675a516068f8",
+          "file": "f32c5f332d8f",
           "counts": {
-            "esri": 9,
+            "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 31
+            "missing": 37
           },
           "entries": {}
         },
         "hu": {
-          "file": "be564774446f",
+          "file": "613b6f163a52",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -28942,30 +27999,20 @@
               "t": "Nincs kiválasztva alaplap. A bázisok hozzáadásához használja a fenti böngészési portálelemek részt.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Segítőútmutató megjelenítése",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Megjeleníti a kérdőjel gombot, amely megnyitja a widget súgó útmutatót",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "id": {
-          "file": "ec2f8e40a925",
+          "file": "54afd3f31884",
           "counts": {
-            "esri": 8,
-            "esri-check": 1,
+            "esri": 14,
+            "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29112,30 +28159,20 @@
               "t": "Tidak ada peta dasar yang dipilih. Gunakan daerah Telusur Portal Ramban di atas untuk menambahkan peta dasar.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Tampilkan panduan bantuan",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Tampilkan tombol tanya-tandai yang membuka panduan bantuan widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "it": {
-          "file": "27a6ac55f8e5",
+          "file": "9f344cf511ce",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29282,30 +28319,20 @@
               "t": "Nessuna mappa di base selezionata. Utilizzare la sezione Sfoglia elementi portali per aggiungere le mappe di base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Mostra la guida",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostra il pulsante di punto interrogativo che apre la guida di aiuto widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ja": {
-          "file": "2ade4bc2fca7",
+          "file": "cde2bc5035a6",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29452,30 +28479,20 @@
               "t": "ベースマップは選択されていません。 上記の「ブラウザポータル項目」セクションを使用して、ベースマップを追加します。",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "ヘルプガイドを表示",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "ウィジェットヘルプガイドを開く質問のボタンを表示する",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ko": {
-          "file": "3cb1bcbfb646",
+          "file": "839ce0cf2b21",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29622,30 +28639,20 @@
               "t": "선택된 basemaps 없음. 위의 Browse Portal 항목 섹션을 사용하여 basemaps를 추가하십시오.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "공지사항",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "위젯 도움말 가이드를 열 수있는 질문 표시 버튼",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "lt": {
-          "file": "40e3918c24f3",
+          "file": "e932ca2b5784",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29792,30 +28799,20 @@
               "t": "Nepasirinktas basemaps. Naudokite Naršyti portalo elementus skirsnyje aukščiau pridėti basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Rodyti pagalbos vadovą",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Rodyti klausimų žymėjimo mygtuką, kuris atveria valdikliui skirtą pagalbos vadovą",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "lv": {
-          "file": "d87fe0cb8a43",
+          "file": "14e24b23513e",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -29962,30 +28959,20 @@
               "t": "Nav izvēlētas bāzes kartes. Izmantojiet Pārlūkot Portālu Vienības sadaļu iepriekš, lai pievienotu bāzes kartes.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Rādīt palīdzības ceļvedi",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Rādīt jautājumu zīmes pogu, kas atver logdaļu palīdzības rokasgrāmatu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "no": {
-          "file": "51be787813f3",
+          "file": "039818470ace",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30132,30 +29119,20 @@
               "t": "Ingen basiskart valgt. Bruk delen Bla gjennom portalelementer ovenfor for å legge til basekart.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Vis hjelpguide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Vis spørsmålsmerkeknappen som åpner widget-hjelpeguiden",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "nl": {
-          "file": "e8199cb17487",
+          "file": "869ad62f6e4a",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30302,30 +29279,20 @@
               "t": "Geen basemaps geselecteerd. Gebruik de sectie Bladerporal items hierboven om basemaps toe te voegen.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Hulplijn tonen",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "De knop met het vraagteken tonen die de hulplijn widget opent",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pl": {
-          "file": "93ea764e46a6",
+          "file": "2821c67fc972",
           "counts": {
-            "esri": 8,
-            "esri-check": 1,
+            "esri": 11,
+            "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30472,30 +29439,20 @@
               "t": "Nie wybrano podstaw. Użyj powyższej sekcji Przeglądaj elementy portalu, aby dodać podstawy.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Pokaż przewodnik pomocy",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Pokaż przycisk question- mark, który otwiera przewodnik pomocy widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pt-br": {
-          "file": "637f9ee135cb",
+          "file": "0bc6d9e8f809",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30642,30 +29599,20 @@
               "t": "Nenhum mapa de base selecionado. Use a seção de itens do portal para adicionar mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Mostre guia de ajuda.",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget.",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pt-pt": {
-          "file": "f44044d7bb18",
+          "file": "467781dcaa01",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30812,30 +29759,20 @@
               "t": "Nenhum mapa de base selecionado. Use a seção Navegar por Portal Itens acima para adicionar mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Mostrar guia de ajuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostrar o botão de marca de perguntas que abre o guia de ajuda do elemento",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ro": {
-          "file": "bed506e40124",
+          "file": "1a879b14c10b",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 13,
+            "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -30982,30 +29919,20 @@
               "t": "Nu s-a selectat niciun basemaps. Utilizați secțiunea de elemente de portal de navigare de mai sus pentru a adăuga basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Arată ghidul de ajutor",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Arată butonul semn de întrebare care deschide ghidul de ajutor widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ru": {
-          "file": "66039a84793b",
+          "file": "18ceec9c7000",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -31152,30 +30079,20 @@
               "t": "Никаких базовых карт не выбрано. Используйте раздел Browse Portal Items выше, чтобы добавить базовые карты.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Показать справочник",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Покажите кнопку вопрос-марка, которая открывает руководство по помощи виджета",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "sk": {
-          "file": "b9ea0fc939fc",
+          "file": "2ea92accd3e6",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 30,
+            "machine": 28,
             "stale": 0,
-            "missing": 1
+            "missing": 7
           },
           "entries": {
             "displayMode": {
@@ -31317,30 +30234,20 @@
               "t": "Neboli vybrané žiadne basemapy. Použi sekciu Položky portálu pre prehliadanie vyššie pre pridanie basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Zobraziť návod na pomoc",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zobraziť tlačidlo otázniku, ktoré otvorí sprievodcu pomocníkom",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "sl": {
-          "file": "da08beabef3c",
+          "file": "2e083e1c5d1e",
           "counts": {
-            "esri": 8,
-            "esri-check": 1,
+            "esri": 11,
+            "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 30,
+            "machine": 28,
             "stale": 0,
-            "missing": 1
+            "missing": 7
           },
           "entries": {
             "displayMode": {
@@ -31482,44 +30389,34 @@
               "t": "Ni izbranih baznih zemljevidov. Uporabite oddelek Brskanje Portal postavke zgoraj za dodajanje baznih zemljevidov.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Prikaži vodnik za pomoč",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži gumb z vprašanji, ki odpre widget pomoč vodnik",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "sr": {
-          "file": "0d8ec4688f3b",
+          "file": "f7806981f8a9",
           "counts": {
-            "esri": 9,
+            "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 31
+            "missing": 37
           },
           "entries": {}
         },
         "sv": {
-          "file": "a47a0a63b35f",
+          "file": "4e023408cac6",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -31666,30 +30563,20 @@
               "t": "Inga basemaps valda. Använd avsnittet Bläddra Portal objekt ovan för att lägga till baskartor.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Visa hjälp guide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Visa frågemärke knappen som öppnar widget hjälp guide",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "th": {
-          "file": "b39f5ac15ccb",
+          "file": "e884b60ed29b",
           "counts": {
-            "esri": 8,
+            "esri": 13,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -31836,30 +30723,20 @@
               "t": "ยังไม่มีการเลือกฐานแมพ ใช้ส่วนรายการทางด้านบนในการเรียกดู เพื่อเพิ่มการใช้ฐานแมป",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "แสดงคําแนะนํา",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "แสดงปุ่ม เครื่องหมายคําถามที่เปิดวิดเจ็ตคําแนะนํา",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "tr": {
-          "file": "c815f900a6d8",
+          "file": "70179566d8e2",
           "counts": {
-            "esri": 9,
+            "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 30,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32011,25 +30888,20 @@
               "t": "Show help guide",
               "src": "machine",
               "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "widget'ı açan soru işaret düğmesine göster",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-cn": {
-          "file": "cd539162ac01",
+          "file": "a174d4df73a7",
           "counts": {
-            "esri": 9,
-            "esri-check": 0,
+            "esri": 12,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32176,30 +31048,20 @@
               "t": "未选择底图 。 使用上面的浏览门户项目部分来添加碱性映射.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "显示帮助指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "显示打开部件帮助指南的问题标记按钮",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "uk": {
-          "file": "9fd106cbd995",
+          "file": "ac12aa2552ea",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32346,30 +31208,20 @@
               "t": "Не вибрано базові карти. Використовуйте розділ Browse Portal вище, щоб додати базові карти.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Показати посібник",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Показати натис-mark, який відкриває посібник з підтримки віджету",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "vi": {
-          "file": "a81dd65d6466",
+          "file": "bd5b54a6dd9a",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32516,30 +31368,20 @@
               "t": "Chưa chọn sơ đồ cơ bản. Dùng phần cổng duyệt bên trên để thêm sơ đồ cơ bản.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Hiện hướng dẫn trợ giúp",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Hiển thị nút đánh dấu câu hỏi để mở hướng dẫn trợ giúp ô điều khiển",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-hk": {
-          "file": "30b91c5ff540",
+          "file": "1c3b7b530376",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32686,30 +31528,20 @@
               "t": "未選擇底圖 。 使用上面的瀏覽端口項目區域來新增基底圖 。",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "顯示說明指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "顯示開啟元件說明指導的問題標鍵",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-tw": {
-          "file": "30b91c5ff540",
+          "file": "1c3b7b530376",
           "counts": {
-            "esri": 9,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 31,
+            "machine": 29,
             "stale": 0,
-            "missing": 0
+            "missing": 6
           },
           "entries": {
             "displayMode": {
@@ -32856,16 +31688,6 @@
               "t": "未選擇底圖 。 使用上面的瀏覽端口項目區域來新增基底圖 。",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "顯示說明指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "顯示開啟元件說明指導的問題標鍵",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         }

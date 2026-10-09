@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "ベースマップは選択されていません。 上記の「ブラウザポータル項目」セクションを使用して、ベースマップを追加します。",
         help: "ヘルプ",
         showHelpGuide: "ヘルプガイドを表示",
-        showTheQuestionMarkButtonThat: "ウィジェットヘルプガイドを開く質問のボタンを表示する"
+        showTheQuestionMarkButtonThat: "ウィジェットヘルプガイドを開く質問のボタンを表示する",
+        extraSmall: "Extra Small",
+        small: "小",
+        mediumDefault: "Medium (Default)",
+        large: "大",
+        extraLarge: "特大",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

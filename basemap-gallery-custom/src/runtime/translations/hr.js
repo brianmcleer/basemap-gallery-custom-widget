@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Shown on the left side of the divider",
         clickToCompareTitleWithThe: "Click to compare {title} with the current basemap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Currently active basemap (click to reapply)",
-        clickToApplyTitleBasemapTo: "Click to apply {title} basemap to the map"
+        clickToApplyTitleBasemapTo: "Click to apply {title} basemap to the map",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

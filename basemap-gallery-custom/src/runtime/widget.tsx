@@ -19,6 +19,7 @@ import Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
 import Collection from 'esri/core/Collection'
 import * as reactiveUtils from 'esri/core/reactiveUtils'
+import { __setIntl, __t } from './i18n-t'
 
 const { useEffect, useState, useRef, useCallback, useMemo } = React
 
@@ -268,6 +269,7 @@ function readMapSwitcherBasemap (): string | null {
 type WidgetProps = AllWidgetProps<Config> & { id: string; useMapWidgetIds?: string[] }
 
 const Widget = (props: WidgetProps) => {
+  __setIntl((props as any).intl)
     const t = useCallback((id: string, values?: Record<string, string>): string => {
         const message = defaultMessages[id as keyof typeof defaultMessages] || id
         if (props.intl) {
@@ -1861,7 +1863,7 @@ const Widget = (props: WidgetProps) => {
                                             onKeyDown={(e) => handleKeyDown(e, item, index)}
                                             role='option'
                                             aria-selected={isActive}
-                                            aria-label={`${item.title}${isActive ? ', currently selected basemap' : ''}${isComparing ? ', shown on the left side for comparison' : ''}${isRightSide ? ', shown on the right side for comparison' : ''}${isFav ? ', favorite' : ''}, ${index + 1} of ${visibleBasemaps.length}`}
+                                            aria-label={__t("titleValueValue2Value3Value4Value5", { title: item.title, value: isActive ? ', currently selected basemap' : '', value2: isComparing ? ', shown on the left side for comparison' : '', value3: isRightSide ? ', shown on the right side for comparison' : '', value4: isFav ? ', favorite' : '', value5: index + 1, length: visibleBasemaps.length })}
                                             aria-posinset={index + 1}
                                             aria-setsize={visibleBasemaps.length}
                                             tabIndex={index === tabStopIndex ? 0 : -1}

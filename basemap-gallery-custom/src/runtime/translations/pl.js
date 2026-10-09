@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Szukaj przewodnika (spróbuj \"map\" lub \"help\")",
         helpNoMatches: "Nic w przewodniku nie pasuje do tego słowa. Spróbuj innego, albo otwórz powyższe sekcje.",
         helpAnd: "i aplikacja",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nowy?",
         firstRunBody: "Wybierz bazę, aby zmienić mapę tła, a następnie używaj mapy.",
         firstRunBodyWaiting: "Gdy basemaps są dostępne, wybierz jeden, aby zmienić mapę tła.",
         firstRunHelpLink: "Otwórz przewodnik.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Mapa jest pusta: ta baza może nie mieć zdjęć dla tego obszaru lub poziomu zoom. Spróbuj innego basemap.",
         helpTroubleFavorites: "Ulubione pliki zniknęły: ta przeglądarka mogła wyczyścić lub zablokować zapisane opcje. Dodaj ponownie gwiazdy w przeglądarce, którą planujesz używać.",
         helpTroubleContact: "Nadal utknąłeś? Skontaktuj się z Wydziałem GIS i wymień nazwę Galerii Basemap i tę aplikację.",
-        helpTipsTitle: "Dobrze wiedzieć.",
+        helpTipsTitle: "Dobrze wiedzieć",
         helpTipsHelp: "{helpLabel}: użyj znaku zapytania w prawym górnym rogu widżetu, aby ponownie otworzyć ten przewodnik.",
         helpTipsClose: "{closeLabel}: użyć przycisku na dole przewodnika, aby powrócić do galerii.",
         helpTipsOrder: "Ulubieńcy pojawiają się pierwsi. Pozostałe basemapy pozostają w porządku wybranym dla tej aplikacji.",
         helpTipsCompare: "Porównaj nic nie dodaje do zapisanej mapy. Zamykanie porównania zwraca mapę do bieżącej bazy danych.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Wczytywanie baz...",
         noBasemapsConfigured: "Brak skonfigurowanych baz",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemapy załadowane.{failedNote} Użyj klawiszy strzałek, aby nawigować, Enter lub Space wybrać.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap załadowany.{failedNote} Użyj klawiszy strzałek, aby nawigować, Enter lub Space wybrać.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Brak podłączonego widżetu mapy",
         noMapConnected: "Nie ma połączonej mapy.",
         selectAMapWidgetInThe: "Wybierz widget mapy w ustawieniach widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Wczytywanie baz",
         noBasemapsConfigured2: "Nie skonfigurowano podstawowych map.",
         addBasemapsInTheWidgetSettings: "Dodaj podstawy w ustawieniach widżetu.",
         basemapsCouldNotBeLoaded: "Basemapy nie mogły być załadowane",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Pokazane po lewej stronie rozdzielacza",
         clickToCompareTitleWithThe: "Kliknij, aby porównać {title} z aktualnym basemapem",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktualnie aktywny basemap (kliknij, aby ponownie zastosować)",
-        clickToApplyTitleBasemapTo: "Kliknij, aby zastosować {title} basemap do mapy"
+        clickToApplyTitleBasemapTo: "Kliknij, aby zastosować {title} basemap do mapy",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

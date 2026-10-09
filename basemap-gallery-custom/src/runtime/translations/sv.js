@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Sök guiden (försök \"karta\" eller \"hjälp\")",
         helpNoMatches: "Ingenting i guiden matchar det ordet. Prova en annan, eller öppna avsnitten ovan.",
         helpAnd: "och",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Ny här?",
         firstRunBody: "Välj en baskarta för att ändra bakgrundskartan och fortsätt sedan med kartan.",
         firstRunBodyWaiting: "När basemaps är tillgängliga, välj en för att ändra bakgrundskartan.",
         firstRunHelpLink: "Öppna guiden.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}Använd knappen längst ner i guiden för att återvända till galleriet.",
         helpTipsOrder: "Favoriter visas först. De återstående baskartorna stannar i den ordning som valts för denna app.",
         helpTipsCompare: "Jämför lägger ingenting till den sparade kartan. Stängning jämför returnerar kartan till den aktuella baskartan.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Loading basemaps...",
         noBasemapsConfigured: "Inga baskartor konfigurerade",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basmaps laddade.{failedNote} Använd piltangenter för att navigera, Ange eller Space för att välja.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basmap laddad.{failedNote} Använd piltangenter för att navigera, Ange eller Space för att välja.",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Visas på vänster sida av dividern",
         clickToCompareTitleWithThe: "Klicka för att jämföra {title} med den nuvarande baskartan",
         titleCurrentlyActiveBasemapClickTo: "{title} - För närvarande aktiv basemap (klicka för att återanvända)",
-        clickToApplyTitleBasemapTo: "Klicka för att söka {title} Basmap till kartan"
+        clickToApplyTitleBasemapTo: "Klicka för att söka {title} Basmap till kartan",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

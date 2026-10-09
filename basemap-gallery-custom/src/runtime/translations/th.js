@@ -10,10 +10,10 @@ System.register([], function (e) {
         helpSearchPlaceholder: "ค้นหาคําแนะนํา (พยายาม \"map\" หรือ \"help\")",
         helpNoMatches: "ไม่มีอะไรในคู่มือที่ตรงกับคํานั้น ลอง เปิด อีก ส่วน หนึ่ง ข้าง บน.",
         helpAnd: "และ",
-        firstRunTitle: "New here?",
+        firstRunTitle: "ใหม่ที่นี่?",
         firstRunBody: "เลือกฐานแมปเพื่อเปลี่ยนแผนที่พื้นหลัง จากนั้นให้ใช้แผนที่ต่อไป",
         firstRunBodyWaiting: "เมื่อ หา เบสแมป ได้ ให้ เลือก ตัว หนึ่ง เพื่อ เปลี่ยน แผนที่.",
-        firstRunHelpLink: "เปิดคู่มือ",
+        firstRunHelpLink: "เปิดคู่มือ.",
         firstRunDismiss: "คําใบ้ที่ไม่สนใจ",
         filterPlaceholder: "แปรงทาสี",
         filterLabel: "กรองฐานแมพโดยใช้ชื่อ",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}ใช้ปุ่มด้านล่างของคู่มือเพื่อกลับไปยังแกลเลอรี่",
         helpTipsOrder: "ของโปรดจะปรากฎก่อน เบสแมพที่เหลือคงอยู่ในลําดับที่เลือกสําหรับแอพนี้",
         helpTipsCompare: "การเปรียบเทียบไม่ได้เพิ่มอะไรเข้ากับแผนที่ที่บันทึกไว้ การเปรียบเทียบการปิดจะคืนค่ากลับมาเป็นแผนที่ไปยังฐานปัจจุบัน",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "กําลังเรียกฐานแมป...",
         noBasemapsConfigured: "ยังไม่มีการปรับแต่งการวางฐาน",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} บรรจุกระสุน{failedNote} ใช้ปุ่มลูกศรเพื่อเรียกดู, ป้อนหรือช่องว่างเพื่อเลือก",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} บรรจุกระสุนฐาน{failedNote} ใช้ปุ่มลูกศรเพื่อเรียกดู, ป้อนหรือช่องว่างเพื่อเลือก",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "ไม่มีวิดเจ็ตของแผนที่ที่เชื่อมต่ออยู่",
         noMapConnected: "ไม่มีแผนที่เชื่อมโยง",
         selectAMapWidgetInThe: "เลือกวิดเจ็ตในการตั้งค่าวิดเจ็ต",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "กําลังเรียกฐานแมป",
         noBasemapsConfigured2: "ไม่มีการปรับแต่งการวางฐาน",
         addBasemapsInTheWidgetSettings: "เพิ่มฐานแมพในการตั้งค่าวิดเจ็ต",
         basemapsCouldNotBeLoaded: "ไม่สามารถโหลดฐานแมปได้",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - โชว์อยู่ด้านซ้ายของตัวแบ่ง",
         clickToCompareTitleWithThe: "คลิกเพื่อเปรียบเทียบ {title} ด้วยการใช้เบสแมพปัจจุบัน",
         titleCurrentlyActiveBasemapClickTo: "{title} ปัจจุบัน เบสแมป (คลิกเพื่อเก็บเกี่ยว)",
-        clickToApplyTitleBasemapTo: "คลิกเพื่อปรับใช้ {title} ฐาน ของ แผนที่"
+        clickToApplyTitleBasemapTo: "คลิกเพื่อปรับใช้ {title} ฐาน ของ แผนที่",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

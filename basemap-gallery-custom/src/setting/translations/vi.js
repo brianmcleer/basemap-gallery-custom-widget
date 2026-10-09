@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Chưa chọn sơ đồ cơ bản. Dùng phần cổng duyệt bên trên để thêm sơ đồ cơ bản.",
         help: "Trợ giúp",
         showHelpGuide: "Hiện hướng dẫn trợ giúp",
-        showTheQuestionMarkButtonThat: "Hiển thị nút đánh dấu câu hỏi để mở hướng dẫn trợ giúp ô điều khiển"
+        showTheQuestionMarkButtonThat: "Hiển thị nút đánh dấu câu hỏi để mở hướng dẫn trợ giúp ô điều khiển",
+        extraSmall: "Extra Small",
+        small: "Nhỏ",
+        mediumDefault: "Medium (Default)",
+        large: "Lớn",
+        extraLarge: "Cực lớn",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Žádné podložky. Pro přidání podkladů použijte výše uvedenou sekci Procházení portálových položek.",
         help: "Nápověda",
         showHelpGuide: "Zobrazit nápovědu",
-        showTheQuestionMarkButtonThat: "Zobrazit tlačítko question- mark, které otevře nápovědu widget"
+        showTheQuestionMarkButtonThat: "Zobrazit tlačítko question- mark, které otevře nápovědu widget",
+        extraSmall: "Extra Small",
+        small: "Malá",
+        mediumDefault: "Medium (Default)",
+        large: "Velká",
+        extraLarge: "Extra velká",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

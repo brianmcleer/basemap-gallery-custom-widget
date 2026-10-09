@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Nav izvēlētas bāzes kartes. Izmantojiet Pārlūkot Portālu Vienības sadaļu iepriekš, lai pievienotu bāzes kartes.",
         help: "Palīdzība",
         showHelpGuide: "Rādīt palīdzības ceļvedi",
-        showTheQuestionMarkButtonThat: "Rādīt jautājumu zīmes pogu, kas atver logdaļu palīdzības rokasgrāmatu"
+        showTheQuestionMarkButtonThat: "Rādīt jautājumu zīmes pogu, kas atver logdaļu palīdzības rokasgrāmatu",
+        extraSmall: "Extra Small",
+        small: "Maza",
+        mediumDefault: "Medium (Default)",
+        large: "Liela",
+        extraLarge: "Īpaši liels",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

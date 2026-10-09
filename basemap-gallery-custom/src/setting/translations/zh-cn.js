@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "未选择底图 。 使用上面的浏览门户项目部分来添加碱性映射.",
         help: "帮助",
         showHelpGuide: "显示帮助指南",
-        showTheQuestionMarkButtonThat: "显示打开部件帮助指南的问题标记按钮"
+        showTheQuestionMarkButtonThat: "显示打开部件帮助指南的问题标记按钮",
+        extraSmall: "Extra Small",
+        small: "小型",
+        mediumDefault: "Medium (Default)",
+        large: "大型",
+        extraLarge: "超大",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

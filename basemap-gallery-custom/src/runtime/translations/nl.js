@@ -4,13 +4,13 @@ System.register([], function (e) {
     execute: function () {
       e({
         _widgetLabel: "Aangepaste basiskaartgalerij",
-        helpTitle: "Help",
+        helpTitle: "Hulp",
         close: "Sluiten",
         helpIntro: "Kies de achtergrondkaart die u wilt zien in deze app.",
         helpSearchPlaceholder: "De handleiding doorzoeken (probeer \"map\" of \"help\")",
         helpNoMatches: "Niets in de gids komt overeen met dat woord. Probeer een andere, of open de bovenstaande secties.",
         helpAnd: "en",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nieuw hier?",
         firstRunBody: "Kies een basismap om de achtergrondkaart te wijzigen en blijf dan de kaart gebruiken.",
         firstRunBodyWaiting: "Zodra basemaps beschikbaar zijn, kies er een om de achtergrondkaart te wijzigen.",
         firstRunHelpLink: "Open de gids.",
@@ -87,7 +87,7 @@ System.register([], function (e) {
         helpKeepClear: "Het wissen van de browsergegevens van deze site verwijdert uw favorieten. Een andere browser heeft zijn eigen favorieten.",
         helpKeepPrivate: "Als de browser niet toestaat opslaan, favorieten werken terwijl de galerie blijft open, maar kan worden verloren wanneer u herladen.",
         helpKeepHint: "Het openen van de gids of het verwerpen van \"Nieuw hier?\" verbergt die tip voor deze galerij in deze browser.",
-        helpTroubleTitle: "Als er iets mis lijkt.",
+        helpTroubleTitle: "Als er iets mis lijkt",
         helpTroubleNoMap: "Geen kaart verbonden: dit widget is niet gekoppeld aan een kaart. Vraag de GIS Division om het te verbinden in de widget-instellingen.",
         helpTroubleLoading: "Laden duurt lang: de kaart of basemaps zijn nog niet klaar met laden. Geef ze een moment, dan opnieuw laden van de pagina als ze nog steeds niet verschijnen.",
         helpTroubleEmpty: "Geen basemaps geconfigureerd: er zijn geen basemaps ingesteld voor deze gallery. Vraag de GIS Division om ze toe te voegen.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: gebruik de knop onderaan de gids om terug te keren naar de galerie.",
         helpTipsOrder: "Favorieten verschijnen eerst. De overige basemaps blijven in de volgorde die voor deze app is gekozen.",
         helpTipsCompare: "Vergelijk voegt niets toe aan de opgeslagen kaart. Sluiten vergelijking geeft de kaart terug naar de huidige basismap.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Basiskaarten laden...",
         noBasemapsConfigured: "Geen basemaps geconfigureerd",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps geladen.{failedNote} Gebruik de pijltjestoetsen om te navigeren, Enter of Spatie om te selecteren.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} basemap geladen.{failedNote} Gebruik de pijltjestoetsen om te navigeren, Enter of Spatie om te selecteren.",
@@ -127,7 +127,7 @@ System.register([], function (e) {
         visibleBasemapsCountBasemapMatchYourSearch: "{visibleBasemapsCount} basemap komt overeen met uw zoekopdracht",
         basemapGalleryWidget: "Basismap Galerij-widget",
         comparison: "Vergelijking:",
-        swipe: "Swipe",
+        swipe: "Vegen",
         dragDividerSideBySide: "Sleep verdeler naast elkaar",
         swipeMode: "Swipe-modus",
         blend: "Mengen",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Geen kaartwidget verbonden",
         noMapConnected: "Geen kaart verbonden.",
         selectAMapWidgetInThe: "Selecteer een mapwidget in de widget-instellingen.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Basiskaarten laden",
         noBasemapsConfigured2: "Geen basemaps geconfigureerd.",
         addBasemapsInTheWidgetSettings: "Basemaps toevoegen in de widget-instellingen.",
         basemapsCouldNotBeLoaded: "Basemaps kon niet geladen worden",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Aan de linkerkant van de verdeler getoond",
         clickToCompareTitleWithThe: "Klik om te vergelijken {title} met de huidige basismap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Momenteel actieve basemap (klik om opnieuw toe te passen)",
-        clickToApplyTitleBasemapTo: "Klik om toe te passen {title} basiskaart naar de kaart"
+        clickToApplyTitleBasemapTo: "Klik om toe te passen {title} basiskaart naar de kaart",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

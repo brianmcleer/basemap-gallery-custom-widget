@@ -9,8 +9,8 @@ System.register([], function (e) {
         helpIntro: "このアプリで見たい背景マップを選択します。",
         helpSearchPlaceholder: "ガイドを検索(「マップ」または「ヘルプ」)",
         helpNoMatches: "ガイドがその単語と一致するわけではありません。 別のセクションを試し、または上記のセクションを開きます。",
-        helpAnd: "and",
-        firstRunTitle: "New here?",
+        helpAnd: "および",
+        firstRunTitle: "詳しくはこちら",
         firstRunBody: "背景マップを変更するベースマップを選択し、マップを使用して保存します。",
         firstRunBodyWaiting: "ベースマップが利用可能になったら、背景マップを変更する1つを選択します。",
         firstRunHelpLink: "ガイドを開きます。",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: ガイドの下部にあるボタンを使用してギャラリーに戻ります。",
         helpTipsOrder: "お気に入りが最初に表示されます。 残りのベースマップは、このアプリで選択した注文にとどまります。",
         helpTipsCompare: "保存したマップに何も追加しません。 閉じると、マップが現在のベースマップに戻ります。",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "ロードベースマップ...",
         noBasemapsConfigured: "ベースマップの設定なし",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} ロードされたベースマップ。{failedNote} 矢印キーを使用して、移動、入力、またはスペースを選択して選択します。",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} ロードされたベースマップ。{failedNote} 矢印キーを使用して、移動、入力、またはスペースを選択して選択します。",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "接続されていないマップウィジェット",
         noMapConnected: "地図は接続されていません。",
         selectAMapWidgetInThe: "ウィジェットの設定でマップウィジェットを選択します。",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "ロードベースマップ",
         noBasemapsConfigured2: "ベースマップの設定はありません。",
         addBasemapsInTheWidgetSettings: "ウィジェットの設定でベースマップを追加します。",
         basemapsCouldNotBeLoaded: "ベースマップはロードできません",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - ディバイダーの左側に表示",
         clickToCompareTitleWithThe: "クリックして比較する {title} 現在のベースマップを使って",
         titleCurrentlyActiveBasemapClickTo: "{title} - 現在アクティブなベースマップ(再適用するためにクリック)",
-        clickToApplyTitleBasemapTo: "お申込みはこちら {title} 地図へのベースマップ"
+        clickToApplyTitleBasemapTo: "お申込みはこちら {title} 地図へのベースマップ",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

@@ -17,6 +17,7 @@ import {
 } from 'jimu-ui'
 import { hooks as __exbI18nHooks } from 'jimu-core';
 import __exbI18nMessages from './translations/default';
+import { __setIntl, __t } from './i18n-t'
 
 
 const { useState, useEffect, useRef } = React
@@ -52,16 +53,16 @@ interface Config {
 export type IMConfig = ImmutableObject<Config>
 
 const SIZE_OPTIONS: { value: SizeOption, label: string }[] = [
-    { value: 'xs', label: 'Extra Small' },
-    { value: 'sm', label: 'Small' },
-    { value: 'md', label: 'Medium (Default)' },
-    { value: 'lg', label: 'Large' },
-    { value: 'xl', label: 'Extra Large' }
+    { value: 'xs', label: __t("extraSmall") },
+    { value: 'sm', label: __t("small") },
+    { value: 'md', label: __t("mediumDefault") },
+    { value: 'lg', label: __t("large") },
+    { value: 'xl', label: __t("extraLarge") }
 ]
 
 const DISPLAY_MODE_OPTIONS: { value: DisplayMode, label: string }[] = [
-    { value: 'grid', label: 'Grid (Thumbnails)' },
-    { value: 'list', label: 'List (Rows)' }
+    { value: 'grid', label: __t("gridThumbnails") },
+    { value: 'list', label: __t("listRows") }
 ]
 
 type SettingProps = {
@@ -77,6 +78,7 @@ type SettingProps = {
 }
 
 const Setting = (props: SettingProps) => {
+  __setIntl((props as any).intl)
   const t = __exbI18nHooks.useTranslation(__exbI18nMessages);
     const [useCustomPortal, setUseCustomPortal] = useState(!!props.config?.portalUrl)
     const [portalItems, setPortalItems] = useState<BasemapItem[]>([])
@@ -373,7 +375,7 @@ const Setting = (props: SettingProps) => {
                     setPortalItems([item])
                 } else {
                     setPortalItems([])
-                    setError('Item not found, or it is not a Web Map or Vector Tile Service')
+                    setError(__t("itemNotFoundOrItIs"))
                 }
                 setIsLoading(false)
                 return
@@ -414,7 +416,7 @@ const Setting = (props: SettingProps) => {
 
             setPortalItems(items)
         } catch (err) {
-            setError(`Failed to load items: ${err.message}`)
+            setError(__t("failedToLoadItemsMessage", { message: err.message }))
         } finally {
             setIsLoading(false)
         }

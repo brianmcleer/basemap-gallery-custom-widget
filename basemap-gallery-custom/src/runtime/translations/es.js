@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Busque la guía (intentar \"mapa\" o \"ayuda\")",
         helpNoMatches: "Nada en la guía coincide con esa palabra. Pruebe otro, o abra las secciones anteriores.",
         helpAnd: "y",
-        firstRunTitle: "New here?",
+        firstRunTitle: "¿Eres nuevo aquí?",
         firstRunBody: "Elija un mapa base para cambiar el mapa de fondo, a continuación, siga utilizando el mapa.",
         firstRunBodyWaiting: "Una vez disponibles los mapas base, elija uno para cambiar el mapa de fondo.",
         firstRunHelpLink: "Abre el guía.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "El mapa está en blanco: que el mapa base puede no tener imágenes para esta área o el nivel de zoom. Prueba una hoja de base diferente.",
         helpTroubleFavorites: "Los favoritos se han ido: este navegador puede haber limpiado o bloqueado opciones guardadas. Añadir las estrellas de nuevo en el navegador que planea utilizar.",
         helpTroubleContact: "¿Sigues atrapado? Póngase en contacto con la División GIS y mencione el nombre de Basemap Gallery Custom y esta aplicación.",
-        helpTipsTitle: "Es bueno saberlo.",
+        helpTipsTitle: "Es bueno saberlo",
         helpTipsHelp: "{helpLabel}: utilice la marca de preguntas en la parte superior derecha del widget para abrir esta guía de nuevo.",
         helpTipsClose: "{closeLabel}: utilice el botón en la parte inferior de la guía para volver a la galería.",
         helpTipsOrder: "Los favoritos aparecen primero. Los mapas base restantes permanecen en el orden elegido para esta aplicación.",
         helpTipsCompare: "Compare no añade nada al mapa guardado. Closing compare devuelve el mapa al mapa base actual.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Carga de mapas base...",
         noBasemapsConfigured: "No hay mapas de base configurados",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Las cañerías cargadas.{failedNote} Utilice las teclas de flecha para navegar, entrar o espacio para seleccionar.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Basemap cargada.{failedNote} Utilice las teclas de flecha para navegar, entrar o espacio para seleccionar.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "No mapa widget conectado",
         noMapConnected: "No hay mapa conectado.",
         selectAMapWidgetInThe: "Seleccione un widget de mapa en la configuración del widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Carga de mapas base",
         noBasemapsConfigured2: "No hay mapas de base configurados.",
         addBasemapsInTheWidgetSettings: "Añadir mapas base en la configuración del widget.",
         basemapsCouldNotBeLoaded: "Los mapas base no se pueden cargar",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Mostrada en el lado izquierdo del divisor",
         clickToCompareTitleWithThe: "Haga clic para comparar {title} con el mapa base actual",
         titleCurrentlyActiveBasemapClickTo: "{title} - Hoja de base activa (haga clic para volver a aplicar)",
-        clickToApplyTitleBasemapTo: "Haga clic para aplicar {title} basemap en el mapa"
+        clickToApplyTitleBasemapTo: "Haga clic para aplicar {title} basemap en el mapa",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

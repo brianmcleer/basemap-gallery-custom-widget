@@ -9,11 +9,11 @@ System.register([], function (e) {
         helpIntro: "이 앱에서 볼 수있는 배경지도를 선택하십시오.",
         helpSearchPlaceholder: "가이드 검색 (try \"map\" 또는 \"help\")",
         helpNoMatches: "가이드의 아무것도 그 단어 일치. 다른 시도, 또는 위의 섹션을 엽니 다.",
-        helpAnd: "and",
-        firstRunTitle: "New here?",
+        helpAnd: "및",
+        firstRunTitle: "여기에 새로운?",
         firstRunBody: "배경지도를 변경하려면 basemap을 선택하고, 지도를 사용하세요.",
         firstRunBodyWaiting: "basemaps를 사용할 때, 배경지도를 변경할 수 있습니다.",
-        firstRunHelpLink: "자주 묻는 질문",
+        firstRunHelpLink: "자주 묻는 질문.",
         firstRunDismiss: "헌팅턴병",
         filterPlaceholder: "필터베이스 맵 ...",
         filterLabel: "필터 basemaps 로 이름",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: 갤러리로 돌아가는 가이드의 하단에 버튼을 사용합니다.",
         helpTipsOrder: "즐겨찾기에 추가 나머지 Basemaps는이 응용 프로그램에 선택된 순서에 머물.",
         helpTipsCompare: "저장된 맵에 아무것도 추가합니다. 닫기 비교는 현재 basemap에 맵을 반환합니다.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "로딩 ...",
         noBasemapsConfigured: "기본 설정 없음",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} 로드 맵.{failedNote} 화살표 키를 사용하여 탐색, Enter 또는 Space를 선택합니다.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} 로드된 basemap.{failedNote} 화살표 키를 사용하여 탐색, Enter 또는 Space를 선택합니다.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "지도 위젯 연결",
         noMapConnected: "지도 없음.",
         selectAMapWidgetInThe: "위젯 설정에서 맵 위젯을 선택합니다.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "로딩",
         noBasemapsConfigured2: "설정된 basemaps 없음.",
         addBasemapsInTheWidgetSettings: "위젯 설정에 basemaps를 추가합니다.",
         basemapsCouldNotBeLoaded: "Basemaps는 로드할 수 없습니다.",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - 배당자의 왼쪽에 표시",
         clickToCompareTitleWithThe: "비교하기 {title} 현재 basemap으로",
         titleCurrentlyActiveBasemapClickTo: "{title} - 현재 활성화된 Basemap (Reapply 클릭)",
-        clickToApplyTitleBasemapTo: "자주 묻는 질문 {title} 지도에 basemap"
+        clickToApplyTitleBasemapTo: "자주 묻는 질문 {title} 지도에 basemap",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

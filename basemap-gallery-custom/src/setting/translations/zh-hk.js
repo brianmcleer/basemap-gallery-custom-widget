@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "未選擇底圖 。 使用上面的瀏覽端口項目區域來新增基底圖 。",
         help: "說明",
         showHelpGuide: "顯示說明指南",
-        showTheQuestionMarkButtonThat: "顯示開啟元件說明指導的問題標鍵"
+        showTheQuestionMarkButtonThat: "顯示開啟元件說明指導的問題標鍵",
+        extraSmall: "Extra Small",
+        small: "小",
+        mediumDefault: "Medium (Default)",
+        large: "大",
+        extraLarge: "特大",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Etsi opasta (kokeile \"karttaa\" tai \"apua\")",
         helpNoMatches: "Mikään oppaassa ei vastaa tuota sanaa. Kokeile toista, tai avaa kohdat yllä.",
         helpAnd: "ja",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Uusi täällä?",
         firstRunBody: "Valitse pohjakartta muuttaaksesi taustakarttaa ja jatka sitten kartan käyttöä.",
         firstRunBodyWaiting: "Kun pohjakartat ovat saatavilla, valitse yksi muuttaa taustakartta.",
         firstRunHelpLink: "Avaa opas.",
@@ -87,7 +87,7 @@ System.register([], function (e) {
         helpKeepClear: "Tämän sivuston selaintietojen puhdistaminen poistaa suosikit. Eri selaimella on omat suosikkinsa.",
         helpKeepPrivate: "Jos selain ei salli säästämistä, suosikit toimivat gallerian ollessa auki, mutta ne voivat kadota ladatessasi.",
         helpKeepHint: "Oppaan avaaminen tai \"Uusi täällä\" erottaminen kätkee tämän gallerian vinkin tähän selaimeen.",
-        helpTroubleTitle: "Jos jokin näyttää väärältä.",
+        helpTroubleTitle: "Jos jokin näyttää väärältä",
         helpTroubleNoMap: "Ei yhteyttä karttaan: tätä elementtiä ei ole liitetty karttaan. Pyydä GIS-osastoa yhdistämään se widget-asetuksissa.",
         helpTroubleLoading: "Lataaminen kestää pitkään: kartta tai pohjakartat eivät ole ladanneet loppuun. Anna heille hetki, sitten ladata sivun, jos ne eivät vieläkään näy.",
         helpTroubleEmpty: "Tälle gallerialle ei ole asetettu peruskarttoja. Pyydä GIS-osastoa lisäämään ne.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: Käytä painiketta pohjassa oppaan palata galleriaan.",
         helpTipsOrder: "Suosikit ensin. Loput basemapit pysyvät järjestyksessä valittu tämän sovelluksen.",
         helpTipsCompare: "Vertaa ei lisää mitään tallennettuun karttaan. Suljettu vertailu palauttaa kartan nykyiseen pohjakarttaan.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Ladataan pohjakarttoja...",
         noBasemapsConfigured: "Peruskarttoja ei ole määritetty",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basmapit ladattu.{failedNote} Käytä nuolinäppäimiä navigoida, Enter tai Space valita.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Pohjakartta ladattu.{failedNote} Käytä nuolinäppäimiä navigoida, Enter tai Space valita.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Kartan elementtiä ei ole liitetty",
         noMapConnected: "Ei yhteyttä karttaan.",
         selectAMapWidgetInThe: "Valitse karttaelementti widget-asetuksista.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Ladataan pohjakarttoja",
         noBasemapsConfigured2: "Peruskarttoja ei ole määritetty.",
         addBasemapsInTheWidgetSettings: "Lisää basemapit widget-asetuksiin.",
         basemapsCouldNotBeLoaded: "Basemapeja ei voitu ladata",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Näytetään vasemmalla puolella jakaja",
         clickToCompareTitleWithThe: "Klikkaa vertaillaksesi {title} ja nykyinen pohjakartta",
         titleCurrentlyActiveBasemapClickTo: "{title} - Tällä hetkellä aktiivinen basemap (klikkaa uudelleensoveltaa)",
-        clickToApplyTitleBasemapTo: "Klikkaa käyttääksesi {title} pohjakartta karttaan"
+        clickToApplyTitleBasemapTo: "Klikkaa käyttääksesi {title} pohjakartta karttaan",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

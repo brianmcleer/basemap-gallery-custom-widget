@@ -8,12 +8,12 @@ System.register([], function (e) {
         close: "關閉",
         helpIntro: "選擇您要在此應用程式中看到的背景地圖 。",
         helpSearchPlaceholder: "搜尋導覽( 試圖或「 幫助 」 )",
-        helpNoMatches: "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域",
+        helpNoMatches: "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域.",
         helpAnd: "和",
-        firstRunTitle: "New here?",
+        firstRunTitle: "新來的?",
         firstRunBody: "選擇要改變背景地圖的基底圖, 然后繼續使用地圖 。",
         firstRunBodyWaiting: "一旦有了基底圖, 請選擇一個來改變背景圖 。",
-        firstRunHelpLink: "打開向导",
+        firstRunHelpLink: "打開向导.",
         firstRunDismiss: "解散提示",
         filterPlaceholder: "滤镜底圖...",
         filterLabel: "按名稱筛选底圖",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: 用導覽底部的按鈕返回畫廊 。",
         helpTipsOrder: "喜歡的人先出現 剩下的基圖按此應用程式所選擇的順序排列 。",
         helpTipsCompare: "與已儲存的地圖比對 。 關閉比對返回地圖到目前的底圖 。",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "正在載入底圖...",
         noBasemapsConfigured: "沒有設定基底圖",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} 已載入底圖 。{failedNote} 使用箭頭金鑰來導航、 輸入或選擇空間 。",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} 已載入底圖 。{failedNote} 使用箭頭金鑰來導航、 輸入或選擇空間 。",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "沒有連接地圖元件",
         noMapConnected: "沒有地圖連接 。",
         selectAMapWidgetInThe: "在元件設定中選擇地圖元件 。",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "正在載入底圖",
         noBasemapsConfigured2: "沒有設定基底圖 。",
         addBasemapsInTheWidgetSettings: "在元件設定中新增底圖 。",
         basemapsCouldNotBeLoaded: "無法載入底圖",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - 在分裂者的左邊顯示",
         clickToCompareTitleWithThe: "點擊以比較 {title} 以目前的底圖",
         titleCurrentlyActiveBasemapClickTo: "{title} - 目前使用的底圖( 點擊以重新應用)",
-        clickToApplyTitleBasemapTo: "點擊以應用 {title} 基底映射到地圖"
+        clickToApplyTitleBasemapTo: "點擊以應用 {title} 基底映射到地圖",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

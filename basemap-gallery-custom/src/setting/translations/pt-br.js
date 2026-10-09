@@ -41,8 +41,17 @@ System.register([], function (e) {
         default: "(Padrão)",
         noBasemapsSelectedUseTheBrowse: "Nenhum mapa de base selecionado. Use a seção de itens do portal para adicionar mapas de base.",
         help: "Ajuda",
-        showHelpGuide: "Mostre guia de ajuda.",
-        showTheQuestionMarkButtonThat: "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget."
+        showHelpGuide: "Mostre guia de ajuda",
+        showTheQuestionMarkButtonThat: "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget",
+        extraSmall: "Extra Small",
+        small: "Pequeno",
+        mediumDefault: "Medium (Default)",
+        large: "Grande",
+        extraLarge: "Extra grande",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

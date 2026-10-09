@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Hledat průvodce (zkuste \"mapa\" nebo \"pomoc\")",
         helpNoMatches: "Nic v průvodci neodpovídá tomu slovu. Zkuste jiný, nebo otevřete sekce výše.",
         helpAnd: "A",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nový tady?",
         firstRunBody: "Vyberte si basemap pro změnu mapy pozadí, pak pokračovat v používání mapy.",
         firstRunBodyWaiting: "Jakmile jsou k dispozici podložky, vyberte jeden změnit mapu pozadí.",
         firstRunHelpLink: "Otevři průvodce.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Mapa je prázdná: že basemap nemusí mít obrázky pro tuto oblast nebo úroveň zoom. Zkus jiný základ.",
         helpTroubleFavorites: "Oblíbenci jsou pryč: tento prohlížeč mohl vymazat nebo zablokovat uložené volby. Přidat hvězdy znovu v prohlížeči, který plánujete použít.",
         helpTroubleContact: "Pořád se zasekl? Kontaktujte GIS Divizi a zmínit Basemap Galerie Vlastní jméno a tuto aplikaci.",
-        helpTipsTitle: "Dobré vědět.",
+        helpTipsTitle: "Dobré vědět",
         helpTipsHelp: "{helpLabel}: použijte otazník v pravé horní části widgetu a znovu otevřete tento průvodce.",
         helpTipsClose: "{closeLabel}: pro návrat do galerie použijte tlačítko dole v průvodci.",
         helpTipsOrder: "Oblíbenci se objevují první. Zbývající basemapy zůstávají v pořadí zvoleném pro tuto aplikaci.",
         helpTipsCompare: "Porovnat nepřidává nic do uložené mapy. Uzavírání porovnání vrátí mapu do aktuálního basemapu.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Nahrávám basemapy...",
         noBasemapsConfigured: "Není nakonfigurován žádný podklad",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Spodky nabité.{failedNote} Pomocí kláves se šipkami pro navigaci, Enter nebo Space pro výběr.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Základna nabitá.{failedNote} Pomocí kláves se šipkami pro navigaci, Enter nebo Space pro výběr.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Bez připojení map widget",
         noMapConnected: "Žádná mapa není připojena.",
         selectAMapWidgetInThe: "Vyberte widget mapy v nastavení widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Nahrávám basemapy",
         noBasemapsConfigured2: "Žádné podstavce.",
         addBasemapsInTheWidgetSettings: "Přidat základy v nastavení widget.",
         basemapsCouldNotBeLoaded: "Základy nelze načíst",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Zobrazeno na levé straně děliče",
         clickToCompareTitleWithThe: "Klikněte pro porovnání {title} s aktuálním základem",
         titleCurrentlyActiveBasemapClickTo: "{title} - V současné době aktivní basemap (klikněte na tlačítko znovu použít)",
-        clickToApplyTitleBasemapTo: "Klikněte pro použití {title} podklad k mapě"
+        clickToApplyTitleBasemapTo: "Klikněte pro použití {title} podklad k mapě",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

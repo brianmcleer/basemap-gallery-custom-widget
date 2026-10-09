@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Търсене в ръководството (пробвайте \"карта\" или \"помощ\")",
         helpNoMatches: "Нищо в ръководството не съвпада с тази дума. Опитайте друг, или отвори секциите по-горе.",
         helpAnd: "И",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Нова тук?",
         firstRunBody: "Изберете базова карта, за да промените фоновата карта, след което продължете да използвате картата.",
         firstRunBodyWaiting: "След като Basemaps са на разположение, изберете един, за да промените фоновата карта.",
         firstRunHelpLink: "Отвори гидът.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Картата е празна: тази базова карта може да няма снимки за тази област или ниво на увеличение. Опитайте друга базова карта.",
         helpTroubleFavorites: "Любимите ги няма: този браузър може да е изчистил или блокирал записания избор. Добавяне на звездите отново в браузъра, който планирате да използвате.",
         helpTroubleContact: "Още ли си заклещен? Свържете се с GIS Division и споменете галерия Basemap Потребителско име и това приложение.",
-        helpTipsTitle: "Добре е да го знам.",
+        helpTipsTitle: "Добре е да го знам",
         helpTipsHelp: "{helpLabel}: използвайте въпросителен знак в горния десен ъгъл на джаджата, за да отворите това ръководство отново.",
         helpTipsClose: "{closeLabel}: Използвайте бутона в долната част на ръководството, за да се върнете в галерията.",
         helpTipsOrder: "Любимите се появяват първи. Останалите основи остават в реда, избран за това приложение.",
         helpTipsCompare: "Сравнението не добавя нищо към записаната карта. Сравнението на затварянето връща картата към текущата базова карта.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Зареждане на базови карти...",
         noBasemapsConfigured: "Няма конфигурирани базови карти",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Базапите са заредени.{failedNote} Използвайте клавишите със стрелки, за да навигирате, въведете или пространство, за да изберете.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Базата карта заредена.{failedNote} Използвайте клавишите със стрелки, за да навигирате, въведете или пространство, за да изберете.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Няма свързано устройство за карта",
         noMapConnected: "Няма карта свързана.",
         selectAMapWidgetInThe: "Изберете джаджа карта в настройките на джаджа.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Зареждане на базови карти",
         noBasemapsConfigured2: "Не е конфигуриран.",
         addBasemapsInTheWidgetSettings: "Добавяне на базови карти в настройките на джаджата.",
         basemapsCouldNotBeLoaded: "Базимапите не могат да бъдат заредени.",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Показана от лявата страна на делителя",
         clickToCompareTitleWithThe: "Кликнете, за да сравните {title} с текущата базова карта",
         titleCurrentlyActiveBasemapClickTo: "{title} - В момента активна базова карта (кликнете отново)",
-        clickToApplyTitleBasemapTo: "Натиснете, за да кандидатствате {title} базова карта на картата"
+        clickToApplyTitleBasemapTo: "Натиснете, за да кандидатствате {title} базова карта на картата",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

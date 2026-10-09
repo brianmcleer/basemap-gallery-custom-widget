@@ -9,8 +9,8 @@ System.register([], function (e) {
         helpIntro: "Scegli la mappa di sfondo che vuoi vedere in questa app.",
         helpSearchPlaceholder: "Cerca la guida (prova \"mappa\" o \"aiuto\")",
         helpNoMatches: "Niente nella guida corrisponde a quella parola. Prova un altro, o apri le sezioni sopra.",
-        helpAnd: "and",
-        firstRunTitle: "New here?",
+        helpAnd: "And",
+        firstRunTitle: "Nuovo qui?",
         firstRunBody: "Scegliere una mappa di base per cambiare la mappa di sfondo, quindi continuare a utilizzare la mappa.",
         firstRunBodyWaiting: "Una volta disponibili le basi, scegline una per cambiare la mappa di sfondo.",
         firstRunHelpLink: "Apri la guida.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: utilizzare il pulsante in fondo alla guida per tornare alla galleria.",
         helpTipsOrder: "I favoriti appaiono prima. Le rimanenti basimap rimangono nell'ordine scelto per questa applicazione.",
         helpTipsCompare: "Confronta non aggiunge nulla alla mappa salvata. Chiusura confrontare restituisce la mappa alla tabella di base corrente.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Caricamento delle basi...",
         noBasemapsConfigured: "Nessuna mappa di base configurata",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} basi caricate.{failedNote} Utilizzare i tasti freccia per navigare, entrare o spazio per selezionare.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} basemap caricato.{failedNote} Utilizzare i tasti freccia per navigare, entrare o spazio per selezionare.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Nessun widget di mappa collegato",
         noMapConnected: "Nessuna mappa collegata.",
         selectAMapWidgetInThe: "Selezionare un widget della mappa nelle impostazioni del widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Caricamento delle basi",
         noBasemapsConfigured2: "Nessuna mappa di base configurata.",
         addBasemapsInTheWidgetSettings: "Aggiungi le basi nelle impostazioni del widget.",
         basemapsCouldNotBeLoaded: "Le mappe di base non potrebbero essere caricate",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Mostrato sul lato sinistro del divisore",
         clickToCompareTitleWithThe: "Fare clic per confrontare {title} con la mappa di base corrente",
         titleCurrentlyActiveBasemapClickTo: "{title} - Mappa di base attualmente attiva (clicca per riapplicare)",
-        clickToApplyTitleBasemapTo: "Clicca per applicare {title} basemap per la mappa"
+        clickToApplyTitleBasemapTo: "Clicca per applicare {title} basemap per la mappa",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

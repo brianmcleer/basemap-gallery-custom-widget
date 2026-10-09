@@ -10,10 +10,10 @@ System.register([], function (e) {
         helpSearchPlaceholder: "חפש את המדריך (נסו \"מפת\" או \"עזרה\")",
         helpNoMatches: "שום דבר במדריך לא מתאים למילה הזאת. נסה עוד, או לפתוח את החלקים לעיל.",
         helpAnd: "וגם",
-        firstRunTitle: "New here?",
+        firstRunTitle: "חדש כאן?",
         firstRunBody: "בחר מפת בסיס לשנות את מפת הרקע, ולאחר מכן להמשיך להשתמש במפה.",
         firstRunBodyWaiting: "ברגע שמפת בסיס זמינים, בחר אחד לשנות את מפת הרקע.",
-        firstRunHelpLink: "פתח את המדריך",
+        firstRunHelpLink: "פתח את המדריך.",
         firstRunDismiss: "המונחים:",
         filterPlaceholder: "מפת בסיס מסנן...",
         filterLabel: "מפת בסיס מסנן בשם",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}השתמש הכפתור בתחתית המדריך כדי לחזור לגלריה.",
         helpTipsOrder: "המועדפים מופיעים ראשונים. מפות הבסיס הנותרים נשארות בסדר שנבחר עבור אפליקציה זו.",
         helpTipsCompare: "ההשוואה לא מוסיפה דבר למפה המנצלת. סגירת ההשוואה מחזירה את המפה למפת הבסיס הנוכחית.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "עקבו אחרי Basemaps...",
         noBasemapsConfigured: "שום מפות בסיס לא מוגדרות",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} מפות בסיס טעון.{failedNote} השתמש במפתחי חצים כדי לנווט, להיכנס או לחלל כדי לבחור.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} מפת בסיס טעון.{failedNote} השתמש במפתחי חצים כדי לנווט, להיכנס או לחלל כדי לבחור.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "שום מפה לא מחוברת",
         noMapConnected: "אין מפה מחוברת.",
         selectAMapWidgetInThe: "בחר מפה widget בהגדרות widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "עקבו אחרי Basemaps",
         noBasemapsConfigured2: "אין מפות בסיס מוגדרות.",
         addBasemapsInTheWidgetSettings: "הוסף מפות בסיס בהגדרות widget.",
         basemapsCouldNotBeLoaded: "מפות בסיס לא ניתן לטעון",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} מוצג בצד שמאל של המחלק",
         clickToCompareTitleWithThe: "לחץ כדי להשוות {title} מפת הבסיס הנוכחית",
         titleCurrentlyActiveBasemapClickTo: "{title} כיום מפת בסיס פעילה (לחץ כדי לחזור)",
-        clickToApplyTitleBasemapTo: "Click to Apply {title} מפת בסיס למפה"
+        clickToApplyTitleBasemapTo: "Click to Apply {title} מפת בסיס למפה",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

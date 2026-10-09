@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Cerca la guia (canvial \"map\" o \"ajuda\")",
         helpNoMatches: "Res en la guia coincideix amb aquesta paraula. Proveu-ne una altra, o obriu les seccions de dalt.",
         helpAnd: "i",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nova aquí?",
         firstRunBody: "Escolliu un mapa base per a canviar el mapa de fons, aleshores continueu usant el mapa.",
         firstRunBodyWaiting: "Un cop estan disponibles mapes base, escolliu- ne un per a canviar el mapa de fons.",
         firstRunHelpLink: "Obre la guia.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: useu el botó a sota de la guia per tornar a la galeria.",
         helpTipsOrder: "Els preferits apareixen primer. Els mapes base restants es queden en l' ordre seleccionat per a aquesta aplicació.",
         helpTipsCompare: "Compara no afegeix res al mapa desat. S' està tancant la comparació retorna el mapa al mapa de base actual.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "S' estan carregant els mapes base...",
         noBasemapsConfigured: "No s' han configurat mapes base",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} S' han carregat mapes de base.{failedNote} Useu les tecles de fletxa per a navegar, introduïu o Espai per a seleccionar.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} S' ha carregat el mapa basemap.{failedNote} Useu les tecles de fletxa per a navegar, introduïu o Espai per a seleccionar.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "No hi ha cap estri de mapa connectat",
         noMapConnected: "No hi ha cap mapa connectat.",
         selectAMapWidgetInThe: "Seleccioneu un estri de mapa a l' arranjament de l' estri.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "S' estan carregant els mapes base",
         noBasemapsConfigured2: "No s' han configurat mapes base.",
         addBasemapsInTheWidgetSettings: "Afegeix mapes base a l' arranjament de l' estri.",
         basemapsCouldNotBeLoaded: "No s' han pogut carregar els mapes base",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Mostrat a la banda esquerra del divisor",
         clickToCompareTitleWithThe: "Cliqueu per comparar {title} amb el mapa base actual",
         titleCurrentlyActiveBasemapClickTo: "{title} - En aquests moments el mapa base actiu (clic per a tornar a aplicar)",
-        clickToApplyTitleBasemapTo: "Cliqueu per aplicar {title} mapa base al mapa"
+        clickToApplyTitleBasemapTo: "Cliqueu per aplicar {title} mapa base al mapa",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

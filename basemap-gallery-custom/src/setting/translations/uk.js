@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Не вибрано базові карти. Використовуйте розділ Browse Portal вище, щоб додати базові карти.",
         help: "Довідка",
         showHelpGuide: "Показати посібник",
-        showTheQuestionMarkButtonThat: "Показати натис-mark, який відкриває посібник з підтримки віджету"
+        showTheQuestionMarkButtonThat: "Показати натис-mark, який відкриває посібник з підтримки віджету",
+        extraSmall: "Extra Small",
+        small: "Малий",
+        mediumDefault: "Medium (Default)",
+        large: "Великий",
+        extraLarge: "Дуже великий",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

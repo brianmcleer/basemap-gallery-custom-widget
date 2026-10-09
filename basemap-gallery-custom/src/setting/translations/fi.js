@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Peruskarttoja ei ole valittu. Lisää basemapit käyttämällä yllä olevaa Selaa portaalia.",
         help: "Ohje",
         showHelpGuide: "Näytä ohje",
-        showTheQuestionMarkButtonThat: "Näytä kysymys-merkki-painike, joka avaa widget ohjeen"
+        showTheQuestionMarkButtonThat: "Näytä kysymys-merkki-painike, joka avaa widget ohjeen",
+        extraSmall: "Extra Small",
+        small: "Pieni",
+        mediumDefault: "Medium (Default)",
+        large: "Suuri",
+        extraLarge: "Erittäin suuri",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

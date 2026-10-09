@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Не са избрани базови карти. Използвайте секцията на портала, за да добавите basemaps.",
         help: "Помощ",
         showHelpGuide: "Показване на ръководство за помощ",
-        showTheQuestionMarkButtonThat: "Показване на бутона въпрос-марка, която отваря джаджа помощ ръководство"
+        showTheQuestionMarkButtonThat: "Показване на бутона въпрос-марка, която отваря джаджа помощ ръководство",
+        extraSmall: "Extra Small",
+        small: "Малки",
+        mediumDefault: "Medium (Default)",
+        large: "Големи",
+        extraLarge: "Много големи",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

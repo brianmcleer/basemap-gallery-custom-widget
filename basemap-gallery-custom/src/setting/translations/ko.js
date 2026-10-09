@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "선택된 basemaps 없음. 위의 Browse Portal 항목 섹션을 사용하여 basemaps를 추가하십시오.",
         help: "도움말",
         showHelpGuide: "공지사항",
-        showTheQuestionMarkButtonThat: "위젯 도움말 가이드를 열 수있는 질문 표시 버튼"
+        showTheQuestionMarkButtonThat: "위젯 도움말 가이드를 열 수있는 질문 표시 버튼",
+        extraSmall: "Extra Small",
+        small: "작게",
+        mediumDefault: "Medium (Default)",
+        large: "크게",
+        extraLarge: "매우 크게",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

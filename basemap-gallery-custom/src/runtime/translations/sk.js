@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Vyhľadajte sprievodcu (skúste \"map\" alebo \"help\")",
         helpNoMatches: "Nič v sprievodcovi nezodpovedá tomu slovu. Skúste iné, alebo otvoriť časti vyššie.",
         helpAnd: "a",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Tu nový?",
         firstRunBody: "Vyberte basemapku pre zmenu mapy pozadia a potom pokračujte v používaní mapy.",
         firstRunBodyWaiting: "Akonáhle sú k dispozícii basemapy, vyberte jeden pre zmenu mapy pozadia.",
         firstRunHelpLink: "Otvorte sprievodcu.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: pomocou tlačidla v dolnej časti návodu vrátiť do galérie.",
         helpTipsOrder: "Obľúbené sa objavujú ako prvé. Zostávajúce basemapy zostávajú v poradí zvolenom pre túto aplikáciu.",
         helpTipsCompare: "Porovnať nič nepridáva na mapu. Uzatváranie porovnania vracia mapu do aktuálnej basemap.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Načítavam basemapy...",
         noBasemapsConfigured: "@ info: status",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Basemaps nabitý.{failedNote} Pomocou klávesov so šípkami pre navigáciu, Enter alebo Space vybrať.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} basemapa nabitá.{failedNote} Pomocou klávesov so šípkami pre navigáciu, Enter alebo Space vybrať.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "@ info: tooltip",
         noMapConnected: "Žiadna mapa pripojená.",
         selectAMapWidgetInThe: "Vyberte widget mapy v nastaveniach widgetu.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Načítavam basemapy",
         noBasemapsConfigured2: "Žiadne základné mapy nenakonfigurované.",
         addBasemapsInTheWidgetSettings: "Pridať basemapy v nastaveniach widgetu.",
         basemapsCouldNotBeLoaded: "Basemaps nemohol byť načítaný",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Zobrazené na ľavej strane deliča",
         clickToCompareTitleWithThe: "Kliknite pre porovnanie {title} s aktuálnou základovou mapou",
         titleCurrentlyActiveBasemapClickTo: "{title} - V súčasnej dobe aktívny basemap (kliknutím na opätovné použitie)",
-        clickToApplyTitleBasemapTo: "Kliknite pre aplikáciu {title} basemap na mapu"
+        clickToApplyTitleBasemapTo: "Kliknite pre aplikáciu {title} basemap na mapu",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

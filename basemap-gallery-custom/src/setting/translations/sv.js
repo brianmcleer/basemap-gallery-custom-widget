@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "Inga basemaps valda. Använd avsnittet Bläddra Portal objekt ovan för att lägga till baskartor.",
         help: "Hjälp",
         showHelpGuide: "Visa hjälp guide",
-        showTheQuestionMarkButtonThat: "Visa frågemärke knappen som öppnar widget hjälp guide"
+        showTheQuestionMarkButtonThat: "Visa frågemärke knappen som öppnar widget hjälp guide",
+        extraSmall: "Extra Small",
+        small: "Liten",
+        mediumDefault: "Medium (Default)",
+        large: "Stor",
+        extraLarge: "Extra stor",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

@@ -42,7 +42,16 @@ System.register([], function (e) {
         noBasemapsSelectedUseTheBrowse: "No s' ha seleccionat cap mapa de dades. Useu la secció dels elements de l' exploració per afegir mapes base.",
         help: "Ajuda",
         showHelpGuide: "Mostra la guia d' ajuda",
-        showTheQuestionMarkButtonThat: "Mostra el botó Pregunta- marca que obre la guia d' ajuda de l' estri"
+        showTheQuestionMarkButtonThat: "Mostra el botó Pregunta- marca que obre la guia d' ajuda de l' estri",
+        extraSmall: "Extra Small",
+        small: "Petita",
+        mediumDefault: "Medium (Default)",
+        large: "Gran",
+        extraLarge: "Extragran",
+        gridThumbnails: "Grid (Thumbnails)",
+        listRows: "List (Rows)",
+        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }
   }

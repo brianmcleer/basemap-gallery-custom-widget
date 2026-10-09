@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Recherche dans le guide (essayez \"carte\" ou \"aide\")",
         helpNoMatches: "Rien dans le guide ne correspond à ce mot. Essayez un autre, ou ouvrez les sections ci-dessus.",
         helpAnd: "et",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Nouveau ici ?",
         firstRunBody: "Choisissez une carte de base pour modifier la carte de fond, puis continuez à utiliser la carte.",
         firstRunBodyWaiting: "Une fois les cartes de base disponibles, choisissez-en une pour modifier la carte de fond.",
         firstRunHelpLink: "Ouvrez le guide.",
@@ -105,7 +105,7 @@ System.register([], function (e) {
         helpTipsClose: "{closeLabel}: utilisez le bouton situé en bas du guide pour revenir à la galerie.",
         helpTipsOrder: "Les favoris apparaissent en premier. Les cartes de base restantes restent dans l'ordre choisi pour cette application.",
         helpTipsCompare: "Comparer n'ajoute rien à la carte enregistrée. La comparaison de clôture renvoie la carte à la carte de base actuelle.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Chargement des cartes de base...",
         noBasemapsConfigured: "Pas de carte de base configurée",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} les cartes de base chargées.{failedNote} Utilisez les touches fléchées pour naviguer, Entrée ou Espace pour sélectionner.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} Carte de base chargée.{failedNote} Utilisez les touches fléchées pour naviguer, Entrée ou Espace pour sélectionner.",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Aucun widget de carte connecté",
         noMapConnected: "Pas de carte connectée.",
         selectAMapWidgetInThe: "Sélectionnez un widget de carte dans les paramètres du widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Chargement des cartes de base",
         noBasemapsConfigured2: "Pas de carte de base configurée.",
         addBasemapsInTheWidgetSettings: "Ajouter des cartes de base dans les paramètres du widget.",
         basemapsCouldNotBeLoaded: "Les cartes de base ne peuvent pas être chargées",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Sur le côté gauche du diviseur",
         clickToCompareTitleWithThe: "Cliquez pour comparer {title} avec la carte de base actuelle",
         titleCurrentlyActiveBasemapClickTo: "{title} - Carte de base actuellement active (cliquez pour une nouvelle application)",
-        clickToApplyTitleBasemapTo: "Cliquez pour postuler {title} basemap vers la carte"
+        clickToApplyTitleBasemapTo: "Cliquez pour postuler {title} basemap vers la carte",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

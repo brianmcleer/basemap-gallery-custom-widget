@@ -10,7 +10,7 @@ System.register([], function (e) {
         helpSearchPlaceholder: "Αναζήτηση του οδηγού (προσπάθεια χάρτη\" ή \"βοήθεια\")",
         helpNoMatches: "Τίποτα στον οδηγό δεν ταιριάζει με αυτή τη λέξη. Δοκιμάστε ένα άλλο, ή ανοίξτε τα τμήματα παραπάνω.",
         helpAnd: "και",
-        firstRunTitle: "New here?",
+        firstRunTitle: "Καινούριο εδώ;",
         firstRunBody: "Επιλέξτε ένα χάρτη βάσης για την αλλαγή του χάρτη φόντου, στη συνέχεια, συνεχίστε τη χρήση του χάρτη.",
         firstRunBodyWaiting: "Μόλις οι χάρτες βάσης είναι διαθέσιμοι, επιλέξτε έναν για να αλλάξετε το χάρτη φόντου.",
         firstRunHelpLink: "Άνοιξε τον οδηγό.",
@@ -100,12 +100,12 @@ System.register([], function (e) {
         helpTroubleMap: "Ο χάρτης είναι κενός: ότι ο χάρτης βάσης μπορεί να μην έχει εικόνες για αυτή την περιοχή ή το επίπεδο εστίασης. Δοκίμασε έναν διαφορετικό χάρτη βάσης.",
         helpTroubleFavorites: "Τα αγαπημένα έχουν φύγει: αυτός ο περιηγητής μπορεί να έχει καθαρίσει ή μπλοκάρει τις αποθηκευμένες επιλογές. Προσθέστε ξανά τα αστέρια στο πρόγραμμα περιήγησης που σκοπεύετε να χρησιμοποιήσετε.",
         helpTroubleContact: "Ακόμα κολλημένος; Επικοινωνήστε με το Τμήμα του GIS και αναφέρετε το όνομα Basemap Gallery Custom και αυτή την εφαρμογή.",
-        helpTipsTitle: "Χαίρομαι που το μαθαίνω.",
+        helpTipsTitle: "Χαίρομαι που το μαθαίνω",
         helpTipsHelp: "{helpLabel}: χρησιμοποιήστε το ερωτηματικό στο επάνω δεξί μέρος του γραφικού συστατικού για να ανοίξετε ξανά αυτόν τον οδηγό.",
         helpTipsClose: "{closeLabel}: χρησιμοποιήστε το κουμπί στο κάτω μέρος του οδηγού για να επιστρέψετε στη γκαλερί.",
         helpTipsOrder: "Τα αγαπημένα εμφανίζονται πρώτα. Οι εναπομείναντες χάρτες βάσης παραμένουν στη σειρά που επιλέχθηκε για αυτή την εφαρμογή.",
         helpTipsCompare: "Η σύγκριση δεν προσθέτει τίποτα στον αποθηκευμένο χάρτη. Κλείσιμο σύγκριση επιστρέφει το χάρτη στον τρέχοντα χάρτη βάσης.",
-        loadingBasemaps: "Loading basemaps…",
+        loadingBasemaps: "Φόρτωση χαρτών βάσης...",
         noBasemapsConfigured: "Δεν έχουν ρυθμιστεί χάρτες βάσης",
         loadedCountBasemapsLoadedFailedNoteUseArrow: "{loadedCount} Χάρτες βάσης φορτώθηκαν.{failedNote} Χρησιμοποιήστε τα πλήκτρα βέλους για να πλοηγηθείτε, εισάγετε ή Space για να επιλέξετε.",
         loadedCountBasemapLoadedFailedNoteUseArrow: "{loadedCount} χάρτης βάσης φορτωμένο.{failedNote} Χρησιμοποιήστε τα πλήκτρα βέλους για να πλοηγηθείτε, εισάγετε ή Space για να επιλέξετε.",
@@ -127,7 +127,7 @@ System.register([], function (e) {
         visibleBasemapsCountBasemapMatchYourSearch: "{visibleBasemapsCount} χάρτης βάσης ταιριάζει με την αναζήτησή σας",
         basemapGalleryWidget: "Γραφικό συστατικό του Basemap Gallery",
         comparison: "Σύγκριση:",
-        swipe: "Swipe",
+        swipe: "Περιστροφή",
         dragDividerSideBySide: "Σύρετε διαχωριστικό δίπλα-δίπλα",
         swipeMode: "Τρόπος σάρωσης",
         blend: "Μείγμα",
@@ -139,7 +139,7 @@ System.register([], function (e) {
         noMapWidgetConnected: "Χωρίς σύνδεση γραφικού συστατικού χάρτη",
         noMapConnected: "Δεν συνδέεται χάρτης.",
         selectAMapWidgetInThe: "Επιλέξτε ένα γραφικό συστατικό χάρτη στις ρυθμίσεις widget.",
-        loadingBasemaps2: "Loading basemaps",
+        loadingBasemaps2: "Φόρτωση χαρτών βάσης",
         noBasemapsConfigured2: "Δεν έχουν ρυθμιστεί χάρτες βάσης.",
         addBasemapsInTheWidgetSettings: "Προσθήκη χαρτών βάσης στις ρυθμίσεις widget.",
         basemapsCouldNotBeLoaded: "Αδύνατη η φόρτωση των χαρτών βάσης",
@@ -161,7 +161,10 @@ System.register([], function (e) {
         titleShownOnTheLeftSide: "{title} - Φαίνεται στην αριστερή πλευρά του διαχωριστικού",
         clickToCompareTitleWithThe: "Κλικ για σύγκριση {title} με τον τρέχοντα χάρτη βάσης",
         titleCurrentlyActiveBasemapClickTo: "{title} - Επί του παρόντος ενεργός χάρτης βάσης (κλικ για reapply)",
-        clickToApplyTitleBasemapTo: "Κλικ για εφαρμογή {title} χάρτης βάσης στο χάρτη"
+        clickToApplyTitleBasemapTo: "Κλικ για εφαρμογή {title} χάρτης βάσης στο χάρτη",
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }
