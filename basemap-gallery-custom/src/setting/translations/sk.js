@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Pomocník",
         showHelpGuide: "Zobraziť návod na pomoc",
         showTheQuestionMarkButtonThat: "Zobraziť tlačidlo otázniku, ktoré otvorí sprievodcu pomocníkom",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra malé",
         small: "Malé",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Stredné (Default)",
         large: "Veľké",
         extraLarge: "Extra veľké",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Mriežka",
+        listRows: "Zoznam (riadky)",
+        itemNotFoundOrItIs: "Položka nenájdená, alebo to nie je webová mapa alebo Vector Tile služba",
+        failedToLoadItemsMessage: "Nepodarilo sa načítať položky: {message}"
       })
     }
   }

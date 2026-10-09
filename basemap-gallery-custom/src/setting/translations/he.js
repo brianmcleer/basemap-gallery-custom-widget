@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "עזרה",
         showHelpGuide: "מדריך עזרה",
         showTheQuestionMarkButtonThat: "הצג את לחצן סימן שאלה פותח את מדריך העזרה widget",
-        extraSmall: "Extra Small",
+        extraSmall: "תוספת קטנה",
         small: "קטן",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "בינוני (Default)",
         large: "גדול",
         extraLarge: "גדול מאד",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "גרידס (Thumbnails)",
+        listRows: "רשימה (Rows)",
+        itemNotFoundOrItIs: "זה לא נמצא, או שזה לא מפת אינטרנט או שירות וטרינרי",
+        failedToLoadItemsMessage: "נכשל לטעון פריטים: {message}"
       })
     }
   }

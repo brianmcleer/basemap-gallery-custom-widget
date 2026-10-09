@@ -275,3 +275,7 @@ the `WIDGETS` list for checking additional sibling widgets against the supplied 
 
 See `docs/HELP_GUIDE.md` for maintenance notes and the remaining live-app checks.
 See `CHANGELOG.md` for the update details and `UPDATED_FILES.md` for the file inventory.
+
+## Localization verification
+
+The October 2026 i18n pass connects local UI helpers, messages and metadata to the app locale and uses the app locale for date/number formatting. Existing units, currencies and configured format options are preserved. Translation files use Esri wording, shared memory and English fallbacks; machine translations still need language review. Catalog coverage is separate from UI coverage. Changes were checked with the widget’s Experience Builder webpack build and compared against its existing TypeScript diagnostics. Test runtime, settings, accessibility text and locale switching in your target languages.

@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Ohje",
         showHelpGuide: "Näytä ohje",
         showTheQuestionMarkButtonThat: "Näytä kysymys-merkki-painike, joka avaa widget ohjeen",
-        extraSmall: "Extra Small",
+        extraSmall: "Erittäin pieni",
         small: "Pieni",
         mediumDefault: "Medium (Default)",
         large: "Suuri",
         extraLarge: "Erittäin suuri",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Ruudukko (Thumbnails)",
+        listRows: "Luettelo (rivit)",
+        itemNotFoundOrItIs: "Tuotetta ei löydy, tai se ei ole Web Map tai Vector Tile Service",
+        failedToLoadItemsMessage: "Kohteita ei voitu ladata: {message}"
       })
     }
   }

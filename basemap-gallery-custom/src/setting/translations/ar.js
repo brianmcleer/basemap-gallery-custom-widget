@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "المساعدة",
         showHelpGuide: "دليل المساعدة",
         showTheQuestionMarkButtonThat: "اظهر زر التساؤل الذي يفتح المرشد",
-        extraSmall: "Extra Small",
+        extraSmall: "صغيرة",
         small: "صغير",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "متوسطة (واجب)",
         large: "كبير",
         extraLarge: "كبير للغاية",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "غريد (طومبنائيل)",
+        listRows: "القائمة (الأرض)",
+        itemNotFoundOrItIs: "بند لم يعثر عليه، أو أنه ليس خريطة على شبكة الإنترنت أو دائرة المركبات",
+        failedToLoadItemsMessage: "المتخلفون عن تحميل المواد: {message}"
       })
     }
   }

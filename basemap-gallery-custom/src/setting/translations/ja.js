@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "ヘルプ",
         showHelpGuide: "ヘルプガイドを表示",
         showTheQuestionMarkButtonThat: "ウィジェットヘルプガイドを開く質問のボタンを表示する",
-        extraSmall: "Extra Small",
+        extraSmall: "余分小さい",
         small: "小",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "媒体(デフォルト)",
         large: "大",
         extraLarge: "特大",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "グリッド(サムネイル)",
+        listRows: "リスト(読み込み)",
+        itemNotFoundOrItIs: "アイテムが見つからなかったり、WebマップやVector Tileサービスではない",
+        failedToLoadItemsMessage: "アイテムをロードする失敗: {message}"
       })
     }
   }

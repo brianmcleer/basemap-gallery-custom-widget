@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Нажмите, чтобы сравнить {title} с текущей базовой картой",
         titleCurrentlyActiveBasemapClickTo: "{title} - В настоящее время активная базовая карта (нажмите, чтобы повторно подать заявку)",
         clickToApplyTitleBasemapTo: "Нажмите, чтобы применить {title} Базовая карта на карте",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} из {length}",
+        unknownError: "Неизвестная ошибка",
+        unserializableError: "несериализируемая ошибка",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

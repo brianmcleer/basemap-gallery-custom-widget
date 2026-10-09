@@ -49,8 +49,8 @@ System.register([], function (e) {
         large: "Grande",
         extraLarge: "Extragrande",
         gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
+        listRows: "Lista (Rows)",
+        itemNotFoundOrItIs: "El artículo no se encuentra, o no es un Web Map o Vector Tile Service",
         failedToLoadItemsMessage: "Failed to load items: {message}"
       })
     }

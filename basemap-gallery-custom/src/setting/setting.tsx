@@ -53,16 +53,16 @@ interface Config {
 export type IMConfig = ImmutableObject<Config>
 
 const SIZE_OPTIONS: { value: SizeOption, label: string }[] = [
-    { value: 'xs', label: __t("extraSmall") },
-    { value: 'sm', label: __t("small") },
-    { value: 'md', label: __t("mediumDefault") },
-    { value: 'lg', label: __t("large") },
-    { value: 'xl', label: __t("extraLarge") }
+    { value: 'xs', get label () { return __t("extraSmall") } },
+    { value: 'sm', get label () { return __t("small") } },
+    { value: 'md', get label () { return __t("mediumDefault") } },
+    { value: 'lg', get label () { return __t("large") } },
+    { value: 'xl', get label () { return __t("extraLarge") } }
 ]
 
 const DISPLAY_MODE_OPTIONS: { value: DisplayMode, label: string }[] = [
-    { value: 'grid', label: __t("gridThumbnails") },
-    { value: 'list', label: __t("listRows") }
+    { value: 'grid', get label () { return __t("gridThumbnails") } },
+    { value: 'list', get label () { return __t("listRows") } }
 ]
 
 type SettingProps = {

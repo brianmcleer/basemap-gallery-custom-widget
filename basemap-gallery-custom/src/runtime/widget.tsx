@@ -19,7 +19,7 @@ import Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
 import Collection from 'esri/core/Collection'
 import * as reactiveUtils from 'esri/core/reactiveUtils'
-import { __setIntl, __t } from './i18n-t'
+import { __m, __setIntl, __t } from './i18n-t'
 
 const { useEffect, useState, useRef, useCallback, useMemo } = React
 
@@ -271,7 +271,7 @@ type WidgetProps = AllWidgetProps<Config> & { id: string; useMapWidgetIds?: stri
 const Widget = (props: WidgetProps) => {
   __setIntl((props as any).intl)
     const t = useCallback((id: string, values?: Record<string, string>): string => {
-        const message = defaultMessages[id as keyof typeof defaultMessages] || id
+        const message = __m[id as keyof typeof defaultMessages] || id
         if (props.intl) {
             return props.intl.formatMessage({ id, defaultMessage: message }, values)
         }
@@ -518,7 +518,7 @@ const Widget = (props: WidgetProps) => {
                 announceStatus((loaded.length !== 1 ? t('loadedCountBasemapsLoadedFailedNoteUseArrow', { loadedCount: String(loaded.length), failedNote: String(failedNote) }) : t('loadedCountBasemapLoadedFailedNoteUseArrow', { loadedCount: String(loaded.length), failedNote: String(failedNote) })))
             } catch (err) {
                 if (!destroyed) {
-                    const errorMsg = `Failed to load basemaps: ${err.message}`
+                    const errorMsg = __t("failedToLoadBasemapsMessage", { message: err.message })
                     setError(errorMsg)
                     setIsLoading(false)
                     announceStatus(errorMsg)

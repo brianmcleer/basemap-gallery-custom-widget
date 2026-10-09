@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Bantuan",
         showHelpGuide: "Tampilkan panduan bantuan",
         showTheQuestionMarkButtonThat: "Tampilkan tombol tanya-tandai yang membuka panduan bantuan widget",
-        extraSmall: "Extra Small",
+        extraSmall: "Ekstra Kecil",
         small: "Kecil",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Sedang (Baku)",
         large: "Besar",
         extraLarge: "Ekstra besar",
         gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        listRows: "Daftar (Baris)",
+        itemNotFoundOrItIs: "Butir tidak ditemukan, atau ini bukan Layanan Tile Peta Web atau Vector",
+        failedToLoadItemsMessage: "Gagal memuat butir: {message}"
       })
     }
   }

@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Klõpsa võrdlemiseks {title} praeguse baaskaardiga",
         titleCurrentlyActiveBasemapClickTo: "{title} - Praegu aktiivne aluskaart (klõpsa uuesti rakendusele)",
         clickToApplyTitleBasemapTo: "Klõpsa rakendusele {title} kaardi aluskaart",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} ühest {length}",
+        unknownError: "tundmatu viga",
+        unserializableError: "seeriaviisiline viga",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Pomoč",
         showHelpGuide: "Prikaži vodnik za pomoč",
         showTheQuestionMarkButtonThat: "Prikaži gumb z vprašanji, ki odpre widget pomoč vodnik",
-        extraSmall: "Extra Small",
+        extraSmall: "Zelo majhna",
         small: "Majhna",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Srednja (privzeto)",
         large: "Velika",
         extraLarge: "Zelo veliko",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Mreža (Tombola)",
+        listRows: "Seznam (Rows)",
+        itemNotFoundOrItIs: "Postavka ni najdena ali ni spletna karta ali Vektorska storitev ploščic",
+        failedToLoadItemsMessage: "Nalaganje predmetov ni uspelo: {message}"
       })
     }
   }

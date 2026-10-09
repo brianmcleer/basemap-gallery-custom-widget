@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Klikk for å sammenligne {title} med gjeldende basiskart",
         titleCurrentlyActiveBasemapClickTo: "{title} - For tiden aktiv basekart (klikk for å søke på nytt)",
         clickToApplyTitleBasemapTo: "Klikk for å søke {title} basekart til kartet",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
+        unknownError: "ukjent feil",
+        unserializableError: "uiserbar feil",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

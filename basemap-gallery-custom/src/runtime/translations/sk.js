@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Kliknite pre porovnanie {title} s aktuálnou základovou mapou",
         titleCurrentlyActiveBasemapClickTo: "{title} - V súčasnej dobe aktívny basemap (kliknutím na opätovné použitie)",
         clickToApplyTitleBasemapTo: "Kliknite pre aplikáciu {title} basemap na mapu",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
+        unknownError: "neznáma chyba",
+        unserializableError: "neserializovateľná chyba",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "ตัวช่วย",
         showHelpGuide: "แสดงคําแนะนํา",
         showTheQuestionMarkButtonThat: "แสดงปุ่ม เครื่องหมายคําถามที่เปิดวิดเจ็ตคําแนะนํา",
-        extraSmall: "Extra Small",
+        extraSmall: "เล็กพิเศษ",
         small: "เล็ก",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "ปานกลาง (ค่าปริยาย)",
         large: "ใหญ่",
         extraLarge: "ใหญ่พิเศษ",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "กริด (เล็บเท้า)",
+        listRows: "รายการ (Rows)",
+        itemNotFoundOrItIs: "ไม่พบรายการ หรือไม่ใช่แผนที่เว็บ หรือบริการการวาดพาเนล",
+        failedToLoadItemsMessage: "ล้มเหลวในการโหลดรายการ: {message}"
       })
     }
   }

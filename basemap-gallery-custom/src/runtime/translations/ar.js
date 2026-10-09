@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "إضغطْ لمقارنة {title} مع خط الأساس الحالي",
         titleCurrentlyActiveBasemapClickTo: "{title} - خريطة قاعدية نشطة في الوقت الراهن (انقر لتستأنف)",
         clickToApplyTitleBasemapTo: "انقروا {title} خريطة",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}.. {value5} of of {length}",
+        unknownError: "خطأ مجهول",
+        unserializableError: "خطأ غير معقول",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

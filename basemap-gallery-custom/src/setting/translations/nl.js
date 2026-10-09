@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Hulp",
         showHelpGuide: "Hulplijn tonen",
         showTheQuestionMarkButtonThat: "De knop met het vraagteken tonen die de hulplijn widget opent",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra klein",
         small: "Klein",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Middel (Standaard)",
         large: "Groot",
         extraLarge: "Extra groot",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Raster",
+        listRows: "Lijst (rijen)",
+        itemNotFoundOrItIs: "Item niet gevonden, of het is geen Web Map of Vector Tile Service",
+        failedToLoadItemsMessage: "Kon items niet laden: {message}"
       })
     }
   }

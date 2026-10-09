@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Faceți clic pentru a compara {title} cu harta de bază curentă",
         titleCurrentlyActiveBasemapClickTo: "{title} - Bază de bază activă (click pentru a aplica din nou)",
         clickToApplyTitleBasemapTo: "Click pentru aplicare {title} mapa de bază a hărții",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} din {length}",
+        unknownError: "Eroare necunoscută",
+        unserializableError: "eroare inoperabilă",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

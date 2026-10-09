@@ -3,8 +3,8 @@
   "generator": "exb-i18n-kit",
   "parts": {
     "runtime": {
-      "en": "0fa2360baffd",
-      "keys": 162,
+      "en": "8c121e6528b3",
+      "keys": 163,
       "hashes": {
         "_widgetLabel": "082788e57dd7",
         "helpTitle": "c47ae15370cf",
@@ -167,20 +167,21 @@
         "clickToApplyTitleBasemapTo": "21abed740b2b",
         "titleValueValue2Value3Value4Value5": "842dbbd4a2cc",
         "unknownError": "af6321ca7a8b",
-        "unserializableError": "76e73551597a"
+        "unserializableError": "76e73551597a",
+        "failedToLoadBasemapsMessage": "25b6511d14e1"
       },
       "locales": {
         "ar": {
-          "file": "d40f557f59f7",
+          "file": "31c077aaf0df",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -882,20 +883,25 @@
               "t": "انقروا {title} خريطة",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}.. {value5} of of {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "bg": {
-          "file": "674c4d02adc0",
+          "file": "c81aae297176",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 139,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -1592,11 +1598,16 @@
               "t": "Натиснете, за да кандидатствате {title} базова карта на картата",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} на {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "bs": {
-          "file": "e694769d4910",
+          "file": "a4b8d786aebb",
           "counts": {
             "esri": 13,
             "esri-check": 0,
@@ -1605,21 +1616,21 @@
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 149
+            "missing": 150
           },
           "entries": {}
         },
         "ca": {
-          "file": "a18aaaeb58b1",
+          "file": "4938a53ed968",
           "counts": {
-            "esri": 17,
+            "esri": 19,
             "esri-check": 2,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -2321,20 +2332,25 @@
               "t": "Cliqueu per aplicar {title} mapa base al mapa",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "cs": {
-          "file": "f8523641109f",
+          "file": "01546430c3dc",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 2,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 139,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -3031,20 +3047,25 @@
               "t": "Klikněte pro použití {title} podklad k mapě",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "da": {
-          "file": "17a6e656e8c5",
+          "file": "a4a377fd5b82",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -3746,20 +3767,25 @@
               "t": "Klik for at anvende {title} basemap til kortet",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} af {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "de": {
-          "file": "70507197c8e8",
+          "file": "cbdd4756068d",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 139,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -4456,20 +4482,25 @@
               "t": "Klicken Sie auf bewerben {title} Basemap zur Karte",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} von {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "el": {
-          "file": "255e56c63a44",
+          "file": "89367f54ce2d",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -5171,20 +5202,25 @@
               "t": "Κλικ για εφαρμογή {title} χάρτης βάσης στο χάρτη",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} του {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "es": {
-          "file": "b49351f14028",
+          "file": "7d2c7aa97c74",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
             "machine": 141,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -5891,20 +5927,25 @@
               "t": "Haga clic para aplicar {title} basemap en el mapa",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
+              "src": "manual",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "et": {
-          "file": "fe9ab0a6e818",
+          "file": "a0e7b15e06e9",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -6601,20 +6642,25 @@
               "t": "Klõpsa rakendusele {title} kaardi aluskaart",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} ühest {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "fi": {
-          "file": "0696abf70b6b",
+          "file": "f7cda37b63b1",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -7311,20 +7357,25 @@
               "t": "Klikkaa käyttääksesi {title} pohjakartta karttaan",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} / {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "fr": {
-          "file": "e4f49f05224c",
+          "file": "6b22a7a68a39",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -8021,20 +8072,25 @@
               "t": "Cliquez pour postuler {title} basemap vers la carte",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} des {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "he": {
-          "file": "9051fb944224",
+          "file": "30419c10b03a",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -8731,11 +8787,16 @@
               "t": "Click to Apply {title} מפת בסיס למפה",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} של {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "hr": {
-          "file": "e694769d4910",
+          "file": "a4b8d786aebb",
           "counts": {
             "esri": 13,
             "esri-check": 0,
@@ -8744,21 +8805,21 @@
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 149
+            "missing": 150
           },
           "entries": {}
         },
         "hu": {
-          "file": "9939a822bda2",
+          "file": "312be69a41cb",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -9455,20 +9516,25 @@
               "t": "Kattintson az alkalmazásra {title} basemap a térképre",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} II. {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "id": {
-          "file": "44c79590a511",
+          "file": "aa0bb244b9d8",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -10165,20 +10231,25 @@
               "t": "Klik untuk menerapkan {title} basemap ke peta",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} dari {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "it": {
-          "file": "d74018f0a189",
+          "file": "b4a84ac0013c",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -10880,20 +10951,25 @@
               "t": "Clicca per applicare {title} basemap per la mappa",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}♪ {value5} di {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "ja": {
-          "file": "5d50427002c2",
+          "file": "b82506e0ce6a",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -11590,20 +11666,25 @@
               "t": "お申込みはこちら {title} 地図へのベースマップ",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} インフォメーション {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "ko": {
-          "file": "30186c057f97",
+          "file": "483557be0263",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -12300,20 +12381,25 @@
               "t": "자주 묻는 질문 {title} 지도에 basemap",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}· {value5} 이름 * {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "lt": {
-          "file": "fc0f8c90a8ae",
+          "file": "2681f4dadc62",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -13010,20 +13096,25 @@
               "t": "Spustelėkite, jei norite taikyti {title} basemap iki žemėlapio",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} iš {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "lv": {
-          "file": "3e3601ed7579",
+          "file": "c7bd87662859",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -13720,20 +13811,25 @@
               "t": "Nospiediet, lai pieteiktos {title} Pamatkarte uz karti",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} skaits * {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "no": {
-          "file": "e3dde394831f",
+          "file": "64c7fdecbbbe",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -14430,20 +14526,25 @@
               "t": "Klikk for å søke {title} basekart til kartet",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "nl": {
-          "file": "b4695679b43b",
+          "file": "77ec900053c6",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -15145,20 +15246,25 @@
               "t": "Klik om toe te passen {title} basiskaart naar de kaart",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} van {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "pl": {
-          "file": "906de4a5ce04",
+          "file": "db3389f99adc",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -15855,20 +15961,25 @@
               "t": "Kliknij, aby zastosować {title} basemap do mapy",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "pt-br": {
-          "file": "5731c97bfa2e",
+          "file": "c3853ad5cfb5",
           "counts": {
-            "esri": 19,
+            "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -16570,20 +16681,25 @@
               "t": "Clique para se candidatar. {title} Mapa de base para o mapa",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "pt-pt": {
-          "file": "389f788d010a",
+          "file": "7deb89944dfd",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -17285,20 +17401,25 @@
               "t": "Clique para se candidatar {title} basemap para o mapa",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "ro": {
-          "file": "1f085c90401c",
+          "file": "6714799e800e",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -17995,20 +18116,25 @@
               "t": "Click pentru aplicare {title} mapa de bază a hărții",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} din {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "ru": {
-          "file": "fd3e962fa5af",
+          "file": "01f9ce3fe0cf",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -18705,20 +18831,25 @@
               "t": "Нажмите, чтобы применить {title} Базовая карта на карте",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} из {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "sk": {
-          "file": "c09d0a9735dc",
+          "file": "d2c58f3e25dc",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -19415,20 +19546,25 @@
               "t": "Kliknite pre aplikáciu {title} basemap na mapu",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "sl": {
-          "file": "d6410ef2ed65",
+          "file": "1f93f64eaf13",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -20125,11 +20261,16 @@
               "t": "Kliknite za prijavo {title} Osnovna karta na zemljevidu",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} o {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "sr": {
-          "file": "d35c5b3890a5",
+          "file": "eaeac83f1be2",
           "counts": {
             "esri": 13,
             "esri-check": 0,
@@ -20138,21 +20279,21 @@
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 149
+            "missing": 150
           },
           "entries": {}
         },
         "sv": {
-          "file": "776fa476264c",
+          "file": "60076b52253d",
           "counts": {
-            "esri": 18,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -20859,20 +21000,25 @@
               "t": "Klicka för att söka {title} Basmap till kartan",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "th": {
-          "file": "2db6b5dbd2cc",
+          "file": "f88b1310152e",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -21569,20 +21715,25 @@
               "t": "คลิกเพื่อปรับใช้ {title} ฐาน ของ แผนที่",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}. {value5} ของ {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "tr": {
-          "file": "60a829735cdf",
+          "file": "169a543373c5",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -22279,20 +22430,25 @@
               "t": "Başvuru için tıklayın {title} Basemap haritaya",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "zh-cn": {
-          "file": "d93b84fbe983",
+          "file": "063d08f300d3",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -22989,20 +23145,25 @@
               "t": "单击以应用 {title} 基础映射到地图",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, (中文). {value5} 页:1 {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "uk": {
-          "file": "0c4efa1f6c0b",
+          "file": "9f667bf126f3",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -23699,20 +23860,25 @@
               "t": "Натисніть, щоб застосувати {title} базова карта на карті",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}й {value5} з {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "vi": {
-          "file": "80d6bbe8e9ae",
+          "file": "f71e54036b5e",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -24409,20 +24575,25 @@
               "t": "Nhấn vào để áp dụng {title} Sơ đồ cơ bản của bản đồ",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}. {value5} Kho {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "zh-hk": {
-          "file": "4846f701dcf2",
+          "file": "63a419f3ad9b",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -25119,20 +25290,25 @@
               "t": "點擊以應用 {title} 基底映射到地圖",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} 四, {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         },
         "zh-tw": {
-          "file": "4846f701dcf2",
+          "file": "63a419f3ad9b",
           "counts": {
-            "esri": 20,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 3
+            "missing": 1
           },
           "entries": {
             "_widgetLabel": {
@@ -25829,6 +26005,11 @@
               "t": "點擊以應用 {title} 基底映射到地圖",
               "src": "machine",
               "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5} 四, {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
             }
           }
         }
@@ -25890,16 +26071,16 @@
       },
       "locales": {
         "ar": {
-          "file": "3c0bed16f96c",
+          "file": "f6ebd98e935a",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26046,20 +26227,50 @@
               "t": "لم يتم إختيار أيّ تطابق استخدمي قسم \"بروز بورتال\" أعلاه لإضافة مواضع قاعدية",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "صغيرة",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "متوسطة (واجب)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "غريد (طومبنائيل)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "القائمة (الأرض)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "بند لم يعثر عليه، أو أنه ليس خريطة على شبكة الإنترنت أو دائرة المركبات",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "المتخلفون عن تحميل المواد: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "bg": {
-          "file": "3ad61d94ddd5",
+          "file": "03e5a2c9bafa",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26206,6 +26417,36 @@
               "t": "Не са избрани базови карти. Използвайте секцията на портала, за да добавите basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Екстра малък",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Среден (по подразбиране)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Мрежа (тумбани)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Списък (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Обектът не е намерен или не е уеб карта или Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Грешка при зареждане на елементите: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
@@ -26224,16 +26465,16 @@
           "entries": {}
         },
         "ca": {
-          "file": "a53ad35b15a7",
+          "file": "a0d719bf915c",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26380,20 +26621,50 @@
               "t": "No s' ha seleccionat cap mapa de dades. Useu la secció dels elements de l' exploració per afegir mapes base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra petit",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Mitjana (per omissió)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Graella (ossos)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Llista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "No s' ha trobat l' element, o no és un servei de mapes web o mosaic vectorial",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Ha fallat en carregar els elements: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "cs": {
-          "file": "cd25b6252172",
+          "file": "c34f454ce53c",
           "counts": {
             "esri": 11,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26540,20 +26811,50 @@
               "t": "Žádné podložky. Pro přidání podkladů použijte výše uvedenou sekci Procházení portálových položek.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra malé",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Střední (výchozí)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Síť (Náhledy)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Seznam (řádky)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Položka nenalezena, nebo to není Web Map nebo Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nepodařilo se načíst položky: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "da": {
-          "file": "7880f77e9830",
+          "file": "56aa1b6571c2",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26700,20 +27001,50 @@
               "t": "Ingen basemaps valgt. Brug afsnittet Gennemse portalelementer ovenfor til at tilføje basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Ekstra lille",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (standard)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (miniaturer)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Liste (rækker)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Varen ikke fundet, eller det er ikke et webkort eller Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Kunne ikke indlæse elementer: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "de": {
-          "file": "533b505fdcee",
+          "file": "70dab459dcec",
           "counts": {
             "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 30,
+            "machine": 36,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -26865,20 +27196,50 @@
               "t": "Show Help Guide",
               "src": "machine",
               "h": "03e9f0b81336"
+            },
+            "extraSmall": {
+              "t": "Extra klein",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (Standard)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Gitter (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Liste (Zeilen)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Element nicht gefunden, oder es ist keine Web Map oder Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nicht geladene Gegenstände: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "el": {
-          "file": "ccbb1b42701d",
+          "file": "98bb789a4f9e",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27025,20 +27386,50 @@
               "t": "Δεν επιλέχθηκαν χάρτες βάσης. Χρησιμοποιήστε την παραπάνω ενότητα αντικειμένων πύλης περιήγησης για να προσθέσετε χάρτες βάσης.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Επιπλέον μικρό",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Μέσο (Προκαθορισμένο)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Πλέγμα (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Κατάλογος (ροές)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Το αντικείμενο δεν βρέθηκε, ή δεν είναι ένα Web Map ή Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Αποτυχία φόρτωσης αντικειμένων: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "es": {
-          "file": "cc16627963fa",
+          "file": "58e13c16907b",
           "counts": {
             "esri": 13,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27185,20 +27576,50 @@
               "t": "No hay mapas de base seleccionados. Utilice la sección de artículos del Portal de Exploración para añadir mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra Small",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "El artículo no se encuentra, o no es un Web Map o Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Failed to load items: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "et": {
-          "file": "4ec4f29e5bf4",
+          "file": "92f0590ea79b",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27345,20 +27766,50 @@
               "t": "Aluskaarte pole valitud. Baaskaartide lisamiseks kasutage ülalolevat jaotist Sirvi portaali elemendid.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "ekstra väike",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Keskmine (vaikimisi)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Võrk (pöidlad)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Nimekiri (read)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Elementi ei leitud või see ei ole Web Map või Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Elementide laadimine nurjus: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "fi": {
-          "file": "7c7ea42323ab",
+          "file": "4ae3e81a9e3b",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27505,20 +27956,50 @@
               "t": "Peruskarttoja ei ole valittu. Lisää basemapit käyttämällä yllä olevaa Selaa portaalia.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Erittäin pieni",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Ruudukko (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Luettelo (rivit)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Tuotetta ei löydy, tai se ei ole Web Map tai Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Kohteita ei voitu ladata: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "fr": {
-          "file": "ef2e2bd69a8d",
+          "file": "87de88b2dfee",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27665,20 +28146,50 @@
               "t": "Aucune carte de base sélectionnée. Utilisez la section Parcourir les éléments du portail ci-dessus pour ajouter des cartes de base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra-petit",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Moyenne (défaut)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grille (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Liste (Taux)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Article non trouvé, ou ce n'est pas une carte Web ou un service de tuile vectorielle",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Impossible de charger des éléments : {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "he": {
-          "file": "d0b01d505752",
+          "file": "cdce297a7874",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27825,6 +28336,36 @@
               "t": "לא נבחרו מפות בסיס. השתמש בסעיף פריטים פורטל Browse לעיל כדי להוסיף מפות בסיס.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "תוספת קטנה",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "בינוני (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "גרידס (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "רשימה (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "זה לא נמצא, או שזה לא מפת אינטרנט או שירות וטרינרי",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "נכשל לטעון פריטים: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
@@ -27843,16 +28384,16 @@
           "entries": {}
         },
         "hu": {
-          "file": "613b6f163a52",
+          "file": "458b660aaac8",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -27999,20 +28540,50 @@
               "t": "Nincs kiválasztva alaplap. A bázisok hozzáadásához használja a fenti böngészési portálelemek részt.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra kicsi",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Közepes (alapértelmezés)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Rács (hüvelykujj)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (sorok)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Elem nem található, vagy ez nem egy webtérkép vagy Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nem sikerült betölteni a tételeket: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "id": {
-          "file": "54afd3f31884",
+          "file": "a4d5f1386da8",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28159,20 +28730,50 @@
               "t": "Tidak ada peta dasar yang dipilih. Gunakan daerah Telusur Portal Ramban di atas untuk menambahkan peta dasar.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Ekstra Kecil",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Sedang (Baku)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Daftar (Baris)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Butir tidak ditemukan, atau ini bukan Layanan Tile Peta Web atau Vector",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Gagal memuat butir: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "it": {
-          "file": "9f344cf511ce",
+          "file": "788b8b0fc694",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28319,20 +28920,50 @@
               "t": "Nessuna mappa di base selezionata. Utilizzare la sezione Sfoglia elementi portali per aggiungere le mappe di base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra piccolo",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medio (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Griglia (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Articolo non trovato, o non è una Mappa Web o Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Non caricare oggetti: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "ja": {
-          "file": "cde2bc5035a6",
+          "file": "df4858e60769",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28479,20 +29110,50 @@
               "t": "ベースマップは選択されていません。 上記の「ブラウザポータル項目」セクションを使用して、ベースマップを追加します。",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "余分小さい",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "媒体(デフォルト)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "グリッド(サムネイル)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "リスト(読み込み)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "アイテムが見つからなかったり、WebマップやVector Tileサービスではない",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "アイテムをロードする失敗: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "ko": {
-          "file": "839ce0cf2b21",
+          "file": "b496b822521b",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28639,20 +29300,50 @@
               "t": "선택된 basemaps 없음. 위의 Browse Portal 항목 섹션을 사용하여 basemaps를 추가하십시오.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "추가 작은",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "중간 (기본)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "그리드 (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "목록 (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "찾을 수 없습니다, 또는 그것은 웹지도 또는 벡터 타일 서비스",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "적재 품목에 실패: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "lt": {
-          "file": "e932ca2b5784",
+          "file": "e5293799820f",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28799,20 +29490,50 @@
               "t": "Nepasirinktas basemaps. Naudokite Naršyti portalo elementus skirsnyje aukščiau pridėti basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Labai maža",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Vidutinis (numatytasis)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Tinklelis (miniatiūros)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Sąrašas (eilutės)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Objektas nerastas, arba tai nėra žiniatinklio žemėlapis ar Vector plytelių paslauga",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nepavyko įkelti elementų: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "lv": {
-          "file": "14e24b23513e",
+          "file": "9c6433eb1be5",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -28959,20 +29680,50 @@
               "t": "Nav izvēlētas bāzes kartes. Izmantojiet Pārlūkot Portālu Vienības sadaļu iepriekš, lai pievienotu bāzes kartes.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Īpaši mazs",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Vidējs (noklusējums)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Režģis (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Saraksts (rindas)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Objekts nav atrasts, vai tas nav Web Map vai Vektoru flīžu pakalpojums",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Neizdevās ielādēt ierakstus: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "no": {
-          "file": "039818470ace",
+          "file": "500f417d67c6",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29119,20 +29870,50 @@
               "t": "Ingen basiskart valgt. Bruk delen Bla gjennom portalelementer ovenfor for å legge til basekart.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Ekstra liten",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Middels (Standard)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Liste (Rader)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Varen er ikke funnet, eller den er ikke et webkart eller vektorflisertjeneste",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Klarte ikke å laste elementene: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "nl": {
-          "file": "869ad62f6e4a",
+          "file": "13f323c67f24",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29279,20 +30060,50 @@
               "t": "Geen basemaps geselecteerd. Gebruik de sectie Bladerporal items hierboven om basemaps toe te voegen.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra klein",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Middel (Standaard)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Raster",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lijst (rijen)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Item niet gevonden, of het is geen Web Map of Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Kon items niet laden: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "pl": {
-          "file": "2821c67fc972",
+          "file": "4a00f0cb67b0",
           "counts": {
             "esri": 11,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29439,20 +30250,50 @@
               "t": "Nie wybrano podstaw. Użyj powyższej sekcji Przeglądaj elementy portalu, aby dodać podstawy.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Bardzo małe",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Średni (domyślny)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Siatka (miniatury)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (wiersze)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Nie znaleziono elementu, lub nie jest to Web Map lub Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nie można wczytać elementów: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "pt-br": {
-          "file": "0bc6d9e8f809",
+          "file": "5701198bb63f",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29599,20 +30440,50 @@
               "t": "Nenhum mapa de base selecionado. Use a seção de itens do portal para adicionar mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra pequeno.",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Médio (Padrão)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grelha (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Item não encontrado, ou não é um Web Map ou Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Falha ao carregar itens: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "pt-pt": {
-          "file": "467781dcaa01",
+          "file": "c7647780189d",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29759,20 +30630,50 @@
               "t": "Nenhum mapa de base selecionado. Use a seção Navegar por Portal Itens acima para adicionar mapas de base.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra Pequeno",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Médio (Padrão)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grelha (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Cordas)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Item não encontrado, ou não é um Web Map ou Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Falha ao carregar os itens: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "ro": {
-          "file": "1a879b14c10b",
+          "file": "18efe9297c5d",
           "counts": {
             "esri": 13,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -29919,20 +30820,50 @@
               "t": "Nu s-a selectat niciun basemaps. Utilizați secțiunea de elemente de portal de navigare de mai sus pentru a adăuga basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra mic",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Mediu (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grilă",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Element negăsit, sau nu este o hartă web sau Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "A eșuat încărcarea elementelor: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "ru": {
-          "file": "18ceec9c7000",
+          "file": "2dda018e860d",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -30079,20 +31010,50 @@
               "t": "Никаких базовых карт не выбрано. Используйте раздел Browse Portal Items выше, чтобы добавить базовые карты.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Очень маленький",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Средний (по умолчанию)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Сетка (графики)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Список (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Элемент не найден, или это не веб-карта или служба векторной плитки",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Не удалось загрузить предметы: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "sk": {
-          "file": "2ea92accd3e6",
+          "file": "e272f1388d14",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 28,
+            "machine": 34,
             "stale": 0,
-            "missing": 7
+            "missing": 1
           },
           "entries": {
             "displayMode": {
@@ -30234,20 +31195,50 @@
               "t": "Neboli vybrané žiadne basemapy. Použi sekciu Položky portálu pre prehliadanie vyššie pre pridanie basemaps.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra malé",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Stredné (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Mriežka",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Zoznam (riadky)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Položka nenájdená, alebo to nie je webová mapa alebo Vector Tile služba",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nepodarilo sa načítať položky: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "sl": {
-          "file": "2e083e1c5d1e",
+          "file": "895a993d617a",
           "counts": {
             "esri": 11,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 28,
+            "machine": 34,
             "stale": 0,
-            "missing": 7
+            "missing": 1
           },
           "entries": {
             "displayMode": {
@@ -30389,6 +31380,36 @@
               "t": "Ni izbranih baznih zemljevidov. Uporabite oddelek Brskanje Portal postavke zgoraj za dodajanje baznih zemljevidov.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Zelo majhna",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Srednja (privzeto)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Mreža (Tombola)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Seznam (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Postavka ni najdena ali ni spletna karta ali Vektorska storitev ploščic",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Nalaganje predmetov ni uspelo: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
@@ -30407,16 +31428,16 @@
           "entries": {}
         },
         "sv": {
-          "file": "4e023408cac6",
+          "file": "c91d10c2c000",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -30563,20 +31584,50 @@
               "t": "Inga basemaps valda. Använd avsnittet Bläddra Portal objekt ovan för att lägga till baskartor.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Extra liten",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (standard)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Observera inte, eller det är inte en webbkarta eller Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Underlåten att ladda objekt: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "th": {
-          "file": "e884b60ed29b",
+          "file": "3936afb819a8",
           "counts": {
             "esri": 13,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -30723,20 +31774,50 @@
               "t": "ยังไม่มีการเลือกฐานแมพ ใช้ส่วนรายการทางด้านบนในการเรียกดู เพื่อเพิ่มการใช้ฐานแมป",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "เล็กพิเศษ",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "ปานกลาง (ค่าปริยาย)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "กริด (เล็บเท้า)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "รายการ (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "ไม่พบรายการ หรือไม่ใช่แผนที่เว็บ หรือบริการการวาดพาเนล",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "ล้มเหลวในการโหลดรายการ: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "tr": {
-          "file": "70179566d8e2",
+          "file": "fc173c8c7789",
           "counts": {
             "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 30,
+            "machine": 36,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -30888,20 +31969,50 @@
               "t": "Show help guide",
               "src": "machine",
               "h": "03e9f0b81336"
+            },
+            "extraSmall": {
+              "t": "Ekstra Küçük",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Medium (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Grid (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Liste (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Un found, or it is not a Web Map or Vector Rolls Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Eşyaları yüklemek için başarısız oldu: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "zh-cn": {
-          "file": "a174d4df73a7",
+          "file": "fb8095b4af3d",
           "counts": {
             "esri": 12,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -31048,20 +32159,50 @@
               "t": "未选择底图 。 使用上面的浏览门户项目部分来添加碱性映射.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "额外小项",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "中度( 默认)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "网格( 直肠)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "列表( Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "未找到的项目, 或者它不是 Web 映射或矢量图",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "装入项目失败 : {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "uk": {
-          "file": "ac12aa2552ea",
+          "file": "a66e252fcb3e",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -31208,20 +32349,50 @@
               "t": "Не вибрано базові карти. Використовуйте розділ Browse Portal вище, щоб додати базові карти.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Екстра Малий",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Середній (Default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Сітка (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Список (Руси)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Не знайдено, або це не Web Map або Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Вимкнено до вантажних елементів: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "vi": {
-          "file": "bd5b54a6dd9a",
+          "file": "b7191b26526a",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -31368,20 +32539,50 @@
               "t": "Chưa chọn sơ đồ cơ bản. Dùng phần cổng duyệt bên trên để thêm sơ đồ cơ bản.",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "Quá nhỏ",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Vừa (Mặc định)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Lưới",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Đường",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Không tìm thấy mục này, hoặc nó không phải là một dịch vụ lát hoặc bản đồ Mạng",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Lỗi nạp mục: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "zh-hk": {
-          "file": "1c3b7b530376",
+          "file": "150dff5dc84d",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -31528,20 +32729,50 @@
               "t": "未選擇底圖 。 使用上面的瀏覽端口項目區域來新增基底圖 。",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "新增小",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "中度 (default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "网格( T)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "列表( Rows )",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "找不到項目, 或不是網頁映射或矢量梯形服務",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "載入項目失敗 : {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         },
         "zh-tw": {
-          "file": "1c3b7b530376",
+          "file": "150dff5dc84d",
           "counts": {
             "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 29,
+            "machine": 35,
             "stale": 0,
-            "missing": 6
+            "missing": 0
           },
           "entries": {
             "displayMode": {
@@ -31688,6 +32919,36 @@
               "t": "未選擇底圖 。 使用上面的瀏覽端口項目區域來新增基底圖 。",
               "src": "machine",
               "h": "2875d7bec54b"
+            },
+            "extraSmall": {
+              "t": "新增小",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "中度 (default)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "网格( T)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "列表( Rows )",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "找不到項目, 或不是網頁映射或矢量梯形服務",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "載入項目失敗 : {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
             }
           }
         }

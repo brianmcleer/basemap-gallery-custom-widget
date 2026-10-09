@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Klik untuk membandingkan {title} dengan peta dasar saat ini",
         titleCurrentlyActiveBasemapClickTo: "{title} - Basemap yang sedang aktif (klik untuk mengajukan ulang)",
         clickToApplyTitleBasemapTo: "Klik untuk menerapkan {title} basemap ke peta",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} dari {length}",
+        unknownError: "galat tak dikenal",
+        unserializableError: "kesalahan tidak serialisasi",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

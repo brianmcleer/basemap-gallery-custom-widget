@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Trợ giúp",
         showHelpGuide: "Hiện hướng dẫn trợ giúp",
         showTheQuestionMarkButtonThat: "Hiển thị nút đánh dấu câu hỏi để mở hướng dẫn trợ giúp ô điều khiển",
-        extraSmall: "Extra Small",
+        extraSmall: "Quá nhỏ",
         small: "Nhỏ",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Vừa (Mặc định)",
         large: "Lớn",
         extraLarge: "Cực lớn",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Lưới",
+        listRows: "Đường",
+        itemNotFoundOrItIs: "Không tìm thấy mục này, hoặc nó không phải là một dịch vụ lát hoặc bản đồ Mạng",
+        failedToLoadItemsMessage: "Lỗi nạp mục: {message}"
       })
     }
   }

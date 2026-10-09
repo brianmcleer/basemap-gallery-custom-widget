@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Ajutor",
         showHelpGuide: "Arată ghidul de ajutor",
         showTheQuestionMarkButtonThat: "Arată butonul semn de întrebare care deschide ghidul de ajutor widget",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra mic",
         small: "Mică",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Mediu (Default)",
         large: "Mare",
         extraLarge: "Extra mare",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Grilă",
+        listRows: "Lista (Rows)",
+        itemNotFoundOrItIs: "Element negăsit, sau nu este o hartă web sau Vector Tile Service",
+        failedToLoadItemsMessage: "A eșuat încărcarea elementelor: {message}"
       })
     }
   }

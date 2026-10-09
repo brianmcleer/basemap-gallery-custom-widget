@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "לחץ כדי להשוות {title} מפת הבסיס הנוכחית",
         titleCurrentlyActiveBasemapClickTo: "{title} כיום מפת בסיס פעילה (לחץ כדי לחזור)",
         clickToApplyTitleBasemapTo: "Click to Apply {title} מפת בסיס למפה",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} של {length}",
+        unknownError: "טעות לא ידועה",
+        unserializableError: "טעות בלתי אפשרית",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

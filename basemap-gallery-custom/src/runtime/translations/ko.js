@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "비교하기 {title} 현재 basemap으로",
         titleCurrentlyActiveBasemapClickTo: "{title} - 현재 활성화된 Basemap (Reapply 클릭)",
         clickToApplyTitleBasemapTo: "자주 묻는 질문 {title} 지도에 basemap",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}· {value5} 이름 * {length}",
+        unknownError: "알 수없는 오류",
+        unserializableError: "unserializable 오류",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

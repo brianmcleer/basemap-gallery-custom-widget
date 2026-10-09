@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Súgó",
         showHelpGuide: "Segítőútmutató megjelenítése",
         showTheQuestionMarkButtonThat: "Megjeleníti a kérdőjel gombot, amely megnyitja a widget súgó útmutatót",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra kicsi",
         small: "Kicsi",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Közepes (alapértelmezés)",
         large: "Nagy",
         extraLarge: "Extra nagy",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Rács (hüvelykujj)",
+        listRows: "Lista (sorok)",
+        itemNotFoundOrItIs: "Elem nem található, vagy ez nem egy webtérkép vagy Vector Tile Service",
+        failedToLoadItemsMessage: "Nem sikerült betölteni a tételeket: {message}"
       })
     }
   }

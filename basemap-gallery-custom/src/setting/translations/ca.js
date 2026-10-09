@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Ajuda",
         showHelpGuide: "Mostra la guia d' ajuda",
         showTheQuestionMarkButtonThat: "Mostra el botó Pregunta- marca que obre la guia d' ajuda de l' estri",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra petit",
         small: "Petita",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Mitjana (per omissió)",
         large: "Gran",
         extraLarge: "Extragran",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Graella (ossos)",
+        listRows: "Llista (Rows)",
+        itemNotFoundOrItIs: "No s' ha trobat l' element, o no és un servei de mapes web o mosaic vectorial",
+        failedToLoadItemsMessage: "Ha fallat en carregar els elements: {message}"
       })
     }
   }

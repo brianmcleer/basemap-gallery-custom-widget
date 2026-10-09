@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Spustelėkite norėdami palyginti {title} su esamu basemap",
         titleCurrentlyActiveBasemapClickTo: "{title} - Šiuo metu aktyvus basemap (spustelėkite norėdami vėl kreiptis)",
         clickToApplyTitleBasemapTo: "Spustelėkite, jei norite taikyti {title} basemap iki žemėlapio",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} iš {length}",
+        unknownError: "nežinoma klaida",
+        unserializableError: "nenustatoma klaida",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

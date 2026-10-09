@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Hjælp",
         showHelpGuide: "Vis hjælpeguide",
         showTheQuestionMarkButtonThat: "Vis spørgsmåls- markerings- knappen der åbner kontrolhjælpevejledningen",
-        extraSmall: "Extra Small",
+        extraSmall: "Ekstra lille",
         small: "Lille",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Medium (standard)",
         large: "Stor",
         extraLarge: "Ekstra stor",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Grid (miniaturer)",
+        listRows: "Liste (rækker)",
+        itemNotFoundOrItIs: "Varen ikke fundet, eller det er ikke et webkort eller Vector Tile Service",
+        failedToLoadItemsMessage: "Kunne ikke indlæse elementer: {message}"
       })
     }
   }

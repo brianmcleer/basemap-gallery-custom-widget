@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Nhấn để so sánh {title} với sơ đồ cơ sở hiện tại",
         titleCurrentlyActiveBasemapClickTo: "{title} - Hiện tại là sơ đồ cơ sở hoạt động (click to reply)",
         clickToApplyTitleBasemapTo: "Nhấn vào để áp dụng {title} Sơ đồ cơ bản của bản đồ",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}. {value5} Kho {length}",
+        unknownError: "lỗi không rõ",
+        unserializableError: "Lỗi không thể gửi đi được",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

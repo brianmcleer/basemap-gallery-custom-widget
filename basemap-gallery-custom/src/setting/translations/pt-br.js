@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Ajuda",
         showHelpGuide: "Mostre guia de ajuda",
         showTheQuestionMarkButtonThat: "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget",
-        extraSmall: "Extra Small",
+        extraSmall: "Extra pequeno.",
         small: "Pequeno",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Médio (Padrão)",
         large: "Grande",
         extraLarge: "Extra grande",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Grelha (Thumbnails)",
+        listRows: "Lista (Rows)",
+        itemNotFoundOrItIs: "Item não encontrado, ou não é um Web Map ou Vector Tile Service",
+        failedToLoadItemsMessage: "Falha ao carregar itens: {message}"
       })
     }
   }

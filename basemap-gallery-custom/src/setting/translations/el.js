@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Βοήθεια",
         showHelpGuide: "Εμφάνιση οδηγού βοήθειας",
         showTheQuestionMarkButtonThat: "Εμφάνιση του κουμπιού ερωτηματολογίου που ανοίγει τον οδηγό βοήθειας widget",
-        extraSmall: "Extra Small",
+        extraSmall: "Επιπλέον μικρό",
         small: "Μικρό μέγεθος",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Μέσο (Προκαθορισμένο)",
         large: "Μεγάλο μέγεθος",
         extraLarge: "Πολύ μεγάλο",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Πλέγμα (Thumbnails)",
+        listRows: "Κατάλογος (ροές)",
+        itemNotFoundOrItIs: "Το αντικείμενο δεν βρέθηκε, ή δεν είναι ένα Web Map ή Vector Tile Service",
+        failedToLoadItemsMessage: "Αποτυχία φόρτωσης αντικειμένων: {message}"
       })
     }
   }

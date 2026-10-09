@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Натисніть, щоб порівняти {title} з поточною основою",
         titleCurrentlyActiveBasemapClickTo: "{title} - В даний час активна базова карта",
         clickToApplyTitleBasemapTo: "Натисніть, щоб застосувати {title} базова карта на карті",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}й {value5} з {length}",
+        unknownError: "Невідома помилка",
+        unserializableError: "несеріалізована помилка",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

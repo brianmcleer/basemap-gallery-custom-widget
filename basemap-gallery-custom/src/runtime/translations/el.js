@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Κλικ για σύγκριση {title} με τον τρέχοντα χάρτη βάσης",
         titleCurrentlyActiveBasemapClickTo: "{title} - Επί του παρόντος ενεργός χάρτης βάσης (κλικ για reapply)",
         clickToApplyTitleBasemapTo: "Κλικ για εφαρμογή {title} χάρτης βάσης στο χάρτη",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} του {length}",
+        unknownError: "άγνωστο σφάλμα",
+        unserializableError: "σφάλμα μη ανιχνεύσιμο",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

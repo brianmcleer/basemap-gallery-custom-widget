@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "說明",
         showHelpGuide: "顯示說明指南",
         showTheQuestionMarkButtonThat: "顯示開啟元件說明指導的問題標鍵",
-        extraSmall: "Extra Small",
+        extraSmall: "新增小",
         small: "小",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "中度 (default)",
         large: "大",
         extraLarge: "特大",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "网格( T)",
+        listRows: "列表( Rows )",
+        itemNotFoundOrItIs: "找不到項目, 或不是網頁映射或矢量梯形服務",
+        failedToLoadItemsMessage: "載入項目失敗 : {message}"
       })
     }
   }

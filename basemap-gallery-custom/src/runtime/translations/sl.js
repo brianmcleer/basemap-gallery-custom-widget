@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Kliknite za primerjavo {title} s trenutno osnovno karto",
         titleCurrentlyActiveBasemapClickTo: "{title} - Trenutno aktivna baza (klikni za ponovno aplikacijo)",
         clickToApplyTitleBasemapTo: "Kliknite za prijavo {title} Osnovna karta na zemljevidu",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} o {length}",
+        unknownError: "neznana napaka",
+        unserializableError: "Neizvedljiva napaka",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

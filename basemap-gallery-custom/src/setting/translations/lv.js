@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Palīdzība",
         showHelpGuide: "Rādīt palīdzības ceļvedi",
         showTheQuestionMarkButtonThat: "Rādīt jautājumu zīmes pogu, kas atver logdaļu palīdzības rokasgrāmatu",
-        extraSmall: "Extra Small",
+        extraSmall: "Īpaši mazs",
         small: "Maza",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Vidējs (noklusējums)",
         large: "Liela",
         extraLarge: "Īpaši liels",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Režģis (Thumbnails)",
+        listRows: "Saraksts (rindas)",
+        itemNotFoundOrItIs: "Objekts nav atrasts, vai tas nav Web Map vai Vektoru flīžu pakalpojums",
+        failedToLoadItemsMessage: "Neizdevās ielādēt ierakstus: {message}"
       })
     }
   }

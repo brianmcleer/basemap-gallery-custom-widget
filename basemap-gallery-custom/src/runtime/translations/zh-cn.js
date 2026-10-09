@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "点击比较 {title} 使用当前基图",
         titleCurrentlyActiveBasemapClickTo: "{title} - 当前活动底图(单击以重新应用)",
         clickToApplyTitleBasemapTo: "单击以应用 {title} 基础映射到地图",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, (中文). {value5} 页:1 {length}",
+        unknownError: "未知错误",
+        unserializableError: "无序错误",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "도움말",
         showHelpGuide: "공지사항",
         showTheQuestionMarkButtonThat: "위젯 도움말 가이드를 열 수있는 질문 표시 버튼",
-        extraSmall: "Extra Small",
+        extraSmall: "추가 작은",
         small: "작게",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "중간 (기본)",
         large: "크게",
         extraLarge: "매우 크게",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "그리드 (Thumbnails)",
+        listRows: "목록 (Rows)",
+        itemNotFoundOrItIs: "찾을 수 없습니다, 또는 그것은 웹지도 또는 벡터 타일 서비스",
+        failedToLoadItemsMessage: "적재 품목에 실패: {message}"
       })
     }
   }

@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Klikkaa vertaillaksesi {title} ja nykyinen pohjakartta",
         titleCurrentlyActiveBasemapClickTo: "{title} - Tällä hetkellä aktiivinen basemap (klikkaa uudelleensoveltaa)",
         clickToApplyTitleBasemapTo: "Klikkaa käyttääksesi {title} pohjakartta karttaan",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} / {length}",
+        unknownError: "tuntematon virhe",
+        unserializableError: "epätavallinen virhe",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

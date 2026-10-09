@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Nospiediet, lai salīdzinātu {title} ar pašreizējo bāzes karti",
         titleCurrentlyActiveBasemapClickTo: "{title} - Šobrīd aktīva bāzes karte (noklikšķiniet, lai atkārtoti)",
         clickToApplyTitleBasemapTo: "Nospiediet, lai pieteiktos {title} Pamatkarte uz karti",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} skaits * {length}",
+        unknownError: "nezināma kļūda",
+        unserializableError: "nepārspējama kļūda",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

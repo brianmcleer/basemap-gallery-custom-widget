@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Összehasonlításhoz kattintson ide {title} az aktuális alappal",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktív bázis (kattintson az újraalkalmazásra)",
         clickToApplyTitleBasemapTo: "Kattintson az alkalmazásra {title} basemap a térképre",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} II. {length}",
+        unknownError: "ismeretlen hiba",
+        unserializableError: "nem sorozható hiba",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

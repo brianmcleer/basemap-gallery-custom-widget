@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "クリックして比較する {title} 現在のベースマップを使って",
         titleCurrentlyActiveBasemapClickTo: "{title} - 現在アクティブなベースマップ(再適用するためにクリック)",
         clickToApplyTitleBasemapTo: "お申込みはこちら {title} 地図へのベースマップ",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} インフォメーション {length}",
+        unknownError: "未知のエラー",
+        unserializableError: "unserializable エラー",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

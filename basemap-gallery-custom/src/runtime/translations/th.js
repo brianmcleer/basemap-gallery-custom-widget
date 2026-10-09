@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "คลิกเพื่อเปรียบเทียบ {title} ด้วยการใช้เบสแมพปัจจุบัน",
         titleCurrentlyActiveBasemapClickTo: "{title} ปัจจุบัน เบสแมป (คลิกเพื่อเก็บเกี่ยว)",
         clickToApplyTitleBasemapTo: "คลิกเพื่อปรับใช้ {title} ฐาน ของ แผนที่",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}. {value5} ของ {length}",
+        unknownError: "ข้อผิดพลาดไม่ทราบสาเหตุ",
+        unserializableError: "ข้อผิดพลาดที่ไม่สามารถตรวจสอบได้",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

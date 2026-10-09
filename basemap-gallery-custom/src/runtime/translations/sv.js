@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Klicka för att jämföra {title} med den nuvarande baskartan",
         titleCurrentlyActiveBasemapClickTo: "{title} - För närvarande aktiv basemap (klicka för att återanvända)",
         clickToApplyTitleBasemapTo: "Klicka för att söka {title} Basmap till kartan",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
+        unknownError: "Okänd fel",
+        unserializableError: "oserialiserbart fel",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

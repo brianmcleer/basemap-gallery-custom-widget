@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Kliknij, aby porównać {title} z aktualnym basemapem",
         titleCurrentlyActiveBasemapClickTo: "{title} - Aktualnie aktywny basemap (kliknij, aby ponownie zastosować)",
         clickToApplyTitleBasemapTo: "Kliknij, aby zastosować {title} basemap do mapy",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
+        unknownError: "nieznany błąd",
+        unserializableError: "błąd niezserializowalny",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

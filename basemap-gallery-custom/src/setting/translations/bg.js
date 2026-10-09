@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Помощ",
         showHelpGuide: "Показване на ръководство за помощ",
         showTheQuestionMarkButtonThat: "Показване на бутона въпрос-марка, която отваря джаджа помощ ръководство",
-        extraSmall: "Extra Small",
+        extraSmall: "Екстра малък",
         small: "Малки",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Среден (по подразбиране)",
         large: "Големи",
         extraLarge: "Много големи",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Мрежа (тумбани)",
+        listRows: "Списък (Rows)",
+        itemNotFoundOrItIs: "Обектът не е намерен или не е уеб карта или Vector Tile Service",
+        failedToLoadItemsMessage: "Грешка при зареждане на елементите: {message}"
       })
     }
   }

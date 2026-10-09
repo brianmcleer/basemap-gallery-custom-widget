@@ -162,9 +162,10 @@ System.register([], function (e) {
         clickToCompareTitleWithThe: "Кликнете, за да сравните {title} с текущата базова карта",
         titleCurrentlyActiveBasemapClickTo: "{title} - В момента активна базова карта (кликнете отново)",
         clickToApplyTitleBasemapTo: "Натиснете, за да кандидатствате {title} базова карта на картата",
-        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} of {length}",
-        unknownError: "unknown error",
-        unserializableError: "unserializable error"
+        titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} на {length}",
+        unknownError: "неизвестна грешка",
+        unserializableError: "несериозна грешка",
+        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
       })
     }
   }

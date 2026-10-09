@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Abi",
         showHelpGuide: "Abijuhendi näitamine",
         showTheQuestionMarkButtonThat: "Küsimusemärgi nupu näitamine, mis avab vidina abi juhendi",
-        extraSmall: "Extra Small",
+        extraSmall: "ekstra väike",
         small: "Väike",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Keskmine (vaikimisi)",
         large: "Suur",
         extraLarge: "Eriti suur",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Võrk (pöidlad)",
+        listRows: "Nimekiri (read)",
+        itemNotFoundOrItIs: "Elementi ei leitud või see ei ole Web Map või Vector Tile Service",
+        failedToLoadItemsMessage: "Elementide laadimine nurjus: {message}"
       })
     }
   }

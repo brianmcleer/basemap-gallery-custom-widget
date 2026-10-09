@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Довідка",
         showHelpGuide: "Показати посібник",
         showTheQuestionMarkButtonThat: "Показати натис-mark, який відкриває посібник з підтримки віджету",
-        extraSmall: "Extra Small",
+        extraSmall: "Екстра Малий",
         small: "Малий",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Середній (Default)",
         large: "Великий",
         extraLarge: "Дуже великий",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Сітка (Thumbnails)",
+        listRows: "Список (Руси)",
+        itemNotFoundOrItIs: "Не знайдено, або це не Web Map або Vector Tile Service",
+        failedToLoadItemsMessage: "Вимкнено до вантажних елементів: {message}"
       })
     }
   }

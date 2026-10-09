@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Справка",
         showHelpGuide: "Показать справочник",
         showTheQuestionMarkButtonThat: "Покажите кнопку вопрос-марка, которая открывает руководство по помощи виджета",
-        extraSmall: "Extra Small",
+        extraSmall: "Очень маленький",
         small: "Малое",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Средний (по умолчанию)",
         large: "Большое",
         extraLarge: "Очень большой",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Сетка (графики)",
+        listRows: "Список (Rows)",
+        itemNotFoundOrItIs: "Элемент не найден, или это не веб-карта или служба векторной плитки",
+        failedToLoadItemsMessage: "Не удалось загрузить предметы: {message}"
       })
     }
   }

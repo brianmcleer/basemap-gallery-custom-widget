@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Yardım",
         showHelpGuide: "Show help guide",
         showTheQuestionMarkButtonThat: "Widget'ı açan soru işaret düğmesine göster",
-        extraSmall: "Extra Small",
+        extraSmall: "Ekstra Küçük",
         small: "Küçük",
         mediumDefault: "Medium (Default)",
         large: "Büyük",
         extraLarge: "Ekstra büyük",
         gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        listRows: "Liste (Rows)",
+        itemNotFoundOrItIs: "Un found, or it is not a Web Map or Vector Rolls Service",
+        failedToLoadItemsMessage: "Eşyaları yüklemek için başarısız oldu: {message}"
       })
     }
   }

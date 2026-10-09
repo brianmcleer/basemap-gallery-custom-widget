@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "帮助",
         showHelpGuide: "显示帮助指南",
         showTheQuestionMarkButtonThat: "显示打开部件帮助指南的问题标记按钮",
-        extraSmall: "Extra Small",
+        extraSmall: "额外小项",
         small: "小型",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "中度( 默认)",
         large: "大型",
         extraLarge: "超大",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "网格( 直肠)",
+        listRows: "列表( Rows)",
+        itemNotFoundOrItIs: "未找到的项目, 或者它不是 Web 映射或矢量图",
+        failedToLoadItemsMessage: "装入项目失败 : {message}"
       })
     }
   }

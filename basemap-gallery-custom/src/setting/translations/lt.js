@@ -43,15 +43,15 @@ System.register([], function (e) {
         help: "Pagalba",
         showHelpGuide: "Rodyti pagalbos vadovą",
         showTheQuestionMarkButtonThat: "Rodyti klausimų žymėjimo mygtuką, kuris atveria valdikliui skirtą pagalbos vadovą",
-        extraSmall: "Extra Small",
+        extraSmall: "Labai maža",
         small: "Mažas",
-        mediumDefault: "Medium (Default)",
+        mediumDefault: "Vidutinis (numatytasis)",
         large: "Didelis",
         extraLarge: "Labai didelis",
-        gridThumbnails: "Grid (Thumbnails)",
-        listRows: "List (Rows)",
-        itemNotFoundOrItIs: "Item not found, or it is not a Web Map or Vector Tile Service",
-        failedToLoadItemsMessage: "Failed to load items: {message}"
+        gridThumbnails: "Tinklelis (miniatiūros)",
+        listRows: "Sąrašas (eilutės)",
+        itemNotFoundOrItIs: "Objektas nerastas, arba tai nėra žiniatinklio žemėlapis ar Vector plytelių paslauga",
+        failedToLoadItemsMessage: "Nepavyko įkelti elementų: {message}"
       })
     }
   }
