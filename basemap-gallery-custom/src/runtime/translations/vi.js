@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}. {value5} Kho {length}",
         unknownError: "lỗi không rõ",
         unserializableError: "Lỗi không thể gửi đi được",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Lỗi tải sơ đồ cơ bản: {message}"
       })
     }
   }

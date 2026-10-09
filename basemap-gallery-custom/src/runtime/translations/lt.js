@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} iš {length}",
         unknownError: "nežinoma klaida",
         unserializableError: "nenustatoma klaida",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Nepavyko įkelti basemaps: {message}"
       })
     }
   }

@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} του {length}",
         unknownError: "άγνωστο σφάλμα",
         unserializableError: "σφάλμα μη ανιχνεύσιμο",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Αποτυχία φόρτωσης χαρτών βάσης: {message}"
       })
     }
   }

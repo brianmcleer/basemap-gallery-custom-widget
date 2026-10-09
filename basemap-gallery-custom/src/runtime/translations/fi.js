@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} / {length}",
         unknownError: "tuntematon virhe",
         unserializableError: "epätavallinen virhe",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Peruskarttoja ei voitu ladata: {message}"
       })
     }
   }

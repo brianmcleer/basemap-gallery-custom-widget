@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} o {length}",
         unknownError: "neznana napaka",
         unserializableError: "Neizvedljiva napaka",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Nalaganje osnovnih zemljevidov ni uspelo: {message}"
       })
     }
   }

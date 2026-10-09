@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} на {length}",
         unknownError: "неизвестна грешка",
         unserializableError: "несериозна грешка",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Грешка при зареждане на базовите карти: {message}"
       })
     }
   }

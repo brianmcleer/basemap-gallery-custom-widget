@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} II. {length}",
         unknownError: "ismeretlen hiba",
         unserializableError: "nem sorozható hiba",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Nem sikerült betölteni a bázisokat: {message}"
       })
     }
   }

@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}· {value5} 이름 * {length}",
         unknownError: "알 수없는 오류",
         unserializableError: "unserializable 오류",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "로드 basemaps에 실패: {message}"
       })
     }
   }

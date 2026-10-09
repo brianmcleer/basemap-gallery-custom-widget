@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} din {length}",
         unknownError: "Eroare necunoscută",
         unserializableError: "eroare inoperabilă",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Eșec la încărcarea de bază: {message}"
       })
     }
   }

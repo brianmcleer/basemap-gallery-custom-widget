@@ -172,16 +172,16 @@
       },
       "locales": {
         "ar": {
-          "file": "31c077aaf0df",
+          "file": "c041746de7b4",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -888,20 +888,25 @@
               "t": "{title}{value}{value2}{value3}{value4}.. {value5} of of {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "لم يُحمّلَ الرواسب الأساسية: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "bg": {
-          "file": "c81aae297176",
+          "file": "db0f23d13e08",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -1603,6 +1608,11 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} на {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Грешка при зареждане на базовите карти: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
@@ -1621,16 +1631,16 @@
           "entries": {}
         },
         "ca": {
-          "file": "4938a53ed968",
+          "file": "d7e6d4d144b1",
           "counts": {
             "esri": 19,
             "esri-check": 2,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -2337,20 +2347,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Ha fallat en carregar els mapes base: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "cs": {
-          "file": "01546430c3dc",
+          "file": "39f42e1af779",
           "counts": {
             "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -3052,20 +3067,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nepodařilo se načíst základní údaje: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "da": {
-          "file": "a4a377fd5b82",
+          "file": "29e858d7c175",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -3772,20 +3792,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} af {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Kunne ikke indlæse basemaps: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "de": {
-          "file": "cbdd4756068d",
+          "file": "42a853e51819",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 139,
+            "machine": 140,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -4487,20 +4512,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} von {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Fehler beim Laden von Basemaps: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "el": {
-          "file": "89367f54ce2d",
+          "file": "ff23bbb4ca26",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -5207,6 +5237,11 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} του {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Αποτυχία φόρτωσης χαρτών βάσης: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
@@ -5218,9 +5253,9 @@
             "community": 0,
             "manual": 1,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -5932,20 +5967,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
               "src": "manual",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Failed to load basemaps: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "et": {
-          "file": "a0e7b15e06e9",
+          "file": "e7d7c92332e0",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -6647,20 +6687,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} ühest {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Baaskaartide laadimine nurjus: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "fi": {
-          "file": "f7cda37b63b1",
+          "file": "b3f72f0d1b9a",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -7362,20 +7407,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} / {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Peruskarttoja ei voitu ladata: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "fr": {
-          "file": "6b22a7a68a39",
+          "file": "9f3d2b28aa33",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -8077,20 +8127,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} des {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Impossible de charger les cartes de base : {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "he": {
-          "file": "30419c10b03a",
+          "file": "5082f50997ab",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -8792,6 +8847,11 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} של {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "נכשל לטעון מפת בסיס: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
@@ -8810,16 +8870,16 @@
           "entries": {}
         },
         "hu": {
-          "file": "312be69a41cb",
+          "file": "1f4180039a54",
           "counts": {
             "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -9521,20 +9581,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} II. {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nem sikerült betölteni a bázisokat: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "id": {
-          "file": "aa0bb244b9d8",
+          "file": "001f43a04a48",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -10236,20 +10301,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} dari {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Gagal memuat basemap: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "it": {
-          "file": "b4a84ac0013c",
+          "file": "5c67191479ea",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -10956,20 +11026,25 @@
               "t": "{title}{value}{value2}{value3}{value4}♪ {value5} di {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Non caricare le mappe di base: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "ja": {
-          "file": "b82506e0ce6a",
+          "file": "80b7156d8031",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -11671,20 +11746,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} インフォメーション {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "ベースマップをロードできなかった: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "ko": {
-          "file": "483557be0263",
+          "file": "0f686dfb57f6",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -12386,20 +12466,25 @@
               "t": "{title}{value}{value2}{value3}{value4}· {value5} 이름 * {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "로드 basemaps에 실패: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "lt": {
-          "file": "2681f4dadc62",
+          "file": "a7172e0e1ace",
           "counts": {
             "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -13101,20 +13186,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} iš {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nepavyko įkelti basemaps: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "lv": {
-          "file": "c7bd87662859",
+          "file": "b216c8c0d39c",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -13816,20 +13906,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} skaits * {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Neizdevās ielādēt bāzes kartes: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "no": {
-          "file": "64c7fdecbbbe",
+          "file": "487f80fc2557",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -14531,20 +14626,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Klarte ikke å laste basiskart: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "nl": {
-          "file": "77ec900053c6",
+          "file": "2458cae37354",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -15251,20 +15351,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} van {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Laden van basemaps is mislukt: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "pl": {
-          "file": "db3389f99adc",
+          "file": "ec40f254cbcd",
           "counts": {
             "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -15966,20 +16071,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nie można wczytać podstawowych map: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "pt-br": {
-          "file": "c3853ad5cfb5",
+          "file": "0395973aa636",
           "counts": {
             "esri": 21,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -16686,20 +16796,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Falha ao carregar mapas de base: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "pt-pt": {
-          "file": "7deb89944dfd",
+          "file": "523b19a67c7f",
           "counts": {
             "esri": 20,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 141,
+            "machine": 142,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -17406,20 +17521,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} de {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Falha ao carregar os mapas de base: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "ro": {
-          "file": "6714799e800e",
+          "file": "ba1b2b4f51cf",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -18121,20 +18241,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} din {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Eșec la încărcarea de bază: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "ru": {
-          "file": "01f9ce3fe0cf",
+          "file": "63d1a6365e07",
           "counts": {
             "esri": 20,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -18836,20 +18961,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} из {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Не удалось загрузить базовые карты: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "sk": {
-          "file": "d2c58f3e25dc",
+          "file": "c2e902554368",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -19551,20 +19681,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nepodarilo sa načítať basemapy: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "sl": {
-          "file": "1f93f64eaf13",
+          "file": "4013ad36c49d",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -20266,6 +20401,11 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} o {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nalaganje osnovnih zemljevidov ni uspelo: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
@@ -20284,16 +20424,16 @@
           "entries": {}
         },
         "sv": {
-          "file": "60076b52253d",
+          "file": "a56d2fa9dab3",
           "counts": {
             "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 142,
+            "machine": 143,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -21005,20 +21145,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} av {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Misslyckades med att ladda basemaps: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "th": {
-          "file": "f88b1310152e",
+          "file": "1f230dc59518",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -21720,20 +21865,25 @@
               "t": "{title}{value}{value2}{value3}{value4}. {value5} ของ {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "การโหลดพื้นฐานล้มเหลว: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "tr": {
-          "file": "169a543373c5",
+          "file": "c574a8c1e611",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -22435,20 +22585,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of Of {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Bazmaps'ı yüklemek için başarısız oldu: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "zh-cn": {
-          "file": "063d08f300d3",
+          "file": "c5be3269d234",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -23150,20 +23305,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, (中文). {value5} 页:1 {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "装入底图失败 : {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "uk": {
-          "file": "9f667bf126f3",
+          "file": "38014fbe3c06",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -23865,20 +24025,25 @@
               "t": "{title}{value}{value2}{value3}{value4}й {value5} з {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Заборонено на завантаження базових карт: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "vi": {
-          "file": "f71e54036b5e",
+          "file": "bd10b2230f9d",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -24580,20 +24745,25 @@
               "t": "{title}{value}{value2}{value3}{value4}. {value5} Kho {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Lỗi tải sơ đồ cơ bản: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "zh-hk": {
-          "file": "63a419f3ad9b",
+          "file": "1589f0ee19ac",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -25295,20 +25465,25 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} 四, {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "載入底圖失敗 : {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         },
         "zh-tw": {
-          "file": "63a419f3ad9b",
+          "file": "1589f0ee19ac",
           "counts": {
             "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 140,
+            "machine": 141,
             "stale": 0,
-            "missing": 1
+            "missing": 0
           },
           "entries": {
             "_widgetLabel": {
@@ -26010,6 +26185,11 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5} 四, {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "載入底圖失敗 : {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
             }
           }
         }

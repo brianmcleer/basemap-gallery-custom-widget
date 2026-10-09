@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
         unknownError: "neznáma chyba",
         unserializableError: "neserializovateľná chyba",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Nepodarilo sa načítať basemapy: {message}"
       })
     }
   }

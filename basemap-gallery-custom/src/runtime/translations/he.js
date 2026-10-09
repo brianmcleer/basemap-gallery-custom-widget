@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} של {length}",
         unknownError: "טעות לא ידועה",
         unserializableError: "טעות בלתי אפשרית",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "נכשל לטעון מפת בסיס: {message}"
       })
     }
   }

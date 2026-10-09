@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} dari {length}",
         unknownError: "galat tak dikenal",
         unserializableError: "kesalahan tidak serialisasi",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Gagal memuat basemap: {message}"
       })
     }
   }

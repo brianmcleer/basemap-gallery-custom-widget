@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, (中文). {value5} 页:1 {length}",
         unknownError: "未知错误",
         unserializableError: "无序错误",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "装入底图失败 : {message}"
       })
     }
   }

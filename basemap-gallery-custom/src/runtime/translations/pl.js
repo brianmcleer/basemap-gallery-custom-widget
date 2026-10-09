@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} z {length}",
         unknownError: "nieznany błąd",
         unserializableError: "błąd niezserializowalny",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Nie można wczytać podstawowych map: {message}"
       })
     }
   }

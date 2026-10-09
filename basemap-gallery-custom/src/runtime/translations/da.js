@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} af {length}",
         unknownError: "ukendt fejl",
         unserializableError: "userialiserbar fejl",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "Kunne ikke indlæse basemaps: {message}"
       })
     }
   }

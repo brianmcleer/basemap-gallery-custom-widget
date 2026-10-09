@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}, {value5} インフォメーション {length}",
         unknownError: "未知のエラー",
         unserializableError: "unserializable エラー",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "ベースマップをロードできなかった: {message}"
       })
     }
   }

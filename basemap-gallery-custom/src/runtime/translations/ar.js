@@ -165,7 +165,7 @@ System.register([], function (e) {
         titleValueValue2Value3Value4Value5: "{title}{value}{value2}{value3}{value4}.. {value5} of of {length}",
         unknownError: "خطأ مجهول",
         unserializableError: "خطأ غير معقول",
-        failedToLoadBasemapsMessage: "Failed to load basemaps: {message}"
+        failedToLoadBasemapsMessage: "لم يُحمّلَ الرواسب الأساسية: {message}"
       })
     }
   }
