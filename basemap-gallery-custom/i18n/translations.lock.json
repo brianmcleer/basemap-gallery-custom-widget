@@ -1617,14 +1617,14 @@
           }
         },
         "bs": {
-          "file": "377897ed74aa",
+          "file": "20134e76d5a4",
           "counts": {
-            "esri": 13,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 149,
+            "machine": 140,
             "stale": 0,
             "missing": 1
           },
@@ -1644,16 +1644,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ništa u vodiču ne odgovara toj riječi.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovdje?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
             "firstRunBody": {
               "t": "Izaberite mapu za mijenjanje pozadinske karte, a zatim nastavite koristiti mapu.",
               "src": "machine",
@@ -1663,11 +1653,6 @@
               "t": "Jednom kada su baze mape dostupne, izaberite jednu za promjenu pozadinske karte.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodič.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Otpust nagovještaj",
@@ -1748,11 +1733,6 @@
               "t": "Trenutna bazna mapa, prikazana na desnoj strani razdjelnika",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Počnite ovdje: tri koraka",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Pogledaj slike i imena u galeriji.",
@@ -2009,11 +1989,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ako nešto nije u redu",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nijedna mapa nije povezana: ovaj grafički element nije povezan sa mapom. Pitajte GIS diviziju da ga poveže u postavkama grafičkog elementa.",
               "src": "machine",
@@ -2073,11 +2048,6 @@
               "t": "Još uvijek zapeo? Kontaktirajte GIS diviziju i spomenite Basemap Gallery Custom ime i ovu aplikaciju.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: koristiti upitnik na gornjem desnom dijelu grafičkog elementa za ponovno otvaranje ovog vodiča.",
@@ -2244,11 +2214,6 @@
               "src": "machine",
               "h": "cd16026acc85"
             },
-            "loadingBasemaps2": {
-              "t": "Učitavam bazne mape",
-              "src": "machine",
-              "h": "4c746f7ab986"
-            },
             "noBasemapsConfigured2": {
               "t": "Nema podešenih baznih mapa.",
               "src": "machine",
@@ -2358,16 +2323,6 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             },
             "failedToLoadBasemapsMessage": {
               "t": "Nisam uspio učitati bazne mape: {message}",
@@ -9602,14 +9557,14 @@
           }
         },
         "hr": {
-          "file": "713934d7f99d",
+          "file": "28c35c5236d4",
           "counts": {
-            "esri": 13,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 150,
+            "machine": 141,
             "stale": 0,
             "missing": 0
           },
@@ -9629,16 +9584,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ništa u vodiču ne odgovara toj riječi. Pokušajte drugi, ili otvorite dijelove iznad.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovdje?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
             "firstRunBody": {
               "t": "Odaberite bazu za promjenu pozadinske karte, a zatim nastavite koristiti kartu.",
               "src": "machine",
@@ -9648,11 +9593,6 @@
               "t": "Nakon što su baze mape dostupne, odaberite jedan za promjenu pozadinske karte.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodič.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Savjeti za otpuštanje",
@@ -9733,11 +9673,6 @@
               "t": "Trenutna bazna mapa, prikazana na desnoj strani razdjelnika",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Počnite ovdje: tri koraka",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Pogledajte slike i imena u galeriji.",
@@ -9994,11 +9929,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ako nešto izgleda loše",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Karta nije povezana: ovaj widget nije povezan s mapom. Pitajte odjel GIS-a da ga poveže u postavkama widgeta.",
               "src": "machine",
@@ -10058,11 +9988,6 @@
               "t": "Još uvijek zaglavi? Kontaktirajte GIS Division i spomenuti Basemap Galerija Prilagođeno ime i ovu aplikaciju.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: koristiti upitnik na vrhu desno od widgeta za ponovno otvaranje ovog vodiča.",
@@ -10234,11 +10159,6 @@
               "src": "machine",
               "h": "cd16026acc85"
             },
-            "loadingBasemaps2": {
-              "t": "Učitavanje baznih mapa",
-              "src": "machine",
-              "h": "4c746f7ab986"
-            },
             "noBasemapsConfigured2": {
               "t": "Nema podešenih baznih mapa.",
               "src": "machine",
@@ -10348,16 +10268,6 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             },
             "failedToLoadBasemapsMessage": {
               "t": "Neuspjelo učitavanje baznih mapa: {message}",
@@ -21907,14 +21817,14 @@
           }
         },
         "sr": {
-          "file": "32d967bd13de",
+          "file": "bd77bd8c3b06",
           "counts": {
-            "esri": 13,
+            "esri": 22,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 148,
+            "machine": 139,
             "stale": 0,
             "missing": 2
           },
@@ -21934,16 +21844,6 @@
               "src": "machine",
               "h": "d6d82e21b70b"
             },
-            "helpNoMatches": {
-              "t": "Ništa u vodièu ne odgovara toj reèi.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovde?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
             "firstRunBody": {
               "t": "Izaberite bazu da promenite mapu pozadine, a onda nastavite da koristite mapu.",
               "src": "machine",
@@ -21953,11 +21853,6 @@
               "t": "Jednom kada su baze mape dostupne, odaberite jednu za promenu pozadinske mape.",
               "src": "machine",
               "h": "3ad3cb7fbd61"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodiè.",
-              "src": "machine",
-              "h": "2447dd6134ea"
             },
             "firstRunDismiss": {
               "t": "Otpust nagoveštaj",
@@ -22038,11 +21933,6 @@
               "t": "Trenutna bazna mapa, prikazana na desnoj strani divider-a",
               "src": "machine",
               "h": "6092bc18462e"
-            },
-            "helpStartTitle": {
-              "t": "Poènite ovde: tri koraka.",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStartGrid": {
               "t": "Pogledaj slike i imena u galeriji.",
@@ -22299,11 +22189,6 @@
               "src": "machine",
               "h": "541448645048"
             },
-            "helpTroubleTitle": {
-              "t": "Ako nešto nije u redu",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoMap": {
               "t": "Nijedna mapa nije povezana: ovaj grafički element nije povezan sa mapom. Pitajte GIS diviziju da ga poveže u postavkama grafičkog elementa.",
               "src": "machine",
@@ -22363,11 +22248,6 @@
               "t": "Još uvek zaglavljen? Kontaktirajte GIS diviziju i pomenite Basemap Gallery Custom name i ovu aplikaciju.",
               "src": "machine",
               "h": "19bfa10f267a"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
             },
             "helpTipsHelp": {
               "t": "{helpLabel}: koristiti upitnik na vrhu desno od grafičkog elementa da biste ponovo otvorili ovaj vodič.",
@@ -22539,11 +22419,6 @@
               "src": "machine",
               "h": "cd16026acc85"
             },
-            "loadingBasemaps2": {
-              "t": "Учитавам баземапеQShortcut",
-              "src": "machine",
-              "h": "4c746f7ab986"
-            },
             "noBasemapsConfigured2": {
               "t": "Nema konfigurisanih baznih mapa.",
               "src": "machine",
@@ -22643,16 +22518,6 @@
               "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
               "src": "machine",
               "h": "842dbbd4a2cc"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             },
             "failedToLoadBasemapsMessage": {
               "t": "Neuspjelo učitavanje baznih mapa: {message}",
@@ -28871,12 +28736,12 @@
         "bs": {
           "file": "e6ebf307e452",
           "counts": {
-            "esri": 12,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 37,
+            "machine": 35,
             "stale": 0,
             "missing": 0
           },
@@ -29025,16 +28890,6 @@
               "t": "Nema izabranih baznih mapa. Za dodavanje baznih mapa koristite prethodno poglavlje Portala za pregledavanje.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Pokaži vodič za pomoć",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Pokaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkog elementa",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             },
             "extraSmall": {
               "t": "Dodatno mali",
@@ -30976,12 +30831,12 @@
         "hr": {
           "file": "62925b9f0160",
           "counts": {
-            "esri": 12,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 37,
+            "machine": 35,
             "stale": 0,
             "missing": 0
           },
@@ -31130,16 +30985,6 @@
               "t": "Nema odabranih baznih mapa. Za dodavanje baznih mapa upotrijebite prethodno poglavlje Portala za pregledavanje.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Prikaži vodič pomoći",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži gumb s upitnikom koji otvara vodič za pomoć widgetu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             },
             "extraSmall": {
               "t": "Ekstra mali",
@@ -34206,12 +34051,12 @@
         "sr": {
           "file": "183ce3cf13ed",
           "counts": {
-            "esri": 12,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 37,
+            "machine": 35,
             "stale": 0,
             "missing": 0
           },
@@ -34360,16 +34205,6 @@
               "t": "Нема изабраних баземапа. За додавање баземапа користите одељак за прегледање портала.",
               "src": "machine",
               "h": "2875d7bec54b"
-            },
-            "showHelpGuide": {
-              "t": "Pokaži vodič za pomoć",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkom elementu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             },
             "extraSmall": {
               "t": "Ekstra mali",
