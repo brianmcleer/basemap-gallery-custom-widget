@@ -1617,18 +1617,764 @@
           }
         },
         "bs": {
-          "file": "a4b8d786aebb",
+          "file": "377897ed74aa",
           "counts": {
             "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 149,
             "stale": 0,
-            "missing": 150
+            "missing": 1
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Basemap galerija prilagođena",
+              "src": "machine",
+              "h": "082788e57dd7"
+            },
+            "helpIntro": {
+              "t": "Izaberite mapu pozadine koju želite vidjeti u ovoj aplikaciji.",
+              "src": "machine",
+              "h": "d9ee9b7414ed"
+            },
+            "helpSearchPlaceholder": {
+              "t": "Traži vodič (pokušajmap ilipomoć",
+              "src": "machine",
+              "h": "d6d82e21b70b"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodiču ne odgovara toj riječi.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovdje?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunBody": {
+              "t": "Izaberite mapu za mijenjanje pozadinske karte, a zatim nastavite koristiti mapu.",
+              "src": "machine",
+              "h": "d56cb5f798d8"
+            },
+            "firstRunBodyWaiting": {
+              "t": "Jednom kada su baze mape dostupne, izaberite jednu za promjenu pozadinske karte.",
+              "src": "machine",
+              "h": "3ad3cb7fbd61"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodič.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Otpust nagovještaj",
+              "src": "machine",
+              "h": "660f4a3c8bc3"
+            },
+            "filterPlaceholder": {
+              "t": "Filtriraj bazne mape...",
+              "src": "machine",
+              "h": "6accab50e144"
+            },
+            "filterLabel": {
+              "t": "Filtriraj bazemape po imenu",
+              "src": "machine",
+              "h": "42fc39a85469"
+            },
+            "favoriteAdd": {
+              "t": "Dodaj u favorite (igle na vrh)",
+              "src": "machine",
+              "h": "1350f7d9f98d"
+            },
+            "activeBasemapLabel": {
+              "t": "Trenutno aktivna bazamapa",
+              "src": "machine",
+              "h": "e71314c0c633"
+            },
+            "compareOn": {
+              "t": "Usporedi bazemape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "compareOff": {
+              "t": "Zatvori poredjenje",
+              "src": "machine",
+              "h": "8a926c9bf085"
+            },
+            "compareOnTip": {
+              "t": "Usporedi dvije bazne mape jedna uz drugu sa dividerom na karti",
+              "src": "machine",
+              "h": "67a3cf402c83"
+            },
+            "compareOffTip": {
+              "t": "Vrati se u normalnu galeriju",
+              "src": "machine",
+              "h": "806f072b1491"
+            },
+            "compareGroupLabel": {
+              "t": "Usporedi bazemape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "comparePrompt": {
+              "t": "Izaberite mapu koja će se prikazati na lijevoj strani karte.",
+              "src": "machine",
+              "h": "46248772d52e"
+            },
+            "compareLoading": {
+              "t": "Učitavam mapu za usporedbu...",
+              "src": "machine",
+              "h": "05b443f7e190"
+            },
+            "compareCurrent": {
+              "t": "Trenutna bazna mapa",
+              "src": "machine",
+              "h": "8b8025fc854d"
+            },
+            "compareSliderLabel": {
+              "t": "Pozicija razdjelnika: {left} s lijeve strane, {right} s desne strane",
+              "src": "machine",
+              "h": "2f4c84662d6a"
+            },
+            "compareIndicatorLabel": {
+              "t": "Prikazano na lijevoj strani razdjelnika",
+              "src": "machine",
+              "h": "0db8f7c1c0ec"
+            },
+            "compareRightIndicatorLabel": {
+              "t": "Trenutna bazna mapa, prikazana na desnoj strani razdjelnika",
+              "src": "machine",
+              "h": "6092bc18462e"
+            },
+            "helpStartTitle": {
+              "t": "Počnite ovdje: tri koraka",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpStartGrid": {
+              "t": "Pogledaj slike i imena u galeriji.",
+              "src": "machine",
+              "h": "14300e5f1b42"
+            },
+            "helpStartList": {
+              "t": "Pogledaj imena sa spiska.",
+              "src": "machine",
+              "h": "7d5928ff8f31"
+            },
+            "helpStartChoose": {
+              "t": "Kliknite ili dotaknite baznu mapu da je stavite na mapu.",
+              "src": "machine",
+              "h": "bead863acd38"
+            },
+            "helpStartWait": {
+              "t": "Daj mapi trenutak da prepravi, a onda nastavi da koristiš mapu.",
+              "src": "machine",
+              "h": "0a3192f72d1e"
+            },
+            "helpStartNoMap1": {
+              "t": "TražiBez mape povezan poruku u ovom grafičkom elementu.",
+              "src": "machine",
+              "h": "6235e27d12fb"
+            },
+            "helpStartNoMap2": {
+              "t": "Karta mora biti spojena prije nego što možete izabrati baznu mapu.",
+              "src": "machine",
+              "h": "f09b4e6cb894"
+            },
+            "helpStartNoMap3": {
+              "t": "Kontaktirajte GIS diviziju i spomenite ovu aplikaciju kako bi mogli povezati mapu.",
+              "src": "machine",
+              "h": "81f6d6baf7a7"
+            },
+            "helpStartLoading1": {
+              "t": "Zadrži ovu aplikaciju otvorenom dok se ne učita mapa i galerija.",
+              "src": "machine",
+              "h": "8d848d7de85c"
+            },
+            "helpStartLoading2": {
+              "t": "Daj učitanoj poruci ili vlasnicima mjesta za slika trenutak da se očiste.",
+              "src": "machine",
+              "h": "df4db7ddb265"
+            },
+            "helpStartLoading3": {
+              "t": "Jednom kada se pojave bazne mape, izaberite onu koju želite vidjeti.",
+              "src": "machine",
+              "h": "d299af11a141"
+            },
+            "helpStartEmpty1": {
+              "t": "Traži Nema podešenih baznih mapa poruka u ovom grafičkom elementu.",
+              "src": "machine",
+              "h": "bf72e9db0512"
+            },
+            "helpStartEmpty2": {
+              "t": "Ova aplikacija nema baze mapa koje će se prikazati u galeriji.",
+              "src": "machine",
+              "h": "76398935fb14"
+            },
+            "helpStartEmpty3": {
+              "t": "Kontaktirajte GIS diviziju i spomenite ovu aplikaciju kako bi mogli dodati bazne mape.",
+              "src": "machine",
+              "h": "1ffaec1814c3"
+            },
+            "helpStartError1": {
+              "t": "Pročitaj poruku prikazanu na mjestu galerije.",
+              "src": "machine",
+              "h": "760166740e36"
+            },
+            "helpStartError2": {
+              "t": "Ponovo učitaj stranicu i daj mapi trenutak za učitavanje.",
+              "src": "machine",
+              "h": "f432bfaa9a5f"
+            },
+            "helpStartError3": {
+              "t": "Ako se bazne mape još uvijek ne pojavljuju, kontaktirajte GIS diviziju i spomenite ovu aplikaciju.",
+              "src": "machine",
+              "h": "1c0c0e9e874d"
+            },
+            "helpUseTitle": {
+              "t": "_Izaberi pozadinu",
+              "src": "machine",
+              "h": "5ed64f25c087"
+            },
+            "helpUseChoose": {
+              "t": "Kliknite ili dotaknite ime ili sliku bazne mape da je odmah koristite.",
+              "src": "machine",
+              "h": "222114d5e64d"
+            },
+            "helpUseIndicator": {
+              "t": "{activeLabel}: znak provjere i granica pokazuju da se koristi bazna mapa.",
+              "src": "machine",
+              "h": "93e0b01a1c5e"
+            },
+            "helpUseReapply": {
+              "t": "Klikom na baznu mapu checkmark ponovo se primjenjuje ista bazna mapa.",
+              "src": "machine",
+              "h": "e80389a049f5"
+            },
+            "helpUseDefault": {
+              "t": "Ova aplikacija počinje sa odabranom baznom mapom. Nakon toga možete izabrati drugu.",
+              "src": "machine",
+              "h": "247e5b109bed"
+            },
+            "helpUseOther": {
+              "t": "Ukoliko neki drugi alat promijeni mapu pozadine, kontrolni znak ga prati kada je ta bazna mapa u ovoj galeriji.",
+              "src": "machine",
+              "h": "f06e37ace5e1"
+            },
+            "helpFavoritesTitle": {
+              "t": "Zadrži favorite na vrhu",
+              "src": "machine",
+              "h": "12b45d19bd2f"
+            },
+            "helpFavoritesAdd": {
+              "t": "{addLabel}: kliknite zvijezdu na bazu da je pomjerite na vrh galerije.",
+              "src": "machine",
+              "h": "af02556f42c1"
+            },
+            "helpFavoritesRemove": {
+              "t": "{removeLabel}: ponovo kliknite na zvijezdu da vratite bazu na njeno uobičajeno mjesto.",
+              "src": "machine",
+              "h": "310c43329106"
+            },
+            "helpFavoritesMap": {
+              "t": "Zvijezda mijenja redoslijed galerije. Ne mijenja mapu.",
+              "src": "machine",
+              "h": "1958dd10860e"
+            },
+            "helpOrganizeTitle": {
+              "t": "Pronađite osnovnu mapu",
+              "src": "machine",
+              "h": "579093cdcacd"
+            },
+            "helpOrganizeFilter": {
+              "t": "{filterLabel}: unesite dio imena bazne mape u okvir iznad galerije.",
+              "src": "machine",
+              "h": "46bc2af56636"
+            },
+            "helpOrganizeNames": {
+              "t": "Samo bazne mape sa tim tekstom u njihovim imenima ostaju u galeriji.",
+              "src": "machine",
+              "h": "07f2824b1ddd"
+            },
+            "helpOrganizeClear": {
+              "t": "Isprazni okvir da ponovo prikažeš sve dostupne bazne mape.",
+              "src": "machine",
+              "h": "6e11dd428c57"
+            },
+            "helpKeyboardTitle": {
+              "t": "Koristi tastaturu",
+              "src": "machine",
+              "h": "971712384346"
+            },
+            "helpKeyboardTab": {
+              "t": "Pritisnite karticu dok bazamapa nema fokusni obris.",
+              "src": "machine",
+              "h": "e6f26fc37bd1"
+            },
+            "helpKeyboardGrid": {
+              "t": "Koristi tipke sa strelicama za pomjeranje između baza. Gore i dolje pomjerajte za red.",
+              "src": "machine",
+              "h": "1bd99aad5f60"
+            },
+            "helpKeyboardList": {
+              "t": "Koristi tipke sa strelicama za pomjeranje između baza u listi.",
+              "src": "machine",
+              "h": "00c97bc4a9a2"
+            },
+            "helpKeyboardChoose": {
+              "t": "Pritisnite Enter ili Space za korištenje fokusirane baze.",
+              "src": "machine",
+              "h": "da4fdc7b0d47"
+            },
+            "helpKeyboardEnds": {
+              "t": "Pritisnite Dom za prvu bazu ili kraj za posljednju.",
+              "src": "machine",
+              "h": "782232ab5adc"
+            },
+            "helpKeyboardFavorite": {
+              "t": "Pritisnite F na fokusiranoj baznoj mapi da ga dodate ili uklonite iz omiljenih.",
+              "src": "machine",
+              "h": "627e8d247763"
+            },
+            "helpKeyboardCompare": {
+              "t": "Pritisnite C na fokusiranoj baznoj mapi da ga uporedite sa trenutnom baznom mapom.",
+              "src": "machine",
+              "h": "b669aa4ce2f5"
+            },
+            "helpKeyboardSlider": {
+              "t": "Tab na klizač divider i koristite tipke sa strelicama da pomjerite divider.",
+              "src": "machine",
+              "h": "11f650311630"
+            },
+            "helpCompareTitle": {
+              "t": "Usporedi dvije bazne mape",
+              "src": "machine",
+              "h": "6f915b3314cd"
+            },
+            "helpCompareOpen": {
+              "t": "{compareLabel}: koristiti dugme za poređenje na vrhu grafičkog elementa za pokretanje.",
+              "src": "machine",
+              "h": "a62c2d222375"
+            },
+            "helpComparePick": {
+              "t": "Izaberite mapu koja će je prikazati na lijevoj strani karte. Mapa sa znakom provjere ostaje na desnoj strani, a obje karte pokazuju značku Lijeva ili Desna.",
+              "src": "machine",
+              "h": "fa738b747681"
+            },
+            "helpCompareSlider": {
+              "t": "Povucite razdjelnik na karti ili koristite klizač u grafičkom elementu, da otkrijete više od bilo koje bazemape.",
+              "src": "machine",
+              "h": "786487716003"
+            },
+            "helpCompareSwap": {
+              "t": "Izaberite drugu baznu mapu koja će zamijeniti onu lijevo.",
+              "src": "machine",
+              "h": "bc1e02c5b24f"
+            },
+            "helpCompareClose": {
+              "t": "{closeCompareLabel}: koristi isto dugme ponovo za povratak u normalnu galeriju.",
+              "src": "machine",
+              "h": "f539e5b61be3"
+            },
+            "helpCompareCurrent": {
+              "t": "Usporedba je sada uključena. Klikom na bazu se mijenja lijeva strana umjesto cijele karte.",
+              "src": "machine",
+              "h": "c8454b90b944"
+            },
+            "helpKeepTitle": {
+              "t": "Gdje tvoji izbori žive.",
+              "src": "machine",
+              "h": "2be573afd6ab"
+            },
+            "helpKeepFavorites": {
+              "t": "Omiljeni su snimljeni u ovom pregledniku za ovu galeriju. Oni ne mijenjaju druge favorite.",
+              "src": "machine",
+              "h": "23d7e68937bc"
+            },
+            "helpKeepClear": {
+              "t": "Čišćenje podataka preglednika ove stranice uklanja vaše favorite. Drugi preglednik ima svoje favorite.",
+              "src": "machine",
+              "h": "2b6d7ac68498"
+            },
+            "helpKeepPrivate": {
+              "t": "Ukoliko preglednik ne dozvoljava snimanje, favoriti rade dok galerija ostaje otvorena, ali može biti izgubljena prilikom ponovnog učitavanja.",
+              "src": "machine",
+              "h": "cd326d98301b"
+            },
+            "helpKeepHint": {
+              "t": "Otvaranje vodiča ili odbacivanjeNovi ovdje skriva taj savjet za ovu galeriju u ovom pregledniku.",
+              "src": "machine",
+              "h": "541448645048"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto nije u redu",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTroubleNoMap": {
+              "t": "Nijedna mapa nije povezana: ovaj grafički element nije povezan sa mapom. Pitajte GIS diviziju da ga poveže u postavkama grafičkog elementa.",
+              "src": "machine",
+              "h": "8711082fb7ab"
+            },
+            "helpTroubleLoading": {
+              "t": "Učitavanje traje dugo: mapa ili bazne mape nisu završile s učitavanjem. Daj im trenutak, a zatim ponovo učitaj stranicu ako se još uvijek ne pojave.",
+              "src": "machine",
+              "h": "7e67e1a58b66"
+            },
+            "helpTroubleEmpty": {
+              "t": "Nema podešenih baznih mapa: nema postavljenih baznih mapa za ovu galeriju. Pitajte GIS diviziju da ih doda.",
+              "src": "machine",
+              "h": "5570df135ef9"
+            },
+            "helpTroubleLoadError": {
+              "t": "Bazemapi se ne mogu učitati: aplikacija nije mogla otvoriti konfigurirane bazemape. Ponovo učitaj stranicu, zatim traži od GIS Divisiona da provjeri bazemape i njihove postavke pristupa.",
+              "src": "machine",
+              "h": "8d1ac5ada6b0"
+            },
+            "helpTroublePartial": {
+              "t": "Neke bazne mape nisu mogle biti učitane: te stavke nisu dostupne u ovoj galeriji. Koristite jednu koja se pojavljuje i tražite od GIS divizije da provjerite nedostajuće stavke.",
+              "src": "machine",
+              "h": "a46244d6a562"
+            },
+            "helpTroubleSearch": {
+              "t": "Nema poklapanja baznih mapa: tekst u{filterLabel} ne odgovara imenu. Očisti okvir ili pokušaj kraći dio imena.",
+              "src": "machine",
+              "h": "2e9f57f4f25c"
+            },
+            "helpTroubleThumbnail": {
+              "t": "Nedostaje slika: taj pregled nije mogao biti prikazan. Kliknite ili dotaknite ime baze da je ipak probate.",
+              "src": "machine",
+              "h": "37be8663e4e2"
+            },
+            "helpTroubleCompare": {
+              "t": "Basemap se ne može učitati za usporedbu: odaberite neki drugi bazni plan ili ga u neposrednoj blizini poredite i otvorite ponovo.",
+              "src": "machine",
+              "h": "a664d761b459"
+            },
+            "helpTroubleCompareSame": {
+              "t": "Obje strane izgledaju isto: bazna mapa koju ste izabrali je već trenutna baza. Izaberite drugu.",
+              "src": "machine",
+              "h": "7dc63b09b71d"
+            },
+            "helpTroubleMap": {
+              "t": "Mapa je prazna: ta bazna mapa možda nema slike za ovu površinu ili nivo uvećanja. Pokušajte sa drugom baznom mapom.",
+              "src": "machine",
+              "h": "8a960bc9dfb2"
+            },
+            "helpTroubleFavorites": {
+              "t": "Omiljeni su nestali: ovaj preglednik je možda očistio ili blokirao snimljene izbore. Dodajte zvijezde ponovo u preglednik koji planirate koristiti.",
+              "src": "machine",
+              "h": "2be33d982ee6"
+            },
+            "helpTroubleContact": {
+              "t": "Još uvijek zapeo? Kontaktirajte GIS diviziju i spomenite Basemap Gallery Custom ime i ovu aplikaciju.",
+              "src": "machine",
+              "h": "19bfa10f267a"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "helpTipsHelp": {
+              "t": "{helpLabel}: koristiti upitnik na gornjem desnom dijelu grafičkog elementa za ponovno otvaranje ovog vodiča.",
+              "src": "machine",
+              "h": "fe401058fd1e"
+            },
+            "helpTipsClose": {
+              "t": "{closeLabel}: za povratak u galeriju koristite dugme na dnu vodiča.",
+              "src": "machine",
+              "h": "71719df16193"
+            },
+            "helpTipsOrder": {
+              "t": "Omiljeni se pojavljuju prvi. Preostali bazni planovi ostaju u redoslijedu koji je odabran za ovu aplikaciju.",
+              "src": "machine",
+              "h": "42b789263081"
+            },
+            "helpTipsCompare": {
+              "t": "Usporedi ništa ne dodaje snimljenoj mapi. Zatvaranje usporedbe vraća mapu trenutnoj bazi.",
+              "src": "machine",
+              "h": "2599e2ac4f7c"
+            },
+            "noBasemapsConfigured": {
+              "t": "Nema podešenih baznih mapa",
+              "src": "machine",
+              "h": "9e87b76876c0"
+            },
+            "loadedCountBasemapsLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazemape učitane.{failedNote} Koristi tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "8d08078322d8"
+            },
+            "loadedCountBasemapLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazamapa učitana.{failedNote} Koristi tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "14ed6d6e817e"
+            },
+            "comparingTitleOnTheLeftWith": {
+              "t": "Uporedujem {title} lijevo sa trenutnom baznom mapom desno. Povucite divider ili koristite klizač.",
+              "src": "machine",
+              "h": "2b777e33f9d9"
+            },
+            "blendingTitleOverTheCurrentBasemap": {
+              "t": "Stapanje {title} preko trenutne bazne mape. Koristite klizač za podešavanje prozirnosti.",
+              "src": "machine",
+              "h": "4560d01543ca"
+            },
+            "titleCouldNotBeLoadedFor": {
+              "t": "{title} se ne može učitati za usporedbu",
+              "src": "machine",
+              "h": "87d96861e6ef"
+            },
+            "compareClosedTheMapShowsThe": {
+              "t": "Usporedi zatvoreno. Karta prikazuje samo trenutnu bazu.",
+              "src": "machine",
+              "h": "cb515a44fb7c"
+            },
+            "compareOnUsingCompareBlendModeModeChoose": {
+              "t": "Usporedi pri korištenju {compareBlendMode} moda. Odaberite mapu baze koja će se prikazati na lijevoj strani karte.",
+              "src": "machine",
+              "h": "222078b1ecaf"
+            },
+            "switchedToSwipeMode": {
+              "t": "Prebaci se na mod za prelazak.",
+              "src": "machine",
+              "h": "d9ef52fdd062"
+            },
+            "switchedToBlendModeUseThe": {
+              "t": "Prebacujem na mod miješanja. Koristite klizač za podešavanje prozirnosti.",
+              "src": "machine",
+              "h": "23a748459ff4"
+            },
+            "switchedToSwipeModeDragThe": {
+              "t": "Prebacujem na mod za provlačenje. Povucite razdjelnik ili koristite klizač.",
+              "src": "machine",
+              "h": "a896996594c1"
+            },
+            "titleIsAlreadyTheCurrentBasemap": {
+              "t": "{title} je već trenutna bazna mapa. Odaberite drugu bazu za usporedbu.",
+              "src": "machine",
+              "h": "d78cad4713b0"
+            },
+            "titleIsAlreadyBeingCompared": {
+              "t": "{title} se već upoređuje",
+              "src": "machine",
+              "h": "660c01c9e616"
+            },
+            "titleBasemapAppliedToMap": {
+              "t": "{title} bazna mapa primijenjena na kartu",
+              "src": "machine",
+              "h": "898bb2d3ee4a"
+            },
+            "titleRemovedFromFavorites": {
+              "t": "{title} uklonjen iz favorita",
+              "src": "machine",
+              "h": "db16f11d1a85"
+            },
+            "titleAddedToFavoritesAndPinned": {
+              "t": "{title} dodano u favorite i priklješteno na vrh",
+              "src": "machine",
+              "h": "ebde32148312"
+            },
+            "visibleBasemapsCountBasemapsMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazne mape odgovaraju vašoj potrazi",
+              "src": "machine",
+              "h": "a8b17636cb6b"
+            },
+            "visibleBasemapsCountBasemapMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazna mapa se poklapa sa vašom pretragom",
+              "src": "machine",
+              "h": "8ff0ed3cc0be"
+            },
+            "basemapGalleryWidget": {
+              "t": "Basemap galerija Widget",
+              "src": "machine",
+              "h": "710f3d251c50"
+            },
+            "comparison": {
+              "t": "Usporedba:",
+              "src": "machine",
+              "h": "23c8ff228f11"
+            },
+            "dragDividerSideBySide": {
+              "t": "Povuci djelitelj jedno uz drugo",
+              "src": "machine",
+              "h": "9f48ea21e8ce"
+            },
+            "blend": {
+              "t": "Stanje",
+              "src": "machine",
+              "h": "7a358cfad459"
+            },
+            "overlayWithBlendEffects": {
+              "t": "Preklopi efektima mješavine",
+              "src": "machine",
+              "h": "28985c95ae7c"
+            },
+            "blendMode": {
+              "t": "Stapanje",
+              "src": "machine",
+              "h": "2285fee5732a"
+            },
+            "opacityComparePosition": {
+              "t": "Neprozirnost: {comparePosition}%",
+              "src": "machine",
+              "h": "4740e3145bae"
+            },
+            "adjustDividerPositionComparePosition": {
+              "t": "Prilagodi poziciju dividera: {comparePosition}%",
+              "src": "machine",
+              "h": "dfe431944522"
+            },
+            "noMapWidgetConnected": {
+              "t": "Grafički element sa mapom nije spojen",
+              "src": "machine",
+              "h": "5b215e62ab2a"
+            },
+            "noMapConnected": {
+              "t": "Karta nije povezana.",
+              "src": "machine",
+              "h": "881e5f08bac9"
+            },
+            "selectAMapWidgetInThe": {
+              "t": "Izaberite grafički element za mapu u postavkama grafičkog elementa.",
+              "src": "machine",
+              "h": "cd16026acc85"
+            },
+            "loadingBasemaps2": {
+              "t": "Učitavam bazne mape",
+              "src": "machine",
+              "h": "4c746f7ab986"
+            },
+            "noBasemapsConfigured2": {
+              "t": "Nema podešenih baznih mapa.",
+              "src": "machine",
+              "h": "1836f9dfcbb8"
+            },
+            "addBasemapsInTheWidgetSettings": {
+              "t": "Dodajte bazne mape u postavke grafičkog elementa.",
+              "src": "machine",
+              "h": "c7b083776e61"
+            },
+            "basemapsCouldNotBeLoaded": {
+              "t": "Bazemapi se ne mogu učitati",
+              "src": "machine",
+              "h": "21bc4f04a4cc"
+            },
+            "noBasemapsCouldBeLoaded": {
+              "t": "Nema baznih mapa koje mogu biti učitane.",
+              "src": "machine",
+              "h": "67542d9df8fb"
+            },
+            "checkTheItemIDsAndPortal": {
+              "t": "Provjerite ID-ove stavki i URL portala u postavkama.",
+              "src": "machine",
+              "h": "95840b50e572"
+            },
+            "failedCountBasemapsCouldNotBeLoaded": {
+              "t": "{failedCount} bazne mape nisu mogle biti učitane. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "8f39421bde8f"
+            },
+            "failedCountBasemapCouldNotBeLoaded": {
+              "t": "{failedCount} bazna mapa nije mogla biti učitana. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "72be79d17aef"
+            },
+            "basemapGalleryWithVisibleBasemapsCountBasemapsAvailable": {
+              "t": "Galerija basemapa sa dostupnim {visibleBasemapsCount} baznim mapama. Koristi tipke sa strelicama za navigaciju između baza. Pritisnite Enter ili Space da izaberete i primijenite baznu mapu na kartu. Početni skokovi tipki na prvu bazu, Završavajte skokove tipki na posljednju bazu. Pritisnite F da dodate ili uklonite fokusiranu bazumapu iz omiljenih. Favoriti su prikačeni na vrh galerije.",
+              "src": "machine",
+              "h": "9b44b6548567"
+            },
+            "basemapGalleryWithVisibleBasemapsCountBasemapAvailable": {
+              "t": "Galerija basemapa sa dostupnom {visibleBasemapsCount} baznom mapom. Koristi tipke sa strelicama za navigaciju između baznih mapa. Pritisnite Enter ili Space da izaberete i primijenite baznu mapu na kartu. Početni skokovi tipki na prvu bazu, Završi skokove tipki na posljednju bazumapu. Pritisnite F da dodate ili uklonite fokusiranu bazumapu iz omiljenih. Favoriti su prikačeni na vrh galerije.",
+              "src": "machine",
+              "h": "eadb67743210"
+            },
+            "pressCToCompareTheFocused": {
+              "t": "Pritisnite C za usporedbu fokusirane bazemape sa trenutnom baznom mapom koristeći način swip ili mješanja.",
+              "src": "machine",
+              "h": "29698dc14a83"
+            },
+            "compareIsOnInCompareBlendModeMode": {
+              "t": "Usporedba je u {compareBlendMode} načinu rada: Unesite ili Space odabire bazu za usporedbu.",
+              "src": "machine",
+              "h": "df89d0f1e00c"
+            },
+            "currentlySelectedTitle": {
+              "t": "Trenutno izabrani: {title}.",
+              "src": "machine",
+              "h": "cfae184ccc34"
+            },
+            "comparingTitleUseTheSliderTo": {
+              "t": "Usporedba: {title}. Koristite klizač za podešavanje poređenja.",
+              "src": "machine",
+              "h": "13e868a95989"
+            },
+            "noBasemapsMatchSearchText": {
+              "t": "Nema poklapanja sa baznim mapama{searchText}",
+              "src": "machine",
+              "h": "3ae50c2ea240"
+            },
+            "basemapSelectionGalleryListView": {
+              "t": "basemap galerija odabira - pregled liste",
+              "src": "machine",
+              "h": "78a181cb8d20"
+            },
+            "basemapSelectionGalleryGridView": {
+              "t": "Galerija odabira basemapa - pogled na mrežu",
+              "src": "machine",
+              "h": "5a471f1d8587"
+            },
+            "titleCurrentBasemapShownOnThe": {
+              "t": "{title} - Trenutna bazna mapa, prikazana na desnoj strani",
+              "src": "machine",
+              "h": "4c573e6ef6b5"
+            },
+            "titleShownOnTheLeftSide": {
+              "t": "{title} - Prikazano na lijevoj strani dividera",
+              "src": "machine",
+              "h": "e0790180c644"
+            },
+            "clickToCompareTitleWithThe": {
+              "t": "Kliknite za usporedbu {title} sa trenutnom baznom mapom",
+              "src": "machine",
+              "h": "7fb5808280f7"
+            },
+            "titleCurrentlyActiveBasemapClickTo": {
+              "t": "{title} - Trenutno aktivna bazna mapa (kliknite za ponovnu primjenu)",
+              "src": "machine",
+              "h": "10f7940f4d52"
+            },
+            "clickToApplyTitleBasemapTo": {
+              "t": "Kliknite da primijenite {title} baznu mapu na kartu",
+              "src": "machine",
+              "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Nisam uspio učitati bazne mape: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
+            }
+          }
         },
         "ca": {
           "file": "d7e6d4d144b1",
@@ -8856,18 +9602,769 @@
           }
         },
         "hr": {
-          "file": "a4b8d786aebb",
+          "file": "713934d7f99d",
           "counts": {
             "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 150,
             "stale": 0,
-            "missing": 150
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Osnovna mapa Galerija prilagođena",
+              "src": "machine",
+              "h": "082788e57dd7"
+            },
+            "helpIntro": {
+              "t": "Odaberite pozadinsku kartu koju želite vidjeti u ovoj aplikaciji.",
+              "src": "machine",
+              "h": "d9ee9b7414ed"
+            },
+            "helpSearchPlaceholder": {
+              "t": "Pretraži vodič (pokušajmapa ilipomoć",
+              "src": "machine",
+              "h": "d6d82e21b70b"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodiču ne odgovara toj riječi. Pokušajte drugi, ili otvorite dijelove iznad.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovdje?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunBody": {
+              "t": "Odaberite bazu za promjenu pozadinske karte, a zatim nastavite koristiti kartu.",
+              "src": "machine",
+              "h": "d56cb5f798d8"
+            },
+            "firstRunBodyWaiting": {
+              "t": "Nakon što su baze mape dostupne, odaberite jedan za promjenu pozadinske karte.",
+              "src": "machine",
+              "h": "3ad3cb7fbd61"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodič.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Savjeti za otpuštanje",
+              "src": "machine",
+              "h": "660f4a3c8bc3"
+            },
+            "filterPlaceholder": {
+              "t": "Filtriraj bazne mape ...",
+              "src": "machine",
+              "h": "6accab50e144"
+            },
+            "filterLabel": {
+              "t": "Filtriraj bazne mape po imenu",
+              "src": "machine",
+              "h": "42fc39a85469"
+            },
+            "favoriteAdd": {
+              "t": "Dodaj u favorite (igle na vrh)",
+              "src": "machine",
+              "h": "1350f7d9f98d"
+            },
+            "activeBasemapLabel": {
+              "t": "Trenutno aktivna baza",
+              "src": "machine",
+              "h": "e71314c0c633"
+            },
+            "compareOn": {
+              "t": "Usporedi bazne mape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "compareOff": {
+              "t": "Zatvori usporedbu",
+              "src": "machine",
+              "h": "8a926c9bf085"
+            },
+            "compareOnTip": {
+              "t": "Usporedi dvije bazne mape jedna uz drugu s dividerom na karti",
+              "src": "machine",
+              "h": "67a3cf402c83"
+            },
+            "compareOffTip": {
+              "t": "Vratite se u normalnu galeriju",
+              "src": "machine",
+              "h": "806f072b1491"
+            },
+            "compareGroupLabel": {
+              "t": "Usporedi bazne mape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "comparePrompt": {
+              "t": "Odaberite mapu koja će se prikazati na lijevoj strani karte.",
+              "src": "machine",
+              "h": "46248772d52e"
+            },
+            "compareLoading": {
+              "t": "Učitavam mapu za usporedbu...",
+              "src": "machine",
+              "h": "05b443f7e190"
+            },
+            "compareCurrent": {
+              "t": "Trenutna osnovna mapa",
+              "src": "machine",
+              "h": "8b8025fc854d"
+            },
+            "compareSliderLabel": {
+              "t": "Položaj razdjelnika: {left} na lijevoj strani, {right} na desnoj strani",
+              "src": "machine",
+              "h": "2f4c84662d6a"
+            },
+            "compareIndicatorLabel": {
+              "t": "Prikazano na lijevoj strani razdjelnika",
+              "src": "machine",
+              "h": "0db8f7c1c0ec"
+            },
+            "compareRightIndicatorLabel": {
+              "t": "Trenutna bazna mapa, prikazana na desnoj strani razdjelnika",
+              "src": "machine",
+              "h": "6092bc18462e"
+            },
+            "helpStartTitle": {
+              "t": "Počnite ovdje: tri koraka",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpStartGrid": {
+              "t": "Pogledajte slike i imena u galeriji.",
+              "src": "machine",
+              "h": "14300e5f1b42"
+            },
+            "helpStartList": {
+              "t": "Pogledaj imena na popisu.",
+              "src": "machine",
+              "h": "7d5928ff8f31"
+            },
+            "helpStartChoose": {
+              "t": "Kliknite ili kucnite na bazu kako biste je stavili na kartu.",
+              "src": "machine",
+              "h": "bead863acd38"
+            },
+            "helpStartWait": {
+              "t": "Daj mapi trenutak da prepravi, a onda nastavi koristiti kartu.",
+              "src": "machine",
+              "h": "0a3192f72d1e"
+            },
+            "helpStartNoMap1": {
+              "t": "Potražite - Nema karte povezan - poruka u ovom widgetu.",
+              "src": "machine",
+              "h": "6235e27d12fb"
+            },
+            "helpStartNoMap2": {
+              "t": "Karta mora biti spojena prije nego što možete odabrati bazu.",
+              "src": "machine",
+              "h": "f09b4e6cb894"
+            },
+            "helpStartNoMap3": {
+              "t": "Kontaktirajte odjel GIS-a i spomenite ovu aplikaciju kako bi mogli spojiti kartu.",
+              "src": "machine",
+              "h": "81f6d6baf7a7"
+            },
+            "helpStartLoading1": {
+              "t": "Držite ovu aplikaciju otvorenom dok se ne učita karta i galerija.",
+              "src": "machine",
+              "h": "8d848d7de85c"
+            },
+            "helpStartLoading2": {
+              "t": "Dajte učitavanje poruku ili slikovnice trenutak za čišćenje.",
+              "src": "machine",
+              "h": "df4db7ddb265"
+            },
+            "helpStartLoading3": {
+              "t": "Jednom kada se pojave bazne mape, odaberite onu koju želite vidjeti.",
+              "src": "machine",
+              "h": "d299af11a141"
+            },
+            "helpStartEmpty1": {
+              "t": "Potražite - Nema bazamaps konfiguriran - poruka u ovom widgetu.",
+              "src": "machine",
+              "h": "bf72e9db0512"
+            },
+            "helpStartEmpty2": {
+              "t": "Ova aplikacija nema baze mape spremne za prikazivanje u galeriji.",
+              "src": "machine",
+              "h": "76398935fb14"
+            },
+            "helpStartEmpty3": {
+              "t": "Kontaktirajte odjel GIS-a i spomenite ovu aplikaciju kako bi mogli dodati bazne mape.",
+              "src": "machine",
+              "h": "1ffaec1814c3"
+            },
+            "helpStartError1": {
+              "t": "Pročitajte poruku prikazanu na mjestu galerije.",
+              "src": "machine",
+              "h": "760166740e36"
+            },
+            "helpStartError2": {
+              "t": "Ponovo učitaj stranicu i daj mapi trenutak za učitavanje.",
+              "src": "machine",
+              "h": "f432bfaa9a5f"
+            },
+            "helpStartError3": {
+              "t": "Ako se bazne mape još uvijek ne pojave, kontaktirajte GIS diviziju i spomenite ovu aplikaciju.",
+              "src": "machine",
+              "h": "1c0c0e9e874d"
+            },
+            "helpUseTitle": {
+              "t": "Odaberite pozadinsku kartu",
+              "src": "machine",
+              "h": "5ed64f25c087"
+            },
+            "helpUseChoose": {
+              "t": "Kliknite ili kucnite na ime ili sliku bazne mape kako biste je odmah koristili.",
+              "src": "machine",
+              "h": "222114d5e64d"
+            },
+            "helpUseIndicator": {
+              "t": "{activeLabel}: kontrolna oznaka i granica pokazuju da se koristi bazna mapa.",
+              "src": "machine",
+              "h": "93e0b01a1c5e"
+            },
+            "helpUseReapply": {
+              "t": "Klikom na baznu mapu s kontrolnom oznakom ponovno se primjenjuje ista bazna mapa.",
+              "src": "machine",
+              "h": "e80389a049f5"
+            },
+            "helpUseDefault": {
+              "t": "Ova aplikacija počinje odabranom baznom mapom. Nakon toga možete odabrati drugu.",
+              "src": "machine",
+              "h": "247e5b109bed"
+            },
+            "helpUseOther": {
+              "t": "Ako drugi alat mijenja pozadinsku kartu, kontrolna oznaka ga prati kada je ta bazna mapa u ovoj galeriji.",
+              "src": "machine",
+              "h": "f06e37ace5e1"
+            },
+            "helpFavoritesTitle": {
+              "t": "Držati favorite na vrhu",
+              "src": "machine",
+              "h": "12b45d19bd2f"
+            },
+            "helpFavoritesAdd": {
+              "t": "{addLabel}: kliknite zvijezdu na bazu kako biste je premjestili na vrh galerije.",
+              "src": "machine",
+              "h": "af02556f42c1"
+            },
+            "helpFavoritesRemove": {
+              "t": "{removeLabel}: ponovno kliknite na zvijezdu kako biste vratili bazu na uobičajeno mjesto.",
+              "src": "machine",
+              "h": "310c43329106"
+            },
+            "helpFavoritesMap": {
+              "t": "Zvijezda mijenja redoslijed galerije. Ona ne mijenja kartu.",
+              "src": "machine",
+              "h": "1958dd10860e"
+            },
+            "helpOrganizeTitle": {
+              "t": "Pronađi mapu",
+              "src": "machine",
+              "h": "579093cdcacd"
+            },
+            "helpOrganizeFilter": {
+              "t": "{filterLabel}: upišite dio imena bazne mape u okvir iznad galerije.",
+              "src": "machine",
+              "h": "46bc2af56636"
+            },
+            "helpOrganizeNames": {
+              "t": "Samo bazne mape s tim tekstom u njihovim imenima ostaju u galeriji.",
+              "src": "machine",
+              "h": "07f2824b1ddd"
+            },
+            "helpOrganizeClear": {
+              "t": "Očistite okvir da biste ponovno prikazali sve dostupne baze.",
+              "src": "machine",
+              "h": "6e11dd428c57"
+            },
+            "helpKeyboardTitle": {
+              "t": "Koristi tipkovnicu",
+              "src": "machine",
+              "h": "971712384346"
+            },
+            "helpKeyboardTab": {
+              "t": "Pritisnite karticu dok bazamap ima fokusni obris.",
+              "src": "machine",
+              "h": "e6f26fc37bd1"
+            },
+            "helpKeyboardGrid": {
+              "t": "Koristi tipke sa strelicama za pomicanje između baza. Gore i dolje pomičite za red.",
+              "src": "machine",
+              "h": "1bd99aad5f60"
+            },
+            "helpKeyboardList": {
+              "t": "Koristi tipke sa strelicama za pomicanje između baza u popisu.",
+              "src": "machine",
+              "h": "00c97bc4a9a2"
+            },
+            "helpKeyboardChoose": {
+              "t": "Pritisnite Enter ili Space za korištenje fokusirane baze.",
+              "src": "machine",
+              "h": "da4fdc7b0d47"
+            },
+            "helpKeyboardEnds": {
+              "t": "Pritisnite Dom za prvu bazu ili kraj za posljednju.",
+              "src": "machine",
+              "h": "782232ab5adc"
+            },
+            "helpKeyboardFavorite": {
+              "t": "Pritisnite F na fokusiranu bazu za dodavanje ili uklanjanje iz favorita.",
+              "src": "machine",
+              "h": "627e8d247763"
+            },
+            "helpKeyboardCompare": {
+              "t": "Pritisnite C na fokusiranu bazu kako biste ga usporedili s trenutnom baznom mapom.",
+              "src": "machine",
+              "h": "b669aa4ce2f5"
+            },
+            "helpKeyboardSlider": {
+              "t": "Tab na dijalizator i koristite tipke sa strelicama za pomicanje dividera.",
+              "src": "machine",
+              "h": "11f650311630"
+            },
+            "helpCompareTitle": {
+              "t": "Usporedi dvije bazne mape",
+              "src": "machine",
+              "h": "6f915b3314cd"
+            },
+            "helpCompareOpen": {
+              "t": "{compareLabel}: koristiti gumb za usporedbu na vrhu widgeta za pokretanje.",
+              "src": "machine",
+              "h": "a62c2d222375"
+            },
+            "helpComparePick": {
+              "t": "Odaberite mapu koja će je prikazati na lijevoj strani karte. Mapa sa znakom za provjeru ostaje na desnoj strani, a obje karte pokazuju značku za lijevu ili desnu stranu.",
+              "src": "machine",
+              "h": "fa738b747681"
+            },
+            "helpCompareSlider": {
+              "t": "Povucite divider na karti, ili koristite klizač u widget, otkriti više od bilo koje bazemap.",
+              "src": "machine",
+              "h": "786487716003"
+            },
+            "helpCompareSwap": {
+              "t": "Odaberite drugu bazu da zamijenite onu s lijeve strane.",
+              "src": "machine",
+              "h": "bc1e02c5b24f"
+            },
+            "helpCompareClose": {
+              "t": "{closeCompareLabel}: za povratak u normalnu galeriju upotrijebite isti gumb.",
+              "src": "machine",
+              "h": "f539e5b61be3"
+            },
+            "helpCompareCurrent": {
+              "t": "Usporedba je sada uključena. Klikom na bazu mijenja se lijeva strana umjesto cijele karte.",
+              "src": "machine",
+              "h": "c8454b90b944"
+            },
+            "helpKeepTitle": {
+              "t": "Gdje tvoji izbori žive",
+              "src": "machine",
+              "h": "2be573afd6ab"
+            },
+            "helpKeepFavorites": {
+              "t": "Omiljene su spremljene u ovom pregledniku za ovu galeriju. Ne mijenjaju ničije favorite.",
+              "src": "machine",
+              "h": "23d7e68937bc"
+            },
+            "helpKeepClear": {
+              "t": "Čišćenje podataka preglednika ove stranice uklanja vaše favorite. Drugi preglednik ima svoje favorite.",
+              "src": "machine",
+              "h": "2b6d7ac68498"
+            },
+            "helpKeepPrivate": {
+              "t": "Ako preglednik ne dopušta spremanje, omiljeni rad dok galerija ostaje otvorena, ali može biti izgubljen kada ponovno učitati.",
+              "src": "machine",
+              "h": "cd326d98301b"
+            },
+            "helpKeepHint": {
+              "t": "Otvaranje vodiča ili odbacivanje Novo ovdje skriva taj savjet za ovu galeriju u ovom pregledniku.",
+              "src": "machine",
+              "h": "541448645048"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto izgleda loše",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTroubleNoMap": {
+              "t": "Karta nije povezana: ovaj widget nije povezan s mapom. Pitajte odjel GIS-a da ga poveže u postavkama widgeta.",
+              "src": "machine",
+              "h": "8711082fb7ab"
+            },
+            "helpTroubleLoading": {
+              "t": "Učitavanje traje dugo vremena: karta ili bazne mape nisu završile s učitavanjem. Dajte im trenutak, a zatim ponovno učitaj stranicu ako se još uvijek ne pojave.",
+              "src": "machine",
+              "h": "7e67e1a58b66"
+            },
+            "helpTroubleEmpty": {
+              "t": "Nema podešenih baznih mapa: nema postavljenih baznih mapa za ovu galeriju. Pitajte odjel GIS-a da ih doda.",
+              "src": "machine",
+              "h": "5570df135ef9"
+            },
+            "helpTroubleLoadError": {
+              "t": "Bazemapi se nisu mogli učitati: aplikacija nije mogla otvoriti konfigurirane bazemape. Ponovno učitati stranicu, a zatim zatražiti od GIS Divisiona da provjeri bazemape i njihove postavke pristupa.",
+              "src": "machine",
+              "h": "8d1ac5ada6b0"
+            },
+            "helpTroublePartial": {
+              "t": "Neke bazne mape nisu mogle biti učitane: te stavke su nedostupne u ovoj galeriji. Koristite one koje se pojavljuju i pitajte GIS Division da provjerite nedostajuće stavke.",
+              "src": "machine",
+              "h": "a46244d6a562"
+            },
+            "helpTroubleSearch": {
+              "t": "Nema podudaranja baznih mapa: tekst u{filterLabel} ne odgovara imenu. Očistite okvir ili pokušajte kraći dio imena.",
+              "src": "machine",
+              "h": "2e9f57f4f25c"
+            },
+            "helpTroubleThumbnail": {
+              "t": "Nedostaje slika: taj pregled nije mogao biti prikazan. Kliknite ili kucnite na ime baze kako biste je ipak isprobali.",
+              "src": "machine",
+              "h": "37be8663e4e2"
+            },
+            "helpTroubleCompare": {
+              "t": "Bazemap se nije mogao učitati za usporedbu: odaberite drugi bazni plan, ili ga u neposrednoj blizini usporedite i ponovno otvorite.",
+              "src": "machine",
+              "h": "a664d761b459"
+            },
+            "helpTroubleCompareSame": {
+              "t": "Obje strane izgledaju isto: bazna mapa koju ste odabrali je već trenutna bazna mapa. Odaberite drugu.",
+              "src": "machine",
+              "h": "7dc63b09b71d"
+            },
+            "helpTroubleMap": {
+              "t": "Karta je prazna: da bazna mapa možda nema slike za ovo područje ili razinu uvećanja. Pokušajte s drugom baznom mapom.",
+              "src": "machine",
+              "h": "8a960bc9dfb2"
+            },
+            "helpTroubleFavorites": {
+              "t": "Omiljeni su nestali: ovaj preglednik je možda očistio ili blokirao spremljene izbore. Dodajte zvijezde ponovno u preglednik koji planirate koristiti.",
+              "src": "machine",
+              "h": "2be33d982ee6"
+            },
+            "helpTroubleContact": {
+              "t": "Još uvijek zaglavi? Kontaktirajte GIS Division i spomenuti Basemap Galerija Prilagođeno ime i ovu aplikaciju.",
+              "src": "machine",
+              "h": "19bfa10f267a"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "helpTipsHelp": {
+              "t": "{helpLabel}: koristiti upitnik na vrhu desno od widgeta za ponovno otvaranje ovog vodiča.",
+              "src": "machine",
+              "h": "fe401058fd1e"
+            },
+            "helpTipsClose": {
+              "t": "{closeLabel}: koristiti gumb na dnu vodiča za povratak u galeriju.",
+              "src": "machine",
+              "h": "71719df16193"
+            },
+            "helpTipsOrder": {
+              "t": "Omiljeni se pojavljuju prvi. Preostali bazni planovi ostaju u redoslijedu odabranom za ovu aplikaciju.",
+              "src": "machine",
+              "h": "42b789263081"
+            },
+            "helpTipsCompare": {
+              "t": "Usporedite ništa ne dodaje na snimljenu kartu. Zatvaranje usporedbe vraća mapu trenutnoj baznoj mapi.",
+              "src": "machine",
+              "h": "2599e2ac4f7c"
+            },
+            "noBasemapsConfigured": {
+              "t": "Nema podešenih baznih mapa",
+              "src": "machine",
+              "h": "9e87b76876c0"
+            },
+            "loadedCountBasemapsLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazemape učitane.{failedNote} Koristi tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "8d08078322d8"
+            },
+            "loadedCountBasemapLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazna mapa učitana.{failedNote} Koristi tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "14ed6d6e817e"
+            },
+            "loadingTitleForComparison": {
+              "t": "Učitavanje {title} za usporedbu",
+              "src": "machine",
+              "h": "cc4feae47681"
+            },
+            "comparingTitleOnTheLeftWith": {
+              "t": "Usporedba {title} na lijevoj strani s trenutnom baznom mapom na desnoj strani. Povucite divider ili koristite klizač.",
+              "src": "machine",
+              "h": "2b777e33f9d9"
+            },
+            "blendingTitleOverTheCurrentBasemap": {
+              "t": "Stapanje {title} preko trenutne baze. Koristite klizač za podešavanje prozirnosti.",
+              "src": "machine",
+              "h": "4560d01543ca"
+            },
+            "titleCouldNotBeLoadedFor": {
+              "t": "{title} nije se moglo učitati za usporedbu",
+              "src": "machine",
+              "h": "87d96861e6ef"
+            },
+            "compareClosedTheMapShowsThe": {
+              "t": "Usporedi zatvorenu. Karta prikazuje samo trenutnu bazu.",
+              "src": "machine",
+              "h": "cb515a44fb7c"
+            },
+            "compareOnUsingCompareBlendModeModeChoose": {
+              "t": "Usporedite prilikom korištenja {compareBlendMode} moda. Odaberite mapu baze koja će se prikazati na lijevoj strani karte.",
+              "src": "machine",
+              "h": "222078b1ecaf"
+            },
+            "switchedToSwipeMode": {
+              "t": "Prebaci se na mod za prelazak.",
+              "src": "machine",
+              "h": "d9ef52fdd062"
+            },
+            "switchedToBlendModeUseThe": {
+              "t": "Prebaci se na način miješanja. Koristite klizač za podešavanje prozirnosti.",
+              "src": "machine",
+              "h": "23a748459ff4"
+            },
+            "switchedToSwipeModeDragThe": {
+              "t": "Prebacite se na način za prevlačenje. Povucite razdjelnik ili koristite klizač.",
+              "src": "machine",
+              "h": "a896996594c1"
+            },
+            "titleIsAlreadyTheCurrentBasemap": {
+              "t": "{title} je već trenutna bazna mapa. Odaberite drugu bazu za usporedbu.",
+              "src": "machine",
+              "h": "d78cad4713b0"
+            },
+            "titleIsAlreadyBeingCompared": {
+              "t": "{title} već se uspoređuje",
+              "src": "machine",
+              "h": "660c01c9e616"
+            },
+            "titleBasemapAppliedToMap": {
+              "t": "{title} bazna mapa primijenjena na kartu",
+              "src": "machine",
+              "h": "898bb2d3ee4a"
+            },
+            "titleRemovedFromFavorites": {
+              "t": "{title} uklonjen iz omiljenih",
+              "src": "machine",
+              "h": "db16f11d1a85"
+            },
+            "titleAddedToFavoritesAndPinned": {
+              "t": "{title} dodano u favorite i priklješteno na vrh",
+              "src": "machine",
+              "h": "ebde32148312"
+            },
+            "visibleBasemapsCountBasemapsMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazne mape odgovaraju vašoj pretrazi",
+              "src": "machine",
+              "h": "a8b17636cb6b"
+            },
+            "visibleBasemapsCountBasemapMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazna mapa odgovara vašoj pretrazi",
+              "src": "machine",
+              "h": "8ff0ed3cc0be"
+            },
+            "basemapGalleryWidget": {
+              "t": "Osnovna mapa Galerija Widget",
+              "src": "machine",
+              "h": "710f3d251c50"
+            },
+            "comparison": {
+              "t": "Usporedba:",
+              "src": "machine",
+              "h": "23c8ff228f11"
+            },
+            "dragDividerSideBySide": {
+              "t": "Povlačenje dijelitelja rame uz rame",
+              "src": "machine",
+              "h": "9f48ea21e8ce"
+            },
+            "blend": {
+              "t": "Uklopi",
+              "src": "machine",
+              "h": "7a358cfad459"
+            },
+            "overlayWithBlendEffects": {
+              "t": "Preklopi s efektima mješavine",
+              "src": "machine",
+              "h": "28985c95ae7c"
+            },
+            "blendMode": {
+              "t": "Stapanje",
+              "src": "machine",
+              "h": "2285fee5732a"
+            },
+            "opacityComparePosition": {
+              "t": "Neprozirnost: {comparePosition}%",
+              "src": "machine",
+              "h": "4740e3145bae"
+            },
+            "adjustDividerPositionComparePosition": {
+              "t": "Podesi poziciju dividera: {comparePosition}%",
+              "src": "machine",
+              "h": "dfe431944522"
+            },
+            "noMapWidgetConnected": {
+              "t": "Nema spojenog grafičkog elementa mape",
+              "src": "machine",
+              "h": "5b215e62ab2a"
+            },
+            "noMapConnected": {
+              "t": "Karta nije povezana.",
+              "src": "machine",
+              "h": "881e5f08bac9"
+            },
+            "selectAMapWidgetInThe": {
+              "t": "Odaberite grafički element mape u postavkama grafičkog elementa.",
+              "src": "machine",
+              "h": "cd16026acc85"
+            },
+            "loadingBasemaps2": {
+              "t": "Učitavanje baznih mapa",
+              "src": "machine",
+              "h": "4c746f7ab986"
+            },
+            "noBasemapsConfigured2": {
+              "t": "Nema podešenih baznih mapa.",
+              "src": "machine",
+              "h": "1836f9dfcbb8"
+            },
+            "addBasemapsInTheWidgetSettings": {
+              "t": "Dodaj mape u postavke widgeta.",
+              "src": "machine",
+              "h": "c7b083776e61"
+            },
+            "basemapsCouldNotBeLoaded": {
+              "t": "Osnovne mape nisu mogle biti učitane",
+              "src": "machine",
+              "h": "21bc4f04a4cc"
+            },
+            "noBasemapsCouldBeLoaded": {
+              "t": "Nema baznih mapa koje bi mogle biti učitane.",
+              "src": "machine",
+              "h": "67542d9df8fb"
+            },
+            "checkTheItemIDsAndPortal": {
+              "t": "Provjerite identifikacije i URL portala u postavkama.",
+              "src": "machine",
+              "h": "95840b50e572"
+            },
+            "failedCountBasemapsCouldNotBeLoaded": {
+              "t": "{failedCount} bazne mape nisu mogle biti učitane. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "8f39421bde8f"
+            },
+            "failedCountBasemapCouldNotBeLoaded": {
+              "t": "{failedCount} bazna mapa nije mogla biti učitana. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "72be79d17aef"
+            },
+            "basemapGalleryWithVisibleBasemapsCountBasemapsAvailable": {
+              "t": "Basemap galerija s dostupnim {visibleBasemapsCount} baznim mapama. Koristi tipke sa strelicama za navigaciju između baza. Pritisnite Enter ili Space za odabir i primjenu bazemapa na kartu. Početni skokovi s ključevima na prvu bazu, Završni skokovi s tipkama na posljednju bazumapu. Pritisnite F za dodavanje ili uklanjanje fokusirane bazemape iz omiljenih. Omiljeni su prikačeni na vrh galerije.",
+              "src": "machine",
+              "h": "9b44b6548567"
+            },
+            "basemapGalleryWithVisibleBasemapsCountBasemapAvailable": {
+              "t": "Basemap galerija s {visibleBasemapsCount} bazamap dostupan. Koristite tipke sa strelicama za navigaciju između bazemapa. Pritisnite Enter ili Space za odabir i primjenu bazemap na kartu. Početna tipka skokova na prvu bazu, Kraj tipke skokova na posljednju bazumapu. Pritisnite F za dodavanje ili uklanjanje fokusirane bazemap iz favorita. Favoriti su prikačeni na vrh galerije.",
+              "src": "machine",
+              "h": "eadb67743210"
+            },
+            "pressCToCompareTheFocused": {
+              "t": "Pritisnite C kako biste usporedili fokusiranu bazu s trenutnom baznom mapom koristeći način swip ili mješavine.",
+              "src": "machine",
+              "h": "29698dc14a83"
+            },
+            "compareIsOnInCompareBlendModeMode": {
+              "t": "Usporedba je u {compareBlendMode} načinu rada: Enter ili Space odabire bazu za usporedbu.",
+              "src": "machine",
+              "h": "df89d0f1e00c"
+            },
+            "currentlySelectedTitle": {
+              "t": "Trenutno je odabrano: {title}.",
+              "src": "machine",
+              "h": "cfae184ccc34"
+            },
+            "comparingTitleUseTheSliderTo": {
+              "t": "Usporedba: {title}. Koristite klizač za podešavanje usporedbe.",
+              "src": "machine",
+              "h": "13e868a95989"
+            },
+            "noBasemapsMatchSearchText": {
+              "t": "Nema podudaranja baznih mapa{searchText}",
+              "src": "machine",
+              "h": "3ae50c2ea240"
+            },
+            "basemapSelectionGalleryListView": {
+              "t": "Basemap galerija odabira - prikaz popisa",
+              "src": "machine",
+              "h": "78a181cb8d20"
+            },
+            "basemapSelectionGalleryGridView": {
+              "t": "Basemap galerija odabira - prikaz mreže",
+              "src": "machine",
+              "h": "5a471f1d8587"
+            },
+            "titleCurrentBasemapShownOnThe": {
+              "t": "{title} - Trenutna baza, prikazana na desnoj strani",
+              "src": "machine",
+              "h": "4c573e6ef6b5"
+            },
+            "titleShownOnTheLeftSide": {
+              "t": "{title} - Prikazano na lijevoj strani dividera",
+              "src": "machine",
+              "h": "e0790180c644"
+            },
+            "clickToCompareTitleWithThe": {
+              "t": "Kliknite za usporedbu {title} s trenutnom baznom mapom",
+              "src": "machine",
+              "h": "7fb5808280f7"
+            },
+            "titleCurrentlyActiveBasemapClickTo": {
+              "t": "{title} - Trenutno aktivna bazna mapa (kliknite za ponovnu primjenu)",
+              "src": "machine",
+              "h": "10f7940f4d52"
+            },
+            "clickToApplyTitleBasemapTo": {
+              "t": "Kliknite za primjenu {title} bazne mape na kartu",
+              "src": "machine",
+              "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Neuspjelo učitavanje baznih mapa: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
+            }
+          }
         },
         "hu": {
           "file": "1f4180039a54",
@@ -20410,18 +21907,759 @@
           }
         },
         "sr": {
-          "file": "eaeac83f1be2",
+          "file": "32d967bd13de",
           "counts": {
             "esri": 13,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 148,
             "stale": 0,
-            "missing": 150
+            "missing": 2
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Базамап Галерија Посебно@ info: whatsthis",
+              "src": "machine",
+              "h": "082788e57dd7"
+            },
+            "helpIntro": {
+              "t": "Odaberite pozadinsku mapu koju želite da vidite u ovoj aplikaciji.",
+              "src": "machine",
+              "h": "d9ee9b7414ed"
+            },
+            "helpSearchPlaceholder": {
+              "t": "Тражи водич (trymap or help",
+              "src": "machine",
+              "h": "d6d82e21b70b"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodièu ne odgovara toj reèi.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovde?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunBody": {
+              "t": "Izaberite bazu da promenite mapu pozadine, a onda nastavite da koristite mapu.",
+              "src": "machine",
+              "h": "d56cb5f798d8"
+            },
+            "firstRunBodyWaiting": {
+              "t": "Jednom kada su baze mape dostupne, odaberite jednu za promenu pozadinske mape.",
+              "src": "machine",
+              "h": "3ad3cb7fbd61"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodiè.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Otpust nagoveštaj",
+              "src": "machine",
+              "h": "660f4a3c8bc3"
+            },
+            "filterPlaceholder": {
+              "t": "Filtriraj bazne mape...",
+              "src": "machine",
+              "h": "6accab50e144"
+            },
+            "filterLabel": {
+              "t": "Filtriraj bazne mape po imenu",
+              "src": "machine",
+              "h": "42fc39a85469"
+            },
+            "favoriteAdd": {
+              "t": "Dodaj u omiljene (igle na vrh)",
+              "src": "machine",
+              "h": "1350f7d9f98d"
+            },
+            "activeBasemapLabel": {
+              "t": "Trenutno aktivna bazna mapa",
+              "src": "machine",
+              "h": "e71314c0c633"
+            },
+            "compareOn": {
+              "t": "Упореди баземапе",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "compareOff": {
+              "t": "Blisko upoređivanje",
+              "src": "machine",
+              "h": "8a926c9bf085"
+            },
+            "compareOnTip": {
+              "t": "Uporedi dve bazne mape jedna pored druge sa dividerom na mapi",
+              "src": "machine",
+              "h": "67a3cf402c83"
+            },
+            "compareOffTip": {
+              "t": "Vratite se u normalnu galeriju.",
+              "src": "machine",
+              "h": "806f072b1491"
+            },
+            "compareGroupLabel": {
+              "t": "Упореди баземапе",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "comparePrompt": {
+              "t": "Izaberite mapu koja će se prikazati na levoj strani mape.",
+              "src": "machine",
+              "h": "46248772d52e"
+            },
+            "compareLoading": {
+              "t": "Učitavanje bazne mape za usporedbu...",
+              "src": "machine",
+              "h": "05b443f7e190"
+            },
+            "compareCurrent": {
+              "t": "Тренутна база@ action: inmenu",
+              "src": "machine",
+              "h": "8b8025fc854d"
+            },
+            "compareSliderLabel": {
+              "t": "Pozicija Dividera: {left}na levoj strani, {right} na desnoj strani",
+              "src": "machine",
+              "h": "2f4c84662d6a"
+            },
+            "compareIndicatorLabel": {
+              "t": "Prikazano na levoj strani dividera",
+              "src": "machine",
+              "h": "0db8f7c1c0ec"
+            },
+            "compareRightIndicatorLabel": {
+              "t": "Trenutna bazna mapa, prikazana na desnoj strani divider-a",
+              "src": "machine",
+              "h": "6092bc18462e"
+            },
+            "helpStartTitle": {
+              "t": "Poènite ovde: tri koraka.",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpStartGrid": {
+              "t": "Pogledaj slike i imena u galeriji.",
+              "src": "machine",
+              "h": "14300e5f1b42"
+            },
+            "helpStartList": {
+              "t": "Pogledaj imena sa spiska.",
+              "src": "machine",
+              "h": "7d5928ff8f31"
+            },
+            "helpStartChoose": {
+              "t": "Klikni ili dotakni bazu da je staviš na mapu.",
+              "src": "machine",
+              "h": "bead863acd38"
+            },
+            "helpStartWait": {
+              "t": "Daj mapi trenutak da prepravi, a onda nastavi da koristiš mapu.",
+              "src": "machine",
+              "h": "0a3192f72d1e"
+            },
+            "helpStartNoMap1": {
+              "t": "PotražiteBez mape povezan poruku u ovom grafičkom elementu.",
+              "src": "machine",
+              "h": "6235e27d12fb"
+            },
+            "helpStartNoMap2": {
+              "t": "Karta mora biti povezana pre nego što izaberete bazu.",
+              "src": "machine",
+              "h": "f09b4e6cb894"
+            },
+            "helpStartNoMap3": {
+              "t": "Kontaktirajte GIS diviziju i pomenite ovu aplikaciju kako bi mogli da povežu mapu.",
+              "src": "machine",
+              "h": "81f6d6baf7a7"
+            },
+            "helpStartLoading1": {
+              "t": "Držite ovu aplikaciju otvorenom dok se mapa i galerija učitaju.",
+              "src": "machine",
+              "h": "8d848d7de85c"
+            },
+            "helpStartLoading2": {
+              "t": "Dajte uèitavajuæu poruku ili slikovnice trenutak da se oèiste.",
+              "src": "machine",
+              "h": "df4db7ddb265"
+            },
+            "helpStartLoading3": {
+              "t": "Kada se pojave bazne mape, izaberite onu koju želite da vidite.",
+              "src": "machine",
+              "h": "d299af11a141"
+            },
+            "helpStartEmpty1": {
+              "t": "PotražiteNema konfigurisanih baznih mapa poruka u ovom grafičkom elementu.",
+              "src": "machine",
+              "h": "bf72e9db0512"
+            },
+            "helpStartEmpty2": {
+              "t": "Ova aplikacija nema baze mape spremne za prikazivanje u galeriji.",
+              "src": "machine",
+              "h": "76398935fb14"
+            },
+            "helpStartEmpty3": {
+              "t": "Kontaktirajte GIS diviziju i pomenite ovu aplikaciju kako bi mogli da dodaju bazne mape.",
+              "src": "machine",
+              "h": "1ffaec1814c3"
+            },
+            "helpStartError1": {
+              "t": "Proèitajte poruku prikazanu na mestu galerije.",
+              "src": "machine",
+              "h": "760166740e36"
+            },
+            "helpStartError2": {
+              "t": "Ponovo uèitaj stranicu i daj mapi trenutak da uèita.",
+              "src": "machine",
+              "h": "f432bfaa9a5f"
+            },
+            "helpStartError3": {
+              "t": "Ako se bazne mape još ne pojave, kontaktirajte GIS diviziju i pomenite ovu aplikaciju.",
+              "src": "machine",
+              "h": "1c0c0e9e874d"
+            },
+            "helpUseTitle": {
+              "t": "Izaberite pozadinsku mapu",
+              "src": "machine",
+              "h": "5ed64f25c087"
+            },
+            "helpUseChoose": {
+              "t": "Klikni ili dotakni ime ili sliku bazne mape da je odmah iskoristiš.",
+              "src": "machine",
+              "h": "222114d5e64d"
+            },
+            "helpUseIndicator": {
+              "t": "{activeLabel}: kontrolna oznaka i granica pokazuju da se bazna mapa koristi.",
+              "src": "machine",
+              "h": "93e0b01a1c5e"
+            },
+            "helpUseReapply": {
+              "t": "Klikom na baznu mapu sa provernim znakom ponovo se primenjuje ista bazna mapa.",
+              "src": "machine",
+              "h": "e80389a049f5"
+            },
+            "helpUseDefault": {
+              "t": "Ova aplikacija počinje sa odabranom baznom mapom. Posle toga možete izabrati drugu.",
+              "src": "machine",
+              "h": "247e5b109bed"
+            },
+            "helpUseOther": {
+              "t": "Ako drugi alat promeni mapu pozadine, oznaka provere prati je kada je ta baza mapa u ovoj galeriji.",
+              "src": "machine",
+              "h": "f06e37ace5e1"
+            },
+            "helpFavoritesTitle": {
+              "t": "Držati favorite na vrhu",
+              "src": "machine",
+              "h": "12b45d19bd2f"
+            },
+            "helpFavoritesAdd": {
+              "t": "{addLabel}: kliknite na zvezdu na baznoj mapi da je pomerite na vrh galerije.",
+              "src": "machine",
+              "h": "af02556f42c1"
+            },
+            "helpFavoritesRemove": {
+              "t": "{removeLabel}: kliknite ponovo na zvezdu da vratite bazu na uobièajeno mesto.",
+              "src": "machine",
+              "h": "310c43329106"
+            },
+            "helpFavoritesMap": {
+              "t": "Zvezda menja redoslijed galerije, ne menja mapu.",
+              "src": "machine",
+              "h": "1958dd10860e"
+            },
+            "helpOrganizeTitle": {
+              "t": "Нађи баземапQShortcut",
+              "src": "machine",
+              "h": "579093cdcacd"
+            },
+            "helpOrganizeFilter": {
+              "t": "{filterLabel}: ukucati deo imena bazne mape u kutiji iznad galerije.",
+              "src": "machine",
+              "h": "46bc2af56636"
+            },
+            "helpOrganizeNames": {
+              "t": "Samo bazne mape sa tim tekstom u njihovim imenima ostaju u galeriji.",
+              "src": "machine",
+              "h": "07f2824b1ddd"
+            },
+            "helpOrganizeClear": {
+              "t": "Isprazni kutiju da ponovo prikažeš sve dostupne mape.",
+              "src": "machine",
+              "h": "6e11dd428c57"
+            },
+            "helpKeyboardTitle": {
+              "t": "Koristi tastaturu",
+              "src": "machine",
+              "h": "971712384346"
+            },
+            "helpKeyboardTab": {
+              "t": "Pritisnite Tab dok ne bude u fokusu.",
+              "src": "machine",
+              "h": "e6f26fc37bd1"
+            },
+            "helpKeyboardGrid": {
+              "t": "Koristi tipke sa strelicama da se krećeš između baznih mapa. Gore i dole za red.",
+              "src": "machine",
+              "h": "1bd99aad5f60"
+            },
+            "helpKeyboardList": {
+              "t": "Koristi tipke sa strelicama za kretanje između baznih mapa u listi.",
+              "src": "machine",
+              "h": "00c97bc4a9a2"
+            },
+            "helpKeyboardChoose": {
+              "t": "Pritisnite Enter ili Space da koristite fokusiranu baznu mapu.",
+              "src": "machine",
+              "h": "da4fdc7b0d47"
+            },
+            "helpKeyboardEnds": {
+              "t": "Pritisnite Dom za prvu bazu ili kraj za poslednju.",
+              "src": "machine",
+              "h": "782232ab5adc"
+            },
+            "helpKeyboardFavorite": {
+              "t": "Pritisnite F na fokusiranu baznu mapu da je dodate ili uklonite iz favorita.",
+              "src": "machine",
+              "h": "627e8d247763"
+            },
+            "helpKeyboardCompare": {
+              "t": "Pritisnite C na fokusiranoj baznoj mapi da ga uporedite sa trenutnom baznom mapom.",
+              "src": "machine",
+              "h": "b669aa4ce2f5"
+            },
+            "helpKeyboardSlider": {
+              "t": "Tab na dijalizator i koristite tipke sa strelicama da pomerite divider.",
+              "src": "machine",
+              "h": "11f650311630"
+            },
+            "helpCompareTitle": {
+              "t": "Упореди две баземапе",
+              "src": "machine",
+              "h": "6f915b3314cd"
+            },
+            "helpCompareOpen": {
+              "t": "{compareLabel}: da biste pokrenuli dugme za poređenje na vrhu grafičkog elementa.",
+              "src": "machine",
+              "h": "a62c2d222375"
+            },
+            "helpComparePick": {
+              "t": "Izaberite mapu da je prikažete na levoj strani mape. Mapa sa znakom provere ostaje na desnoj strani, a obe karte pokazuju značku leve ili desne strane.",
+              "src": "machine",
+              "h": "fa738b747681"
+            },
+            "helpCompareSlider": {
+              "t": "Povucite divider na mapi, ili koristite klizač u grafičkom elementu, da otkrijete više od bilo koje baze mape.",
+              "src": "machine",
+              "h": "786487716003"
+            },
+            "helpCompareSwap": {
+              "t": "Izaberi drugu bazu da zameniš onu levo.",
+              "src": "machine",
+              "h": "bc1e02c5b24f"
+            },
+            "helpCompareClose": {
+              "t": "{closeCompareLabel}: koristi isto dugme ponovo da se vratiš u normalnu galeriju.",
+              "src": "machine",
+              "h": "f539e5b61be3"
+            },
+            "helpCompareCurrent": {
+              "t": "Poređenje je sada uključeno. Klikom na baznu mapu menja se leva strana umesto cele mape.",
+              "src": "machine",
+              "h": "c8454b90b944"
+            },
+            "helpKeepTitle": {
+              "t": "Gde tvoji izbori žive.",
+              "src": "machine",
+              "h": "2be573afd6ab"
+            },
+            "helpKeepFavorites": {
+              "t": "Omiljeni su spremljeni u ovom pretraživaču za ovu galeriju. Oni ne menjaju ničije omiljene.",
+              "src": "machine",
+              "h": "23d7e68937bc"
+            },
+            "helpKeepClear": {
+              "t": "Čišćenje podataka pretraživača ovog sajta uklanja vaše omiljene. Drugačiji pretraživač ima svoje favorite.",
+              "src": "machine",
+              "h": "2b6d7ac68498"
+            },
+            "helpKeepPrivate": {
+              "t": "Ako pretraživač ne dozvoljava spremanje, omiljeni radovi dok galerija ostaje otvorena ali se mogu izgubiti kada se ponovo učita.",
+              "src": "machine",
+              "h": "cd326d98301b"
+            },
+            "helpKeepHint": {
+              "t": "Otvaranje vodiča ili odbacivanjeNova ovde krije taj savet za ovu galeriju u ovom pretraživaču.",
+              "src": "machine",
+              "h": "541448645048"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto nije u redu",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTroubleNoMap": {
+              "t": "Nijedna mapa nije povezana: ovaj grafički element nije povezan sa mapom. Pitajte GIS diviziju da ga poveže u postavkama grafičkog elementa.",
+              "src": "machine",
+              "h": "8711082fb7ab"
+            },
+            "helpTroubleLoading": {
+              "t": "Učitavanje traje dugo: mapa ili bazne mape nisu završene. Dajte im trenutak, a onda ponovo učitaj stranicu ako se još uvek ne pojave.",
+              "src": "machine",
+              "h": "7e67e1a58b66"
+            },
+            "helpTroubleEmpty": {
+              "t": "Nema podešenih baznih mapa: nema postavljenih baznih mapa za ovu galeriju. Pitajte GIS diviziju da ih doda.",
+              "src": "machine",
+              "h": "5570df135ef9"
+            },
+            "helpTroubleLoadError": {
+              "t": "Bazemapi se ne mogu učitati: aplikacija nije mogla da otvori konfigurisane bazne mape. Ponovo učitaj stranicu, a zatim traži od GIS divizije da proveri bazemape i njihove postavke pristupa.",
+              "src": "machine",
+              "h": "8d1ac5ada6b0"
+            },
+            "helpTroublePartial": {
+              "t": "Neke bazne mape nisu mogle biti učitane: te stavke su nedostupne u ovoj galeriji. Koristite jednu koja se pojavljuje i zamolite GIS diviziju da proveri predmete koji nedostaju.",
+              "src": "machine",
+              "h": "a46244d6a562"
+            },
+            "helpTroubleSearch": {
+              "t": "Ne poklapaju se bazne mape: tekst u {filterLabel} ne odgovara imenu. Očistite okvir ili pokušajte kraći deo imena.",
+              "src": "machine",
+              "h": "2e9f57f4f25c"
+            },
+            "helpTroubleThumbnail": {
+              "t": "Nedostaje slika: taj pregled nije mogao da se prikaže. Klikni ili dodirni ime bazne mape da bi je ipak probao.",
+              "src": "machine",
+              "h": "37be8663e4e2"
+            },
+            "helpTroubleCompare": {
+              "t": "Bazemap se ne može učitati za poređenje: izaberite drugu baznu mapu, ili blisko uporedite i otvorite je ponovo.",
+              "src": "machine",
+              "h": "a664d761b459"
+            },
+            "helpTroubleCompareSame": {
+              "t": "Obe strane izgledaju isto: bazna mapa koju ste izabrali je već trenutna bazna mapa. Izaberite drugu.",
+              "src": "machine",
+              "h": "7dc63b09b71d"
+            },
+            "helpTroubleMap": {
+              "t": "Mapa je prazna: ta bazna mapa možda nema slike za ovu oblast ili nivo uvećanja. Pokušajte sa drugom baznom mapom.",
+              "src": "machine",
+              "h": "8a960bc9dfb2"
+            },
+            "helpTroubleFavorites": {
+              "t": "Omiljeni su nestali: ovaj pretraživač je možda očistio ili blokirao snimljene izbore. Dodajte ponovo zvezde u pretraživač koji planirate da koristite.",
+              "src": "machine",
+              "h": "2be33d982ee6"
+            },
+            "helpTroubleContact": {
+              "t": "Još uvek zaglavljen? Kontaktirajte GIS diviziju i pomenite Basemap Gallery Custom name i ovu aplikaciju.",
+              "src": "machine",
+              "h": "19bfa10f267a"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "helpTipsHelp": {
+              "t": "{helpLabel}: koristiti upitnik na vrhu desno od grafičkog elementa da biste ponovo otvorili ovaj vodič.",
+              "src": "machine",
+              "h": "fe401058fd1e"
+            },
+            "helpTipsClose": {
+              "t": "{closeLabel}: koristite dugme na dnu vodiča da se vratite u galeriju.",
+              "src": "machine",
+              "h": "71719df16193"
+            },
+            "helpTipsOrder": {
+              "t": "Omiljeni se pojavljuju prvi. Preostale bazne mape ostaju u redu odabranom za ovu aplikaciju.",
+              "src": "machine",
+              "h": "42b789263081"
+            },
+            "helpTipsCompare": {
+              "t": "Upoređivanje ne dodaje ništa spašenoj mapi. Zatvaranje upoređivanja vraća mapu trenutnoj baznoj mapi.",
+              "src": "machine",
+              "h": "2599e2ac4f7c"
+            },
+            "noBasemapsConfigured": {
+              "t": "Нема подешених баземапа@ info: whatsthis",
+              "src": "machine",
+              "h": "9e87b76876c0"
+            },
+            "loadedCountBasemapsLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazemape učitane.{failedNote} Koristite tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "8d08078322d8"
+            },
+            "loadedCountBasemapLoadedFailedNoteUseArrow": {
+              "t": "{loadedCount} bazna mapa učitana.{failedNote} Koristi tipke sa strelicama za navigaciju, unos ili prostor za odabir.",
+              "src": "machine",
+              "h": "14ed6d6e817e"
+            },
+            "loadingTitleForComparison": {
+              "t": "Učitavam {title} za poređenje",
+              "src": "machine",
+              "h": "cc4feae47681"
+            },
+            "comparingTitleOnTheLeftWith": {
+              "t": "Upoređivanje {title} sa leve strane sa trenutnom baznom mapom na desnoj strani. Povucite divider ili koristite klizač.",
+              "src": "machine",
+              "h": "2b777e33f9d9"
+            },
+            "blendingTitleOverTheCurrentBasemap": {
+              "t": "Mešanje {title} preko trenutne bazne mape. Koristite klizač za podešavanje transparentnosti.",
+              "src": "machine",
+              "h": "4560d01543ca"
+            },
+            "titleCouldNotBeLoadedFor": {
+              "t": "{title} se ne može učitati za poređenje",
+              "src": "machine",
+              "h": "87d96861e6ef"
+            },
+            "compareClosedTheMapShowsThe": {
+              "t": "Uporedi zatvorenu mapu sa trenutnom baznom mapom.",
+              "src": "machine",
+              "h": "cb515a44fb7c"
+            },
+            "compareOnUsingCompareBlendModeModeChoose": {
+              "t": "Uporedi prilikom korištenja {compareBlendMode} moda. Odaberite mapu baze koja će se prikazati na levoj strani mape.",
+              "src": "machine",
+              "h": "222078b1ecaf"
+            },
+            "switchedToSwipeMode": {
+              "t": "Prebaèen na mod.",
+              "src": "machine",
+              "h": "d9ef52fdd062"
+            },
+            "switchedToBlendModeUseThe": {
+              "t": "Prebacite se na mod mešanja. Koristite klizač za podešavanje prozirnosti.",
+              "src": "machine",
+              "h": "23a748459ff4"
+            },
+            "switchedToSwipeModeDragThe": {
+              "t": "Prebacite se na mod za prelazak. Povucite divider ili koristite klizač.",
+              "src": "machine",
+              "h": "a896996594c1"
+            },
+            "titleIsAlreadyTheCurrentBasemap": {
+              "t": "{title} je već trenutna bazna mapa. Odaberite drugu baznu mapu za poređenje.",
+              "src": "machine",
+              "h": "d78cad4713b0"
+            },
+            "titleIsAlreadyBeingCompared": {
+              "t": "{title} se već upoređuje",
+              "src": "machine",
+              "h": "660c01c9e616"
+            },
+            "titleBasemapAppliedToMap": {
+              "t": "{title} bazna mapa primenjena na mapi",
+              "src": "machine",
+              "h": "898bb2d3ee4a"
+            },
+            "titleRemovedFromFavorites": {
+              "t": "{title} uklonjen iz favorita",
+              "src": "machine",
+              "h": "db16f11d1a85"
+            },
+            "titleAddedToFavoritesAndPinned": {
+              "t": "{title} dodato favoritima i prikačeno na vrh",
+              "src": "machine",
+              "h": "ebde32148312"
+            },
+            "visibleBasemapsCountBasemapsMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazne mape odgovaraju vašoj potrazi",
+              "src": "machine",
+              "h": "a8b17636cb6b"
+            },
+            "visibleBasemapsCountBasemapMatchYourSearch": {
+              "t": "{visibleBasemapsCount} bazna mapa odgovara vašoj potrazi",
+              "src": "machine",
+              "h": "8ff0ed3cc0be"
+            },
+            "basemapGalleryWidget": {
+              "t": "Баземап Галерија Widget",
+              "src": "machine",
+              "h": "710f3d251c50"
+            },
+            "comparison": {
+              "t": "Usporedba:",
+              "src": "machine",
+              "h": "23c8ff228f11"
+            },
+            "dragDividerSideBySide": {
+              "t": "Povucite divider rame uz rame",
+              "src": "machine",
+              "h": "9f48ea21e8ce"
+            },
+            "blend": {
+              "t": "Spoj.",
+              "src": "machine",
+              "h": "7a358cfad459"
+            },
+            "overlayWithBlendEffects": {
+              "t": "Preklopi sa efektima mešavine",
+              "src": "machine",
+              "h": "28985c95ae7c"
+            },
+            "blendMode": {
+              "t": "Мешовити режим",
+              "src": "machine",
+              "h": "2285fee5732a"
+            },
+            "opacityComparePosition": {
+              "t": "Neprozirnost: {comparePosition}%",
+              "src": "machine",
+              "h": "4740e3145bae"
+            },
+            "adjustDividerPositionComparePosition": {
+              "t": "Прилагодите позицију раздвајача: {comparePosition}%",
+              "src": "machine",
+              "h": "dfe431944522"
+            },
+            "noMapWidgetConnected": {
+              "t": "Није повезан ни један виџет са мапомQShortcut",
+              "src": "machine",
+              "h": "5b215e62ab2a"
+            },
+            "noMapConnected": {
+              "t": "Karta nije povezana.",
+              "src": "machine",
+              "h": "881e5f08bac9"
+            },
+            "selectAMapWidgetInThe": {
+              "t": "Odaberite grafički element mape u postavkama grafičkog elementa.",
+              "src": "machine",
+              "h": "cd16026acc85"
+            },
+            "loadingBasemaps2": {
+              "t": "Учитавам баземапеQShortcut",
+              "src": "machine",
+              "h": "4c746f7ab986"
+            },
+            "noBasemapsConfigured2": {
+              "t": "Nema konfigurisanih baznih mapa.",
+              "src": "machine",
+              "h": "1836f9dfcbb8"
+            },
+            "addBasemapsInTheWidgetSettings": {
+              "t": "Додај баземапе у поставке виџета.",
+              "src": "machine",
+              "h": "c7b083776e61"
+            },
+            "basemapsCouldNotBeLoaded": {
+              "t": "Bazemape se ne mogu učitati",
+              "src": "machine",
+              "h": "21bc4f04a4cc"
+            },
+            "noBasemapsCouldBeLoaded": {
+              "t": "Nema baznih mapa koje bi mogle biti učitane.",
+              "src": "machine",
+              "h": "67542d9df8fb"
+            },
+            "checkTheItemIDsAndPortal": {
+              "t": "Proverite ID-ove i portal URL u postavkama.",
+              "src": "machine",
+              "h": "95840b50e572"
+            },
+            "failedCountBasemapsCouldNotBeLoaded": {
+              "t": "{failedCount} bazne mape nisu mogle biti učitane. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "8f39421bde8f"
+            },
+            "failedCountBasemapCouldNotBeLoaded": {
+              "t": "{failedCount} bazna mapa se ne može učitati. Provjerite ID-ove stavki u postavkama.",
+              "src": "machine",
+              "h": "72be79d17aef"
+            },
+            "pressCToCompareTheFocused": {
+              "t": "Pritisnite C da uporedite fokusiranu baznu mapu sa trenutnom baznom mapom koristeći swip ili mješavinu moda.",
+              "src": "machine",
+              "h": "29698dc14a83"
+            },
+            "compareIsOnInCompareBlendModeMode": {
+              "t": "Poređenje je u {compareBlendMode} modu: Enter ili Space bira baznu mapu za poređenje.",
+              "src": "machine",
+              "h": "df89d0f1e00c"
+            },
+            "currentlySelectedTitle": {
+              "t": "Trenutno odabrano: {title}.",
+              "src": "machine",
+              "h": "cfae184ccc34"
+            },
+            "comparingTitleUseTheSliderTo": {
+              "t": "Usporedba: {title}. Koristite klizač da podesite poređenje.",
+              "src": "machine",
+              "h": "13e868a95989"
+            },
+            "noBasemapsMatchSearchText": {
+              "t": "Нема баземапа{searchText}",
+              "src": "machine",
+              "h": "3ae50c2ea240"
+            },
+            "basemapSelectionGalleryListView": {
+              "t": "Basemap galerija odabira - prikaz liste",
+              "src": "machine",
+              "h": "78a181cb8d20"
+            },
+            "basemapSelectionGalleryGridView": {
+              "t": "Basemap selection galery - приказ мреже",
+              "src": "machine",
+              "h": "5a471f1d8587"
+            },
+            "titleCurrentBasemapShownOnThe": {
+              "t": "{title} - Trenutna bazna mapa, prikazana na desnoj strani",
+              "src": "machine",
+              "h": "4c573e6ef6b5"
+            },
+            "titleShownOnTheLeftSide": {
+              "t": "{title} - Prikazano na levoj strani dividera",
+              "src": "machine",
+              "h": "e0790180c644"
+            },
+            "clickToCompareTitleWithThe": {
+              "t": "Klikni za upoređivanje {title} sa trenutnom baznom mapom",
+              "src": "machine",
+              "h": "7fb5808280f7"
+            },
+            "titleCurrentlyActiveBasemapClickTo": {
+              "t": "{title} - Trenutno aktivna bazna mapa (kliknite za ponovnu primenu)",
+              "src": "machine",
+              "h": "10f7940f4d52"
+            },
+            "clickToApplyTitleBasemapTo": {
+              "t": "Klikni da primeniš {title} baznu mapu na mapu",
+              "src": "machine",
+              "h": "21abed740b2b"
+            },
+            "titleValueValue2Value3Value4Value5": {
+              "t": "{title}{value}{value2}{value3}{value4}, {value5}od {length}",
+              "src": "machine",
+              "h": "842dbbd4a2cc"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            },
+            "failedToLoadBasemapsMessage": {
+              "t": "Neuspjelo učitavanje baznih mapa: {message}",
+              "src": "machine",
+              "h": "25b6511d14e1"
+            }
+          }
         },
         "sv": {
           "file": "a56d2fa9dab3",
@@ -26631,18 +28869,204 @@
           }
         },
         "bs": {
-          "file": "f32c5f332d8f",
+          "file": "e6ebf307e452",
           "counts": {
             "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 37,
             "stale": 0,
-            "missing": 37
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "displayMode": {
+              "t": "Prikaz",
+              "src": "machine",
+              "h": "ab106677edc7"
+            },
+            "displaySize": {
+              "t": "Prikaži veličinu",
+              "src": "machine",
+              "h": "237f890bcdf0"
+            },
+            "compareBasemaps": {
+              "t": "Usporedi bazemape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "showTheCompareButtonWhichPlaces": {
+              "t": "Pokaži dugme za poređenje koje postavlja drugu baznu mapu na kartu iza razdjelnika koji se može pomjeriti",
+              "src": "machine",
+              "h": "755f7b70754a"
+            },
+            "portalSource": {
+              "t": "Izvor Portala",
+              "src": "machine",
+              "h": "66fb1ef3138b"
+            },
+            "useCustomPortal": {
+              "t": "Koristi vlastiti portal",
+              "src": "machine",
+              "h": "ff2f3f70405b"
+            },
+            "portalUrl": {
+              "t": "Portal URL",
+              "src": "machine",
+              "h": "7d1f3467578c"
+            },
+            "browsePortalItems": {
+              "t": "Stavke Portala",
+              "src": "machine",
+              "h": "34ae2e5f998f"
+            },
+            "searchByTitleOrItemId": {
+              "t": "Traži po naslovu ili identifikaciji stavki...",
+              "src": "machine",
+              "h": "cd90dd3bb20b"
+            },
+            "noItemsFoundTryADifferent": {
+              "t": "Nije pronađena stavka. Pokušajte sa drugim izrazom za pretragu.",
+              "src": "machine",
+              "h": "f55af8470d45"
+            },
+            "added": {
+              "t": "Dodano",
+              "src": "machine",
+              "h": "55461d2ceeb7"
+            },
+            "importExportConfiguration": {
+              "t": "Podešavanje mrežnog proxy-a",
+              "src": "machine",
+              "h": "f2f770dc6a0e"
+            },
+            "exportConfiguration": {
+              "t": "Podešavanje mrežnog proxy-a",
+              "src": "machine",
+              "h": "1f002604b485"
+            },
+            "exportYourBasemapConfigurationToXml": {
+              "t": "Izvezite konfiguraciju bazemapa u XML za sigurnosnu kopiju ili dijeljenje.",
+              "src": "machine",
+              "h": "9e32f3ae8e37"
+            },
+            "generateXml": {
+              "t": "Generiraj XML",
+              "src": "machine",
+              "h": "30835fd73c2d"
+            },
+            "downloadFile": {
+              "t": "Preuzmi datoteku",
+              "src": "machine",
+              "h": "6dff41f945dd"
+            },
+            "importConfiguration": {
+              "t": "Podešavanje mrežnog proxy-a",
+              "src": "machine",
+              "h": "4122ce7eaa8f"
+            },
+            "importBasemapConfigurationFromXmlThis": {
+              "t": "Uvezi konfiguraciju basemapa iz XML-a. Ovo će zamijeniti vaše trenutne odabire basemapa.",
+              "src": "machine",
+              "h": "d1e119fa90f3"
+            },
+            "loadFromFile": {
+              "t": "_Učitaj iz datoteke",
+              "src": "machine",
+              "h": "200480c5ea8d"
+            },
+            "orPasteXml": {
+              "t": "Ili zalijepi XML:",
+              "src": "machine",
+              "h": "793151c06c46"
+            },
+            "configurationImportedSuccessfully": {
+              "t": "Konfiguracija uvezena uspješno!",
+              "src": "machine",
+              "h": "8b8f037f4c71"
+            },
+            "noteImportingWillReplaceAllCurrent": {
+              "t": "Napomena: Uvoz će zamijeniti sve trenutno izabrane bazemape, ali neće promijeniti izabrani grafički element mape.",
+              "src": "machine",
+              "h": "1f99c91daec7"
+            },
+            "selectedBasemaps": {
+              "t": "Izabrane bazemape",
+              "src": "machine",
+              "h": "8608c4d812c4"
+            },
+            "clickToSetTheDefaultBasemap": {
+              "t": "Kliknite da postavite uobičajenu baznu mapu prikazanu pri učitavanju aplikacije. Koristite strelice za preuređivanje.",
+              "src": "machine",
+              "h": "4adef861df7a"
+            },
+            "defaultBasemap": {
+              "t": "Uobičajena bazna mapa",
+              "src": "machine",
+              "h": "9a227b2961d5"
+            },
+            "setAsDefault": {
+              "t": "Postavi kao uobičajeno",
+              "src": "machine",
+              "h": "5b6f739130d0"
+            },
+            "removeBasemap": {
+              "t": "Ukloni baznu mapu",
+              "src": "machine",
+              "h": "58c69e93a0df"
+            },
+            "default": {
+              "t": "(Uobičajeno)",
+              "src": "machine",
+              "h": "c32f3c8245d5"
+            },
+            "noBasemapsSelectedUseTheBrowse": {
+              "t": "Nema izabranih baznih mapa. Za dodavanje baznih mapa koristite prethodno poglavlje Portala za pregledavanje.",
+              "src": "machine",
+              "h": "2875d7bec54b"
+            },
+            "showHelpGuide": {
+              "t": "Pokaži vodič za pomoć",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Pokaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkog elementa",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            },
+            "extraSmall": {
+              "t": "Dodatno mali",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Srednje (uobičajeno)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Mreža (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (redovi)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Stavka nije pronađena ili nije veb mapa ili vektorski servis",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Neuspjelo učitavanje stavki: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
+            }
+          }
         },
         "ca": {
           "file": "a0d719bf915c",
@@ -28550,18 +30974,204 @@
           }
         },
         "hr": {
-          "file": "f32c5f332d8f",
+          "file": "62925b9f0160",
           "counts": {
             "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 37,
             "stale": 0,
-            "missing": 37
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "displayMode": {
+              "t": "Način prikaza",
+              "src": "machine",
+              "h": "ab106677edc7"
+            },
+            "displaySize": {
+              "t": "Veličina prikaza",
+              "src": "machine",
+              "h": "237f890bcdf0"
+            },
+            "compareBasemaps": {
+              "t": "Usporedi bazne mape",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "showTheCompareButtonWhichPlaces": {
+              "t": "Prikaži gumb za usporedbu, koji postavlja drugu bazu na kartu iza razdjelnika za vuču",
+              "src": "machine",
+              "h": "755f7b70754a"
+            },
+            "portalSource": {
+              "t": "Izvor Portala",
+              "src": "machine",
+              "h": "66fb1ef3138b"
+            },
+            "useCustomPortal": {
+              "t": "Koristi prilagođeni portal",
+              "src": "machine",
+              "h": "ff2f3f70405b"
+            },
+            "portalUrl": {
+              "t": "Portal URL",
+              "src": "machine",
+              "h": "7d1f3467578c"
+            },
+            "browsePortalItems": {
+              "t": "Pregledaj stavke portala",
+              "src": "machine",
+              "h": "34ae2e5f998f"
+            },
+            "searchByTitleOrItemId": {
+              "t": "Traži po naslovu ili stavci ID...",
+              "src": "machine",
+              "h": "cd90dd3bb20b"
+            },
+            "noItemsFoundTryADifferent": {
+              "t": "Nisu pronađene stavke. Pokušajte s drugim izrazom za pretragu.",
+              "src": "machine",
+              "h": "f55af8470d45"
+            },
+            "added": {
+              "t": "Dodano",
+              "src": "machine",
+              "h": "55461d2ceeb7"
+            },
+            "importExportConfiguration": {
+              "t": "Uvoz / Postava izvoza",
+              "src": "machine",
+              "h": "f2f770dc6a0e"
+            },
+            "exportConfiguration": {
+              "t": "Konfiguracija Izvoza",
+              "src": "machine",
+              "h": "1f002604b485"
+            },
+            "exportYourBasemapConfigurationToXml": {
+              "t": "Izvezite konfiguraciju bazemapa u XML za backup ili dijeljenje.",
+              "src": "machine",
+              "h": "9e32f3ae8e37"
+            },
+            "generateXml": {
+              "t": "Generiraj XML",
+              "src": "machine",
+              "h": "30835fd73c2d"
+            },
+            "downloadFile": {
+              "t": "Preuzmi datoteku",
+              "src": "machine",
+              "h": "6dff41f945dd"
+            },
+            "importConfiguration": {
+              "t": "Podešavanje uvoza",
+              "src": "machine",
+              "h": "4122ce7eaa8f"
+            },
+            "importBasemapConfigurationFromXmlThis": {
+              "t": "Uvezi konfiguraciju bazemapa iz XML- a. Ovo će zamijeniti vaše trenutne odabire bazamapa.",
+              "src": "machine",
+              "h": "d1e119fa90f3"
+            },
+            "loadFromFile": {
+              "t": "Učitaj iz datoteke",
+              "src": "machine",
+              "h": "200480c5ea8d"
+            },
+            "orPasteXml": {
+              "t": "Ili zalijepi XML:",
+              "src": "machine",
+              "h": "793151c06c46"
+            },
+            "configurationImportedSuccessfully": {
+              "t": "Konfiguracija uvezena uspješno!",
+              "src": "machine",
+              "h": "8b8f037f4c71"
+            },
+            "noteImportingWillReplaceAllCurrent": {
+              "t": "Napomena: Uvoz će zamijeniti sve trenutne basemap odabire, ali neće promijeniti odabrani map widget.",
+              "src": "machine",
+              "h": "1f99c91daec7"
+            },
+            "selectedBasemaps": {
+              "t": "Odabrani osnovni planovi",
+              "src": "machine",
+              "h": "8608c4d812c4"
+            },
+            "clickToSetTheDefaultBasemap": {
+              "t": "Kliknite za postavljanje zadane baze mape prikazane kada se aplikacija učitava. Koristite strelice za preuređivanje.",
+              "src": "machine",
+              "h": "4adef861df7a"
+            },
+            "defaultBasemap": {
+              "t": "Uobičajena osnovna mapa",
+              "src": "machine",
+              "h": "9a227b2961d5"
+            },
+            "setAsDefault": {
+              "t": "Postavi kao uobičajeno",
+              "src": "machine",
+              "h": "5b6f739130d0"
+            },
+            "removeBasemap": {
+              "t": "Osnovna mapa",
+              "src": "machine",
+              "h": "58c69e93a0df"
+            },
+            "default": {
+              "t": "(Uobičajeno)",
+              "src": "machine",
+              "h": "c32f3c8245d5"
+            },
+            "noBasemapsSelectedUseTheBrowse": {
+              "t": "Nema odabranih baznih mapa. Za dodavanje baznih mapa upotrijebite prethodno poglavlje Portala za pregledavanje.",
+              "src": "machine",
+              "h": "2875d7bec54b"
+            },
+            "showHelpGuide": {
+              "t": "Prikaži vodič pomoći",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Prikaži gumb s upitnikom koji otvara vodič za pomoć widgetu",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            },
+            "extraSmall": {
+              "t": "Ekstra mali",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Srednje (uobičajeno)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Mreža (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Popis (redovi)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Stavka nije pronađena, ili nije web karta ili Vector Tile Service",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Neuspjelo učitavanje stavki: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
+            }
+          }
         },
         "hu": {
           "file": "458b660aaac8",
@@ -31594,18 +34204,204 @@
           }
         },
         "sr": {
-          "file": "f7806981f8a9",
+          "file": "183ce3cf13ed",
           "counts": {
             "esri": 12,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 37,
             "stale": 0,
-            "missing": 37
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "displayMode": {
+              "t": "Режим приказа@ info: whatsthis",
+              "src": "machine",
+              "h": "ab106677edc7"
+            },
+            "displaySize": {
+              "t": "Величина приказаQShortcut",
+              "src": "machine",
+              "h": "237f890bcdf0"
+            },
+            "compareBasemaps": {
+              "t": "Упореди баземапе",
+              "src": "machine",
+              "h": "01b7f5d1c4c3"
+            },
+            "showTheCompareButtonWhichPlaces": {
+              "t": "Prikaži dugme za upoređivanje, koje postavlja drugu baznu mapu na mapi iza povlačnog dividera",
+              "src": "machine",
+              "h": "755f7b70754a"
+            },
+            "portalSource": {
+              "t": "Portal Izvor",
+              "src": "machine",
+              "h": "66fb1ef3138b"
+            },
+            "useCustomPortal": {
+              "t": "Koristi prilagođeni portal",
+              "src": "machine",
+              "h": "ff2f3f70405b"
+            },
+            "portalUrl": {
+              "t": "Portal URL",
+              "src": "machine",
+              "h": "7d1f3467578c"
+            },
+            "browsePortalItems": {
+              "t": "Прегледај ставке портала",
+              "src": "machine",
+              "h": "34ae2e5f998f"
+            },
+            "searchByTitleOrItemId": {
+              "t": "Traži po naslovu ili identifikaciji stavki...",
+              "src": "machine",
+              "h": "cd90dd3bb20b"
+            },
+            "noItemsFoundTryADifferent": {
+              "t": "Nema pronaðenih stavki. Pokušajte sa drugim izrazom pretrage.",
+              "src": "machine",
+              "h": "f55af8470d45"
+            },
+            "added": {
+              "t": "Dodato",
+              "src": "machine",
+              "h": "55461d2ceeb7"
+            },
+            "importExportConfiguration": {
+              "t": "Увези / Извези поставуQShortcut",
+              "src": "machine",
+              "h": "f2f770dc6a0e"
+            },
+            "exportConfiguration": {
+              "t": "Подешавање извозаQShortcut",
+              "src": "machine",
+              "h": "1f002604b485"
+            },
+            "exportYourBasemapConfigurationToXml": {
+              "t": "Izvezite konfiguraciju bazne mape u XML za podršku ili deljenje.",
+              "src": "machine",
+              "h": "9e32f3ae8e37"
+            },
+            "generateXml": {
+              "t": "Generiraj XML",
+              "src": "machine",
+              "h": "30835fd73c2d"
+            },
+            "downloadFile": {
+              "t": "Преузми фајлQShortcut",
+              "src": "machine",
+              "h": "6dff41f945dd"
+            },
+            "importConfiguration": {
+              "t": "Увези подешавањеQShortcut",
+              "src": "machine",
+              "h": "4122ce7eaa8f"
+            },
+            "importBasemapConfigurationFromXmlThis": {
+              "t": "Увези конфигурацију баземапа из XML. Ово ће заменити тренутне изборе баземапа.",
+              "src": "machine",
+              "h": "d1e119fa90f3"
+            },
+            "loadFromFile": {
+              "t": "Учитај из фајлаQShortcut",
+              "src": "machine",
+              "h": "200480c5ea8d"
+            },
+            "orPasteXml": {
+              "t": "Ili zalijepi XML:",
+              "src": "machine",
+              "h": "793151c06c46"
+            },
+            "configurationImportedSuccessfully": {
+              "t": "Konfiguracija uvezena uspešno!",
+              "src": "machine",
+              "h": "8b8f037f4c71"
+            },
+            "noteImportingWillReplaceAllCurrent": {
+              "t": "Napomena: Uvoz će zameniti sve trenutno odabrane bazne mape, ali neće promeniti odabrani grafički element mape.",
+              "src": "machine",
+              "h": "1f99c91daec7"
+            },
+            "selectedBasemaps": {
+              "t": "Изабрани баземапи@ info: whatsthis",
+              "src": "machine",
+              "h": "8608c4d812c4"
+            },
+            "clickToSetTheDefaultBasemap": {
+              "t": "Klikni da podesiš uobičajenu baznu mapu prikazanu kada se aplikacija učitava. Koristi strelice za preuređivanje.",
+              "src": "machine",
+              "h": "4adef861df7a"
+            },
+            "defaultBasemap": {
+              "t": "Подразум ијевана баземап@ action: inmenu",
+              "src": "machine",
+              "h": "9a227b2961d5"
+            },
+            "setAsDefault": {
+              "t": "Podesi kao uobičajeno",
+              "src": "machine",
+              "h": "5b6f739130d0"
+            },
+            "removeBasemap": {
+              "t": "Уклони баземапуQShortcut",
+              "src": "machine",
+              "h": "58c69e93a0df"
+            },
+            "default": {
+              "t": "(Default)",
+              "src": "machine",
+              "h": "c32f3c8245d5"
+            },
+            "noBasemapsSelectedUseTheBrowse": {
+              "t": "Нема изабраних баземапа. За додавање баземапа користите одељак за прегледање портала.",
+              "src": "machine",
+              "h": "2875d7bec54b"
+            },
+            "showHelpGuide": {
+              "t": "Pokaži vodič za pomoć",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Prikaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkom elementu",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            },
+            "extraSmall": {
+              "t": "Ekstra mali",
+              "src": "machine",
+              "h": "4e149dc26ecb"
+            },
+            "mediumDefault": {
+              "t": "Средњи (ударни)",
+              "src": "machine",
+              "h": "4aa460289a5a"
+            },
+            "gridThumbnails": {
+              "t": "Mreža (Thumbnails)",
+              "src": "machine",
+              "h": "522cc46ea77e"
+            },
+            "listRows": {
+              "t": "Lista (Rows)",
+              "src": "machine",
+              "h": "0ba8d9e27e2f"
+            },
+            "itemNotFoundOrItIs": {
+              "t": "Stavka nije pronađena, ili nije veb mapa ili Vektor Tile servis",
+              "src": "machine",
+              "h": "e48a7ddaa009"
+            },
+            "failedToLoadItemsMessage": {
+              "t": "Neuspjelo učitavanje stavki: {message}",
+              "src": "machine",
+              "h": "8dee8e834c72"
+            }
+          }
         },
         "sv": {
           "file": "c91d10c2c000",
