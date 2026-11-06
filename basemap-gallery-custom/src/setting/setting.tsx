@@ -18,6 +18,23 @@ import {
 import { hooks as __exbI18nHooks } from 'jimu-core';
 import __exbI18nMessages from './translations/default';
 import { __setIntl, __t } from './i18n-t'
+// Pure helpers shared with the runtime. No esri imports in this file or in that one:
+// the settings bundle loads in the Builder, which has no map (playbook 12.1).
+import {
+    type BasemapItem,
+    type UrlLayerType,
+    URL_LAYER_TYPES,
+    detectUrlLayerType,
+    isArcGisRestUrl,
+    isHttpUrl,
+    isUrlBasemap,
+    isUrlLayerType,
+    layerTypeFromServiceInfo,
+    normalizeServiceUrl,
+    titleFromServiceInfo,
+    titleFromUrl,
+    urlBasemapId
+} from '../runtime/basemapSource'
 
 
 const { useState, useEffect, useRef } = React
@@ -27,14 +44,9 @@ interface SectionState {
     appearance: boolean
     portalSource: boolean
     browsePortal: boolean
+    addFromUrl: boolean
     importExport: boolean
     selectedBasemaps: boolean
-}
-
-interface BasemapItem {
-    id: string
-    title: string
-    thumbnailUrl?: string
 }
 
 type SizeOption = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -65,6 +77,23 @@ const DISPLAY_MODE_OPTIONS: { value: DisplayMode, label: string }[] = [
     { value: 'list', get label () { return __t("listRows") } }
 ]
 
+// Labels for the layer classes a URL basemap can use (keys live in translations/default.ts)
+const LAYER_TYPE_LABEL_KEYS: Record<UrlLayerType, string> = {
+    auto: 'autoDetect',
+    tile: 'layerTypeTile',
+    'map-image': 'layerTypeMapImage',
+    'vector-tile': 'layerTypeVectorTile',
+    imagery: 'layerTypeImagery',
+    'imagery-tile': 'layerTypeImageryTile',
+    wms: 'layerTypeWms',
+    wmts: 'layerTypeWmts'
+}
+
+const LAYER_TYPE_OPTIONS: { value: UrlLayerType, label: string }[] = (['auto', ...URL_LAYER_TYPES] as UrlLayerType[]).map(value => ({
+    value,
+    get label () { return __t(LAYER_TYPE_LABEL_KEYS[value]) }
+}))
+
 type SettingProps = {
     config: IMConfig
     onSettingChange: (settings: any, ...rest: any[]) => void
@@ -91,12 +120,25 @@ const Setting = (props: SettingProps) => {
     const [exportXml, setExportXml] = useState('')
     const fileInputRef = useRef<HTMLInputElement>(null)
 
+    // Add basemap from URL form
+    const [urlInput, setUrlInput] = useState('')
+    const [urlLayerType, setUrlLayerType] = useState<UrlLayerType>('auto')
+    const [urlTitle, setUrlTitle] = useState('')
+    const [urlThumbnail, setUrlThumbnail] = useState('')
+    const [urlBusy, setUrlBusy] = useState(false)
+    const [urlError, setUrlError] = useState<string>(null)
+    const [urlNotice, setUrlNotice] = useState<string>(null)
+    // Always the latest config, for handlers that run after an await
+    const configRef = useRef(props.config)
+    configRef.current = props.config
+
     // Section collapse state
     const [openSections, setOpenSections] = useState<SectionState>({
         map: true,
         appearance: true,
         portalSource: true,
         browsePortal: true,
+        addFromUrl: false,
         importExport: false,
         selectedBasemaps: true
     })
@@ -143,6 +185,12 @@ const Setting = (props: SettingProps) => {
                 xml += '    <basemap>\n'
                 xml += `      <id>${escapeXml(b.id)}</id>\n`
                 xml += `      <title>${escapeXml(b.title)}</title>\n`
+                if (isUrlBasemap(b)) {
+                    // A service URL entry: the id is derived from the url on import,
+                    // so the url and layer type are what actually travel.
+                    xml += `      <url>${escapeXml(b.url)}</url>\n`
+                    xml += `      <layerType>${escapeXml(b.layerType || 'auto')}</layerType>\n`
+                }
                 if (b.thumbnailUrl) {
                     xml += `      <thumbnailUrl>${escapeXml(b.thumbnailUrl)}</thumbnailUrl>\n`
                 }
@@ -219,11 +267,27 @@ const Setting = (props: SettingProps) => {
 
             const basemapEls = root.querySelectorAll('basemaps > basemap')
             basemapEls.forEach(basemapEl => {
-                const id = basemapEl.querySelector('id')?.textContent
+                const id = basemapEl.querySelector('id')?.textContent?.trim()
                 const title = basemapEl.querySelector('title')?.textContent
                 const thumbnailUrl = basemapEl.querySelector('thumbnailUrl')?.textContent
+                const rawUrl = basemapEl.querySelector('url')?.textContent?.trim() || ''
+                const url = normalizeServiceUrl(rawUrl)
+                const layerTypeRaw = basemapEl.querySelector('layerType')?.textContent?.trim().toLowerCase()
 
-                if (id && title) {
+                if (rawUrl) {
+                    // Service URL entry. A url that is not http(s) is dropped rather than
+                    // falling through as a portal item that could never load. The id is
+                    // always recomputed from the url so a hand-edited or older file cannot
+                    // carry a mismatched id, and a missing title comes from the url.
+                    if (!isHttpUrl(url)) return
+                    result.basemaps.push({
+                        id: urlBasemapId(url),
+                        title: title?.trim() || titleFromUrl(url),
+                        url: url,
+                        layerType: isUrlLayerType(layerTypeRaw) ? layerTypeRaw : 'auto',
+                        thumbnailUrl: thumbnailUrl || undefined
+                    })
+                } else if (id && title) {
                     result.basemaps.push({
                         id: id,
                         title: title,
@@ -286,7 +350,9 @@ const Setting = (props: SettingProps) => {
         }
 
         newConfig = newConfig.set('basemaps', parsed.basemaps)
-        newConfig = newConfig.set('defaultBasemapId', parsed.defaultBasemapId || (parsed.basemaps.length > 0 ? parsed.basemaps[0].id : null))
+        // The default must point at an entry that was actually imported
+        const importedDefault = parsed.basemaps.some(b => b.id === parsed.defaultBasemapId) ? parsed.defaultBasemapId : null
+        newConfig = newConfig.set('defaultBasemapId', importedDefault || (parsed.basemaps.length > 0 ? parsed.basemaps[0].id : null))
 
         if (parsed.size) {
             newConfig = newConfig.set('size', parsed.size)
@@ -473,15 +539,18 @@ const Setting = (props: SettingProps) => {
     }
 
     const handleAddBasemap = (item: BasemapItem) => {
-        const currentBasemaps = props.config?.basemaps
-            ? (props.config.basemaps as any).asMutable?.() || [...(props.config.basemaps as any)]
+        // Read through the ref: the URL form calls this after a network round trip, and the
+        // config may have changed in between (browse add, remove, reorder, import).
+        const config = configRef.current
+        const currentBasemaps = config?.basemaps
+            ? (config.basemaps as any).asMutable?.() || [...(config.basemaps as any)]
             : []
 
         if (currentBasemaps.some((b: BasemapItem) => b.id === item.id)) return
 
         const updatedBasemaps = [...currentBasemaps, item]
 
-        let newConfig = props.config.set('basemaps', updatedBasemaps)
+        let newConfig = config.set('basemaps', updatedBasemaps)
 
         if (updatedBasemaps.length === 1) {
             newConfig = newConfig.set('defaultBasemapId', item.id)
@@ -491,6 +560,104 @@ const Setting = (props: SettingProps) => {
             id: props.id,
             config: newConfig
         })
+    }
+
+    const layerTypeLabel = (type?: UrlLayerType): string => __t(LAYER_TYPE_LABEL_KEYS[isUrlLayerType(type) ? type : 'auto'])
+
+    const resetUrlForm = () => {
+        setUrlInput('')
+        setUrlLayerType('auto')
+        setUrlTitle('')
+        setUrlThumbnail('')
+    }
+
+    // Add a basemap from a service endpoint. ArcGIS REST services are asked for their
+    // description (plain fetch, no esri modules in the settings bundle) so a dynamic map
+    // service does not get added as a cached tile layer, and so the title comes from the
+    // service when the user left it blank. WMS and WMTS are recognized from the URL alone.
+    const handleAddFromUrl = async () => {
+        setUrlError(null)
+        setUrlNotice(null)
+
+        const url = normalizeServiceUrl(urlInput)
+        if (!url || !isHttpUrl(url)) {
+            setUrlError(__t('urlInvalid'))
+            return
+        }
+
+        const id = urlBasemapId(url)
+        const alreadyAdded = (): boolean => {
+            const basemaps: BasemapItem[] = configRef.current?.basemaps
+                ? (configRef.current.basemaps as any).asMutable?.() || [...(configRef.current.basemaps as any)]
+                : []
+            return basemaps.some(b => b.id === id || (isUrlBasemap(b) && normalizeServiceUrl(b.url).toLowerCase() === url.toLowerCase()))
+        }
+        if (alreadyAdded()) {
+            setUrlError(__t('urlAlreadyAdded'))
+            return
+        }
+
+        let layerType: UrlLayerType = urlLayerType
+        let title = urlTitle.trim()
+        let addedWithoutCheck = false
+
+        setUrlBusy(true)
+        try {
+            if (isArcGisRestUrl(url)) {
+                let info: any = null
+                try {
+                    const sep = url.includes('?') ? '&' : '?'
+                    const response = await fetch(`${url}${sep}f=json`)
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+                    info = await response.json()
+                    if (info?.error) throw new Error(info.error.message || `Error ${info.error.code || ''}`.trim())
+                } catch (err) {
+                    if (layerType === 'auto') {
+                        setUrlError(__t('urlCouldNotReach', { message: err?.message || String(err) }))
+                        return
+                    }
+                    addedWithoutCheck = true
+                }
+                if (info && layerType === 'auto') {
+                    layerType = layerTypeFromServiceInfo(url, info) || 'auto'
+                }
+                if (!title) {
+                    title = info ? titleFromServiceInfo(url, info) : titleFromUrl(url)
+                }
+            } else {
+                if (layerType === 'auto') layerType = detectUrlLayerType(url)
+                if (!title) title = titleFromUrl(url)
+            }
+
+            if (layerType === 'auto') {
+                setUrlError(__t('urlChooseLayerType'))
+                return
+            }
+            // The probe took time; someone may have added this service meanwhile
+            if (alreadyAdded()) {
+                setUrlError(__t('urlAlreadyAdded'))
+                return
+            }
+
+            const item: BasemapItem = {
+                id,
+                title: title || titleFromUrl(url),
+                url,
+                layerType,
+                thumbnailUrl: normalizeServiceUrl(urlThumbnail) || undefined
+            }
+            handleAddBasemap(item)
+            resetUrlForm()
+            setUrlNotice(addedWithoutCheck ? __t('urlAddedWithoutCheck') : __t('basemapAddedFromUrl'))
+        } finally {
+            setUrlBusy(false)
+        }
+    }
+
+    const handleUrlKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' && !urlBusy) {
+            void handleAddFromUrl()
+        }
     }
 
     const handleRemoveBasemap = (itemId: string) => {
@@ -661,6 +828,63 @@ const Setting = (props: SettingProps) => {
       font-size: 11px;
       color: var(--sys-color-text-tertiary);
       word-wrap: break-word;
+    }
+
+    .url-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .url-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin: 0;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .url-field-label {
+      font-size: 12px;
+      color: var(--sys-color-text-primary);
+    }
+
+    .url-field-hint {
+      font-size: 11px;
+      line-height: 1.4;
+      color: var(--sys-color-text-tertiary);
+    }
+
+    .url-optional-heading {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--sys-color-text-secondary);
+      padding-top: 8px;
+      border-top: 1px solid var(--sys-color-divider-primary);
+    }
+
+    .source-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0 5px;
+      margin-right: 6px;
+      border-radius: 3px;
+      border: 1px solid var(--sys-color-divider-primary);
+      color: var(--sys-color-text-secondary);
+      vertical-align: middle;
+    }
+
+    .basemap-url {
+      font-size: 11px;
+      color: var(--sys-color-text-tertiary);
+      word-break: break-all;
+      margin-top: 2px;
     }
 
     .default-badge {
@@ -1092,6 +1316,107 @@ const Setting = (props: SettingProps) => {
             <SettingSection className='collapsible-section'>
                 <div
                     className='section-header'
+                    onClick={() => toggleSection('addFromUrl')}
+                    role='button'
+                    tabIndex={0}
+                    onKeyPress={(e) => e.key === 'Enter' && toggleSection('addFromUrl')}
+                    aria-expanded={openSections.addFromUrl}
+                    aria-controls='section-add-from-url'
+                >
+                    <span className='section-title'>{t('addBasemapFromUrl')}</span>
+                    <span className={`section-toggle ${!openSections.addFromUrl ? 'collapsed' : ''}`}>▼</span>
+                </div>
+                <div
+                    id='section-add-from-url'
+                    className={`section-content ${openSections.addFromUrl ? 'expanded' : 'collapsed'}`}
+                >
+                    <div className='help-text'>
+                        {t('addFromUrlHelp')}
+                    </div>
+
+                    <div className='url-form'>
+                        <label className='url-field'>
+                            <span className='url-field-label'>{t('serviceUrl')}</span>
+                            <TextInput
+                                className='w-100 url-input'
+                                size='sm'
+                                placeholder={t('serviceUrlPlaceholder')}
+                                value={urlInput}
+                                onChange={(e) => setUrlInput(e.target.value)}
+                                onKeyPress={handleUrlKeyPress}
+                                disabled={urlBusy}
+                            />
+                            <span className='url-field-hint'>{t('serviceUrlHint')}</span>
+                        </label>
+
+                        <label className='url-field'>
+                            <span className='url-field-label'>{t('layerType')}</span>
+                            <Select
+                                className='w-100'
+                                value={urlLayerType}
+                                onChange={(e) => setUrlLayerType(e.target.value as UrlLayerType)}
+                                size='sm'
+                                disabled={urlBusy}
+                                aria-label={t('layerType')}
+                            >
+                                {LAYER_TYPE_OPTIONS.map(opt => (
+                                    <Option key={opt.value} value={opt.value}>
+                                        {opt.label}
+                                    </Option>
+                                ))}
+                            </Select>
+                        </label>
+
+                        <div className='url-optional-heading'>{t('optional')}</div>
+
+                        <label className='url-field'>
+                            <span className='url-field-label'>{t('title')}</span>
+                            <TextInput
+                                className='w-100'
+                                size='sm'
+                                placeholder={t('titlePlaceholder')}
+                                value={urlTitle}
+                                onChange={(e) => setUrlTitle(e.target.value)}
+                                onKeyPress={handleUrlKeyPress}
+                                disabled={urlBusy}
+                            />
+                        </label>
+
+                        <label className='url-field'>
+                            <span className='url-field-label'>{t('thumbnailUrl')}</span>
+                            <TextInput
+                                className='w-100'
+                                size='sm'
+                                placeholder={t('thumbnailPlaceholder')}
+                                value={urlThumbnail}
+                                onChange={(e) => setUrlThumbnail(e.target.value)}
+                                onKeyPress={handleUrlKeyPress}
+                                disabled={urlBusy}
+                            />
+                        </label>
+
+                        {urlError && (
+                            <Alert type='error' text={urlError} withIcon className='w-100' />
+                        )}
+                        {urlNotice && (
+                            <Alert type='success' text={urlNotice} withIcon className='w-100' />
+                        )}
+
+                        <Button
+                            className='add-url-btn w-100'
+                            type='primary'
+                            onClick={() => { void handleAddFromUrl() }}
+                            disabled={urlBusy || !urlInput.trim()}
+                        >
+                            {urlBusy ? t('checkingService') : t('addBasemap')}
+                        </Button>
+                    </div>
+                </div>
+            </SettingSection>
+
+            <SettingSection className='collapsible-section'>
+                <div
+                    className='section-header'
                     onClick={() => toggleSection('importExport')}
                     role='button'
                     tabIndex={0}
@@ -1313,7 +1638,15 @@ const Setting = (props: SettingProps) => {
                                                 {item.title}
                                                 {isDefault && <span className='default-badge'>{t('default')}</span>}
                                             </div>
-                                            <div className='basemap-id'>{item.id}</div>
+                                            {isUrlBasemap(item) ? (
+                                                <div className='basemap-id'>
+                                                    <span className='source-badge'>{t('fromUrl')}</span>
+                                                    {layerTypeLabel(item.layerType)}
+                                                    <div className='basemap-url'>{item.url}</div>
+                                                </div>
+                                            ) : (
+                                                <div className='basemap-id'>{item.id}</div>
+                                            )}
                                         </div>
                                     </div>
                                 )

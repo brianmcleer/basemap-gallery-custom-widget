@@ -28299,8 +28299,8 @@
       }
     },
     "setting": {
-      "en": "7838a474707d",
-      "keys": 49,
+      "en": "458bfd554c8a",
+      "keys": 77,
       "hashes": {
         "map": "ab478f3efc84",
         "appearance": "41def7a0febe",
@@ -28350,20 +28350,48 @@
         "gridThumbnails": "522cc46ea77e",
         "listRows": "0ba8d9e27e2f",
         "itemNotFoundOrItIs": "e48a7ddaa009",
-        "failedToLoadItemsMessage": "8dee8e834c72"
+        "failedToLoadItemsMessage": "8dee8e834c72",
+        "addBasemapFromUrl": "626066c6f0e8",
+        "addFromUrlHelp": "526b808eb48a",
+        "serviceUrl": "077225837f3d",
+        "serviceUrlPlaceholder": "c2804ae7c8b9",
+        "serviceUrlHint": "f03219b4529c",
+        "layerType": "8a398db6aeb3",
+        "autoDetect": "7dbcac72248e",
+        "layerTypeTile": "4259e7d54840",
+        "layerTypeMapImage": "872b39d84574",
+        "layerTypeVectorTile": "d4b4f4d2c41d",
+        "layerTypeImagery": "0343b1bb4e77",
+        "layerTypeImageryTile": "c68ed115e432",
+        "layerTypeWms": "89aa6e8c5aeb",
+        "layerTypeWmts": "e05e6e250fa8",
+        "optional": "0c6c4102d4df",
+        "title": "768e0c1c6957",
+        "titlePlaceholder": "af5440c3cdf7",
+        "thumbnailUrl": "9751947607d7",
+        "thumbnailPlaceholder": "ac0230fe2bc2",
+        "addBasemap": "1e0f3a769856",
+        "checkingService": "38d21844a5c1",
+        "urlInvalid": "e6b83fd3c13b",
+        "urlAlreadyAdded": "6974cf1621bc",
+        "urlCouldNotReach": "15e7e7791d2f",
+        "urlChooseLayerType": "0714a4219796",
+        "urlAddedWithoutCheck": "70ec477fe28f",
+        "basemapAddedFromUrl": "6b4c9edd2860",
+        "fromUrl": "0e2d9b0777a4"
       },
       "locales": {
         "ar": {
-          "file": "f6ebd98e935a",
+          "file": "e942fad10f11",
           "counts": {
-            "esri": 14,
-            "esri-check": 0,
+            "esri": 16,
+            "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -28540,20 +28568,25 @@
               "t": "المتخلفون عن تحميل المواد: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "الخدمة",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "bg": {
-          "file": "03e5a2c9bafa",
+          "file": "56fe27a869b5",
           "counts": {
-            "esri": 12,
+            "esri": 15,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -28730,20 +28763,25 @@
               "t": "Грешка при зареждане на елементите: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Адрес на услугата",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "bs": {
-          "file": "e6ebf307e452",
+          "file": "f49ffbef52d1",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -28920,20 +28958,30 @@
               "t": "Neuspjelo učitavanje stavki: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Servis",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "ca": {
-          "file": "a0d719bf915c",
+          "file": "e9d5c396194c",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -29110,20 +29158,30 @@
               "t": "Ha fallat en carregar els elements: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL del servei",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "cs": {
-          "file": "c34f454ce53c",
+          "file": "3cca383b1b03",
           "counts": {
-            "esri": 11,
+            "esri": 14,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -29300,20 +29358,25 @@
               "t": "Nepodařilo se načíst položky: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL služby",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "da": {
-          "file": "56aa1b6571c2",
+          "file": "154972b495dd",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -29490,20 +29553,30 @@
               "t": "Kunne ikke indlæse elementer: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Service URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "de": {
-          "file": "70dab459dcec",
+          "file": "6ae60b1eaef9",
           "counts": {
-            "esri": 13,
+            "esri": 14,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 36,
+            "machine": 38,
             "stale": 0,
-            "missing": 0
+            "missing": 25
           },
           "entries": {
             "displayMode": {
@@ -29685,20 +29758,30 @@
               "t": "Nicht geladene Gegenstände: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Service URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "el": {
-          "file": "98bb789a4f9e",
+          "file": "2116598f3647",
           "counts": {
-            "esri": 12,
+            "esri": 15,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -29875,20 +29958,25 @@
               "t": "Αποτυχία φόρτωσης αντικειμένων: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL υπηρεσίας",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "es": {
-          "file": "58e13c16907b",
+          "file": "0182ac616524",
           "counts": {
-            "esri": 13,
+            "esri": 15,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -30065,20 +30153,30 @@
               "t": "Failed to load items: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL de servicio",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "et": {
-          "file": "92f0590ea79b",
+          "file": "b810e5311bbf",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -30255,20 +30353,30 @@
               "t": "Elementide laadimine nurjus: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Teenuse URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "fi": {
-          "file": "4ae3e81a9e3b",
+          "file": "46be88227498",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -30445,20 +30553,25 @@
               "t": "Kohteita ei voitu ladata: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Palvelun URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "fr": {
-          "file": "87de88b2dfee",
+          "file": "e126ca284277",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -30635,20 +30748,30 @@
               "t": "Impossible de charger des éléments : {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL du service",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "he": {
-          "file": "cdce297a7874",
+          "file": "f8f106edd6b1",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -30825,20 +30948,25 @@
               "t": "נכשל לטעון פריטים: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "כתובת URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "hr": {
-          "file": "62925b9f0160",
+          "file": "c6e6a9024c7c",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31015,20 +31143,30 @@
               "t": "Neuspjelo učitavanje stavki: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL servisa",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "hu": {
-          "file": "458b660aaac8",
+          "file": "1e8b7abeaa02",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31205,20 +31343,30 @@
               "t": "Nem sikerült betölteni a tételeket: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Szolgáltatási URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "id": {
-          "file": "a4d5f1386da8",
+          "file": "95c9320b3f57",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31395,20 +31543,30 @@
               "t": "Gagal memuat butir: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL layanan",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "it": {
-          "file": "788b8b0fc694",
+          "file": "249845a08f44",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31585,20 +31743,25 @@
               "t": "Non caricare oggetti: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL del servizio",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "ja": {
-          "file": "df4858e60769",
+          "file": "8e8cc6f7d26a",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31775,20 +31938,25 @@
               "t": "アイテムをロードする失敗: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "サービスURL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "ko": {
-          "file": "b496b822521b",
+          "file": "ac536afe2ca9",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -31965,20 +32133,25 @@
               "t": "적재 품목에 실패: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "서비스 URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "lt": {
-          "file": "e5293799820f",
+          "file": "0d1b0127ffc8",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -32155,20 +32328,30 @@
               "t": "Nepavyko įkelti elementų: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Paslaugos URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "lv": {
-          "file": "9c6433eb1be5",
+          "file": "2c5fea7c489d",
           "counts": {
-            "esri": 12,
+            "esri": 15,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -32345,20 +32528,25 @@
               "t": "Neizdevās ielādēt ierakstus: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Servisa URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "no": {
-          "file": "500f417d67c6",
+          "file": "58aa2dc0965d",
           "counts": {
-            "esri": 12,
+            "esri": 14,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -32535,20 +32723,30 @@
               "t": "Klarte ikke å laste elementene: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Tjenesteadresse",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "nl": {
-          "file": "13f323c67f24",
+          "file": "64f59e4f9bac",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -32725,20 +32923,30 @@
               "t": "Kon items niet laden: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Service-URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "pl": {
-          "file": "4a00f0cb67b0",
+          "file": "0dd876156de6",
           "counts": {
-            "esri": 11,
+            "esri": 14,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -32915,20 +33123,25 @@
               "t": "Nie można wczytać elementów: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL usługi",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "pt-br": {
-          "file": "5701198bb63f",
+          "file": "e813e0825148",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -33105,20 +33318,30 @@
               "t": "Falha ao carregar itens: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL de serviço",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "pt-pt": {
-          "file": "c7647780189d",
+          "file": "67ccbb38714e",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -33295,20 +33518,30 @@
               "t": "Falha ao carregar os itens: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL do serviço",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "ro": {
-          "file": "18efe9297c5d",
+          "file": "2aeb49d79507",
           "counts": {
-            "esri": 13,
+            "esri": 15,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -33485,20 +33718,30 @@
               "t": "A eșuat încărcarea elementelor: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL- ul serviciului",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "ru": {
-          "file": "2dda018e860d",
+          "file": "ac9fcd98d7b0",
           "counts": {
-            "esri": 12,
+            "esri": 15,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -33675,20 +33918,25 @@
               "t": "Не удалось загрузить предметы: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Сервис URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "sk": {
-          "file": "e272f1388d14",
+          "file": "b11e4336a794",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 34,
+            "machine": 36,
             "stale": 0,
-            "missing": 1
+            "missing": 25
           },
           "entries": {
             "displayMode": {
@@ -33860,20 +34108,30 @@
               "t": "Nepodarilo sa načítať položky: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL služby",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "sl": {
-          "file": "895a993d617a",
+          "file": "cf39c92aea0d",
           "counts": {
-            "esri": 11,
+            "esri": 13,
             "esri-check": 3,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 34,
+            "machine": 36,
             "stale": 0,
-            "missing": 1
+            "missing": 25
           },
           "entries": {
             "displayMode": {
@@ -34045,20 +34303,30 @@
               "t": "Nalaganje predmetov ni uspelo: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL storitve",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "sr": {
-          "file": "183ce3cf13ed",
+          "file": "58c9d4cbaa36",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -34235,20 +34503,30 @@
               "t": "Neuspjelo učitavanje stavki: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "УРЛ сервисаQShortcut",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "sv": {
-          "file": "c91d10c2c000",
+          "file": "453dc38d8b86",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -34425,20 +34703,30 @@
               "t": "Underlåten att ladda objekt: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Service URL",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "th": {
-          "file": "3936afb819a8",
+          "file": "ce199920eff2",
           "counts": {
-            "esri": 13,
-            "esri-check": 1,
+            "esri": 15,
+            "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -34615,20 +34903,25 @@
               "t": "ล้มเหลวในการโหลดรายการ: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "ที่อยู่ URL ของบริการ",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "tr": {
-          "file": "fc173c8c7789",
+          "file": "fd3471da0f91",
           "counts": {
-            "esri": 13,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 36,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -34810,20 +35103,25 @@
               "t": "Eşyaları yüklemek için başarısız oldu: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Servis URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "zh-cn": {
-          "file": "fb8095b4af3d",
+          "file": "9f5cef80edd5",
           "counts": {
-            "esri": 12,
+            "esri": 15,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -35000,20 +35298,25 @@
               "t": "装入项目失败 : {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "服务 URL",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "uk": {
-          "file": "a66e252fcb3e",
+          "file": "9b05e8ddd45c",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -35190,20 +35493,25 @@
               "t": "Вимкнено до вантажних елементів: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "Статус на сервери",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "vi": {
-          "file": "b7191b26526a",
+          "file": "b83de697e86e",
           "counts": {
-            "esri": 14,
+            "esri": 16,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 37,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -35380,20 +35688,30 @@
               "t": "Lỗi nạp mục: {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "URL dịch vụ",
+              "src": "machine",
+              "h": "077225837f3d"
+            },
+            "fromUrl": {
+              "t": "URL",
+              "src": "machine",
+              "h": "0e2d9b0777a4"
             }
           }
         },
         "zh-hk": {
-          "file": "150dff5dc84d",
+          "file": "40b1ddd85da4",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -35570,20 +35888,25 @@
               "t": "載入項目失敗 : {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "服務網址",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         },
         "zh-tw": {
-          "file": "150dff5dc84d",
+          "file": "40b1ddd85da4",
           "counts": {
-            "esri": 14,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 35,
+            "machine": 36,
             "stale": 0,
-            "missing": 0
+            "missing": 24
           },
           "entries": {
             "displayMode": {
@@ -35760,6 +36083,11 @@
               "t": "載入項目失敗 : {message}",
               "src": "machine",
               "h": "8dee8e834c72"
+            },
+            "serviceUrl": {
+              "t": "服務網址",
+              "src": "machine",
+              "h": "077225837f3d"
             }
           }
         }

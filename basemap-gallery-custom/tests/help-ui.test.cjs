@@ -188,7 +188,7 @@ for (const mode of ['grid', 'list']) {
     assert.equal(children[0].props.className, 'search-container')
     assert.equal(children[1].type, 'Tooltip', 'Compare sits between the filter and Help, with a tooltip')
     assert.equal(nodes(children[1], n => n === parts.compare).length, 1)
-    assert.equal(parts.compare.props.title, 'Compare basemaps')
+    assert.equal(parts.compare.props['aria-label'], 'Compare basemaps')
     assert.equal(parts.compare.props.type, 'secondary')
     assert.ok(text(parts.compare).includes('Compare'), 'Compare shows a text label, not only an icon')
     const sticky = nodes(tree, n => n.props.className === 'gallery-sticky')
@@ -290,6 +290,9 @@ async function compareGallery (config = {}) {
         async destroy () { this.destroyed = true },
         fire (name) { listeners[name]?.() }
       }
+      // view.ui.add() parents the element in a real browser; destroySwipe detaches it
+      // through parentElement.removeChild, so the stub needs a parent to be removed from.
+      el.parentElement = { removeChild: child => { if (child === el) el.removed = true } }
       swipes.push(el)
       return el
     }
@@ -344,7 +347,7 @@ test('Compare places the chosen basemap behind an arcgis-swipe divider and the s
   assert.equal(bar.length, 1)
   assert.ok(text(bar[0]).includes('Choose a basemap to show on the left side of the map.'))
   assert.equal(headerParts(tree).compare.props['aria-pressed'], true)
-  assert.equal(headerParts(tree).compare.props.title, 'Close compare')
+  assert.equal(headerParts(tree).compare.props['aria-label'], 'Close compare')
   assert.equal(headerParts(tree).compare.props.type, 'primary')
   assert.ok(text(headerParts(tree).compare).includes('Close'))
   assert.equal(nodes(nodes(tree, n => n.props.className === 'gallery-sticky')[0], n => n.props.className === 'compare-bar').length, 1, 'The compare bar is inside the sticky wrapper')
@@ -367,7 +370,9 @@ test('Compare places the chosen basemap behind an arcgis-swipe divider and the s
   assert.equal(slider.props.value, 50)
   assert.equal(slider.props.min, 0)
   assert.equal(slider.props.max, 100)
-  assert.ok(slider.props.label.includes('Imagery') && slider.props.label.includes('Streets'))
+  assert.ok(slider.props.label.includes('50'), 'Slider label carries the current position')
+  const names = text(nodes(tree, n => n.props.className === 'compare-labels')[0])
+  assert.ok(names.includes('Imagery') && names.includes('Streets'), 'Both basemap names are shown beside the slider')
   slider.props.onCalciteSliderInput({ target: { value: '72' } })
   tree = s.render()
   assert.equal(swipe.position, 72)
@@ -478,5 +483,6 @@ test('Browser shortcuts are left alone and removing the compared basemap from se
   assert.equal(s.ui.length, 0)
   assert.equal(s.swipes[0].removed, true)
   assert.equal(headerParts(tree).compare.props['aria-pressed'], true, 'Compare stays on for a new choice')
-  assert.ok(text(nodes(tree, n => n.props.className === 'compare-bar')[0]).includes('Choose a basemap'))
+  const bar = nodes(tree, n => n.props.className === 'compare-bar')[0]
+  assert.ok(text(bar).includes('Choose a basemap'))
 })

@@ -50,7 +50,11 @@ function checkWithBlockedJsxTypes ({ restoreLegacyShim = false, includeReactPack
     assert.equal(config.error, undefined)
     const parsed = ts.parseJsonConfigFileContent(config.config, ts.sys, widget)
     assert.equal(parsed.errors.length, 0)
-    assert.equal(parsed.options.jsx, ts.JsxEmit.React)
+    // react-jsx with jsxImportSource @emotion/react is the build contract (tsconfig.json
+    // header, playbook 12.3): ts-loader reads this file, and classic "react" breaks jimu-core's
+    // patched createElement at runtime. The editor-only jsx-runtime lookup noise is accepted.
+    assert.equal(parsed.options.jsx, ts.JsxEmit.ReactJSX)
+    assert.equal(parsed.options.jsxImportSource, '@emotion/react')
     assert.equal(parsed.options.skipLibCheck, true)
     const host = ts.createCompilerHost(parsed.options)
     const readSource = host.getSourceFile.bind(host)
@@ -90,11 +94,16 @@ test('Fixed editor declarations never read the blocked React JSX type files', ()
   assert.deepEqual(result.packageSources, [])
 })
 
-test('Fixed editor declarations stay isolated when React and Emotion packages are also visible', () => {
+test('With React and Emotion packages visible, only the accepted jsx-runtime lookup reaches the blocked file', () => {
+  // react-jsx through @emotion/react resolves @emotion/react/jsx-runtime, which re-exports
+  // react/jsx-runtime. That single editor-only read is the IDE1100 noise the tsconfig header
+  // accepts in exchange for a working build. It must not become a type error or pull any
+  // package source into the program.
   const result = checkWithBlockedJsxTypes({ includeReactPackage: true })
-  assert.deepEqual(result.blockedReads, [])
+  const jsxRuntime = file => /(?:@types\/react|@emotion\/react)\/jsx(?:-dev)?-runtime\.d\.ts$/.test(file)
+  assert.deepEqual(result.blockedReads.filter(file => !jsxRuntime(file)), [])
   assert.equal(result.errors.length, 0, result.errorText)
-  assert.deepEqual(result.packageSources, [])
+  assert.deepEqual(result.packageSources.filter(file => !jsxRuntime(file)), [])
 })
 
 test('The obsolete shim is shipped as comments so overwrite upgrades neutralize the old file', () => {

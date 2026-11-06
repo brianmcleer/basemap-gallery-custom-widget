@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.22.0 (2026-11-06)
+
+- Added: basemaps by service URL. A new **Add Basemap from URL** settings section takes a REST endpoint for a cached or dynamic ArcGIS map service, an image service, a vector tile service, or a WMS or WMTS endpoint, the same job as "Add basemap from URL" in the out of the box gallery (asked for on the Community thread). Auto-detect reads the ArcGIS service description to choose the layer class and title; a type can be chosen by hand when the service cannot be reached from the Builder. Each entry gets a stable `url-` id, so favorites, the default and the XML round trip keep working. Runtime builds one base layer from the matching Maps SDK class and sets `Basemap.id`, live sync matches on that id when there is no portal item (and only on ids this gallery minted, so a web map's own basemap no longer reads as selected), and compare builds a fresh layer from the URL. The runtime probe uses `esri/request`, so a secured service is asked with the same sign-in the layer will use. XML export writes `<url>` and `<layerType>`; import recomputes the id and validates the type.
+- Added: `src/runtime/basemapSource.ts` (pure helpers, shared with the settings panel, no esri imports) and `src/runtime/basemapFactory.ts` (the one place a gallery entry becomes a `Basemap`, for portal items and URLs alike).
+- Fixed: the test suite had been failing since 1.21.6 (tsconfig moved to `react-jsx`), 1.21.9 (the Map Switcher hand-off read `window.location` on module load) and the October compare bar changes (no `title` on the compare button, slider label wording, `destroySwipe` detaching through `parentElement`). The widget now guards `window.location`, and the tests assert the current contract instead of the September one. 53 tests pass, including 19 new ones for URL handling, the factory, live sync, compare and the settings form and XML round trip.
+- Fixed: `package-lock.json` had stayed at 1.21.4 while the manifest moved on; all three version fields are 1.22.0.
+- Beacon: `apply` and `compare` actions carry `url` or `item` as the detail (a fixed mode name, never the URL itself).
+- Settings layout: the Add Basemap from URL fields stack label over control at full width, with Title and Thumbnail URL under an Optional divider and a full-width Add basemap button. The earlier side-by-side Layer type row squeezed its label into a one-letter column in the narrow settings panel.
+- Translations: 27 new settings strings in `src/setting/translations/default.ts`. Run `exb-i18n sync` before publishing so the 39 locale files pick up the English fill (playbook 20.6). No runtime strings changed.
+
+
 ## 1.21.10 (2026-10-02)
 
 - Console: removed all `console.warn` and `console.error` calls from the runtime and settings. Load, preload, compare and swipe errors go to the beacon instead; the gallery's on-screen failed count and compare error messages are unchanged.

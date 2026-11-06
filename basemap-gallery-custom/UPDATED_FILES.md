@@ -65,3 +65,23 @@ Packaging only. No runtime source changed.
 - `README.md`: zip contents note, clone note, pnpm install caution, developer checks.
 - `CHANGELOG.md`, `UPDATED_FILES.md`, `manifest.json`, `package.json`,
   `package-lock.json`: version 1.21.4.
+
+## 1.22.0
+
+Basemaps by service URL.
+
+- New: `src/runtime/basemapSource.ts` (pure helpers, no esri imports; imported by both
+  runtime and settings), `src/runtime/basemapFactory.ts` (portal item or URL to Basemap),
+  `tests/basemap-url.test.cjs`.
+- `src/runtime/widget.tsx`: loads every entry through the factory, keeps the source entry
+  on each loaded basemap, recognizes URL basemaps through `Basemap.id` (`basemapKey`),
+  compare builds a fresh layer from the URL, `window.location` guarded on module load.
+- `src/setting/setting.tsx`: Add Basemap from URL section, service probe with plain
+  `fetch`, URL badge and layer type in Selected Basemaps, `<url>` and `<layerType>` in
+  the XML export and import.
+- `src/setting/translations/default.ts`: 24 new strings (run `exb-i18n sync` before publish).
+- `tests/helpers.cjs`: layer class doubles for every `esri/layers/*` module the factory
+  imports. `tests/help-ui.test.cjs`, `tests/editor-isolation.test.cjs`,
+  `tests/help-consistency.test.cjs`: assertions brought up to the current widget.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, `package.json` (test script),
+  `manifest.json`, `package-lock.json`: version 1.22.0.

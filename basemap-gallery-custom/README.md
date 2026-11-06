@@ -9,6 +9,10 @@ Gallery with additional configuration for developers.
   first-run hint. The guide describes the controls and messages currently available.
 - Display basemaps as thumbnails or as a list
 - Five size settings for the list and thumbnail layouts
+- Add basemaps by service URL as well as by portal item: a cached or dynamic ArcGIS map
+  service, an image service, a vector tile service, or a WMS or WMTS endpoint. The widget
+  reads the service description to pick the layer type and title, and the entry travels
+  in the XML export
 - Import and export XML files to transfer widget settings across applications
 - Reorder the basemaps in the list
 - Set a default basemap that is applied to the map on application load
@@ -59,7 +63,7 @@ folder over the existing widget folder, replacing matching files. Do not put a s
 `your-extensions/widgets`. Start the client again and refresh the app. Existing configured
 basemaps and the existing favorites storage key are unchanged.
 
-Version **1.21.4** is the widget release number, not a change to the Experience Builder
+Version **1.22.0** is the widget release number, not a change to the Experience Builder
 version field. The manifest's existing `exbVersion` value is unchanged. This update does not
 add a library that needs a separate installation.
 
@@ -150,6 +154,47 @@ current basemap. Compare never changes the saved web map. The **Compare basemaps
 switch in the Appearance settings hides the control; exported XML includes
 `<enableCompare>false</enableCompare>` only when it is off.
 
+## Basemaps from a service URL
+
+The **Add Basemap from URL** section in the settings takes a REST endpoint instead of a
+portal item, the same job as "Add basemap from URL" in the out of the box gallery.
+
+1. Paste the service URL. ArcGIS REST endpoints end in `MapServer`, `ImageServer` or
+   `VectorTileServer`; a WMS endpoint carries `service=WMS` or ends in `WMSServer`; a
+   WMTS endpoint contains `WMTS`. A pasted `?f=json` or trailing slash is dropped.
+2. Leave **Layer type** on Auto-detect. For an ArcGIS REST URL the widget fetches the
+   service description (`?f=json`) and picks a tile layer for a cached map service, a map
+   image layer for a dynamic one, an imagery tile layer for a cached image service, an
+   imagery layer otherwise, or a vector tile layer. WMS and WMTS are recognized from the
+   URL. Pick a type yourself when the service cannot be reached from the Builder or the
+   URL is not one of those shapes.
+3. Title and thumbnail are optional. The title comes from the service description
+   (document title, then map name, then the service name in the URL) when left blank.
+   URL basemaps have no portal thumbnail, so the card shows a plain placeholder unless
+   you give it an image URL.
+4. Click Add. The entry appears in Selected Basemaps with a URL badge, its layer type
+   and the endpoint, and it can be reordered, starred as the default, favorited and
+   compared like any other basemap.
+
+How it works: each URL entry gets a stable id (`url-` plus a hash of the endpoint), so
+favorites and the default survive an XML round trip and the same service cannot be added
+twice. At runtime the widget builds a `Basemap` with one base layer from the matching
+Maps SDK layer class and sets `Basemap.id` to that id; live sync recognizes the basemap
+through that id because there is no portal item to match on. Compare builds a second,
+fresh layer from the URL rather than reusing the gallery's layer object. The XML export
+writes `<url>` and `<layerType>` on those entries; import recomputes the id from the URL.
+
+Things that are different from portal items:
+
+- Secured services: the widget asks the service with the browser's identity. A service
+  that prompts for a sign-in in the Builder needs the same sign-in in the app.
+- CORS and HTTPS: the service must allow the app's origin and be reachable over HTTPS
+  from an HTTPS app, the same requirements as for any layer in the map.
+- Map Switcher hand-off carries portal item ids only; a URL basemap is not carried
+  between apps.
+- The portal browser in the settings only lists items. URL entries show up in Selected
+  Basemaps once added.
+
 ## Notes
 
 - Favorites are stored in the browser (localStorage) per widget, so they are personal to
@@ -239,6 +284,15 @@ handle class names inside the component have changed; see `SWIPE_POINTER_CSS` in
 a failed `js.arcgis.com/.../map-components` request otherwise) and that the map widget
 is a 2D map. The compare layers still appear at full width if the divider fails.
 
+### A basemap added by URL does not appear, or the card is there but the map is blank
+
+The service description could be read in the Builder but the layer fails in the app, or
+the other way round. Open the browser console and look for the request to the service
+URL. A `401` or `403` means the service needs a sign-in the app does not have. A CORS
+error means the server does not allow the app's origin. A `404` on `/tile/` requests
+with a map image service, or a blank layer from a tile layer, means the layer type is
+wrong for that service: remove the entry and add it again with the correct type.
+
 ### Some basemaps show a notice that they could not be loaded
 
 One or more configured item IDs failed to load. Open the browser console for a warning
@@ -252,8 +306,9 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 
 ## Developer checks
 
-The widget uses the handoff's self-contained, editor-only TypeScript setup with classic
-JSX. The shared `src/exb-editor-shims.d.ts` is copied unchanged from the published
+The widget uses the handoff's self-contained, editor-only TypeScript setup with
+`jsx: react-jsx` through `@emotion/react` (the tsconfig header explains why that must
+not change). The shared `src/exb-editor-shims.d.ts` is copied unchanged from the published
 Property Report reference. Widget-specific declarations are separate in
 `src/vendor-shims.d.ts` (including `arcgis-map-components`, `CalciteSlider`, and
 `esri/core/Collection`) and `src/runtime/esri.d.ts`. The two existing files that use
@@ -262,7 +317,7 @@ Emotion's `css` prop have explicit JSX and fragment pragmas to preserve that ren
 From the widget folder inside the Experience Builder client tree, run:
 
 ```powershell
-node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consistency.test.cjs tests/editor-isolation.test.cjs
+node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consistency.test.cjs tests/editor-isolation.test.cjs tests/basemap-url.test.cjs
 npx tsc -p .
 ```
 

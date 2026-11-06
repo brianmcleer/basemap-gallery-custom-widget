@@ -12,6 +12,8 @@ https://community.esri.com/t5/experience-builder-custom-widgets/basemap-gallery-
 
 - Display basemaps as thumbnails or as a list
 - Five size settings for the list and thumbnail layouts
+- Add basemaps by portal item or by service URL (ArcGIS map, image and vector tile
+  services, WMS, WMTS), with the layer type and title read from the service
 - Import and export XML files to transfer widget settings across applications
 - Reorder the basemaps in the list
 - Set a default basemap that is applied to the map on application load

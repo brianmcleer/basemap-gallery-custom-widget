@@ -53,12 +53,16 @@ test('Help uses the actual gallery visibility and the original search threshold'
   assert.match(source, /\{showGallery && \(/)
 })
 
-test('Editor configuration is self-contained classic JSX, with no runtime dependency additions', () => {
+test('Editor configuration is self-contained react-jsx through Emotion, with no runtime dependency additions', () => {
   const config = JSON.parse(fs.readFileSync(path.join(root, 'tsconfig.json'), 'utf8')).compilerOptions
-  assert.equal(config.jsx, 'react')
+  // The tsconfig header explains why this must stay react-jsx: ts-loader builds the widget
+  // from this file, and classic "react" crashes every panel with "Cannot convert undefined
+  // or null to object" (playbook 12.3, 16 and 18 September 2026).
+  assert.equal(config.jsx, 'react-jsx')
+  assert.equal(config.jsxImportSource, '@emotion/react')
   assert.equal(config.noEmit, true)
   assert.deepEqual(config.types, [])
-  assert.ok(!('paths' in config) && !('baseUrl' in config) && !('jsxImportSource' in config))
+  assert.ok(!('paths' in config) && !('baseUrl' in config))
   const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'))
   assert.deepEqual(pkg.dependencies, {})
   for (const file of ['src/runtime/widget.tsx', 'src/setting/setting.tsx']) {

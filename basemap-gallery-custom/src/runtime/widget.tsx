@@ -15,25 +15,23 @@ import { dismissHelpHint, isHelpHintDismissed } from './helpHint'
 import defaultMessages from './translations/default'
 import { beacon } from '../shared/beacon'
 import type { BeaconHandle } from '../shared/beacon'
-import Basemap from 'esri/Basemap'
+import type Basemap from 'esri/Basemap'
 import Portal from 'esri/portal/Portal'
 import Collection from 'esri/core/Collection'
 import * as reactiveUtils from 'esri/core/reactiveUtils'
 import { __m, __setIntl, __t } from './i18n-t'
+import { type BasemapItem, basemapKey, isUrlBasemap } from './basemapSource'
+import { createBasemapForItem } from './basemapFactory'
 
 const { useEffect, useState, useRef, useCallback, useMemo } = React
-
-interface BasemapItem {
-    id: string
-    title: string
-    thumbnailUrl?: string
-}
 
 interface LoadedBasemap {
     id: string
     title: string
     thumbnailUrl: string
     basemap: Basemap
+    /** The configured entry this basemap was built from (portal item or service URL). */
+    source: BasemapItem
 }
 
 type SizeOption = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -241,7 +239,7 @@ const MS_MAX_AGE_MS = 120000
 const MS_ITEM_ID_PATTERN = /^[a-f0-9]{32}$/i
 
 // Captured on module load, before Map Switcher cleans the address bar.
-const msInitialSearch = typeof window !== 'undefined' ? window.location.search : ''
+const msInitialSearch = typeof window !== 'undefined' && window.location ? (window.location.search || '') : ''
 
 function readMapSwitcherBasemap (): string | null {
     const fresh = (h: any): boolean => !!h?.value && Date.now() - Number(h.ts) < MS_MAX_AGE_MS
@@ -250,7 +248,7 @@ function readMapSwitcherBasemap (): string | null {
         if (g?.value) return String(g.value)
     } catch {}
     try {
-        const v = new URLSearchParams(msInitialSearch || window.location.search).get(MS_BASEMAP_PARAM)
+        const v = new URLSearchParams(msInitialSearch || window.location?.search || '').get(MS_BASEMAP_PARAM)
         if (v) return v
     } catch {}
     try {
@@ -413,19 +411,17 @@ const Widget = (props: WidgetProps) => {
                     : Array.from(configBasemaps as any)
 
                 // Load all basemaps in parallel. allSettled keeps one bad item ID
-                // from sinking the rest, and the results array preserves the
-                // configured order.
-                const basemapObjects = itemList.map(item =>
-                    new Basemap({
-                        portalItem: {
-                            id: item.id,
-                            portal: portal
-                        }
-                    })
-                )
-
+                // or unreachable service from sinking the rest, and the results
+                // array preserves the configured order. Portal items and service
+                // URLs go through the same factory.
+                // load() reads a portal item but not a URL basemap's layer, so URL entries
+                // use loadAll() here; otherwise a wrong URL would count as loaded.
                 const results = await Promise.allSettled(
-                    basemapObjects.map(bm => bm.load())
+                    itemList.map(item =>
+                        createBasemapForItem(item, portal).then(bm =>
+                            (isUrlBasemap(item) ? bm.loadAll() : bm.load()).then(() => bm)
+                        )
+                    )
                 )
 
                 if (destroyed) return
@@ -436,12 +432,13 @@ const Widget = (props: WidgetProps) => {
                 results.forEach((result, i) => {
                     const item = itemList[i]
                     if (result.status === 'fulfilled') {
-                        const basemap = basemapObjects[i]
+                        const basemap = result.value
                         loaded.push({
                             id: item.id,
                             title: basemap.title || item.title,
                             thumbnailUrl: basemap.thumbnailUrl || item.thumbnailUrl || '',
-                            basemap: basemap
+                            basemap: basemap,
+                            source: item
                         })
                     } else {
                         failed++
@@ -483,7 +480,7 @@ const Widget = (props: WidgetProps) => {
                 const defaultBasemap = defaultId
                     ? loaded.find(b => b.id === defaultId)
                     : undefined
-                const currentBasemapId = view.map?.basemap?.portalItem?.id
+                const currentBasemapId = basemapKey(view.map?.basemap)
                 const carried = readMapSwitcherBasemap()
                 const carriedItemId = carried?.startsWith('item:') ? carried.slice(5) : null
                 const carriedMatch = carriedItemId && MS_ITEM_ID_PATTERN.test(carriedItemId)
@@ -542,8 +539,9 @@ const Widget = (props: WidgetProps) => {
         const handle = reactiveUtils.watch(
             () => view.map.basemap,
             (basemap) => {
-                const id = basemap?.portalItem?.id
-                setActiveBasemapId(id || null)
+                // Portal basemaps answer with their item id, URL basemaps with the
+                // gallery id stored on Basemap.id (see basemapKey)
+                setActiveBasemapId(basemapKey(basemap))
             }
         )
 
@@ -618,7 +616,7 @@ const Widget = (props: WidgetProps) => {
     // Put the chosen basemap on the map. Swipe mode clips it to the left of the divider.
     // Blend mode lays it over the whole map at the slider's opacity.
     const startCompare = useCallback(async (item: LoadedBasemap) => {
-        beaconRef.current?.action('compare')
+        beaconRef.current?.action('compare', isUrlBasemap(item.source) ? 'url' : 'item')
         const view = jimuMapView?.view
         if (!view?.map) return
 
@@ -632,11 +630,10 @@ const Widget = (props: WidgetProps) => {
         let addedLayers: any[] = []
 
         try {
-            // A separate Basemap object so the gallery's own layer objects stay untouched.
+            // A separate Basemap object (fresh layers) so the gallery's own layer
+            // objects stay untouched. Works the same for portal items and URLs.
             const portalUrl = props.config?.portalUrl || 'https://www.arcgis.com'
-            const source = new Basemap({
-                portalItem: { id: item.id, portal: new Portal({ url: portalUrl }) }
-            })
+            const source = await createBasemapForItem(item.source, new Portal({ url: portalUrl }))
             await source.loadAll()
             if (requestId !== compareRequestRef.current) return
 
@@ -807,7 +804,7 @@ const Widget = (props: WidgetProps) => {
 
         // Prioritize this basemap if the background warmer has not reached it yet.
         // Do not await it: applying immediately lets the MapView use the cache now.
-        beaconRef.current?.action('apply')
+        beaconRef.current?.action('apply', isUrlBasemap(item.source) ? 'url' : 'item')
         void preloadBasemap(item).catch(() => undefined)
         jimuMapView.view.map.basemap = item.basemap
         setActiveBasemapId(item.id)

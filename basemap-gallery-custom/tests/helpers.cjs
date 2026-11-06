@@ -103,9 +103,30 @@ function hookHarness () {
     'esri/Basemap': class Basemap {},
     'esri/portal/Portal': class Portal {},
     'esri/core/Collection': class Collection { constructor (items) { this.items = items || [] } },
-    'esri/core/reactiveUtils': { watch: () => ({ remove () {} }) }
+    'esri/core/reactiveUtils': { watch: () => ({ remove () {} }) },
+    'esri/request': async () => ({ data: {} }),
+    ...layerClassMocks()
   }
   return { render, mocks }
+}
+
+// One stand-in class per Maps SDK layer module the URL basemap factory imports. Each
+// instance remembers which class made it (`kind`) and the options it was given, so a
+// test can assert that a dynamic map service became a MapImageLayer and so on.
+const LAYER_MODULES = {
+  'esri/layers/TileLayer': 'tile',
+  'esri/layers/MapImageLayer': 'map-image',
+  'esri/layers/VectorTileLayer': 'vector-tile',
+  'esri/layers/ImageryLayer': 'imagery',
+  'esri/layers/ImageryTileLayer': 'imagery-tile',
+  'esri/layers/WMSLayer': 'wms',
+  'esri/layers/WMTSLayer': 'wmts'
+}
+function layerClassMocks () {
+  return Object.fromEntries(Object.entries(LAYER_MODULES).map(([module, kind]) => [module, class {
+    constructor (options) { this.listMode = 'show'; this.opacity = 1; Object.assign(this, options); this.kind = kind; this.destroyed = false }
+    destroy () { this.destroyed = true }
+  }]))
 }
 
 function nodes (tree, predicate = () => true) {
@@ -120,4 +141,4 @@ function text (tree) {
   return text(tree.props?.children)
 }
 
-module.exports = { root, loader, translate, hookHarness, nodes, text }
+module.exports = { root, loader, translate, hookHarness, nodes, text, layerClassMocks, LAYER_MODULES }
