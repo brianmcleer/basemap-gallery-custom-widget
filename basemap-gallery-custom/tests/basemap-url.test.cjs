@@ -324,7 +324,13 @@ function xmlDocument (xml) {
   const node = (name, body) => ({
     name,
     body,
-    get textContent () { return body.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'") },
+    get textContent () {
+      // Strip tags until none are left (one pass can leave a tag behind when they nest),
+      // then decode entities with &amp; last so "&amp;lt;" stays "&lt;" as a real DOM reads it
+      let out = body
+      for (let prev = null; prev !== out;) { prev = out; out = out.replace(/<[^>]*>/g, '') }
+      return out.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&')
+    },
     querySelector (sel) { return this.querySelectorAll(sel)[0] || null },
     querySelectorAll (sel) {
       const parts = sel.split('>').map(p => p.trim())
@@ -417,7 +423,7 @@ test('Add from URL probes the service, picks the layer type and title, and store
   const listed = byClass(tree, 'basemap-list-item')
   assert.equal(listed.length, 1)
   assert.ok(text(listed[0]).includes('Tile layer'))
-  assert.ok(text(listed[0]).includes(MAP))
+  assert.ok(nodes(listed[0], n => text(n) === MAP).length, 'The service URL shows on its own line')
   assert.ok(text(listed[0]).includes('URL'))
 
   // Same service again is refused
