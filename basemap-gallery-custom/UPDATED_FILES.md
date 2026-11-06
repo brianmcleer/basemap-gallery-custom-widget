@@ -85,3 +85,17 @@ Basemaps by service URL.
   `tests/help-consistency.test.cjs`: assertions brought up to the current widget.
 - `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, `package.json` (test script),
   `manifest.json`, `package-lock.json`: version 1.22.0.
+
+## 1.23.0
+
+Edit in place and thumbnails from a file.
+
+- `src/setting/setting.tsx`: pencil on each Selected Basemaps card with an inline edit
+  form, Choose image on both forms (canvas resize to a data URL), shared
+  `resolveServiceUrl` for add and edit.
+- `src/runtime/basemapSource.ts`: `coverCrop`, `normalizeThumbnailUrl`, `isDataImageUrl`,
+  card size constants.
+- `src/runtime/widget.tsx`: configured title and thumbnail win over the portal item's.
+- `src/setting/translations/default.ts`: 13 new strings (run `exb-i18n sync`).
+- `tests/basemap-url.test.cjs`: 4 new tests.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, version files: 1.23.0.

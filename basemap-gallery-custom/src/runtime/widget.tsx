@@ -433,10 +433,12 @@ const Widget = (props: WidgetProps) => {
                     const item = itemList[i]
                     if (result.status === 'fulfilled') {
                         const basemap = result.value
+                        // What is typed in the settings wins over what the portal item
+                        // says, so an edited title or a picked thumbnail shows on the card
                         loaded.push({
                             id: item.id,
-                            title: basemap.title || item.title,
-                            thumbnailUrl: basemap.thumbnailUrl || item.thumbnailUrl || '',
+                            title: item.title || basemap.title,
+                            thumbnailUrl: item.thumbnailUrl || basemap.thumbnailUrl || '',
                             basemap: basemap,
                             source: item
                         })

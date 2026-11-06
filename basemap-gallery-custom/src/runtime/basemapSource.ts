@@ -171,3 +171,32 @@ export function basemapKey (basemap: any): string | null {
 
 /** Shape of the ids urlBasemapId() mints. */
 export const URL_ID_PATTERN = /^url-[0-9a-f]{8}$/
+
+/** Card thumbnail size stored in the config for a picked image file (4:3, like the gallery cards). */
+export const THUMBNAIL_WIDTH = 300
+export const THUMBNAIL_HEIGHT = 225
+
+export function isDataImageUrl (value: string | null | undefined): boolean {
+  return typeof value === 'string' && /^data:image\//i.test(value.trim())
+}
+
+/** A thumbnail is either an image URL (normalized like a service URL) or an inline data: image, kept as is. */
+export function normalizeThumbnailUrl (value: string | null | undefined): string {
+  const text = String(value ?? '').trim()
+  if (!text) return ''
+  return isDataImageUrl(text) ? text : normalizeServiceUrl(text)
+}
+
+/**
+ * Source rectangle that fills a destination box the way CSS object-fit: cover does:
+ * scale to cover, then crop the overflow equally from both sides.
+ */
+export function coverCrop (srcWidth: number, srcHeight: number, dstWidth: number, dstHeight: number): { sx: number, sy: number, sw: number, sh: number } {
+  if (!(srcWidth > 0) || !(srcHeight > 0) || !(dstWidth > 0) || !(dstHeight > 0)) {
+    return { sx: 0, sy: 0, sw: Math.max(0, srcWidth), sh: Math.max(0, srcHeight) }
+  }
+  const scale = Math.max(dstWidth / srcWidth, dstHeight / srcHeight)
+  const sw = Math.min(srcWidth, Math.round(dstWidth / scale))
+  const sh = Math.min(srcHeight, Math.round(dstHeight / scale))
+  return { sx: Math.round((srcWidth - sw) / 2), sy: Math.round((srcHeight - sh) / 2), sw, sh }
+}

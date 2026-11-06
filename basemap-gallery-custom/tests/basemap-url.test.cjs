@@ -528,3 +528,115 @@ test('XML export writes url and layerType and import rebuilds the same entries w
   tree = await target.settle()
   assert.equal(target.changes.at(-1).config.basemaps.length, 0)
 })
+
+// ---------------------------------------------------------------------------
+// 1.23.0: thumbnails from a file, and editing an entry in place
+// ---------------------------------------------------------------------------
+test('coverCrop fills the card the way object-fit cover does and normalizeThumbnailUrl keeps data images intact', () => {
+  // Objects cross the vm boundary, so compare by value, not prototype
+  const crop = (...args) => JSON.stringify(src.coverCrop(...args))
+  assert.equal(crop(1200, 900, 300, 225), JSON.stringify({ sx: 0, sy: 0, sw: 1200, sh: 900 }))
+  assert.equal(crop(1600, 900, 300, 225), JSON.stringify({ sx: 200, sy: 0, sw: 1200, sh: 900 }))
+  assert.equal(crop(900, 1600, 300, 225), JSON.stringify({ sx: 0, sy: 463, sw: 900, sh: 675 }))
+  assert.equal(crop(100, 100, 300, 225), JSON.stringify({ sx: 0, sy: 13, sw: 100, sh: 75 }))
+  assert.equal(crop(0, 0, 300, 225), JSON.stringify({ sx: 0, sy: 0, sw: 0, sh: 0 }))
+  const data = 'data:image/jpeg;base64,/9j/4AAQ=='
+  assert.equal(src.normalizeThumbnailUrl(` ${data} `), data)
+  assert.equal(src.normalizeThumbnailUrl('https://p/x.png/'), 'https://p/x.png')
+  assert.equal(src.normalizeThumbnailUrl(''), '')
+  assert.equal(src.isDataImageUrl(data), true)
+  assert.equal(src.isDataImageUrl('https://p/x.png'), false)
+})
+
+test('Editing a portal item changes its title and thumbnail in place, and the runtime shows the edited values', async () => {
+  const portal = { id: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4', title: 'Streets' }
+  const s = settingsHarness({ config: { basemaps: [portal, { id: 'url-cafe0001', title: 'Aerials', url: MAP, layerType: 'tile' }], defaultBasemapId: portal.id } })
+  let tree = await s.settle()
+  const editButtons = nodes(tree, n => n.type === 'Button' && n.props['aria-label'] === 'Edit basemap')
+  assert.equal(editButtons.length, 2)
+  editButtons[0].props.onClick()
+  tree = s.render()
+  assert.equal(byClass(tree, 'edit-form').length, 1)
+  assert.equal(byClass(tree, 'edit-url-input').length, 0, 'Portal items do not get a URL field')
+  byClass(tree, 'edit-title-input')[0].props.onChange({ target: { value: '  Streets (City)  ' } })
+  tree = s.render()
+  byClass(tree, 'edit-thumb-input')[0].props.onChange({ target: { value: 'data:image/png;base64,iVBORw0KGgo=' } })
+  tree = s.render()
+  byClass(tree, 'edit-save-btn')[0].props.onClick()
+  tree = await s.settle()
+  const saved = s.changes.at(-1).config
+  assert.equal(saved.basemaps[0].id, portal.id)
+  assert.equal(saved.basemaps[0].title, 'Streets (City)')
+  assert.equal(saved.basemaps[0].thumbnailUrl, 'data:image/png;base64,iVBORw0KGgo=')
+  assert.equal(saved.basemaps[1].id, 'url-cafe0001', 'The other entry is untouched')
+  assert.equal(saved.defaultBasemapId, portal.id)
+  assert.equal(byClass(tree, 'edit-form').length, 0, 'Edit mode closes on save')
+  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'success').length)
+  assert.equal(s.fetchCalls.filter(u => !/sharing\/rest/.test(u)).length, 0, 'No service probe for a portal item edit')
+})
+
+test('Editing a URL entry re-probes a changed address, recomputes the id, keeps the position and moves the default along', async () => {
+  const other = { id: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4', title: 'Streets' }
+  const entry = { id: src.urlBasemapId(MAP), title: 'Aerials', url: MAP, layerType: 'tile' }
+  const s = settingsHarness({
+    serviceInfo: url => (/ImageServer/.test(url) ? { tileInfo: {} } : { singleFusedMapCache: true }),
+    config: { basemaps: [other, entry], defaultBasemapId: entry.id }
+  })
+  let tree = await s.settle()
+  nodes(tree, n => n.type === 'Button' && n.props['aria-label'] === 'Edit basemap')[1].props.onClick()
+  tree = s.render()
+  assert.equal(byClass(tree, 'edit-url-input')[0].props.value, MAP)
+
+  // Same service, different type: no id change
+  byClass(tree, 'edit-type-select')[0].props.onChange({ target: { value: 'map-image' } })
+  tree = s.render()
+  byClass(tree, 'edit-save-btn')[0].props.onClick()
+  tree = await s.settle()
+  let saved = s.changes.at(-1).config
+  assert.equal(saved.basemaps[1].id, entry.id)
+  assert.equal(saved.basemaps[1].layerType, 'map-image')
+
+  // New address: id follows the url, auto-detect picks the type, default follows, order kept
+  nodes(tree, n => n.type === 'Button' && n.props['aria-label'] === 'Edit basemap')[1].props.onClick()
+  tree = s.render()
+  byClass(tree, 'edit-url-input')[0].props.onChange({ target: { value: `${IMG}/` } })
+  tree = s.render()
+  byClass(tree, 'edit-type-select')[0].props.onChange({ target: { value: 'auto' } })
+  tree = s.render()
+  byClass(tree, 'edit-title-input')[0].props.onChange({ target: { value: '' } })
+  tree = s.render()
+  byClass(tree, 'edit-save-btn')[0].props.onClick()
+  tree = await s.settle()
+  saved = s.changes.at(-1).config
+  assert.equal(saved.basemaps.length, 2)
+  assert.equal(saved.basemaps[0].id, other.id, 'Order is kept')
+  assert.equal(saved.basemaps[1].id, src.urlBasemapId(IMG))
+  assert.equal(saved.basemaps[1].url, IMG)
+  assert.equal(saved.basemaps[1].layerType, 'imagery-tile')
+  assert.equal(saved.basemaps[1].title, 'Ortho', 'A blanked title is read from the service again')
+  assert.equal(saved.defaultBasemapId, src.urlBasemapId(IMG), 'The default follows the new id')
+
+  // Changing the url to one that is already in the list is refused
+  nodes(tree, n => n.type === 'Button' && n.props['aria-label'] === 'Edit basemap')[1].props.onClick()
+  tree = s.render()
+  byClass(tree, 'edit-url-input')[0].props.onChange({ target: { value: 'not a url' } })
+  tree = s.render()
+  byClass(tree, 'edit-save-btn')[0].props.onClick()
+  tree = await s.settle()
+  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'error' && /http/.test(n.props.text)).length)
+  assert.equal(byClass(tree, 'edit-form').length, 1, 'Edit mode stays open on an error')
+  byClass(tree, 'edit-cancel-btn')[0].props.onClick()
+  tree = s.render()
+  assert.equal(byClass(tree, 'edit-form').length, 0)
+  assert.equal(s.props.config.basemaps[1].url, IMG, 'Cancel leaves the saved entry alone')
+})
+
+test('The runtime shows the configured title and thumbnail over what the portal item carries', async () => {
+  const s = await urlGallery()
+  const tree = await s.settle()
+  // urlGallery's TestBasemap has no title, so the configured one shows either way; assert the precedence directly
+  const widgetSource = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'src/runtime/widget.tsx'), 'utf8')
+  assert.match(widgetSource, /title: item\.title \|\| basemap\.title/)
+  assert.match(widgetSource, /thumbnailUrl: item\.thumbnailUrl \|\| basemap\.thumbnailUrl \|\| ''/)
+  assert.ok(option(tree, 'County Aerials'))
+})

@@ -33,8 +33,35 @@ import {
     normalizeServiceUrl,
     titleFromServiceInfo,
     titleFromUrl,
-    urlBasemapId
+    urlBasemapId,
+    coverCrop,
+    isDataImageUrl,
+    normalizeThumbnailUrl,
+    THUMBNAIL_WIDTH,
+    THUMBNAIL_HEIGHT
 } from '../runtime/basemapSource'
+
+// Largest image file the thumbnail picker will read. The stored copy is resized to the
+// card size and is roughly 10 to 20 KB whatever the source.
+const THUMBNAIL_FILE_LIMIT = 10 * 1024 * 1024
+
+/** What an edit of a Selected Basemaps card can change. */
+interface EditDraft {
+    title: string
+    thumbnailUrl: string
+    url: string
+    layerType: UrlLayerType
+}
+
+/** Outcome of asking a service URL about itself (settings side, plain fetch). */
+interface UrlResolution {
+    ok: boolean
+    layerType?: UrlLayerType
+    title?: string
+    unverified?: boolean
+    errorKey?: string
+    errorValues?: Record<string, string>
+}
 
 
 const { useState, useEffect, useRef } = React
@@ -128,9 +155,19 @@ const Setting = (props: SettingProps) => {
     const [urlBusy, setUrlBusy] = useState(false)
     const [urlError, setUrlError] = useState<string>(null)
     const [urlNotice, setUrlNotice] = useState<string>(null)
+    const [urlThumbError, setUrlThumbError] = useState<string>(null)
+    const thumbFileRef = useRef<HTMLInputElement>(null)
+    const editThumbFileRef = useRef<HTMLInputElement>(null)
     // Always the latest config, for handlers that run after an await
     const configRef = useRef(props.config)
     configRef.current = props.config
+
+    // Edit mode on one Selected Basemaps card at a time
+    const [editingId, setEditingId] = useState<string>(null)
+    const [editDraft, setEditDraft] = useState<EditDraft>(null)
+    const [editBusy, setEditBusy] = useState(false)
+    const [editError, setEditError] = useState<string>(null)
+    const [editNotice, setEditNotice] = useState<string>(null)
 
     // Section collapse state
     const [openSections, setOpenSections] = useState<SectionState>({
@@ -575,6 +612,52 @@ const Setting = (props: SettingProps) => {
     // description (plain fetch, no esri modules in the settings bundle) so a dynamic map
     // service does not get added as a cached tile layer, and so the title comes from the
     // service when the user left it blank. WMS and WMTS are recognized from the URL alone.
+    const readBasemaps = (): BasemapItem[] => configRef.current?.basemaps
+        ? (configRef.current.basemaps as any).asMutable?.() || [...(configRef.current.basemaps as any)]
+        : []
+
+    const sameService = (a: string, b: string): boolean => normalizeServiceUrl(a).toLowerCase() === normalizeServiceUrl(b).toLowerCase()
+
+    // Ask the service about itself so a dynamic map service does not get added as a cached
+    // tile layer, and so a blank title comes from the service. Plain fetch, no esri modules
+    // in the settings bundle. An explicit layer type survives a failed probe; auto-detect
+    // does not, because guessing wrong produces a layer that silently never draws.
+    const resolveServiceUrl = async (url: string, chosenType: UrlLayerType, typedTitle: string): Promise<UrlResolution> => {
+        let layerType: UrlLayerType = chosenType
+        let title = typedTitle.trim()
+        let unverified = false
+
+        if (isArcGisRestUrl(url)) {
+            let info: any = null
+            try {
+                const sep = url.includes('?') ? '&' : '?'
+                const response = await fetch(`${url}${sep}f=json`)
+                if (!response.ok) throw new Error(`HTTP ${response.status}`)
+                info = await response.json()
+                if (info?.error) throw new Error(info.error.message || `Error ${info.error.code || ''}`.trim())
+            } catch (err) {
+                if (layerType === 'auto') {
+                    return { ok: false, errorKey: 'urlCouldNotReach', errorValues: { message: err?.message || String(err) } }
+                }
+                unverified = true
+            }
+            if (info && layerType === 'auto') {
+                layerType = layerTypeFromServiceInfo(url, info) || 'auto'
+            }
+            if (!title) {
+                title = info ? titleFromServiceInfo(url, info) : titleFromUrl(url)
+            }
+        } else {
+            if (layerType === 'auto') layerType = detectUrlLayerType(url)
+            if (!title) title = titleFromUrl(url)
+        }
+
+        if (layerType === 'auto') {
+            return { ok: false, errorKey: 'urlChooseLayerType' }
+        }
+        return { ok: true, layerType, title: title || titleFromUrl(url), unverified }
+    }
+
     const handleAddFromUrl = async () => {
         setUrlError(null)
         setUrlNotice(null)
@@ -586,51 +669,17 @@ const Setting = (props: SettingProps) => {
         }
 
         const id = urlBasemapId(url)
-        const alreadyAdded = (): boolean => {
-            const basemaps: BasemapItem[] = configRef.current?.basemaps
-                ? (configRef.current.basemaps as any).asMutable?.() || [...(configRef.current.basemaps as any)]
-                : []
-            return basemaps.some(b => b.id === id || (isUrlBasemap(b) && normalizeServiceUrl(b.url).toLowerCase() === url.toLowerCase()))
-        }
+        const alreadyAdded = (): boolean => readBasemaps().some(b => b.id === id || (isUrlBasemap(b) && sameService(b.url, url)))
         if (alreadyAdded()) {
             setUrlError(__t('urlAlreadyAdded'))
             return
         }
 
-        let layerType: UrlLayerType = urlLayerType
-        let title = urlTitle.trim()
-        let addedWithoutCheck = false
-
         setUrlBusy(true)
         try {
-            if (isArcGisRestUrl(url)) {
-                let info: any = null
-                try {
-                    const sep = url.includes('?') ? '&' : '?'
-                    const response = await fetch(`${url}${sep}f=json`)
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-                    info = await response.json()
-                    if (info?.error) throw new Error(info.error.message || `Error ${info.error.code || ''}`.trim())
-                } catch (err) {
-                    if (layerType === 'auto') {
-                        setUrlError(__t('urlCouldNotReach', { message: err?.message || String(err) }))
-                        return
-                    }
-                    addedWithoutCheck = true
-                }
-                if (info && layerType === 'auto') {
-                    layerType = layerTypeFromServiceInfo(url, info) || 'auto'
-                }
-                if (!title) {
-                    title = info ? titleFromServiceInfo(url, info) : titleFromUrl(url)
-                }
-            } else {
-                if (layerType === 'auto') layerType = detectUrlLayerType(url)
-                if (!title) title = titleFromUrl(url)
-            }
-
-            if (layerType === 'auto') {
-                setUrlError(__t('urlChooseLayerType'))
+            const resolved = await resolveServiceUrl(url, urlLayerType, urlTitle)
+            if (!resolved.ok) {
+                setUrlError(__t(resolved.errorKey, resolved.errorValues))
                 return
             }
             // The probe took time; someone may have added this service meanwhile
@@ -641,17 +690,154 @@ const Setting = (props: SettingProps) => {
 
             const item: BasemapItem = {
                 id,
-                title: title || titleFromUrl(url),
+                title: resolved.title,
                 url,
-                layerType,
-                thumbnailUrl: normalizeServiceUrl(urlThumbnail) || undefined
+                layerType: resolved.layerType,
+                thumbnailUrl: normalizeThumbnailUrl(urlThumbnail) || undefined
             }
             handleAddBasemap(item)
             resetUrlForm()
-            setUrlNotice(addedWithoutCheck ? __t('urlAddedWithoutCheck') : __t('basemapAddedFromUrl'))
+            setUrlNotice(resolved.unverified ? __t('urlAddedWithoutCheck') : __t('basemapAddedFromUrl'))
         } finally {
             setUrlBusy(false)
         }
+    }
+
+    // Turn a picked image file into a small data: URL the size of a gallery card. The copy
+    // lives in the widget config, so it travels with the XML export and needs no upload.
+    const fileToThumbnail = (file: File): Promise<string> => new Promise((resolve, reject) => {
+        if (!file) { reject(new Error('no file')); return }
+        if (file.size > THUMBNAIL_FILE_LIMIT) { reject(new Error('too-large')); return }
+        const objectUrl = URL.createObjectURL(file)
+        const img = new Image()
+        img.onload = () => {
+            try {
+                const canvas = document.createElement('canvas')
+                canvas.width = THUMBNAIL_WIDTH
+                canvas.height = THUMBNAIL_HEIGHT
+                const ctx = canvas.getContext('2d')
+                if (!ctx) throw new Error('no-canvas')
+                const { sx, sy, sw, sh } = coverCrop(img.naturalWidth || img.width, img.naturalHeight || img.height, THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT)
+                ctx.drawImage(img, sx, sy, sw, sh, 0, 0, THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT)
+                resolve(canvas.toDataURL('image/jpeg', 0.82))
+            } catch (err) {
+                reject(err)
+            } finally {
+                URL.revokeObjectURL(objectUrl)
+            }
+        }
+        img.onerror = () => { URL.revokeObjectURL(objectUrl); reject(new Error('not-image')) }
+        img.src = objectUrl
+    })
+
+    const thumbnailErrorText = (err: any): string =>
+        err?.message === 'too-large' ? __t('imageTooLarge') : __t('imageNotReadable')
+
+    const handleThumbFile = async (e: React.ChangeEvent<HTMLInputElement>, target: 'add' | 'edit') => {
+        const file = e.target.files?.[0]
+        e.target.value = ''
+        if (!file) return
+        try {
+            const dataUrl = await fileToThumbnail(file)
+            if (target === 'add') {
+                setUrlThumbError(null)
+                setUrlThumbnail(dataUrl)
+            } else {
+                setEditError(null)
+                setEditDraft(prev => prev ? { ...prev, thumbnailUrl: dataUrl } : prev)
+            }
+        } catch (err) {
+            if (target === 'add') setUrlThumbError(thumbnailErrorText(err))
+            else setEditError(thumbnailErrorText(err))
+        }
+    }
+
+    // ---- Edit an existing Selected Basemaps entry in place ----
+    const beginEdit = (item: BasemapItem) => {
+        setEditError(null)
+        setEditNotice(null)
+        setEditingId(item.id)
+        setEditDraft({
+            title: item.title || '',
+            thumbnailUrl: item.thumbnailUrl || '',
+            url: item.url || '',
+            layerType: isUrlLayerType(item.layerType) ? item.layerType : 'auto'
+        })
+    }
+
+    const cancelEdit = () => {
+        setEditingId(null)
+        setEditDraft(null)
+        setEditError(null)
+    }
+
+    const saveEdit = async () => {
+        if (!editingId || !editDraft) return
+        setEditError(null)
+        const basemaps = readBasemaps()
+        const index = basemaps.findIndex(b => b.id === editingId)
+        if (index < 0) { cancelEdit(); return }
+        const current = basemaps[index]
+        const title = editDraft.title.trim()
+        const thumbnailUrl = normalizeThumbnailUrl(editDraft.thumbnailUrl) || undefined
+
+        setEditBusy(true)
+        try {
+            let updated: BasemapItem
+            if (isUrlBasemap(current)) {
+                const url = normalizeServiceUrl(editDraft.url)
+                if (!url || !isHttpUrl(url)) {
+                    setEditError(__t('urlInvalid'))
+                    return
+                }
+                const urlChanged = !sameService(url, current.url)
+                const typeChanged = editDraft.layerType !== (current.layerType || 'auto')
+                const newId = urlChanged ? urlBasemapId(url) : current.id
+                if (urlChanged && basemaps.some((b, i) => i !== index && (b.id === newId || (isUrlBasemap(b) && sameService(b.url, url))))) {
+                    setEditError(__t('urlAlreadyAdded'))
+                    return
+                }
+                let layerType: UrlLayerType = editDraft.layerType
+                let resolvedTitle = title
+                if (urlChanged || typeChanged || layerType === 'auto') {
+                    // Re-check the service when the address or the type changed, or when
+                    // the user asked for auto-detect again
+                    const resolved = await resolveServiceUrl(url, layerType, title)
+                    if (!resolved.ok) {
+                        setEditError(__t(resolved.errorKey, resolved.errorValues))
+                        return
+                    }
+                    layerType = resolved.layerType
+                    resolvedTitle = title || resolved.title
+                }
+                updated = { ...current, id: newId, url, layerType, title: resolvedTitle || current.title, thumbnailUrl }
+            } else {
+                updated = { ...current, title: title || current.title, thumbnailUrl }
+            }
+
+            // Re-read: the config may have moved while the probe ran
+            const latest = readBasemaps()
+            const latestIndex = latest.findIndex(b => b.id === editingId)
+            if (latestIndex < 0) { cancelEdit(); return }
+            const next = [...latest]
+            next[latestIndex] = updated
+            let newConfig = configRef.current.set('basemaps', next)
+            if (configRef.current?.defaultBasemapId === editingId && updated.id !== editingId) {
+                newConfig = newConfig.set('defaultBasemapId', updated.id)
+            }
+            props.onSettingChange({ id: props.id, config: newConfig })
+            setEditingId(null)
+            setEditDraft(null)
+            setEditNotice(__t('basemapUpdated'))
+            setTimeout(() => setEditNotice(null), 3000)
+        } finally {
+            setEditBusy(false)
+        }
+    }
+
+    const handleEditKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' && !editBusy) void saveEdit()
+        if (e.key === 'Escape') cancelEdit()
     }
 
     const handleUrlKeyPress = (e: React.KeyboardEvent) => {
@@ -865,6 +1051,67 @@ const Setting = (props: SettingProps) => {
       color: var(--sys-color-text-secondary);
       padding-top: 8px;
       border-top: 1px solid var(--sys-color-divider-primary);
+    }
+
+    .thumb-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .thumb-url-input {
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+
+    .thumb-pick-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .thumb-picked {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .thumb-preview {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--sys-color-divider-primary);
+      flex-shrink: 0;
+    }
+
+    .field-error {
+      font-size: 11px;
+      color: var(--sys-color-error-main);
+    }
+
+    .edit-btn {
+      padding: 4px;
+      min-width: 28px;
+      margin-left: 4px;
+    }
+
+    .edit-btn.is-editing {
+      color: var(--sys-color-primary-main);
+    }
+
+    .edit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--sys-color-divider-primary);
+    }
+
+    .edit-actions {
+      display: flex;
+      gap: 8px;
     }
 
     .source-badge {
@@ -1382,18 +1629,42 @@ const Setting = (props: SettingProps) => {
                             />
                         </label>
 
-                        <label className='url-field'>
-                            <span className='url-field-label'>{t('thumbnailUrl')}</span>
-                            <TextInput
-                                className='w-100'
-                                size='sm'
-                                placeholder={t('thumbnailPlaceholder')}
-                                value={urlThumbnail}
-                                onChange={(e) => setUrlThumbnail(e.target.value)}
-                                onKeyPress={handleUrlKeyPress}
-                                disabled={urlBusy}
-                            />
-                        </label>
+                        <div className='url-field'>
+                            <span className='url-field-label'>{t('thumbnail')}</span>
+                            {isDataImageUrl(urlThumbnail) ? (
+                                <div className='thumb-picked'>
+                                    <img className='thumb-preview' src={urlThumbnail} alt='' />
+                                    <Button type='tertiary' size='sm' onClick={() => setUrlThumbnail('')} disabled={urlBusy}>
+                                        {t('removeImage')}
+                                    </Button>
+                                </div>
+                            ) : (
+                                <div className='thumb-row'>
+                                    <TextInput
+                                        className='thumb-url-input'
+                                        size='sm'
+                                        placeholder={t('thumbnailPlaceholder')}
+                                        value={urlThumbnail}
+                                        onChange={(e) => setUrlThumbnail(e.target.value)}
+                                        onKeyPress={handleUrlKeyPress}
+                                        disabled={urlBusy}
+                                        aria-label={t('thumbnailUrl')}
+                                    />
+                                    <Button type='default' size='sm' className='thumb-pick-btn' onClick={() => thumbFileRef.current?.click()} disabled={urlBusy}>
+                                        {t('chooseImage')}
+                                    </Button>
+                                    <input
+                                        ref={thumbFileRef}
+                                        type='file'
+                                        accept='image/*'
+                                        className='file-input-hidden'
+                                        onChange={(e) => { void handleThumbFile(e, 'add') }}
+                                    />
+                                </div>
+                            )}
+                            <span className='url-field-hint'>{t('thumbnailHint')}</span>
+                            {urlThumbError && <span className='field-error'>{urlThumbError}</span>}
+                        </div>
 
                         {urlError && (
                             <Alert type='error' text={urlError} withIcon className='w-100' />
@@ -1569,8 +1840,10 @@ const Setting = (props: SettingProps) => {
                     className={`section-content ${openSections.selectedBasemaps ? 'expanded' : 'collapsed'}`}
                 >
                     <div className='help-text'>
-                        {t('clickToSetTheDefaultBasemap')}
+                        {t('clickToSetTheDefaultBasemap')} {t('useThePencilToEdit')}
                     </div>
+
+                    {editNotice && <Alert type='success' text={editNotice} withIcon className='mb-2' />}
 
                     {selectedBasemaps.length > 0 ? (
                         <div className='basemap-list-scroll'>
@@ -1623,6 +1896,17 @@ const Setting = (props: SettingProps) => {
                                             )}
 
                                             <Button
+                                                className={`edit-btn ${editingId === item.id ? 'is-editing' : ''}`}
+                                                type='tertiary'
+                                                onClick={() => (editingId === item.id ? cancelEdit() : beginEdit(item))}
+                                                title={t('editBasemap')}
+                                                aria-label={t('editBasemap')}
+                                                aria-pressed={editingId === item.id}
+                                            >
+                                                ✎
+                                            </Button>
+
+                                            <Button
                                                 className='remove-btn'
                                                 type='tertiary'
                                                 onClick={() => handleRemoveBasemap(item.id)}
@@ -1633,6 +1917,91 @@ const Setting = (props: SettingProps) => {
                                             </Button>
                                         </div>
 
+                                        {editingId === item.id && editDraft ? (
+                                            <div className='edit-form' onKeyDown={handleEditKeyPress}>
+                                                <label className='url-field'>
+                                                    <span className='url-field-label'>{t('title')}</span>
+                                                    <TextInput
+                                                        className='w-100 edit-title-input'
+                                                        size='sm'
+                                                        value={editDraft.title}
+                                                        onChange={(e) => setEditDraft({ ...editDraft, title: e.target.value })}
+                                                        disabled={editBusy}
+                                                    />
+                                                </label>
+                                                {isUrlBasemap(item) && (
+                                                    <>
+                                                        <label className='url-field'>
+                                                            <span className='url-field-label'>{t('serviceUrl')}</span>
+                                                            <TextInput
+                                                                className='w-100 edit-url-input'
+                                                                size='sm'
+                                                                value={editDraft.url}
+                                                                onChange={(e) => setEditDraft({ ...editDraft, url: e.target.value })}
+                                                                disabled={editBusy}
+                                                            />
+                                                        </label>
+                                                        <label className='url-field'>
+                                                            <span className='url-field-label'>{t('layerType')}</span>
+                                                            <Select
+                                                                className='w-100 edit-type-select'
+                                                                value={editDraft.layerType}
+                                                                onChange={(e) => setEditDraft({ ...editDraft, layerType: e.target.value as UrlLayerType })}
+                                                                size='sm'
+                                                                disabled={editBusy}
+                                                                aria-label={t('layerType')}
+                                                            >
+                                                                {LAYER_TYPE_OPTIONS.map(opt => (
+                                                                    <Option key={opt.value} value={opt.value}>{opt.label}</Option>
+                                                                ))}
+                                                            </Select>
+                                                        </label>
+                                                    </>
+                                                )}
+                                                <div className='url-field'>
+                                                    <span className='url-field-label'>{t('thumbnail')}</span>
+                                                    {isDataImageUrl(editDraft.thumbnailUrl) ? (
+                                                        <div className='thumb-picked'>
+                                                            <img className='thumb-preview' src={editDraft.thumbnailUrl} alt='' />
+                                                            <Button type='tertiary' size='sm' onClick={() => setEditDraft({ ...editDraft, thumbnailUrl: '' })} disabled={editBusy}>
+                                                                {t('removeImage')}
+                                                            </Button>
+                                                        </div>
+                                                    ) : (
+                                                        <div className='thumb-row'>
+                                                            <TextInput
+                                                                className='thumb-url-input edit-thumb-input'
+                                                                size='sm'
+                                                                placeholder={t('thumbnailPlaceholder')}
+                                                                value={editDraft.thumbnailUrl}
+                                                                onChange={(e) => setEditDraft({ ...editDraft, thumbnailUrl: e.target.value })}
+                                                                disabled={editBusy}
+                                                                aria-label={t('thumbnailUrl')}
+                                                            />
+                                                            <Button type='default' size='sm' className='thumb-pick-btn' onClick={() => editThumbFileRef.current?.click()} disabled={editBusy}>
+                                                                {t('chooseImage')}
+                                                            </Button>
+                                                            <input
+                                                                ref={editThumbFileRef}
+                                                                type='file'
+                                                                accept='image/*'
+                                                                className='file-input-hidden'
+                                                                onChange={(e) => { void handleThumbFile(e, 'edit') }}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                {editError && <Alert type='error' text={editError} withIcon className='w-100' />}
+                                                <div className='edit-actions'>
+                                                    <Button type='primary' size='sm' className='edit-save-btn' onClick={() => { void saveEdit() }} disabled={editBusy}>
+                                                        {editBusy ? t('checkingService') : t('saveChanges')}
+                                                    </Button>
+                                                    <Button type='tertiary' size='sm' className='edit-cancel-btn' onClick={cancelEdit} disabled={editBusy}>
+                                                        {t('cancel')}
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        ) : (
                                         <div className='basemap-info'>
                                             <div className='basemap-title'>
                                                 {item.title}
@@ -1648,6 +2017,7 @@ const Setting = (props: SettingProps) => {
                                                 <div className='basemap-id'>{item.id}</div>
                                             )}
                                         </div>
+                                        )}
                                     </div>
                                 )
                             })}

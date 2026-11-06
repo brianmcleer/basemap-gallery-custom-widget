@@ -13,6 +13,8 @@ Gallery with additional configuration for developers.
   service, an image service, a vector tile service, or a WMS or WMTS endpoint. The widget
   reads the service description to pick the layer type and title, and the entry travels
   in the XML export
+- Edit any entry in place (title, thumbnail, and for URL entries the address and layer
+  type), and pick a thumbnail from an image file as well as a URL
 - Import and export XML files to transfer widget settings across applications
 - Reorder the basemaps in the list
 - Set a default basemap that is applied to the map on application load
@@ -63,7 +65,7 @@ folder over the existing widget folder, replacing matching files. Do not put a s
 `your-extensions/widgets`. Start the client again and refresh the app. Existing configured
 basemaps and the existing favorites storage key are unchanged.
 
-Version **1.22.0** is the widget release number, not a change to the Experience Builder
+Version **1.23.0** is the widget release number, not a change to the Experience Builder
 version field. The manifest's existing `exbVersion` value is unchanged. This update does not
 add a library that needs a separate installation.
 
@@ -172,9 +174,21 @@ portal item, the same job as "Add basemap from URL" in the out of the box galler
    (document title, then map name, then the service name in the URL) when left blank.
    URL basemaps have no portal thumbnail, so the card shows a plain placeholder unless
    you give it an image URL.
-4. Click Add. The entry appears in Selected Basemaps with a URL badge, its layer type
-   and the endpoint, and it can be reordered, starred as the default, favorited and
+4. Click Add basemap. The entry appears in Selected Basemaps with a URL badge, its layer
+   type and the endpoint, and it can be reordered, starred as the default, favorited and
    compared like any other basemap.
+
+**Thumbnail from a file.** Choose image in either form takes an image file instead of a
+URL. The widget resizes it to the card size (300 x 225, cropped like `object-fit: cover`)
+and stores a small JPEG copy in the widget settings, so nothing is uploaded anywhere and
+the picture travels with the XML export. Keep source files under 10 MB.
+
+**Editing an entry.** The pencil on a Selected Basemaps card opens the title and
+thumbnail for changes, and for a URL entry also the service URL and layer type. Changing
+the URL reads the service again and gives the entry a new id (the id is a hash of the
+URL), so the list position and the default follow it but a user's browser favorite for
+that one basemap resets. Portal items get title and thumbnail editing only; what is typed
+there wins over the portal item's own title and thumbnail.
 
 How it works: each URL entry gets a stable id (`url-` plus a hash of the endpoint), so
 favorites and the default survive an XML round trip and the same service cannot be added

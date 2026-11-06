@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.23.0 (2026-11-06)
+
+- Added: edit a Selected Basemaps entry in place. A pencil on each card opens the title and thumbnail, and for a URL entry also the service URL and layer type, with Save and Cancel (Enter and Escape work too). Changing the URL re-reads the service, recomputes the entry id from the new address, keeps the list position and moves the default along; a blanked title is read from the service again. Portal items get title and thumbnail only. Asked for on the Community thread after 1.22.0.
+- Added: thumbnail from a file. Both the Add Basemap from URL form and the edit form take an image file as well as an image URL. The file is resized on a canvas to the card size (300 x 225, cover crop) and stored as a small JPEG data URL in the widget config, roughly 10 to 20 KB, so it needs no upload and travels with the XML export. Files over 10 MB are refused.
+- Changed: the title and thumbnail typed in the settings now win over what the portal item carries, so an edited title or a picked thumbnail shows on the card. Before, the portal item's title always won.
+- Settings: the add handler and the edit handler share one service resolver (`resolveServiceUrl`).
+- Translations: 13 new settings strings. Run `exb-i18n sync` before publishing.
+- Tests: 57 pass (4 new: cover crop and thumbnail normalizing, editing a portal item, editing a URL entry including a changed address, runtime precedence).
+
+
 ## 1.22.0 (2026-11-06)
 
 - Added: basemaps by service URL. A new **Add Basemap from URL** settings section takes a REST endpoint for a cached or dynamic ArcGIS map service, an image service, a vector tile service, or a WMS or WMTS endpoint, the same job as "Add basemap from URL" in the out of the box gallery (asked for on the Community thread). Auto-detect reads the ArcGIS service description to choose the layer class and title; a type can be chosen by hand when the service cannot be reached from the Builder. Each entry gets a stable `url-` id, so favorites, the default and the XML round trip keep working. Runtime builds one base layer from the matching Maps SDK class and sets `Basemap.id`, live sync matches on that id when there is no portal item (and only on ids this gallery minted, so a web map's own basemap no longer reads as selected), and compare builds a fresh layer from the URL. The runtime probe uses `esri/request`, so a secured service is asked with the same sign-in the layer will use. XML export writes `<url>` and `<layerType>`; import recomputes the id and validates the type.
