@@ -626,6 +626,10 @@ const Setting = (props: SettingProps) => {
         let layerType: UrlLayerType = chosenType
         let title = typedTitle.trim()
         let unverified = false
+        // What the URL alone says. A VectorTileServer is a vector tile layer whatever the
+        // probe answers, so a secured one (499 Token Required to an anonymous fetch) can
+        // still be added; the layer signs in through the app at runtime.
+        const fromUrl = detectUrlLayerType(url)
 
         if (isArcGisRestUrl(url)) {
             let info: any = null
@@ -636,9 +640,10 @@ const Setting = (props: SettingProps) => {
                 info = await response.json()
                 if (info?.error) throw new Error(info.error.message || `Error ${info.error.code || ''}`.trim())
             } catch (err) {
-                if (layerType === 'auto') {
+                if (layerType === 'auto' && fromUrl === 'auto') {
                     return { ok: false, errorKey: 'urlCouldNotReach', errorValues: { message: err?.message || String(err) } }
                 }
+                if (layerType === 'auto') layerType = fromUrl
                 unverified = true
             }
             if (info && layerType === 'auto') {

@@ -84,7 +84,7 @@ export default {
   urlAlreadyAdded: 'That service is already in the gallery.',
   urlCouldNotReach: 'Could not read the service description: {message}. Check the URL, or choose the layer type to add it without checking.',
   urlChooseLayerType: 'Choose the layer type for this URL. Only ArcGIS REST, WMS and WMTS endpoints are detected automatically.',
-  urlAddedWithoutCheck: 'Added with the chosen layer type. The service description could not be read, so the title comes from the URL.',
+  urlAddedWithoutCheck: 'Added without reading the service description (it may be secured or unreachable from here), so the title comes from the URL. A secured service needs a sign-in with access to it in the app.',
   basemapAddedFromUrl: 'Basemap added from URL.',
   fromUrl: 'URL'
 }

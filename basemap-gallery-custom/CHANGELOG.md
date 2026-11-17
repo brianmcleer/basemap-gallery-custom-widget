@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.23.2 (2026-11-17)
+
+- Fixed: starring a new default in the settings did not switch the map in the Builder preview. The default was applied once per map view and then never again, so only a reload showed it. The widget now remembers which default it applied and applies again when the configured default changes. Everything else is as before: the default still applies once on load, reordering or editing other entries does not override a basemap the user picked, a published app's config never changes at runtime, and a basemap carried over by Map Switcher still wins on load.
+
+
+## 1.23.1 (2026-11-17)
+
+- Fixed: a secured VectorTileServer (for example an ArcGIS Online hosted tile service that is not public) could not be added from its URL. The settings probe is an anonymous request, the service answered 499 Token Required, and auto-detect refused the URL even though a VectorTileServer is a vector tile layer whatever the description says. Auto-detect now falls back to the type the URL itself names (VectorTileServer, WMS, WMTS) when the description cannot be read, adds the entry with the title from the URL, and says so in the notice. Map and image services still need the description, since cached and dynamic look the same in the URL; pick the type by hand for a secured one. The layer itself signs in through the app at runtime, so the app user needs access to the service.
+
+
 ## 1.23.0 (2026-11-06)
 
 - Added: edit a Selected Basemaps entry in place. A pencil on each card opens the title and thumbnail, and for a URL entry also the service URL and layer type, with Save and Cancel (Enter and Escape work too). Changing the URL re-reads the service, recomputes the entry id from the new address, keeps the list position and moves the default along; a blanked title is read from the service again. Portal items get title and thumbnail only. Asked for on the Community thread after 1.22.0.

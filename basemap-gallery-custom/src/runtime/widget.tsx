@@ -319,9 +319,11 @@ const Widget = (props: WidgetProps) => {
     // TileLayers are warmed only once. This loads layer metadata up front;
     // actual map tiles still come from the ArcGIS Server cache on demand.
     const preloadPromisesRef = useRef<Record<string, Promise<Basemap> | undefined>>({})
-    // Tracks which map views have already had the default basemap applied,
-    // so the default applies once on load and never fights the user afterward
-    const defaultAppliedRef = useRef<Record<string, boolean>>({})
+    // Per map view, which default was last applied (or a marker when a carried
+    // Map Switcher basemap took its place). The default applies once on load and
+    // never fights the user afterward; it applies again only when the configured
+    // default itself changes, which happens in the Builder when a new star is set.
+    const defaultAppliedRef = useRef<Record<string, string>>({})
 
     // Compare: layers are placed on the map and blended using opacity.
     // In swipe mode, a visual divider overlay indicates the swipe position.
@@ -489,11 +491,13 @@ const Widget = (props: WidgetProps) => {
                     ? loaded.find(b => b.id === carriedItemId)
                     : undefined
 
-                if (carried && !defaultAppliedRef.current[viewKey]) {
+                const appliedDefault = defaultAppliedRef.current[viewKey]
+                if (carried && !appliedDefault) {
                     // 0. A basemap carried over by Map Switcher wins over the default.
                     //    If it is in this gallery, apply it here; otherwise leave the
                     //    map alone so Map Switcher can apply it.
-                    defaultAppliedRef.current[viewKey] = true
+                    // Remember the default as handled so it does not override the carried basemap
+                    defaultAppliedRef.current[viewKey] = defaultId || 'carried'
                     if (carriedMatch) {
                         if (currentBasemapId !== carriedMatch.id) {
                             view.map.basemap = carriedMatch.basemap
@@ -502,8 +506,8 @@ const Widget = (props: WidgetProps) => {
                     } else if (currentBasemapId && loaded.some(b => b.id === currentBasemapId)) {
                         setActiveBasemapId(currentBasemapId)
                     }
-                } else if (defaultBasemap && !defaultAppliedRef.current[viewKey]) {
-                    defaultAppliedRef.current[viewKey] = true
+                } else if (defaultBasemap && appliedDefault !== defaultBasemap.id) {
+                    defaultAppliedRef.current[viewKey] = defaultBasemap.id
                     if (currentBasemapId !== defaultBasemap.id) {
                         view.map.basemap = defaultBasemap.basemap
                     }

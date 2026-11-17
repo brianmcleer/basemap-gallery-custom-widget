@@ -254,7 +254,7 @@ async function urlGallery () {
   nodes(loadingTree, n => n.type === 'JimuMapViewComponent')[0].props.onActiveViewChange({ id: 'view', view })
   render()
   const settle = async () => { for (let i = 0; i < 3; i++) await new Promise(resolve => setImmediate(resolve)); return render() }
-  return { render, settle, map, mapLayers, swipes, fireWatch: bm => watchCallback(bm) }
+  return { render, settle, props, map, mapLayers, swipes, fireWatch: bm => watchCallback(bm) }
 }
 const option = (tree, title) => nodes(tree, n => n.props.role === 'option' && n.props['aria-label'].startsWith(title))[0]
 
@@ -453,7 +453,7 @@ test('An unreachable ArcGIS service is refused on auto-detect but accepted with 
   const entry = s.changes.at(-1).config.basemaps[0]
   assert.equal(entry.layerType, 'imagery')
   assert.equal(entry.title, 'Ortho', 'Title falls back to the service name in the URL')
-  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'success' && /chosen layer type/.test(n.props.text)).length)
+  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'success' && /Added without reading the service description/.test(n.props.text)).length)
 
   // Plain http URL that is neither ArcGIS REST nor OGC needs a type
   byClass(tree, 'url-input')[0].props.onChange({ target: { value: 'https://tiles.example.gov/osm' } })
@@ -645,4 +645,66 @@ test('The runtime shows the configured title and thumbnail over what the portal 
   assert.match(widgetSource, /title: item\.title \|\| basemap\.title/)
   assert.match(widgetSource, /thumbnailUrl: item\.thumbnailUrl \|\| basemap\.thumbnailUrl \|\| ''/)
   assert.ok(option(tree, 'County Aerials'))
+})
+
+test('A secured VectorTileServer (499 Token Required) is added on auto-detect from the URL alone', async () => {
+  const SECURED = 'https://tiles.arcgis.com/tiles/1XtWpHd9UYxtngtO/arcgis/rest/services/GreyScaleTest/VectorTileServer'
+  const s = settingsHarness({ serviceInfo: { error: { code: 499, message: 'Token Required.', details: null } } })
+  let tree = await s.settle()
+  byClass(tree, 'url-input')[0].props.onChange({ target: { value: SECURED } })
+  tree = s.render()
+  byClass(tree, 'add-url-btn')[0].props.onClick()
+  tree = await s.settle()
+  const entry = s.changes.at(-1)?.config?.basemaps?.[0]
+  assert.ok(entry, 'The entry is added instead of refused')
+  assert.equal(entry.layerType, 'vector-tile')
+  assert.equal(entry.title, 'GreyScaleTest')
+  assert.equal(entry.url, SECURED)
+  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'success' && /sign-in/.test(n.props.text)).length, 'The notice says why the description was not read')
+
+  // A secured MapServer still cannot be guessed: cached and dynamic need the description
+  const s2 = settingsHarness({ serviceInfo: { error: { code: 499, message: 'Token Required.' } } })
+  tree = await s2.settle()
+  byClass(tree, 'url-input')[0].props.onChange({ target: { value: MAP } })
+  tree = s2.render()
+  byClass(tree, 'add-url-btn')[0].props.onClick()
+  tree = await s2.settle()
+  assert.equal(s2.changes.length, 0)
+  assert.ok(nodes(tree, n => n.type === 'Alert' && n.props.type === 'error' && /Token Required/.test(n.props.text)).length)
+})
+
+test('A new default set in the Builder switches the map; reordering or other edits do not re-apply it', async () => {
+  const s = await urlGallery()
+  // A config change reloads the gallery; wait until the cards are back
+  const loaded = async () => {
+    let t
+    for (let i = 0; i < 20; i++) {
+      t = await s.settle()
+      if (nodes(t, n => n.props.role === 'option').length) return t
+    }
+    return t
+  }
+  s.props.config = { ...s.props.config, defaultBasemapId: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4' }
+  let tree = await loaded()
+  assert.equal(s.map.basemap.portalItem.id, 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4', 'The first default applies on load')
+
+  // The user picks another basemap in the preview: a reload of the same config must not fight it
+  option(tree, 'County Aerials').props.onClick()
+  tree = await loaded()
+  s.props.config = { ...s.props.config, basemaps: [...s.props.config.basemaps].reverse() }
+  tree = await loaded()
+  assert.equal(s.map.basemap.id, 'url-cafe0001', 'Reordering keeps the user choice')
+
+  // Starring a different default in the settings switches the map
+  s.props.config = { ...s.props.config, defaultBasemapId: 'url-cafe0001' }
+  tree = await loaded()
+  option(tree, 'Streets').props.onClick()
+  tree = await loaded()
+  s.props.config = { ...s.props.config, defaultBasemapId: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4' }
+  tree = await loaded()
+  assert.equal(s.map.basemap.portalItem.id, 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4')
+  s.props.config = { ...s.props.config, defaultBasemapId: 'url-cafe0001' }
+  tree = await loaded()
+  assert.equal(s.map.basemap.id, 'url-cafe0001', 'Each new default applies')
+  assert.match(option(tree, 'County Aerials').props['aria-label'], /currently selected/)
 })
