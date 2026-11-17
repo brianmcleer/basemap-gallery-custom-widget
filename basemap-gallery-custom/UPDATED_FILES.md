@@ -100,6 +100,24 @@ Edit in place and thumbnails from a file.
 - `tests/basemap-url.test.cjs`: 4 new tests.
 - `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, version files: 1.23.0.
 
+## 1.23.5
+
+No flash of the web map basemap at load.
+
+- `src/extensions/apply-default.ts`: preloads the default, store subscription, applies when the
+  web map has loaded, hides the old basemap while waiting.
+- `tests/apply-default.test.cjs`: 3 new tests.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, version files: 1.23.5.
+
+## 1.23.4
+
+Default basemap with a gallery per screen size.
+
+- `src/extensions/apply-default.ts`: handles every copy of the gallery and picks the copy
+  for the current screen size per map widget; one retry; failures on window.
+- `tests/apply-default.test.cjs`: 4 new tests.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, version files: 1.23.4.
+
 ## 1.23.3
 
 Default basemap at app load, with the widget closed.

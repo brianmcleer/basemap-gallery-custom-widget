@@ -65,7 +65,7 @@ folder over the existing widget folder, replacing matching files. Do not put a s
 `your-extensions/widgets`. Start the client again and refresh the app. Existing configured
 basemaps and the existing favorites storage key are unchanged.
 
-Version **1.23.3** is the widget release number, not a change to the Experience Builder
+Version **1.23.5** is the widget release number, not a change to the Experience Builder
 version field. The manifest's existing `exbVersion` value is unchanged. This update does not
 add a library that needs a separate installation.
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.23.5 (2026-11-17)
+
+- Fixed: at app load the web map's own basemap drew briefly before the gallery's default replaced it. The startup extension now starts loading the default basemap as soon as the app config loads, before the map exists, reacts to the new map view through the app store instead of waiting for the next poll, and sets the basemap once the web map has loaded instead of waiting for the view to finish drawing. If the default is still loading at that point, the web map's basemap layers are hidden until it is ready, and shown again if it fails.
+- Tests: 73 pass (3 new: preload and apply without waiting for the view, hidden layers restored on failure, a web map still loading).
+
+## 1.23.4 (2026-11-17)
+
+- Fixed: with a gallery on more than one screen size (an app with separate Large, Medium and Small layouts has a separate gallery widget, and a separate default, on each), the startup extension applied the wrong copy's default, so the desktop map came up on the tablet gallery's default. Jimu runs only the first registered APP_CONFIG_PROCESSOR, not one per widget, so only one copy's extension ever ran. That one instance now handles every copy of the gallery in the app: per map widget it picks the copy on the layout for the current screen size (falling back to the main size mode), applies that copy's default, and records it under that copy's id, which is the one the user opens.
+- Fixed: a startup apply that fails is retried once after 3 seconds (a secured service can answer before sign-in has finished) before it is left to the widget. Failures are listed in `window.__bgcAppliedDefaultErrors` for the console.
+- Tests: 70 pass (4 new: copy chosen by screen size, a copy per map widget, the size-mode lookup, a failed load that succeeds on the retry).
+
 ## 1.23.3 (2026-11-17)
 
 - Fixed: the default basemap was not applied when the app loaded if the gallery sat in a Widget Controller or a closed sidebar; it only appeared when the widget was opened. Experience Builder does not render a widget until it is opened, and the default lived in the widget's own load code. A new APP_CONFIG_PROCESSOR extension (`src/extensions/apply-default.ts`, registered in `manifest.json`) runs at app load for every widget in the app, opened or not. It waits for the configured map widget's views and applies the default once per view, or the basemap Map Switcher carried in when it is in the gallery. It loads esri modules with `loadArcGISJSAPIModules` and never throws into startup.
