@@ -181,7 +181,7 @@ test('every layer module the factory imports has a test double', () => {
 // ---------------------------------------------------------------------------
 // Runtime: a URL basemap sits in the gallery next to a portal item, applies, syncs and compares
 // ---------------------------------------------------------------------------
-async function urlGallery () {
+async function urlGallery ({ registry } = {}) {
   const harness = hookHarness()
   const storage = new Map()
   class TestLayer { constructor (id) { this.id = id; this.destroyed = false } destroy () { this.destroyed = true } }
@@ -228,7 +228,7 @@ async function urlGallery () {
     customElements: { whenDefined: async () => undefined },
     setTimeout,
     clearTimeout,
-    window: { localStorage: { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, value) } }
+    window: { __bgcAppliedDefault: registry, localStorage: { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, value) } }
   })
   const Widget = load('src/runtime/widget.tsx').default
   const props = {
@@ -707,4 +707,15 @@ test('A new default set in the Builder switches the map; reordering or other edi
   tree = await loaded()
   assert.equal(s.map.basemap.id, 'url-cafe0001', 'Each new default applies')
   assert.match(option(tree, 'County Aerials').props['aria-label'], /currently selected/)
+})
+
+test('A widget opened after the startup extension applied the default leaves the user choice alone', async () => {
+  // The extension applied url-cafe0001 to view "view" at app load; the user then picked Streets elsewhere
+  const s = await urlGallery({ registry: { 'urls|view': 'url-cafe0001' } })
+  s.map.basemap = { portalItem: { id: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4' } }
+  s.props.config = { ...s.props.config, defaultBasemapId: 'url-cafe0001' }
+  let tree
+  for (let i = 0; i < 20; i++) { tree = await s.settle(); if (nodes(tree, n => n.props.role === 'option').length) break }
+  assert.equal(s.map.basemap.portalItem.id, 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4', 'Opening the gallery does not re-apply a default the extension already applied')
+  assert.match(option(tree, 'Streets').props['aria-label'], /currently selected/)
 })

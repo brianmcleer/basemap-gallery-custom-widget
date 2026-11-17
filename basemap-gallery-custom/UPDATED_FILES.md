@@ -99,3 +99,17 @@ Edit in place and thumbnails from a file.
 - `src/setting/translations/default.ts`: 13 new strings (run `exb-i18n sync`).
 - `tests/basemap-url.test.cjs`: 4 new tests.
 - `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, version files: 1.23.0.
+
+## 1.23.3
+
+Default basemap at app load, with the widget closed.
+
+- New: `src/extensions/apply-default.ts` (APP_CONFIG_PROCESSOR extension),
+  `src/runtime/basemapBuild.ts` (basemap building with esri classes passed in),
+  `src/runtime/startupState.ts` (Map Switcher reader and the applied-default registry),
+  `tests/apply-default.test.cjs`.
+- `manifest.json`: `extensions` entry.
+- `src/runtime/basemapFactory.ts`: thin wrapper over basemapBuild with static esri imports.
+- `src/runtime/widget.tsx`: Map Switcher reader moved out; reads and writes the registry.
+- `tests/basemap-url.test.cjs`: registry hand-off test.
+- `README.md`, `CHANGELOG.md`, `UPDATED_FILES.md`, `package.json` (test script), version files.

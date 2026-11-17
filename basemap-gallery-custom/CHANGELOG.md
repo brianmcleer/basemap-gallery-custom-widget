@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.23.3 (2026-11-17)
+
+- Fixed: the default basemap was not applied when the app loaded if the gallery sat in a Widget Controller or a closed sidebar; it only appeared when the widget was opened. Experience Builder does not render a widget until it is opened, and the default lived in the widget's own load code. A new APP_CONFIG_PROCESSOR extension (`src/extensions/apply-default.ts`, registered in `manifest.json`) runs at app load for every widget in the app, opened or not. It waits for the configured map widget's views and applies the default once per view, or the basemap Map Switcher carried in when it is in the gallery. It loads esri modules with `loadArcGISJSAPIModules` and never throws into startup.
+- Fixed: closing and reopening the gallery in a controller re-applied the default and overrode the basemap the user had picked since, because a remounted widget starts with an empty record. The extension and the widget now share a `window` registry (`src/runtime/startupState.ts`) of which default was applied to which map view, so neither applies it twice.
+- Internal: the basemap building logic moved to `src/runtime/basemapBuild.ts` (esri classes passed in), shared by the widget (through `basemapFactory.ts`, static imports) and the extension. The Map Switcher hand-off reader moved to `startupState.ts`.
+- Tests: 66 pass (7 new: the extension with the widget never opened, a view that appears late, a portal item default, the Map Switcher priority, a failed load, the manifest entry, and a widget opened after the extension applied the default).
+
+
 ## 1.23.2 (2026-11-17)
 
 - Fixed: starring a new default in the settings did not switch the map in the Builder preview. The default was applied once per map view and then never again, so only a reload showed it. The widget now remembers which default it applied and applies again when the configured default changes. Everything else is as before: the default still applies once on load, reordering or editing other entries does not override a basemap the user picked, a published app's config never changes at runtime, and a basemap carried over by Map Switcher still wins on load.

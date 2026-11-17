@@ -65,7 +65,7 @@ folder over the existing widget folder, replacing matching files. Do not put a s
 `your-extensions/widgets`. Start the client again and refresh the app. Existing configured
 basemaps and the existing favorites storage key are unchanged.
 
-Version **1.23.0** is the widget release number, not a change to the Experience Builder
+Version **1.23.3** is the widget release number, not a change to the Experience Builder
 version field. The manifest's existing `exbVersion` value is unchanged. This update does not
 add a library that needs a separate installation.
 
@@ -213,8 +213,10 @@ Things that are different from portal items:
 
 - Favorites are stored in the browser (localStorage) per widget, so they are personal to
   each user and each browser. Clearing browser data clears favorites.
-- The default basemap is applied once when the map loads. After that the widget never
-  overrides a basemap the user has chosen.
+- The default basemap is applied once when the map loads, even when the gallery sits in a
+  Widget Controller or a closed sidebar and is never opened (a small startup extension in
+  `src/extensions/apply-default.ts` does that part). After that the widget never overrides a
+  basemap the user has chosen, including when the gallery is closed and opened again.
 
 ## Usage telemetry
 
@@ -331,7 +333,7 @@ Emotion's `css` prop have explicit JSX and fragment pragmas to preserve that ren
 From the widget folder inside the Experience Builder client tree, run:
 
 ```powershell
-node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consistency.test.cjs tests/editor-isolation.test.cjs tests/basemap-url.test.cjs
+node --test tests/help-content.test.cjs tests/help-ui.test.cjs tests/help-consistency.test.cjs tests/editor-isolation.test.cjs tests/basemap-url.test.cjs tests/apply-default.test.cjs
 npx tsc -p .
 ```
 

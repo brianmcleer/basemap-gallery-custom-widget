@@ -22,6 +22,7 @@ import * as reactiveUtils from 'esri/core/reactiveUtils'
 import { __m, __setIntl, __t } from './i18n-t'
 import { type BasemapItem, basemapKey, isUrlBasemap } from './basemapSource'
 import { createBasemapForItem } from './basemapFactory'
+import { carriedItemId, getAppliedDefault, readMapSwitcherBasemap, setAppliedDefault } from './startupState'
 
 const { useEffect, useState, useRef, useCallback, useMemo } = React
 
@@ -226,42 +227,6 @@ const LIST_SIZE_CONFIG = {
         indicatorFontSize: 16,
         borderWidth: 3
     }
-}
-
-// Map Switcher hand-off (Map Switcher 1.1.0+). When the user arrives from
-// another app through Map Switcher, the basemap they had there is carried in
-// one of these channels. A carried basemap wins over defaultBasemapId so the
-// gallery's one-time default does not overwrite it.
-const MS_BASEMAP_PARAM = 'ms_basemap'
-const MS_HANDOFF_KEY = 'ms-basemap-handoff'
-const MS_CARRY_KEY = 'ms-basemap-carry'
-const MS_MAX_AGE_MS = 120000
-const MS_ITEM_ID_PATTERN = /^[a-f0-9]{32}$/i
-
-// Captured on module load, before Map Switcher cleans the address bar.
-const msInitialSearch = typeof window !== 'undefined' && window.location ? (window.location.search || '') : ''
-
-function readMapSwitcherBasemap (): string | null {
-    const fresh = (h: any): boolean => !!h?.value && Date.now() - Number(h.ts) < MS_MAX_AGE_MS
-    try {
-        const g = (window as any).__msBasemapHandoff
-        if (g?.value) return String(g.value)
-    } catch {}
-    try {
-        const v = new URLSearchParams(msInitialSearch || window.location?.search || '').get(MS_BASEMAP_PARAM)
-        if (v) return v
-    } catch {}
-    try {
-        const raw = window.sessionStorage.getItem(MS_HANDOFF_KEY)
-        const h = raw ? JSON.parse(raw) : null
-        if (fresh(h)) return String(h.value)
-    } catch {}
-    try {
-        const raw = window.localStorage.getItem(MS_CARRY_KEY)
-        const h = raw ? JSON.parse(raw) : null
-        if (fresh(h)) return String(h.value)
-    } catch {}
-    return null
 }
 
 type WidgetProps = AllWidgetProps<Config> & { id: string; useMapWidgetIds?: string[] }
@@ -486,18 +451,21 @@ const Widget = (props: WidgetProps) => {
                     : undefined
                 const currentBasemapId = basemapKey(view.map?.basemap)
                 const carried = readMapSwitcherBasemap()
-                const carriedItemId = carried?.startsWith('item:') ? carried.slice(5) : null
-                const carriedMatch = carriedItemId && MS_ITEM_ID_PATTERN.test(carriedItemId)
-                    ? loaded.find(b => b.id === carriedItemId)
-                    : undefined
+                const carriedId = carriedItemId(carried)
+                const carriedMatch = carriedId ? loaded.find(b => b.id === carriedId) : undefined
 
-                const appliedDefault = defaultAppliedRef.current[viewKey]
+                // The startup extension (extensions/apply-default.ts) may already have applied
+                // the default before this widget was ever opened, and a widget reopened from a
+                // controller starts with an empty ref. The window registry knows either way.
+                const appliedDefault = defaultAppliedRef.current[viewKey] || getAppliedDefault(props.id, viewKey)
+                if (appliedDefault) defaultAppliedRef.current[viewKey] = appliedDefault
                 if (carried && !appliedDefault) {
                     // 0. A basemap carried over by Map Switcher wins over the default.
                     //    If it is in this gallery, apply it here; otherwise leave the
                     //    map alone so Map Switcher can apply it.
                     // Remember the default as handled so it does not override the carried basemap
                     defaultAppliedRef.current[viewKey] = defaultId || 'carried'
+                    setAppliedDefault(props.id, viewKey, defaultId || 'carried')
                     if (carriedMatch) {
                         if (currentBasemapId !== carriedMatch.id) {
                             view.map.basemap = carriedMatch.basemap
@@ -508,6 +476,7 @@ const Widget = (props: WidgetProps) => {
                     }
                 } else if (defaultBasemap && appliedDefault !== defaultBasemap.id) {
                     defaultAppliedRef.current[viewKey] = defaultBasemap.id
+                    setAppliedDefault(props.id, viewKey, defaultBasemap.id)
                     if (currentBasemapId !== defaultBasemap.id) {
                         view.map.basemap = defaultBasemap.basemap
                     }

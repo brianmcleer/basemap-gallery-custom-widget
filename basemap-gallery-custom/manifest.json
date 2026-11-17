@@ -2,9 +2,17 @@
   "name": "basemap-gallery-custom",
   "label": "Basemap Gallery Custom",
   "type": "widget",
-  "version": "1.23.2",
+  "version": "1.23.3",
   "dependency": [
     "jimu-arcgis"
+  ],
+  "extensions": [
+    {
+      "name": "apply-default-basemap",
+      "label": "Apply the default basemap when the app loads",
+      "point": "APP_CONFIG_PROCESSOR",
+      "uri": "extensions/apply-default"
+    }
   ],
   "exbVersion": "1.21.0",
   "author": "Brian McLeer",
